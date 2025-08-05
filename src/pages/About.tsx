@@ -111,9 +111,15 @@ export default function About() {
                   and professionals connect in the modern marketplace.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Prior to founding proHIRE, Chris held senior leadership roles at Fortune 500 
-                  companies, where he developed innovative recruitment strategies that reduced 
-                  time-to-hire by 40% while improving candidate quality and retention rates.
+                  As a strategic advisor and leadership consultant, Chris brings deep expertise 
+                  in executive search, organizational development, and strategic talent solutions. 
+                  Through ongoing strategic referral networks and partnership agreements with aligned firms, 
+                  proHIRE delivers comprehensive solutions that extend beyond traditional recruiting.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Chris serves on the board of Inspiredu, reflecting his commitment to community impact 
+                  and educational equity. This dedication to giving back extends throughout proHIRE's 
+                  mission to create meaningful connections between talent and opportunity.
                 </p>
               </div>
 

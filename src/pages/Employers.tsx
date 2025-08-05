@@ -47,12 +47,12 @@ export default function Employers() {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* Strategic Hiring Models */}
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-              Comprehensive Hiring Solutions
+              Strategic Hiring Models
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our AI-enhanced recruitment approach combined with deep industry expertise 
@@ -137,6 +137,220 @@ export default function Employers() {
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-4 h-4 text-success" />
                     <span className="text-sm">Cultural fit assessment</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions by Business Type */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary">
+              Solutions by Business Type
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Tailored talent strategies that align with your organization's growth stage and strategic objectives.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Startups */}
+            <Card className="group hover:shadow-premium transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-6">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Startups</h3>
+                <p className="text-muted-foreground mb-6">
+                  Complete talent infrastructure for early-stage companies ready to scale rapidly and efficiently.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Hiring systems & process design</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Fractional CHRO & HRBP support</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Embedded ops teams (EA, COO, SDR)</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">LinkedIn employer brand refresh</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Manager training programs</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Growth-Stage */}
+            <Card className="group hover:shadow-premium transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Growth-Stage</h3>
+                <p className="text-muted-foreground mb-6">
+                  Strategic executive hiring and infrastructure scaling for companies in rapid expansion mode.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Specialized executive recruitment</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Talent + GTM strategy alignment</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">GTM strategy & account expansion</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Revenue leader network access</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Infrastructure scaling support</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Enterprise */}
+            <Card className="group hover:shadow-premium transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-6">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Enterprise</h3>
+                <p className="text-muted-foreground mb-6">
+                  Scalable sourcing engines and team augmentation for large organizations with complex hiring needs.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Team-based sourcing at scale</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Internal recruiting team support</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Project-based talent solutions</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Custom onboarding pipelines</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-success mt-1" />
+                    <span className="text-sm">Recruiter subscription services</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="py-20 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary">
+              Strategic Support Services
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Beyond recruitment - comprehensive business acceleration and operational excellence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="group hover:shadow-premium transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Remote Executive Assistants</h3>
+                <p className="text-muted-foreground mb-6">
+                  Premium EAs for founders and executives from our curated, high-trust network. 
+                  Available fractional or full-time.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">C-suite caliber professionals</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Flexible engagement models</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Pre-vetted and reference-checked</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-premium transition-all duration-300">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-primary mb-4">Onboarding & Retention</h3>
+                <p className="text-muted-foreground mb-6">
+                  Data-backed onboarding design and retention strategies to reduce early attrition 
+                  and accelerate time-to-productivity.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">System design & optimization</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">High-level coaching programs</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Analytics-driven improvements</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-premium transition-all duration-300 md:col-span-2">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-6">
+                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center shrink-0">
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-primary mb-4">Strategic Partnerships</h3>
+                    <p className="text-muted-foreground mb-6">
+                      proHIRE maintains ongoing strategic referral networks with aligned firms across 
+                      complementary service areas. We believe in collaborative approaches that deliver 
+                      comprehensive solutions for our clients.
+                    </p>
+                    <div className="flex flex-wrap gap-4">
+                      <Badge variant="secondary">Partnership Inquiries Welcome</Badge>
+                      <Badge variant="secondary">Referral Network Access</Badge>
+                      <Badge variant="secondary">Collaborative Solutions</Badge>
+                    </div>
                   </div>
                 </div>
               </CardContent>

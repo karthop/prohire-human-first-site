@@ -48,46 +48,42 @@ export default function Professionals() {
         </div>
       </section>
 
-      {/* Services Overview */}
+      {/* Executive Brand Elevation */}
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-              Comprehensive Career Services
+              Executive Brand Elevation & Strategic Positioning
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our strategic approach to career advancement goes beyond traditional job placement. 
-              We partner with you to build a career that reflects your ambitions and potential.
+              Comprehensive career advancement services that position you as the ideal candidate 
+              for your target roles and accelerate your professional trajectory.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02]">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-white" />
+                  <User className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Strategic Career Planning</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Executive Presence Strategy</h3>
                 <p className="text-muted-foreground mb-6">
-                  Work with our experienced advisors to map out your career trajectory, 
-                  identify growth opportunities, and create actionable plans for advancement.
+                  Develop your leadership narrative and executive presence to command attention 
+                  and respect in any professional setting.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Career assessment and goal setting</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Industry trend analysis</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Skills gap identification</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
+                    <CheckCircle className="w-4 h-4 text-success" />
                     <span className="text-sm">Personal brand development</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">C-Suite narrative messaging</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Leadership story crafting</span>
                   </div>
                 </div>
               </CardContent>
@@ -96,29 +92,25 @@ export default function Professionals() {
             <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02]">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6">
-                  <Presentation className="w-6 h-6 text-white" />
+                  <FileText className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Executive Presence Coaching</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">Strategic Career Transitions</h3>
                 <p className="text-muted-foreground mb-6">
-                  Develop the leadership qualities and executive presence needed for senior roles. 
-                  Build confidence, communication skills, and strategic thinking capabilities.
+                  Professional positioning and documents that showcase your value proposition 
+                  for senior leadership roles and career pivots.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Leadership communication training</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Executive resume optimization</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Interview preparation and practice</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">LinkedIn profile enhancement</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Negotiation strategy development</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Executive networking guidance</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Interview preparation & coaching</span>
                   </div>
                 </div>
               </CardContent>
@@ -127,60 +119,113 @@ export default function Professionals() {
             <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02]">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-6">
-                  <FileText className="w-6 h-6 text-white" />
+                  <Briefcase className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Resume & LinkedIn Optimization</h3>
+                <h3 className="text-xl font-bold text-primary mb-4">The Curated Network™</h3>
                 <p className="text-muted-foreground mb-6">
-                  Transform your professional documents and online presence to stand out 
-                  in today's competitive market and attract the right opportunities.
+                  Exclusive access to career acceleration opportunities through warm introductions 
+                  and our extensive network of industry leaders.
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">ATS-optimized resume writing</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Executive network access</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">LinkedIn profile enhancement</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Warm introduction facilitation</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Cover letter templates</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Professional portfolio guidance</span>
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    <span className="text-sm">Hidden market opportunities</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
 
-            <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02]">
-              <CardContent className="p-8">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-6">
-                  <Briefcase className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">Curated Job Access</h3>
-                <p className="text-muted-foreground mb-6">
-                  Access exclusive opportunities through our extensive network of clients 
-                  and partners. Get matched with roles that align with your career goals.
+      {/* Executive Assistant Opportunities */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+                  Executive Support Opportunities
+                </Badge>
+                <h2 className="text-3xl lg:text-4xl font-bold text-primary">
+                  Premium Remote Executive Assistant Roles
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Join our curated network of elite executive assistants supporting C-suite leaders 
+                  and high-growth companies across multiple industries.
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Hidden job market access</span>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center shrink-0 mt-1">
+                    <Star className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Pre-screened opportunities</span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary mb-2">C-Suite Caliber Opportunities</h3>
+                    <p className="text-muted-foreground">
+                      Support founders, CEOs, and senior executives at leading companies 
+                      with meaningful, strategic work.
+                    </p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Direct client introductions</span>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center shrink-0 mt-1">
+                    <Calendar className="w-5 h-5 text-white" />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-success" />
-                    <span className="text-sm">Ongoing career support</span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary mb-2">Flexible Engagement Models</h3>
+                    <p className="text-muted-foreground">
+                      Choose from fractional, part-time, or full-time arrangements 
+                      that fit your lifestyle and career goals.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shrink-0 mt-1">
+                    <Award className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary mb-2">Vetted & Trusted Network</h3>
+                    <p className="text-muted-foreground">
+                      Join a pre-qualified network of high-trust professionals 
+                      with proven track records of excellence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Card className="shadow-premium">
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-bold text-primary text-center">Join Our EA Network</h3>
+                  <p className="text-muted-foreground text-center">
+                    Apply to join our exclusive network of executive assistants and gain access 
+                    to premium opportunities with industry-leading companies.
+                  </p>
+                  <div className="space-y-4">
+                    <Button variant="hero" size="lg" className="w-full" asChild>
+                      <Link to="/contact">Apply to Network</Link>
+                    </Button>
+                    <Button variant="outline" size="lg" className="w-full" asChild>
+                      <Link to="/contact">Learn More</Link>
+                    </Button>
+                  </div>
+                  <div className="text-center text-sm text-muted-foreground">
+                    <p>✓ Remote-first opportunities</p>
+                    <p>✓ Competitive compensation</p>
+                    <p>✓ Professional development support</p>
                   </div>
                 </div>
               </CardContent>

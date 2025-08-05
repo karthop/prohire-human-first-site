@@ -168,6 +168,7 @@ export default function Contact() {
                             <SelectContent>
                               <SelectItem value="hiring">I'm Looking to Hire</SelectItem>
                               <SelectItem value="career">Career Advancement</SelectItem>
+                              <SelectItem value="ea-network">Join EA Network</SelectItem>
                               <SelectItem value="partnership">Partnership Opportunity</SelectItem>
                               <SelectItem value="general">General Inquiry</SelectItem>
                             </SelectContent>
