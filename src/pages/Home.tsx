@@ -23,10 +23,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        ></div>
+        <div className="absolute inset-0">
+          <img 
+            src={heroImage} 
+            alt="Professional handshake representing partnership" 
+            className="w-full h-full object-cover opacity-20"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
