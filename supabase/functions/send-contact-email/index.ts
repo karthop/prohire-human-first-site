@@ -46,8 +46,10 @@ serve(async (req: Request): Promise<Response> => {
       <p>${message.replace(/\n/g, '<br/>')}</p>
     `;
 
+    const fromAddress = Deno.env.get("RESEND_FROM") || "proHIRE resources <onboarding@resend.dev>";
+
     const emailResponse = await resend.emails.send({
-      from: "proHIRE resources <no-reply@prohireresources.com>",
+      from: fromAddress,
       to: [toAddress],
       reply_to: email,
       subject,

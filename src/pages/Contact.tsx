@@ -69,9 +69,21 @@ export default function Contact() {
       // Reset form
       setFormData({ name: "", email: "", company: "", role: "", inquiryType: "", message: "" });
     } catch (err: any) {
-      const errMsg = "Something went wrong. Please try again or email us directly.";
+      const subject = effectivePersona === 'employer'
+        ? `Employer Inquiry: ${formData.name} — ${formData.company || ''}`
+        : effectivePersona === 'professional'
+        ? `Professional Inquiry: ${formData.name}`
+        : `New Inquiry from ${formData.name}`;
+
+      const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role}\nInquiry Type: ${formData.inquiryType}\n\nMessage:\n${formData.message}`;
+      const mailtoUrl = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fallbackBody)}`;
+
+      const errMsg = err?.message ? `Email service error: ${err.message}. Opening your email client...` : "Email service error. Opening your email client...";
       setFeedback(errMsg);
-      toast({ title: "Error", description: errMsg, variant: "destructive" });
+      toast({ title: "Falling back to email", description: errMsg, variant: "destructive" });
+
+      // Fallback: Open user's email client
+      window.location.href = mailtoUrl;
     }
   };
 
@@ -191,8 +203,8 @@ export default function Contact() {
                       <Button type="submit" variant="hero" size="lg" className="w-full group">
                         <Send className="w-5 h-5" />
                         {submitLabel}
-                      </Button>
-                      <p aria-live="polite" className="sr-only">{feedback}</p>
+        </Button>
+        <p aria-live="polite" role="status" className="sr-only">{feedback}</p>
                     </form>
 
                     <div className="pt-6 border-t border-border">
