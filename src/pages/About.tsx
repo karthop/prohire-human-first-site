@@ -23,16 +23,16 @@ export default function About() {
       <section className="relative bg-gradient-hero py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-fade-in">
-            <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE Resources logo" />
+            <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE resources logo" />
             <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
-              About proHIRE Resources
+              About proHIRE resources
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
               Redefining Talent{" "}
               <span className="text-accent">Connections</span>
             </h1>
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              At proHIRE Resources, we believe in the power of human potential. Our mission is to bridge 
+              At proHIRE resources, we believe in the power of human potential. Our mission is to bridge 
               the gap between exceptional talent and visionary organizations through innovative, human-first approaches.
             </p>
           </div>
@@ -105,11 +105,11 @@ export default function About() {
                   Meet Chris Betz
                 </h2>
                 <h3 className="text-xl text-accent font-semibold">
-                  Founder & CEO, proHIRE Resources
+                  Founder & CEO, proHIRE resources
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   With over 15 years of experience in talent acquisition and human resources, 
-                  Chris founded proHIRE Resources with a vision to transform how organizations 
+                  Chris founded proHIRE resources with a vision to transform how organizations 
                   and professionals connect in the modern marketplace.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -277,7 +277,7 @@ export default function About() {
               Our Unique Approach
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              What sets proHIRE Resources apart is our commitment to understanding the complete picture—
+              What sets proHIRE resources apart is our commitment to understanding the complete picture—
               not just skills and requirements, but culture, aspirations, and long-term success.
             </p>
           </div>

@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Logo className="w-10 h-10" />
-              <span className="text-lg font-bold">proHIRE Resources</span>
+              <span className="text-lg font-bold">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Bridging the gap between organizational hiring needs and individual career advancement with AI-enhanced recruitment and human-first philosophy.
@@ -91,7 +91,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 proHIRE Resources. All rights reserved.
+            © 2024 proHIRE resources. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-primary-foreground/60 hover:text-accent transition-colors text-sm">

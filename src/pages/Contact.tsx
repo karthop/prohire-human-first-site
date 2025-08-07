@@ -72,7 +72,7 @@ export default function Contact() {
       <section className="relative bg-gradient-hero py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-fade-in">
-            <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE Resources logo" />
+            <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE resources logo" />
             <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
               Get In Touch
             </Badge>

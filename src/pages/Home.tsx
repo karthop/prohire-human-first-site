@@ -48,7 +48,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal animation="lift" className="space-y-8">
               <div className="space-y-4">
-                <Logo className="w-16 h-16" priority alt="proHIRE Resources logo" />
+                <Logo className="w-16 h-16" priority alt="proHIRE resources logo" />
                 <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
                   AI-Enhanced Recruitment Solutions
                 </Badge>
@@ -224,7 +224,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-              Why Choose proHIRE Resources?
+              Why Choose proHIRE resources?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Our unique blend of AI-enhanced technology and human-first philosophy sets us apart 
@@ -293,7 +293,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-6 italic">
-                  "proHIRE Resources transformed our hiring process. Their AI-enhanced approach found us the perfect candidates faster than ever before."
+                  "proHIRE resources transformed our hiring process. Their AI-enhanced approach found us the perfect candidates faster than ever before."
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-accent rounded-full flex items-center justify-center">

@@ -9,7 +9,7 @@ interface LogoProps {
 export const Logo = ({ 
   className = "w-8 h-8", 
   priority = false, 
-  alt = "proHIRE Resources logo" 
+  alt = "proHIRE resources logo" 
 }: LogoProps) => {
   return (
     <img

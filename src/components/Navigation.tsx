@@ -17,7 +17,7 @@ export const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <Logo className="w-9 h-9" priority />
-            <span className="text-xl font-bold text-primary">proHIRE Resources</span>
+            <span className="text-xl font-bold text-primary">proHIRE resources</span>
           </Link>
 
           {/* Desktop Navigation */}
