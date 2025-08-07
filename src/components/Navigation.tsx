@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Users, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "@/components/Logo";
+import { PersonaToggle } from "@/components/PersonaToggle";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,7 @@ export const Navigation = () => {
             <span className="text-xl font-bold text-primary">proHIRE resources</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <Link 
               to="/" 
               className={`text-sm font-medium transition-colors hover:text-accent ${
@@ -57,6 +57,14 @@ export const Navigation = () => {
               About
             </Link>
             <Link 
+              to="/insights" 
+              className={`text-sm font-medium transition-colors hover:text-accent ${
+                isActive('/insights') ? 'text-accent' : 'text-foreground'
+              }`}
+            >
+              Insights
+            </Link>
+            <Link 
               to="/contact" 
               className={`text-sm font-medium transition-colors hover:text-accent ${
                 isActive('/contact') ? 'text-accent' : 'text-foreground'
@@ -64,6 +72,7 @@ export const Navigation = () => {
             >
               Contact
             </Link>
+            <PersonaToggle />
             <Button variant="hero" size="default" asChild>
               <Link to="/contact">Get Started</Link>
             </Button>
@@ -125,6 +134,15 @@ export const Navigation = () => {
                 About
               </Link>
               <Link 
+                to="/insights" 
+                className={`text-sm font-medium transition-colors hover:text-accent ${
+                  isActive('/insights') ? 'text-accent' : 'text-foreground'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Insights
+              </Link>
+              <Link 
                 to="/contact" 
                 className={`text-sm font-medium transition-colors hover:text-accent ${
                   isActive('/contact') ? 'text-accent' : 'text-foreground'
@@ -133,6 +151,7 @@ export const Navigation = () => {
               >
                 Contact
               </Link>
+              <PersonaToggle />
               <Button variant="hero" size="default" className="self-start" asChild>
                 <Link to="/contact" onClick={() => setIsOpen(false)}>Get Started</Link>
               </Button>
