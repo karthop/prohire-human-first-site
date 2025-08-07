@@ -10,7 +10,6 @@ const corsHeaders = {
 };
 
 interface ContactEmailRequest {
-  to: string;
   name: string;
   email: string;
   company?: string;
@@ -26,7 +25,8 @@ serve(async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { to, name, email, company, role, inquiryType, message, persona }: ContactEmailRequest = await req.json();
+    const { name, email, company, role, inquiryType, message, persona }: ContactEmailRequest = await req.json();
+    const toAddress = Deno.env.get("CONTACT_EMAIL_TO") || "info@prohireresources.com";
 
     const subject = persona === 'employer'
       ? `Employer Inquiry: ${name} — ${company ?? ''}`
@@ -48,7 +48,7 @@ serve(async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "proHIRE resources <no-reply@prohireresources.com>",
-      to: [to],
+      to: [toAddress],
       reply_to: email,
       subject,
       html,

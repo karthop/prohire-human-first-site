@@ -54,7 +54,6 @@ export default function Contact() {
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          to: 'info@prohireresources.com',
           persona: effectivePersona,
           ...formData,
         },
