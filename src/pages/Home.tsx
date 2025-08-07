@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/hero-handshake.jpg";
 import { Logo } from "@/components/Logo";
+import { PersonaSelector } from "@/sections/PersonaSelector";
 
 export default function Home() {
   const { elementRef: heroParallaxRef, offset } = useParallaxScroll(0.3);
@@ -77,6 +78,8 @@ export default function Home() {
                   </Link>
                 </Button>
               </div>
+              {/* Persona selector (subtle) */}
+              <PersonaSelector />
             </ScrollReveal>
 
             <ScrollReveal animation="scale" delay={300} className="relative">

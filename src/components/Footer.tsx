@@ -62,18 +62,13 @@ export const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Get In Touch</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
+              <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-accent" />
-                <a href="mailto:info@prohireresources.com" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  info@prohireresources.com
-                </a>
+                <span className="text-primary-foreground/80 text-sm">
+                  Use the contact form — we typically reply within 24 hours.
+                </span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-accent" />
-                <a href="tel:+1-555-PROHIRE" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
-                  +1 (555) PRO-HIRE
-                </a>
-              </div>
+              
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-accent mt-0.5" />
                 <span className="text-primary-foreground/80 text-sm">
@@ -83,7 +78,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Linkedin className="w-4 h-4 text-accent" />
-                <a href="https://linkedin.com/company/prohire-resources" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
+                <a href="https://www.linkedin.com/company/prohireresources" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
                   Connect on LinkedIn
                 </a>
               </div>

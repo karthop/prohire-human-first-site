@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Clock,
   Users,
@@ -20,50 +19,60 @@ import {
   Linkedin
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { usePersona } from "@/context/PersonaContext";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     company: "",
     role: "",
     inquiryType: "",
     message: ""
   });
+  const [feedback, setFeedback] = useState<string>("");
   const { toast } = useToast();
+  const { persona } = usePersona();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const effectivePersona = persona ?? (typeof window !== 'undefined' ? (localStorage.getItem('persona') as 'employer' | 'professional' | null) : null);
+  const emailLabel = effectivePersona === 'employer' ? 'Work email *' : 'Email *';
+  const submitLabel = effectivePersona === 'employer' ? 'Start a hiring plan' : effectivePersona === 'professional' ? 'Advance my career' : "Let's connect";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setFeedback("");
+
     // Form validation
     if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
-      toast({
-        title: "Please fill in all required fields",
-        description: "Name, email, inquiry type, and message are required.",
-        variant: "destructive"
-      });
+      const msg = "Please fill in all required fields: name, email, inquiry type, and message.";
+      setFeedback(msg);
+      toast({ title: "Incomplete form", description: msg, variant: "destructive" });
       return;
     }
 
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          to: 'info@prohireresources.com',
+          persona: effectivePersona,
+          ...formData,
+        },
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      role: "",
-      inquiryType: "",
-      message: ""
-    });
+      if (error) throw error;
+
+      const successMsg = "Thanks — we'll follow up within 24 hours.";
+      setFeedback(successMsg);
+      toast({ title: "Message sent", description: successMsg });
+
+      // Reset form
+      setFormData({ name: "", email: "", company: "", role: "", inquiryType: "", message: "" });
+    } catch (err: any) {
+      const errMsg = "Something went wrong. Please try again or email us directly.";
+      setFeedback(errMsg);
+      toast({ title: "Error", description: errMsg, variant: "destructive" });
+    }
   };
 
   return (
@@ -117,7 +126,7 @@ export default function Contact() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
+                          <Label htmlFor="email">{emailLabel}</Label>
                           <Input
                             id="email"
                             type="email"
@@ -131,22 +140,21 @@ export default function Contact() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number</Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="(555) 123-4567"
-                          />
-                        </div>
-                        <div className="space-y-2">
                           <Label htmlFor="company">Company</Label>
                           <Input
                             id="company"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                             placeholder="Your company name"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="role">Your Role/Title</Label>
+                          <Input
+                            id="role"
+                            value={formData.role}
+                            onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                            placeholder="e.g., HR Director, Software Engineer"
                           />
                         </div>
                       </div>
@@ -192,8 +200,9 @@ export default function Contact() {
 
                       <Button type="submit" variant="hero" size="lg" className="w-full group">
                         <Send className="w-5 h-5" />
-                        Send Message
+                        {submitLabel}
                       </Button>
+                      <p aria-live="polite" className="sr-only">{feedback}</p>
                     </form>
 
                     <div className="pt-6 border-t border-border">
@@ -210,31 +219,17 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-8">
               {/* Quick Contact */}
-              <Card className="shadow-card">
+                  <Card className="shadow-card">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-6">Quick Contact</h3>
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-start gap-3">
                       <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
                         <Mail className="w-5 h-5 text-white" />
                       </div>
                       <div>
                         <div className="font-medium text-primary">Email</div>
-                        <a href="mailto:info@prohireresources.com" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                          info@prohireresources.com
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                        <Phone className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-primary">Phone</div>
-                        <a href="tel:+1-555-PROHIRE" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                          +1 (555) PRO-HIRE
-                        </a>
+                        <p className="text-sm text-muted-foreground">Please use the form to get in touch. We respond within 24 hours.</p>
                       </div>
                     </div>
 
@@ -244,7 +239,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-medium text-primary">LinkedIn</div>
-                        <a href="https://linkedin.com/company/prohire-resources" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                        <a href="https://www.linkedin.com/company/prohireresources" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">
                           Connect with us
                         </a>
                       </div>
