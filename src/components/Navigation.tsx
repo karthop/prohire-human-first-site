@@ -33,6 +33,12 @@ export const Navigation = () => {
     ? 'Advance My Career'
     : "Let's Connect";
 
+  const ctaHref = effectivePersona === 'employer'
+    ? '/employers'
+    : effectivePersona === 'professional'
+    ? '/professionals'
+    : '/contact';
+
   const navLinkBase =
     "text-sm font-medium transition-colors hover:underline underline-offset-4 decoration-accent/60";
 
@@ -95,8 +101,8 @@ export const Navigation = () => {
             {/* Right controls */}
             <div className="flex items-center gap-3 pl-3">
               <ThemeToggle />
-              <Button variant="hero" size="default" asChild>
-                <Link to="/contact">{ctaLabel}</Link>
+              <Button variant="emerald" size="default" asChild>
+                <Link to={ctaHref}>{ctaLabel}</Link>
               </Button>
             </div>
           </div>
@@ -170,8 +176,8 @@ export const Navigation = () => {
               </Link>
               <div className="flex items-center gap-3 pt-2">
                 <ThemeToggle />
-                <Button variant="hero" size="default" className="self-start" asChild>
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>{ctaLabel}</Link>
+                <Button variant="emerald" size="default" className="self-start" asChild>
+                  <Link to={ctaHref} onClick={() => setIsOpen(false)}>{ctaLabel}</Link>
                 </Button>
               </div>
             </div>

@@ -21,10 +21,20 @@ import {
 import heroImage from "@/assets/hero-handshake.jpg";
 import { Logo } from "@/components/Logo";
 import { PersonaSelector } from "@/sections/PersonaSelector";
+import { usePersona } from "@/context/PersonaContext";
 
 export default function Home() {
   const { elementRef: heroParallaxRef, offset } = useParallaxScroll(0.3);
   const serviceCards = useStaggeredScrollAnimation(2, { delay: 200, stagger: 150 });
+
+  const { persona } = usePersona();
+  const storedPersona = (typeof window !== 'undefined' ? localStorage.getItem('persona') : null) as 'employer' | 'professional' | null;
+  const effectivePersona = persona ?? storedPersona ?? null;
+  const heroCta = effectivePersona === 'employer'
+    ? { to: '/employers', label: 'Start a Hiring Plan', Icon: Users }
+    : effectivePersona === 'professional'
+    ? { to: '/professionals', label: 'Advance My Career', Icon: User }
+    : { to: '/contact', label: "Let's Connect", Icon: Users };
 
   return (
     <div className="min-h-screen pt-16">
@@ -63,17 +73,10 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="xl" asChild className="group">
-                  <Link to="/employers">
-                    <Users className="w-5 h-5" />
-                    I'm Hiring Talent
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-                <Button variant="professional" size="xl" asChild className="group">
-                  <Link to="/professionals">
-                    <User className="w-5 h-5" />
-                    I'm Seeking Opportunities
+                <Button variant="emerald" size="xl" asChild className="group">
+                  <Link to={heroCta.to}>
+                    <heroCta.Icon className="w-5 h-5" />
+                    {heroCta.label}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
