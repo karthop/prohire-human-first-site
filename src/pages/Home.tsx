@@ -19,6 +19,7 @@ import {
   Star
 } from "lucide-react";
 import heroImage from "@/assets/hero-handshake.jpg";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   const { elementRef: heroParallaxRef, offset } = useParallaxScroll(0.3);
@@ -47,6 +48,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal animation="lift" className="space-y-8">
               <div className="space-y-4">
+                <Logo className="w-16 h-16" priority alt="proHIRE Resources logo" />
                 <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
                   AI-Enhanced Recruitment Solutions
                 </Badge>

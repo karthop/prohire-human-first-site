@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Users, User } from "lucide-react";
+import { Logo } from "@/components/Logo";
+
 
 export const Footer = () => {
   return (
@@ -9,9 +11,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">pH</span>
-              </div>
+              <Logo className="w-10 h-10" />
               <span className="text-lg font-bold">proHIRE Resources</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
