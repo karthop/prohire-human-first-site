@@ -9,15 +9,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-light transform hover:scale-[1.02] shadow-md hover:shadow-lg",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-accent text-accent-foreground hover:shadow-premium transform hover:scale-[1.02] hover:shadow-lg border-0",
-        hero: "bg-accent text-accent-foreground hover:bg-accent-hover transform hover:scale-[1.02] shadow-lg hover:shadow-xl font-semibold",
-        professional: "bg-primary text-primary-foreground hover:bg-primary-dark border border-primary/20 shadow-card hover:shadow-premium transform hover:translate-y-[-2px]"
+        default: "bg-primary text-primary-foreground hover:bg-primary-light hover:shadow-hover hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:shadow-hover hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        outline: "border border-input bg-background/80 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground hover:shadow-hover hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:shadow-hover hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 transition-all duration-200",
+        link: "text-primary underline-offset-4 hover:underline transition-colors duration-200",
+        premium: "bg-gradient-primary text-primary-foreground hover:shadow-premium hover:-translate-y-1 shadow-card transition-all duration-300 hover:scale-105",
+        hero: "bg-gradient-hero text-primary-foreground hover:shadow-hero hover:-translate-y-1 shadow-premium text-lg px-8 py-3 transition-all duration-300 hover:scale-105 font-semibold",
+        professional: "bg-charcoal text-charcoal-foreground hover:bg-charcoal/90 hover:shadow-hover hover:-translate-y-0.5 border border-charcoal/20 shadow-card transition-all duration-300",
+        emerald: "bg-accent-emerald text-accent-emerald-foreground hover:bg-accent-emerald/90 hover:shadow-interactive hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        teal: "bg-accent-teal text-accent-teal-foreground hover:bg-accent-teal/90 hover:shadow-hover hover:-translate-y-0.5 shadow-card transition-all duration-300",
+        interactive: "bg-gradient-interactive text-primary-foreground hover:shadow-glow hover:-translate-y-1 shadow-elegant transition-all duration-300 hover:scale-105"
       },
       size: {
         default: "h-10 px-4 py-2",

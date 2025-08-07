@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AnimatedCard } from "@/components/ui/animated-card";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Badge } from "@/components/ui/badge";
+import { useStaggeredScrollAnimation, useParallaxScroll } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
 import { 
   Users, 
@@ -18,10 +21,17 @@ import {
 import heroImage from "@/assets/hero-handshake.jpg";
 
 export default function Home() {
+  const { elementRef: heroParallaxRef, offset } = useParallaxScroll(0.3);
+  const serviceCards = useStaggeredScrollAnimation(2, { delay: 200, stagger: 150 });
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero">
+      <section 
+        ref={heroParallaxRef}
+        className="relative overflow-hidden bg-gradient-hero"
+        style={{ transform: `translateY(${offset}px)` }}
+      >
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
           <img 
@@ -35,14 +45,14 @@ export default function Home() {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <ScrollReveal animation="lift" className="space-y-8">
               <div className="space-y-4">
                 <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
                   AI-Enhanced Recruitment Solutions
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
                   You Are More Than Just A{" "}
-                  <span className="text-accent">Keyword Search</span>
+                  <span className="text-accent-emerald">Keyword Search</span>
                 </h1>
                 <p className="text-xl text-white/90 leading-relaxed max-w-xl">
                   Bridging the gap between organizational hiring needs and individual career advancement with our human-first philosophy and cutting-edge technology.
@@ -65,33 +75,35 @@ export default function Home() {
                   </Link>
                 </Button>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="relative animate-hero-float">
-              <div className="absolute -inset-4 bg-gradient-accent opacity-20 blur-2xl rounded-full"></div>
-              <Card className="relative bg-white/10 backdrop-blur-md border-white/20 shadow-hero">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-2 gap-6 text-center">
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-accent">500+</div>
-                      <div className="text-sm text-white/80">Successful Placements</div>
+            <ScrollReveal animation="scale" delay={300} className="relative">
+              <div className="animate-hero-float">
+                <div className="absolute -inset-4 bg-gradient-accent opacity-20 blur-2xl rounded-full"></div>
+                <Card className="relative bg-white/10 backdrop-blur-md border-white/20 shadow-hero">
+                  <CardContent className="p-8">
+                    <div className="grid grid-cols-2 gap-6 text-center">
+                      <div className="space-y-2">
+                        <div className="text-3xl font-bold text-accent-emerald">500+</div>
+                        <div className="text-sm text-white/80">Successful Placements</div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="text-3xl font-bold text-accent-emerald">95%</div>
+                        <div className="text-sm text-white/80">Client Satisfaction</div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="text-3xl font-bold text-accent-emerald">50+</div>
+                        <div className="text-sm text-white/80">Enterprise Clients</div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="text-3xl font-bold text-accent-emerald">24h</div>
+                        <div className="text-sm text-white/80">Avg Response Time</div>
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-accent">95%</div>
-                      <div className="text-sm text-white/80">Client Satisfaction</div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-accent">50+</div>
-                      <div className="text-sm text-white/80">Enterprise Clients</div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="text-3xl font-bold text-accent">24h</div>
-                      <div className="text-sm text-white/80">Avg Response Time</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -99,7 +111,7 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-20 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
+          <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
               Comprehensive Talent Solutions
             </h2>
@@ -107,96 +119,100 @@ export default function Home() {
               From high-volume sourcing to executive search, we deliver flexible and scalable talent solutions 
               tailored to your unique needs.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* For Employers Card */}
-            <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02] border-2 hover:border-accent/20">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">For Employers</h3>
+            <AnimatedCard 
+              delay={serviceCards[0].isVisible ? 0 : 200}
+              className="p-8 bg-gradient-card hover:shadow-elegant border-2 hover:border-accent-emerald/20"
+              hover={true}
+            >
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                    <Users className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <p className="text-muted-foreground">
-                    Strategic talent acquisition solutions for organizations ranging from startups to Fortune 500 companies.
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">High-Volume Sourcing</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Retained Direct Hire</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Executive Search</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">AI-Enhanced Screening</span>
-                    </div>
-                  </div>
-                  
-                  <Button variant="premium" size="lg" asChild className="w-full group">
-                    <Link to="/employers">
-                      Explore Hiring Solutions
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                  <h3 className="text-2xl font-bold text-primary">For Employers</h3>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <p className="text-muted-foreground">
+                  Strategic talent acquisition solutions for organizations ranging from startups to Fortune 500 companies.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">High-Volume Sourcing</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Retained Direct Hire</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Executive Search</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">AI-Enhanced Screening</span>
+                  </div>
+                </div>
+                
+                <Button variant="premium" size="lg" asChild className="w-full group">
+                  <Link to="/employers">
+                    Explore Hiring Solutions
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </div>
+            </AnimatedCard>
 
             {/* For Professionals Card */}
-            <Card className="group hover:shadow-premium transition-all duration-300 hover:scale-[1.02] border-2 hover:border-primary/20">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <User className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">For Professionals</h3>
+            <AnimatedCard 
+              delay={serviceCards[1].isVisible ? 0 : 350}
+              className="p-8 bg-gradient-card hover:shadow-elegant border-2 hover:border-accent-teal/20"
+              hover={true}
+            >
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                    <User className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <p className="text-muted-foreground">
-                    Strategic career advisory services and curated opportunities for ambitious professionals.
-                  </p>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Strategic Career Planning</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Executive Presence Coaching</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Resume & LinkedIn Optimization</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-success" />
-                      <span className="text-sm">Curated Job Access</span>
-                    </div>
-                  </div>
-                  
-                  <Button variant="professional" size="lg" asChild className="w-full group">
-                    <Link to="/professionals">
-                      Advance Your Career
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
+                  <h3 className="text-2xl font-bold text-primary">For Professionals</h3>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <p className="text-muted-foreground">
+                  Strategic career advisory services and curated opportunities for ambitious professionals.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Strategic Career Planning</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Executive Presence Coaching</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Resume & LinkedIn Optimization</span>
+                  </div>
+                  <div className="flex items-center gap-3 group">
+                    <CheckCircle className="w-5 h-5 text-success group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">Curated Job Access</span>
+                  </div>
+                </div>
+                
+                <Button variant="emerald" size="lg" asChild className="w-full group">
+                  <Link to="/professionals">
+                    Advance Your Career
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </div>
+            </AnimatedCard>
           </div>
         </div>
       </section>
@@ -337,9 +353,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
+      <section className="py-20 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <ScrollReveal className="space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
               Ready to Experience the Difference?
             </h2>
@@ -348,14 +365,17 @@ export default function Home() {
               let's start a conversation about your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/contact">Schedule a Consultation</Link>
+              <Button variant="interactive" size="xl" asChild className="group">
+                <Link to="/contact">
+                  Schedule a Consultation
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button variant="professional" size="xl" asChild>
+              <Button variant="outline" size="xl" asChild className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm">
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>
