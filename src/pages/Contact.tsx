@@ -19,6 +19,7 @@ import {
   Linkedin
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { Seo } from "@/components/Seo";
 import { usePersona } from "@/context/PersonaContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -76,6 +77,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen pt-16">
+      <Seo title="Contact | proHIRE resources" description="Contact proHIRE resources — confidential consultations for employers and professionals." />
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,31 +160,20 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="role">Your Role/Title</Label>
-                          <Input
-                            id="role"
-                            value={formData.role}
-                            onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                            placeholder="e.g., HR Director, Software Engineer"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="inquiryType">Inquiry Type *</Label>
-                          <Select onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select inquiry type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="hiring">I'm Looking to Hire</SelectItem>
-                              <SelectItem value="career">Career Advancement</SelectItem>
-                              <SelectItem value="ea-network">Join EA Network</SelectItem>
-                              <SelectItem value="partnership">Partnership Opportunity</SelectItem>
-                              <SelectItem value="general">General Inquiry</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="inquiryType">Inquiry Type *</Label>
+                        <Select value={formData.inquiryType} onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select inquiry type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="hiring">I'm Looking to Hire</SelectItem>
+                            <SelectItem value="career">Career Advancement</SelectItem>
+                            <SelectItem value="ea-network">Join EA Network</SelectItem>
+                            <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                            <SelectItem value="general">General Inquiry</SelectItem>
+                          </SelectContent>
+                        </Select>
                       </div>
 
                       <div className="space-y-2">
