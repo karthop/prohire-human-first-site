@@ -372,12 +372,7 @@ export default function Home() {
               let's start a conversation about your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="interactive" size="xl" asChild className="group">
-                <Link to="/contact">
-                  Schedule a Consultation
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+              {/* Redundant contact CTA removed to keep single primary action */}
               <Button variant="outline" size="xl" asChild className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm">
                 <Link to="/about">Learn More About Us</Link>
               </Button>

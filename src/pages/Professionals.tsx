@@ -20,6 +20,20 @@ import {
 import { Logo } from "@/components/Logo";
 
 export default function Professionals() {
+  const getMailto = () => {
+    const to = ['info','@','prohireresources','.','com'].join('');
+    const subject = 'Career Inquiry';
+    const name = typeof window !== 'undefined' ? localStorage.getItem('contact_name') || '' : '';
+    const email = typeof window !== 'undefined' ? localStorage.getItem('contact_email') || '' : '';
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n`;
+    const params = new URLSearchParams({ subject, body });
+    return `mailto:${to}?${params.toString()}`;
+  };
+
+  const handleContactClick = () => {
+    window.location.href = getMailto();
+  };
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -39,8 +53,8 @@ export default function Professionals() {
               ready to take the next step in their career trajectory.
             </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="emerald" size="xl" asChild>
-                  <Link to="/contact">Advance My Career</Link>
+                <Button variant="emerald" size="xl" onClick={handleContactClick}>
+                  Advance My Career
                 </Button>
               </div>
           </div>
@@ -213,14 +227,7 @@ export default function Professionals() {
                     Apply to join our exclusive network of executive assistants and gain access 
                     to premium opportunities with industry-leading companies.
                   </p>
-                  <div className="space-y-4">
-                    <Button variant="hero" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Apply to Network</Link>
-                    </Button>
-                    <Button variant="outline" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Learn More</Link>
-                    </Button>
-                  </div>
+                  {/* Consolidated CTA handled in hero to avoid redundancy */}
                   <div className="text-center text-sm text-muted-foreground">
                     <p>✓ Remote-first opportunities</p>
                     <p>✓ Competitive compensation</p>
@@ -415,9 +422,7 @@ export default function Professionals() {
                     how we can help you achieve your professional goals.
                   </p>
                   <div className="space-y-4">
-                    <Button variant="hero" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Schedule Consultation</Link>
-                    </Button>
+                    {/* Redundant contact CTA removed */}
                     <Button variant="outline" size="lg" className="w-full" asChild>
                       <Link to="/about">Learn More About Our Process</Link>
                     </Button>

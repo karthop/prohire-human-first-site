@@ -19,6 +19,20 @@ import {
 import { Logo } from "@/components/Logo";
 
 export default function Employers() {
+  const getMailto = () => {
+    const to = ['info','@','prohireresources','.','com'].join('');
+    const subject = 'Hiring Inquiry';
+    const name = typeof window !== 'undefined' ? localStorage.getItem('contact_name') || '' : '';
+    const email = typeof window !== 'undefined' ? localStorage.getItem('contact_email') || '' : '';
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n`;
+    const params = new URLSearchParams({ subject, body });
+    return `mailto:${to}?${params.toString()}`;
+  };
+
+  const handleContactClick = () => {
+    window.location.href = getMailto();
+  };
+
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -38,8 +52,8 @@ export default function Employers() {
               for organizations ranging from startups to Fortune 500 companies.
             </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="emerald" size="xl" asChild>
-                  <Link to="/contact">Start a Hiring Plan</Link>
+                <Button variant="emerald" size="xl" onClick={handleContactClick}>
+                  Start a Hiring Plan
                 </Button>
               </div>
           </div>
@@ -460,14 +474,7 @@ export default function Employers() {
                     Submit your hiring requirements and we'll get back to you within 24 hours 
                     with a tailored recruitment strategy.
                   </p>
-                  <div className="space-y-4">
-                    <Button variant="hero" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Submit Hiring Request</Link>
-                    </Button>
-                    <Button variant="outline" size="lg" className="w-full" asChild>
-                      <Link to="/contact">Schedule Consultation</Link>
-                    </Button>
-                  </div>
+                  {/* Consolidated CTA handled in hero to avoid redundancy */}
                   <div className="text-center text-sm text-muted-foreground">
                     <p>✓ No upfront fees</p>
                     <p>✓ 24-hour response guarantee</p>

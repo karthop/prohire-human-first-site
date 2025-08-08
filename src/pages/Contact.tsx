@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +22,7 @@ import { Logo } from "@/components/Logo";
 import { Seo } from "@/components/Seo";
 import { usePersona } from "@/context/PersonaContext";
 import { supabase } from "@/integrations/supabase/client";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,12 +34,18 @@ export default function Contact() {
     message: ""
   });
   const [feedback, setFeedback] = useState<string>("");
+  const statusRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
   const { persona } = usePersona();
 
   const effectivePersona = persona ?? (typeof window !== 'undefined' ? (localStorage.getItem('persona') as 'employer' | 'professional' | null) : null);
   const emailLabel = effectivePersona === 'employer' ? 'Work email *' : 'Email *';
   const submitLabel = effectivePersona === 'employer' ? 'Start a hiring plan' : effectivePersona === 'professional' ? 'Advance my career' : "Let's connect";
+
+  // Move focus to status when feedback updates
+  useEffect(() => {
+    if (feedback && statusRef.current) statusRef.current.focus();
+  }, [feedback]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -218,8 +225,12 @@ export default function Contact() {
                       <Button type="submit" variant="hero" size="lg" className="w-full group">
                         <Send className="w-5 h-5" />
                         {submitLabel}
-        </Button>
-        <p aria-live="polite" role="status" className="sr-only">{feedback}</p>
+                      </Button>
+                      {feedback && (
+                        <Alert ref={statusRef} aria-live="polite" role="status" tabIndex={-1} className="mt-4">
+                          <AlertDescription>{feedback}</AlertDescription>
+                        </Alert>
+                      )}
                     </form>
 
                     <div className="pt-6 border-t border-border">
