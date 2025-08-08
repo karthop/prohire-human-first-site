@@ -56,7 +56,17 @@ serve(async (req: Request): Promise<Response> => {
       html,
     });
 
-    return new Response(JSON.stringify(emailResponse), {
+    // If Resend returns an error, bubble it up so the client can handle fallback
+    if (emailResponse.error) {
+      console.error("Resend send failed:", emailResponse.error);
+      return new Response(JSON.stringify({ error: emailResponse.error }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    // Success
+    return new Response(JSON.stringify({ data: emailResponse.data }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });

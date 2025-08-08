@@ -60,7 +60,16 @@ export default function Contact() {
         },
       });
 
+      // Treat both transport errors and Resend payload errors as failures
       if (error) throw error;
+      const payload = data as any;
+      if (payload?.error) {
+        const message =
+          typeof payload.error === 'string'
+            ? payload.error
+            : payload.error?.message || payload.error?.error || 'Email service error';
+        throw new Error(message);
+      }
 
       const successMsg = "Thanks — we'll follow up within 24 hours.";
       setFeedback(successMsg);
