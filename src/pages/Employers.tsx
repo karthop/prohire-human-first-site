@@ -37,14 +37,11 @@ export default function Employers() {
               From high-volume sourcing to executive search, we deliver flexible and scalable talent solutions 
               for organizations ranging from startups to Fortune 500 companies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/contact">Submit a Hiring Request</Link>
-              </Button>
-              <Button variant="professional" size="xl" asChild>
-                <Link to="/contact">Schedule Consultation</Link>
-              </Button>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="emerald" size="xl" asChild>
+                  <Link to="/contact">Start a Hiring Plan</Link>
+                </Button>
+              </div>
           </div>
         </div>
       </section>

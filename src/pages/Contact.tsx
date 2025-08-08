@@ -142,7 +142,11 @@ export default function Contact() {
                           <Input
                             id="name"
                             value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              setFormData({ ...formData, name: val });
+                              if (typeof window !== 'undefined') localStorage.setItem('contact_name', val);
+                            }}
                             placeholder="Your full name"
                             required
                           />
@@ -153,9 +157,11 @@ export default function Contact() {
                             id="email"
                             type="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="your.email@company.com"
-                            required
+                             onChange={(e) => {
+                               const val = e.target.value;
+                               setFormData({ ...formData, email: val });
+                               if (typeof window !== 'undefined') localStorage.setItem('contact_email', val);
+                             }}
                           />
                         </div>
                       </div>

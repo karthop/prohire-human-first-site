@@ -27,17 +27,25 @@ export const Navigation = () => {
     | null;
   const effectivePersona = persona ?? storedPersona ?? null;
 
-  const ctaLabel = effectivePersona === 'employer'
-    ? 'Start a Hiring Plan'
-    : effectivePersona === 'professional'
-    ? 'Advance My Career'
-    : "Let's Connect";
+  const getMailto = () => {
+    const to = ['info','@','prohireresources','.','com'].join('');
+    const subject =
+      effectivePersona === 'employer'
+        ? 'Hiring Inquiry'
+        : effectivePersona === 'professional'
+        ? 'Career Inquiry'
+        : 'General Inquiry';
+    const name = typeof window !== 'undefined' ? localStorage.getItem('contact_name') || '' : '';
+    const email = typeof window !== 'undefined' ? localStorage.getItem('contact_email') || '' : '';
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n`;
+    const params = new URLSearchParams({ subject, body });
+    return `mailto:${to}?${params.toString()}`;
+  };
 
-  const ctaHref = effectivePersona === 'employer'
-    ? '/employers'
-    : effectivePersona === 'professional'
-    ? '/professionals'
-    : '/contact';
+  const handleContactClick = () => {
+    const href = getMailto();
+    window.location.href = href;
+  };
 
   const navLinkBase =
     "text-sm font-medium transition-colors hover:underline underline-offset-4 decoration-accent/60";
@@ -91,19 +99,17 @@ export const Navigation = () => {
             >
               Insights
             </Link>
-            <Link
-              to="/contact"
-              aria-current={isActive('/contact') ? 'page' : undefined}
-              className={`${navLinkBase} ${isActive('/contact') ? 'text-accent' : 'text-foreground'}`}
+            <button
+              type="button"
+              onClick={handleContactClick}
+              className={`${navLinkBase} text-foreground`}
+              aria-label="Contact via email"
             >
               Contact
-            </Link>
+            </button>
             {/* Right controls */}
             <div className="flex items-center gap-3 pl-3">
               <ThemeToggle />
-              <Button variant="emerald" size="default" asChild>
-                <Link to={ctaHref}>{ctaLabel}</Link>
-              </Button>
             </div>
           </div>
 
@@ -166,19 +172,16 @@ export const Navigation = () => {
               >
                 Insights
               </Link>
-              <Link
-                to="/contact"
-                aria-current={isActive('/contact') ? 'page' : undefined}
-                className={`${navLinkBase} ${isActive('/contact') ? 'text-accent' : 'text-foreground'}`}
-                onClick={() => setIsOpen(false)}
+              <button
+                type="button"
+                onClick={() => { setIsOpen(false); handleContactClick(); }}
+                className={`${navLinkBase} text-foreground`}
+                aria-label="Contact via email"
               >
                 Contact
-              </Link>
+              </button>
               <div className="flex items-center gap-3 pt-2">
                 <ThemeToggle />
-                <Button variant="emerald" size="default" className="self-start" asChild>
-                  <Link to={ctaHref} onClick={() => setIsOpen(false)}>{ctaLabel}</Link>
-                </Button>
               </div>
             </div>
           </div>
