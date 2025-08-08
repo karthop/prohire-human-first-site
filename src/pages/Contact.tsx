@@ -21,7 +21,7 @@ import {
 import { Logo } from "@/components/Logo";
 import { Seo } from "@/components/Seo";
 import { usePersona } from "@/context/PersonaContext";
-import { supabase } from "@/integrations/supabase/client";
+
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function Contact() {
@@ -59,48 +59,21 @@ export default function Contact() {
       return;
     }
 
-    try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          persona: effectivePersona,
-          ...formData,
-        },
-      });
+    const subject = effectivePersona === 'employer'
+      ? `Employer Inquiry: ${formData.name} — ${formData.company || ''}`
+      : effectivePersona === 'professional'
+      ? `Professional Inquiry: ${formData.name}`
+      : `New Inquiry from ${formData.name}`;
 
-      // Treat both transport errors and Resend payload errors as failures
-      if (error) throw error;
-      const payload = data as any;
-      if (payload?.error) {
-        const message =
-          typeof payload.error === 'string'
-            ? payload.error
-            : payload.error?.message || payload.error?.error || 'Email service error';
-        throw new Error(message);
-      }
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role}\nInquiry Type: ${formData.inquiryType}\n\nMessage:\n${formData.message}`;
+    const mailtoUrl = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      const successMsg = "Thanks — we'll follow up within 24 hours.";
-      setFeedback(successMsg);
-      toast({ title: "Message sent", description: successMsg });
+    const msg = "Opening your email client...";
+    setFeedback(msg);
+    toast({ title: "Compose email", description: msg });
 
-      // Reset form
-      setFormData({ name: "", email: "", company: "", role: "", inquiryType: "", message: "" });
-    } catch (err: any) {
-      const subject = effectivePersona === 'employer'
-        ? `Employer Inquiry: ${formData.name} — ${formData.company || ''}`
-        : effectivePersona === 'professional'
-        ? `Professional Inquiry: ${formData.name}`
-        : `New Inquiry from ${formData.name}`;
-
-      const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role}\nInquiry Type: ${formData.inquiryType}\n\nMessage:\n${formData.message}`;
-      const mailtoUrl = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fallbackBody)}`;
-
-      const errMsg = err?.message ? `Email service error: ${err.message}. Opening your email client...` : "Email service error. Opening your email client...";
-      setFeedback(errMsg);
-      toast({ title: "Falling back to email", description: errMsg, variant: "destructive" });
-
-      // Fallback: Open user's email client
-      window.location.href = mailtoUrl;
-    }
+    // Open user's email client directly (no backend)
+    window.location.href = mailtoUrl;
   };
 
   return (
