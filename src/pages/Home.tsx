@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/hero-handshake.jpg";
 import { Logo } from "@/components/Logo";
-import { PersonaSelector } from "@/sections/PersonaSelector";
+// import { PersonaSelector } from "@/sections/PersonaSelector";
 import { usePersona } from "@/context/PersonaContext";
 
 export default function Home() {
@@ -81,8 +81,7 @@ export default function Home() {
                   </Link>
                 </Button>
               </div>
-              {/* Persona selector (subtle) */}
-              <PersonaSelector />
+{/* Persona selector removed to avoid redundancy */}
             </ScrollReveal>
 
             <ScrollReveal animation="scale" delay={300} className="relative">
