@@ -23,6 +23,8 @@ const TalentSolutions = lazy(() => import("./pages/services/TalentSolutions"));
 const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const AdminKnowledge = lazy(() => import("./pages/admin/AdminKnowledge"));
+import { AveryWidget } from "@/components/assistant/AveryWidget";
 
 const queryClient = new QueryClient();
 
@@ -59,10 +61,12 @@ const App = () => (
               {/* Legacy redirects */}
               <Route path="/employers" element={<Navigate to="/services/talent-solutions" replace />} />
               <Route path="/professionals" element={<Navigate to="/services/career-advisory" replace />} />
+              <Route path="/admin/ai-knowledge" element={<AdminKnowledge />} />
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
           </Suspense>
           <Footer />
+          <AveryWidget />
         </BrowserRouter>
       </PersonaProvider>
     </TooltipProvider>
