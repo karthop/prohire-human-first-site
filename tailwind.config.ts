@@ -116,7 +116,10 @@ export default {
 				'bounce': 'var(--transition-bounce)'
 			},
 			fontFamily: {
-				'professional': ['Inter', 'system-ui', 'sans-serif']
+				'professional': ['Inter', 'system-ui', 'sans-serif'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'serif': ['"Source Serif 4"', '"Source Serif Pro"', 'Georgia', 'serif'],
+				'display': ['"Source Serif 4"', '"Source Serif Pro"', 'Georgia', 'serif']
 			},
 			keyframes: {
 				'accordion-down': {
