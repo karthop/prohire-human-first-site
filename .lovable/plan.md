@@ -1,165 +1,78 @@
 
-# proHIRE Resources — Executive Consulting Redesign
+# Motion & Interaction Polish — Executive Consulting Tier
 
-A ground-up rethink positioning proHIRE as a senior advisory firm — not a recruiting site. The bar is Bain / McKinsey / BCG / Korn Ferry / Accenture polish, adapted to a boutique, founder-led practice.
+The goal is the kind of motion you feel on Bain, McKinsey, Accenture, and high-end editorial sites: nothing announces itself, but everything responds. No bouncing, no glow pulses, no parallax tilt cards, no scale-on-hover everywhere.
 
----
+## Principles (the "not cheesy" rules)
 
-## 1. Strategic Positioning Shift
+- **Slow and short.** Durations 300–700ms, easing `cubic-bezier(0.22, 1, 0.36, 1)` (editorial ease-out).
+- **Move 8–24px max.** Never large translates. No rotations except chevrons.
+- **Opacity does most of the work.** Fades > slides > scales.
+- **One motion per element.** Never combine scale + lift + glow.
+- **Respect `prefers-reduced-motion`.** Every effect must disable cleanly.
+- **Hover = subtle feedback only.** Color shift, underline grow, arrow nudge — never card lift + scale + shadow.
 
-**Today:** Reads as a recruiting / staffing site with a persona toggle (Employer vs Professional) and tactical service blurbs.
+## What gets added
 
-**New positioning:** *Executive talent advisory and growth-acceleration partner for founder-led, PE-backed, and enterprise leadership teams.*
+### 1. Section-level scroll reveals (already partly wired)
+Audit `useScrollAnimation` + `ScrollReveal` and standardize across Home, Services, About, Industries, Approach. Use the `lift` variant only on hero/section headers; everything else uses `fade`. Stagger child items 60–80ms (currently 100ms — slightly snappier).
 
-Three pillars (mirroring how Bain/Korn Ferry structure themselves):
+### 2. Editorial hero treatments
+- **Slow image drift** on `EditorialHero`: hero image scales from 1.0 → 1.04 over 12s, infinite, paused on hover. Replaces nothing — purely ambient.
+- **Word-by-word headline reveal** on first paint (h1 split into spans, each fades + rises 8px with 40ms stagger). One-time, only on hero.
 
-1. **Executive Search & Leadership Advisory** — retained search, fractional CXOs, board advisory.
-2. **Strategic Talent & Workforce Solutions** — RPO, niche tech & finance hiring, onboarding systems.
-3. **Growth Acceleration** — fractional BD, operational infrastructure, partnership development (the Strategic Business Operations offering from your PDF).
+### 3. Link & button micro-interactions
+- **Arrow nudge:** any `Link` with a trailing `ArrowRight` translates the arrow `+4px` on hover (200ms). Already used ad-hoc — make it a utility class `.link-arrow`.
+- **Underline grow:** text links use a `.link-underline` (left-origin scaleX 0→1, 300ms). Replaces current ad-hoc `border-b`.
+- **Magnetic primary CTA:** the main "Contact" / "Request consultation" buttons gently translate toward the cursor when it's within ~80px (max 6px offset). Lightweight pointer-move handler, disabled on touch and reduced-motion. Used sparingly — hero CTA + CTABand only.
 
-Plus a fourth, smaller pillar: **Career Advisory for Senior Professionals** (the individual-side service from your LinkedIn) — kept present but de-emphasized so the site doesn't feel like a job board.
+### 4. Card & pillar interactions
+- `PillarGrid` cards: on hover, the **rule line** above the title grows from 24px → 64px (300ms), title color shifts to `accent`. No translate, no shadow, no scale.
+- `FeaturedCases`: image gets a slow 1.0 → 1.03 zoom on hover (700ms). Caption fades up 4px.
 
----
+### 5. Navigation polish
+- Nav background opacity ramps `0.85 → 1.0` and a hairline border fades in as `scrolled` flips (already partial — refine timing to 250ms).
+- Active link gets a 2px underline that animates between items using a shared `layoutId`-style indicator (CSS-only via `::after` + transform; no Framer needed).
+- Mobile menu: replace instant toggle with fade + 8px slide (200ms).
 
-## 2. Information Architecture (new)
+### 6. Page transitions
+Wrap `<Routes>` in a lightweight `PageTransition` component: outgoing page fades out (150ms), incoming fades + rises 12px (300ms). Pure CSS keyed off `location.pathname`. No libraries.
 
-```text
-/                         Home — executive narrative, not feature grid
-/services
-  /executive-search       Retained search & fractional CXO
-  /talent-solutions       RPO, contract, finance & tech hiring, onboarding
-  /growth-acceleration    BD execution, fractional ops, partnerships
-  /career-advisory        Senior professional / board-track support
-/industries               Tech, FinTech, Healthcare, Supply Chain, Industrial
-/approach                 Methodology — "Human-first, AI-enhanced"
-/insights                 Thought leadership (kept, redesigned)
-/about                    Firm + Chris Betz bio, network, affiliations
-/contact                  Executive consultation request (mailto-based, as established)
-```
+### 7. Cursor signal (optional, tasteful)
+A small **custom cursor accent** — only a 6px dot that trails the cursor with ~120ms lag, and grows to a 32px ring when hovering links/buttons. Desktop only, hidden on touch, hidden under reduced-motion. This is the only "showy" element and is opt-in via a `<MotionAccents />` mount in `App.tsx`. If you'd rather skip it, we drop it — see questions.
 
-Drop the persona toggle as the primary IA device. It's a B2C pattern; the firms you admire don't use it. Persona-relevant CTAs still live contextually inside Services and Career Advisory.
+### 8. Numbers & proof bar
+`ProofBar` / `StatCounter`: numbers count up from 0 to target over 1.2s when scrolled into view, once. Already partially built — verify it fires and respects reduced-motion.
 
----
+### 9. Image reveals
+Any large editorial image (hero, case studies, founder portrait) uses a **clip-path reveal**: `inset(0 100% 0 0)` → `inset(0 0 0 0)` over 900ms when entering viewport. Feels like Korn Ferry / Accenture.
 
-## 3. Visual & Brand Language
+## What we are NOT doing
 
-Goal: quiet authority, generous whitespace, editorial typography, restrained motion.
+- No parallax backgrounds (already removed, stays removed).
+- No tilt-on-mouse 3D cards.
+- No glow / pulse / ripple buttons.
+- No scroll-jacked sections or locked scrolling.
+- No bouncy springs.
+- No animated gradients.
+- No Lottie illustrations.
 
-- **Type:** Serif display (e.g., *Source Serif*, *Canela*-feel, or *Tiempos Headline* via free alternative *Source Serif Pro*) for headlines; clean grotesque (*Inter* or *Söhne*-feel via *Inter Tight*) for body. Bain/BCG/McKinsey all pair editorial serif headlines with neutral sans body.
-- **Palette refinement:** Keep navy authority, but pull back the emerald/teal gradient noise. Move to:
-  - Deep navy `#0B1F3A` (primary)
-  - Ink black `#0A0A0A` (text)
-  - Warm off-white `#F7F5F1` (background — McKinsey/Bain-style cream rather than pure white)
-  - Single accent: a refined ember/copper `#B45309`-range OR a single confident blue. Choose one — not both. (Korn Ferry uses one accent; current site uses 3+.)
-- **Remove:** Premium gradient buttons, glow shadows, scale-on-hover, hero parallax. These read as SaaS/marketing, not advisory. Replace with subtle 1–2px borders, understated underline-on-hover, and quiet fades.
-- **Photography:** Replace stock handshake with editorial-style photography: real boardrooms, candid leadership moments, abstract architectural details. If real photos aren't available now, use restrained abstract imagery (textures, geometry) rather than stock people.
-- **Logo strip:** Keep, but greyscale, evenly spaced, captioned "Leaders we've partnered with" — Bain/BCG style.
+## Technical details
 
----
+- New file `src/lib/motion.ts` exporting `easeEditorial = "cubic-bezier(0.22, 1, 0.36, 1)"` and shared durations.
+- New utilities in `src/index.css`: `.link-arrow`, `.link-underline`, `.image-reveal`, `.kenburns-slow`.
+- New components:
+  - `src/components/motion/MagneticButton.tsx`
+  - `src/components/motion/PageTransition.tsx`
+  - `src/components/motion/SplitHeadline.tsx`
+  - `src/components/motion/CursorAccent.tsx` (opt-in)
+- Audit and prune `tailwind.config.ts` keyframes: remove `glow-pulse`, `lift-hover`, `parallax-slow`, `hero-float` (none should be used after this pass). Keep `fade-in`, `slide-in`, `scale-in`, `scroll-reveal`, `accordion-*`.
+- Update `EditorialHero`, `PillarGrid`, `FeaturedCases`, `FounderIntro`, `CTABand`, `Navigation`, `App.tsx` to consume the new utilities/components.
+- All effects gated behind `@media (prefers-reduced-motion: reduce)` → instant/no-op.
+- No new dependencies. Pure CSS + small React hooks. (Framer Motion not needed for this fidelity and adds weight.)
 
-## 4. Page-by-Page Redesign
+## Questions before I build
 
-### Home
-- **Hero:** Editorial headline, left-aligned, no gradient. Example: *"Leadership talent and growth infrastructure for companies scaling with intent."* Sub: one line on human-first + AI. Two restrained CTAs: "Explore our work" / "Request a consultation."
-- **Proof bar:** quiet stats — *20 yrs · $15M–$150B client revenue range · Fortune 500 to Series A · Atlanta-based, national reach*.
-- **Three-pillar block:** Executive Search · Talent Solutions · Growth Acceleration. Each a card with one paragraph and "Learn more →" — no icons-in-circles.
-- **Featured insight / case:** One large editorial card pulling from your PDF success stories ("Series B AI Platform: $1.2M qualified pipeline in 60 days"). This is the signature McKinsey/BCG move.
-- **Approach teaser:** "Human-first. AI-enhanced. Outcome-accountable."
-- **Founder section:** Chris Betz — short bio, photo, board/affiliation marks (Inspiredu, FinTech Atlanta, C-Level Advisory, The Curated Network).
-- **CTA band:** "Schedule an executive consultation."
-
-### Services (4 sub-pages)
-Each follows a consistent template:
-1. One-sentence positioning
-2. Who it's for (stage/size/situation)
-3. What's included (capability list, not feature bullets)
-4. Engagement models & investment (pulled from your PDFs — keep the transparent pricing; it's a differentiator)
-5. Representative outcomes (1–2 quoted case stories)
-6. CTA
-
-Investment ranges from your PDFs are a **strength** — most consulting sites hide pricing. Keep them, framed as "Investment models" not "Pricing."
-
-### Industries
-Six tiles: Technology · FinTech · Healthcare / MedTech · Supply Chain & Logistics · Industrial / Energy · Professional Services. Each links to a short page with stage focus and 1–2 wins.
-
-### Approach
-The methodology page — this is where Korn Ferry and Bain build credibility. Sections:
-- The proHIRE method (Discovery → Design → Execute → Embed)
-- Human-first principles
-- AI augmentation (responsible use, what we automate vs. what stays human)
-- Network: The Curated Network, C-Level Advisory, Inspiredu, FinTech Atlanta
-
-### Insights
-Editorial grid, large typography, category filters (Leadership, Talent Markets, Growth, AI in Hiring). Even with few articles today, the layout signals seriousness.
-
-### About
-Firm story + Chris's bio expanded from LinkedIn (Amazon, Pyramid, Stellar EVP, 20 years across Randstad/Kelly/Quest). Affiliations as logo row. Values. Locations / reach.
-
-### Contact
-"Request an executive consultation" — single column, generous whitespace, 4 fields (name, company, role, brief context). Continues to use the established mailto pattern (no backend). Add a calendar booking link if you have one.
-
----
-
-## 5. Codebase Work (technical plan)
-
-Most of this is *redesign at the design-system level* so individual pages get the polish for free.
-
-1. **Design tokens (`src/index.css` + `tailwind.config.ts`)**
-   - Replace gradient/glow/scale tokens with editorial tokens (cream bg, navy, single accent, restrained shadows).
-   - Add serif display font family + Inter via `<link>` in `index.html`.
-2. **Button & Card variants**
-   - Slim down `button.tsx` variants: keep `default`, `outline`, `ghost`, `link`. Remove `premium`, `hero`, `interactive`, `emerald`, `teal`. Replace with one `accent` variant.
-   - Card: add an `editorial` variant (no shadow, hairline border, generous padding).
-3. **Navigation**
-   - Replace persona icons with a clean text nav: Services (dropdown to 4 sub-services) · Industries · Approach · Insights · About · Contact.
-   - Sticky, thin, off-white background, hairline bottom border. Drop the scroll-shrink animation.
-4. **New section components** in `src/sections/`:
-   - `EditorialHero.tsx`, `PillarGrid.tsx`, `FeaturedCase.tsx`, `FounderIntro.tsx`, `ApproachStrip.tsx`, `CTABand.tsx`, `ServiceTemplate.tsx`, `IndustryGrid.tsx`.
-5. **Routing (`src/App.tsx`)**
-   - Add nested `/services/*` routes and `/industries`, `/approach`. Keep existing routes redirecting where appropriate (`/employers` → `/services/talent-solutions`, `/professionals` → `/services/career-advisory`).
-6. **Remove / retire**
-   - `PersonaSelector`, `PersonaToggle` from primary nav (keep context internally if useful for CTA copy).
-   - Heavy parallax + staggered scroll animations on Home; replace with single subtle fade-in.
-   - Unused gradient utilities once buttons are simplified.
-7. **Content**
-   - Port your three PDFs (Strategic Ops, Finance/Accounting, Onboarding) into structured page content with consistent investment-model blocks.
-   - Pull 4–6 quoted case stories from the PDFs into a reusable `<CaseQuote />` component.
-8. **Performance & polish**
-   - Replace the hero image with a properly sized, art-directed asset (or abstract placeholder until photography is sourced).
-   - Audit and remove unused shadcn components from `src/components/ui` that aren't referenced.
-   - Add proper SEO per page via the existing `Seo` component (titles, descriptions, OG images).
-9. **Accessibility**
-   - Audit color contrast against the new palette.
-   - Ensure focus rings on the simplified buttons remain visible on cream background.
-
----
-
-## 6. What Stays vs. Goes
-
-**Keep:** Mailto-based contact pattern (per your direction), `Insights` route, `Seo` component, `ThemeToggle` (consider removing dark mode for v1 — none of your reference firms offer it; revisit later), Logo, footer structure.
-
-**Retire:** Persona toggle as primary IA, gradient/glow button variants, parallax hero, scale-on-hover, the persona-conditional homepage CTA logic, `Index.tsx` if redundant with `Home.tsx`.
-
----
-
-## 7. Phased Delivery
-
-I recommend two implementation passes so you can react between them:
-
-- **Phase A — Foundation (single build):** New design tokens, typography, simplified button/card system, redesigned Navigation + Footer, new Home, new About, new Contact. Existing service pages temporarily restyled to inherit the new system.
-- **Phase B — Depth:** Build out `/services/*` (4 pages), `/industries`, `/approach`, redesigned `/insights` grid, case-study component, founder section with affiliations, route redirects.
-
-Phase A alone will already give the site the polish you're after; Phase B brings the structural depth that matches the reference firms.
-
----
-
-## 8. Open Questions Before We Build
-
-I'll ask these as a quick multi-choice round once you approve the direction, but flagging now:
-
-1. **Accent color** — single confident blue (Accenture/Bain-leaning) vs. warm copper/ember (more distinctive, boutique-feel) vs. keep navy-only with no accent (most McKinsey-like).
-2. **Dark mode** — keep or remove for v1? (Recommend remove.)
-3. **Persona toggle** — fully retire, or keep as a contextual helper inside Services pages only?
-4. **Photography** — do you have any real photos (you, team, clients with permission), or should we go abstract/editorial textures until you commission a shoot?
-
-Approve the plan and I'll proceed with Phase A and confirm the four questions above before writing code.
+1. **Custom cursor accent (item 7)** — include it, or skip? It's the most "designed" element; tasteful firms split on it.
+2. **Magnetic CTA buttons (item 3)** — apply only to the single primary hero CTA, or to all primary buttons site-wide?
+3. **Page transitions (item 6)** — full fade + rise on every route change, or only between top-level sections (Home / Services / About / etc.)?
