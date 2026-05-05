@@ -1,28 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { 
-  Mail, 
-  MapPin, 
-  Clock,
-  Users,
-  User,
-  Calendar,
-  Send,
-  CheckCircle,
-  Linkedin
-} from "lucide-react";
-import { Logo } from "@/components/Logo";
 import { Seo } from "@/components/Seo";
-import { usePersona } from "@/context/PersonaContext";
-
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { ArrowRight } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -31,327 +13,170 @@ export default function Contact() {
     company: "",
     role: "",
     inquiryType: "",
-    message: ""
+    message: "",
   });
-  const [feedback, setFeedback] = useState<string>("");
-  const statusRef = useRef<HTMLDivElement>(null);
-  const { toast } = useToast();
-  const { persona } = usePersona();
 
-  const effectivePersona = persona ?? (typeof window !== 'undefined' ? (localStorage.getItem('persona') as 'employer' | 'professional' | null) : null);
-  const emailLabel = effectivePersona === 'employer' ? 'Work email *' : 'Email *';
-  const submitLabel = effectivePersona === 'employer' ? 'Start a hiring plan' : effectivePersona === 'professional' ? 'Advance my career' : "Let's connect";
-
-  // Move focus to status when feedback updates
-  useEffect(() => {
-    if (feedback && statusRef.current) statusRef.current.focus();
-  }, [feedback]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFeedback("");
-
-    // Form validation
-    if (!formData.name || !formData.email || !formData.inquiryType || !formData.message) {
-      const msg = "Please fill in all required fields: name, email, inquiry type, and message.";
-      setFeedback(msg);
-      toast({ title: "Incomplete form", description: msg, variant: "destructive" });
-      return;
-    }
-
-    const subject = effectivePersona === 'employer'
-      ? `Employer Inquiry: ${formData.name} — ${formData.company || ''}`
-      : effectivePersona === 'professional'
-      ? `Professional Inquiry: ${formData.name}`
-      : `New Inquiry from ${formData.name}`;
-
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role}\nInquiry Type: ${formData.inquiryType}\n\nMessage:\n${formData.message}`;
-    const mailtoUrl = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    const msg = "Opening your email client...";
-    setFeedback(msg);
-    toast({ title: "Compose email", description: msg });
-
-    // Open user's email client directly (no backend)
-    window.location.href = mailtoUrl;
+    const subject = `proHIRE inquiry — ${formData.name}${formData.company ? " · " + formData.company : ""}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company}`,
+      `Role: ${formData.role}`,
+      `Inquiry: ${formData.inquiryType}`,
+      "",
+      "Message:",
+      formData.message,
+    ].join("\n");
+    const url = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
   };
 
   return (
-    <div className="min-h-screen pt-16">
-      <Seo title="Contact | proHIRE resources" description="Contact proHIRE resources — confidential consultations for employers and professionals." />
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8 animate-fade-in">
-            <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE resources logo" />
-            <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
-              Get In Touch
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-              Let's Start a{" "}
-              <span className="text-accent">Conversation</span>
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Whether you're looking to hire exceptional talent or advance your career, 
-              we're here to help. Reach out today for a confidential consultation.
-            </p>
-          </div>
+    <div className="min-h-screen pt-16 bg-background">
+      <Seo
+        title="Contact | proHIRE resources"
+        description="Request a confidential executive consultation."
+      />
+
+      <section className="bg-primary text-primary-foreground">
+        <div className="container-editorial py-20 lg:py-28">
+          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Contact</div>
+          <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-3xl">
+            Request a confidential consultation.
+          </h1>
+          <p className="mt-8 text-lg text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
+            Tell us where you're headed. We'll respond within one business day with a candid
+            view of how — and whether — we can help.
+          </p>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="shadow-premium">
-                <CardContent className="p-8">
-                  <div className="space-y-6">
-                    <div className="space-y-2">
-                      <h2 className="text-3xl font-bold text-primary">Send Us a Message</h2>
-                      <p className="text-muted-foreground">
-                        Fill out the form below and we'll get back to you within 24 hours.
-                      </p>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name *</Label>
-                          <Input
-                            id="name"
-                            value={formData.name}
-                            onChange={(e) => {
-                              const val = e.target.value;
-                              setFormData({ ...formData, name: val });
-                              if (typeof window !== 'undefined') localStorage.setItem('contact_name', val);
-                            }}
-                            placeholder="Your full name"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">{emailLabel}</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                             onChange={(e) => {
-                               const val = e.target.value;
-                               setFormData({ ...formData, email: val });
-                               if (typeof window !== 'undefined') localStorage.setItem('contact_email', val);
-                             }}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="company">Company</Label>
-                          <Input
-                            id="company"
-                            value={formData.company}
-                            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                            placeholder="Your company name"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="role">Your Role/Title</Label>
-                          <Input
-                            id="role"
-                            value={formData.role}
-                            onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                            placeholder="e.g., HR Director, Software Engineer"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="inquiryType">Inquiry Type *</Label>
-                        <Select value={formData.inquiryType} onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select inquiry type" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="hiring">I'm Looking to Hire</SelectItem>
-                            <SelectItem value="career">Career Advancement</SelectItem>
-                            <SelectItem value="ea-network">Join EA Network</SelectItem>
-                            <SelectItem value="partnership">Partnership Opportunity</SelectItem>
-                            <SelectItem value="general">General Inquiry</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
-                        <Textarea
-                          id="message"
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          placeholder="Tell us about your needs, goals, or questions..."
-                          rows={6}
-                          required
-                        />
-                      </div>
-
-                      <Button type="submit" variant="hero" size="lg" className="w-full group">
-                        <Send className="w-5 h-5" />
-                        {submitLabel}
-                      </Button>
-                      {feedback && (
-                        <Alert ref={statusRef} aria-live="polite" role="status" tabIndex={-1} className="mt-4">
-                          <AlertDescription>{feedback}</AlertDescription>
-                        </Alert>
-                      )}
-                    </form>
-
-                    <div className="pt-6 border-t border-border">
-                      <div className="flex items-center gap-3 text-muted-foreground text-sm">
-                        <CheckCircle className="w-4 h-4 text-success" />
-                        <span>We respect your privacy and will never share your information.</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              {/* Quick Contact */}
-                  <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-6">Quick Contact</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
-                        <Mail className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-primary">Email</div>
-                        <p className="text-sm text-muted-foreground">Please use the form to get in touch. We respond within 24 hours.</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                        <Linkedin className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-primary">LinkedIn</div>
-                        <a href="https://www.linkedin.com/company/prohireresources" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors">
-                          Connect with us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Office Info */}
-              <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-6">Office Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center mt-1">
-                        <MapPin className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-primary">Location</div>
-                        <p className="text-sm text-muted-foreground">
-                          Serving clients nationwide<br />
-                          Remote & on-site services available
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mt-1">
-                        <Clock className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-primary">Business Hours</div>
-                        <p className="text-sm text-muted-foreground">
-                          Monday - Friday: 8:00 AM - 6:00 PM EST<br />
-                          Emergency consultations available
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Service Types */}
-              <Card className="shadow-card">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-6">How Can We Help?</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 bg-accent/5 rounded-lg border border-accent/20">
-                      <Users className="w-5 h-5 text-accent" />
-                      <div>
-                        <div className="font-medium text-primary">For Employers</div>
-                        <p className="text-xs text-muted-foreground">Talent acquisition & recruitment</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg border border-primary/20">
-                      <User className="w-5 h-5 text-primary" />
-                      <div>
-                        <div className="font-medium text-primary">For Professionals</div>
-                        <p className="text-xs text-muted-foreground">Career advancement services</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg border border-border">
-                      <Calendar className="w-5 h-5 text-muted-foreground" />
-                      <div>
-                        <div className="font-medium text-primary">Consultations</div>
-                        <p className="text-xs text-muted-foreground">Strategic planning sessions</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Response Promise */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Card className="shadow-premium bg-gradient-subtle border-accent/20">
-            <CardContent className="p-8">
-              <div className="space-y-6">
-                <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-primary">
-                  Our Commitment to You
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-accent mb-2">24 Hours</div>
-                    <div className="text-sm text-muted-foreground">Response Time Guarantee</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-accent mb-2">100%</div>
-                    <div className="text-sm text-muted-foreground">Confidential Discussions</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-accent mb-2">No Cost</div>
-                    <div className="text-sm text-muted-foreground">Initial Consultation</div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  We understand that your time is valuable. That's why we guarantee a response 
-                  within 24 hours and provide complimentary initial consultations to understand your needs.
-                </p>
+      <section className="py-24">
+        <div className="container-editorial grid lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-5 space-y-10">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Direct</div>
+              <div className="font-serif text-xl text-foreground">Chris Betz</div>
+              <div className="text-muted-foreground font-light">CEO, proHIRE resources LLC</div>
+              <div className="mt-3 text-foreground">
+                <a href="mailto:info@prohireresources.com" className="hover:underline">info@prohireresources.com</a>
               </div>
-            </CardContent>
-          </Card>
+              <div className="text-foreground">678.697.2833</div>
+            </div>
+
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Office</div>
+              <div className="text-foreground font-light leading-relaxed">
+                Atlanta, Georgia<br />
+                Serving clients nationally and internationally.<br />
+                Remote and on-site engagements.
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Discretion</div>
+              <p className="text-muted-foreground font-light leading-relaxed">
+                All inquiries are treated as confidential. Initial consultations are
+                complimentary and without obligation.
+              </p>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit} className="lg:col-span-7 space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Name</Label>
+                <Input
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="company" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Company</Label>
+                <Input
+                  id="company"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="role" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Role</Label>
+                <Input
+                  id="role"
+                  value={formData.role}
+                  onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                  className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="inquiryType" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                Inquiry
+              </Label>
+              <Select
+                value={formData.inquiryType}
+                onValueChange={(v) => setFormData({ ...formData, inquiryType: v })}
+              >
+                <SelectTrigger className="border-0 border-b border-border rounded-none bg-transparent px-0 focus:ring-0 h-11">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="executive-search">Executive search / fractional CXO</SelectItem>
+                  <SelectItem value="talent-solutions">Talent solutions / RPO</SelectItem>
+                  <SelectItem value="growth-acceleration">Growth acceleration / BD</SelectItem>
+                  <SelectItem value="career-advisory">Career advisory (individual)</SelectItem>
+                  <SelectItem value="partnership">Partnership / referral</SelectItem>
+                  <SelectItem value="general">General inquiry</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                Context
+              </Label>
+              <Textarea
+                id="message"
+                required
+                rows={6}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground resize-none"
+                placeholder="Tell us about your priorities, situation, or question."
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 text-sm font-medium hover:bg-primary-light transition-colors"
+            >
+              Send inquiry <ArrowRight className="w-4 h-4" />
+            </button>
+            <p className="text-xs text-muted-foreground">
+              Submitting opens a pre-filled email in your default mail client.
+            </p>
+          </form>
         </div>
       </section>
     </div>
