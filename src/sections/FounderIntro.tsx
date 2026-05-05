@@ -50,7 +50,7 @@ export const FounderIntro = () => {
             <div className="pt-2">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
+                className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
               >
                 Read full bio
               </Link>

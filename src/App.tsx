@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PageLoadingSkeleton } from "@/components/ui/loading-skeleton";
+import { PageTransition } from "@/components/motion/PageTransition";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PersonaProvider } from "@/context/PersonaContext";
@@ -44,21 +45,21 @@ const App = () => (
           <Navigation />
           <Suspense fallback={<PageLoadingSkeleton />}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/executive-search" element={<ExecutiveSearch />} />
-              <Route path="/services/talent-solutions" element={<TalentSolutions />} />
-              <Route path="/services/growth-acceleration" element={<GrowthAcceleration />} />
-              <Route path="/services/career-advisory" element={<CareerAdvisory />} />
-              <Route path="/industries" element={<Industries />} />
-              <Route path="/approach" element={<Approach />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+              <Route path="/services/executive-search" element={<PageTransition><ExecutiveSearch /></PageTransition>} />
+              <Route path="/services/talent-solutions" element={<PageTransition><TalentSolutions /></PageTransition>} />
+              <Route path="/services/growth-acceleration" element={<PageTransition><GrowthAcceleration /></PageTransition>} />
+              <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
+              <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
+              <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
+              <Route path="/insights" element={<PageTransition><Insights /></PageTransition>} />
+              <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<Navigate to="/services/talent-solutions" replace />} />
               <Route path="/professionals" element={<Navigate to="/services/career-advisory" replace />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
           </Suspense>
           <Footer />

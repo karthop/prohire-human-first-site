@@ -140,4 +140,97 @@
   .container-editorial {
     @apply max-w-6xl mx-auto px-6 lg:px-8;
   }
+
+  /* Editorial easing token */
+  .ease-editorial {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Arrow nudge — for inline links with trailing arrow icon */
+  .link-arrow svg {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-arrow:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Editorial underline grow (left origin) */
+  .link-underline {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 2px;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.4;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+  }
+  .link-underline:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  .link-underline-grow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline-grow:hover::after,
+  .link-underline-grow:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Slow ambient ken-burns — purely ambient, ~14s loop */
+  .kenburns-slow {
+    animation: kenburns 18s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    from { transform: scale(1) translate3d(0, 0, 0); }
+    to   { transform: scale(1.06) translate3d(0, -1%, 0); }
+  }
+
+  /* Pillar rule line that grows on hover of parent .group */
+  .rule-grow {
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .rule-grow {
+    width: 64px;
+  }
+
+  /* Card image zoom (parent .group) */
+  .img-zoom {
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .img-zoom {
+    transform: scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns-slow,
+  .img-zoom,
+  .link-arrow svg,
+  .rule-grow {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
 }
