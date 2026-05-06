@@ -45,11 +45,11 @@ export const EditorialHero = () => {
             text="Leadership talent and growth infrastructure for companies scaling with intent."
           />
           <Reveal variant="fade" delay={500}>
-            <div className="lg:hidden mt-10 flex justify-center">
+            <div className="lg:hidden mt-10 -mx-6 h-[360px] overflow-hidden flex items-start justify-center">
               <img
                 src={chrisBetz}
                 alt="Chris Betz, CEO of proHIRE resources"
-                className="h-[380px] w-auto object-contain"
+                className="h-[520px] w-auto object-contain object-top"
                 loading="eager"
                 width={900}
                 height={1100}
