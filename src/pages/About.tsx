@@ -133,7 +133,7 @@ export default function About() {
             </p>
             <p>
               That sentence is the practice in a single line. Most of what's labeled
-              "executive search" today is a sourcing motion dressed up in advisory language ,
+              "executive search" today is a sourcing motion dressed up in advisory language —
               a database query with a glossy deck. The work that actually moves a company is
               slower, more specific, and almost always begins with re-scoping the question
               the client first asked.
@@ -145,10 +145,23 @@ export default function About() {
               through transitions where the wrong move costs a decade of compounding.
             </p>
             <p>
-              The throughline across two decades, from staffing floors at Randstad and Kelly,
-              to running BD at Pyramid and Quest, to senior TPM hiring at Amazon, to sales
-              leadership in technology consulting, has been the same: <em className="text-foreground">people are
-              the strategy</em>. Everything else is execution.
+              I have spent twenty years on every side of this work — staffing floors at
+              Randstad and Kelly, BD and delivery leadership at Pyramid and Quest, senior
+              TPM hiring inside Amazon, and sales leadership in technology consulting. Each
+              of those seats taught the same lesson from a different angle: the firms that
+              get senior talent right are not the ones with the largest databases. They are
+              the ones with the most disciplined judgment.
+            </p>
+            <p>
+              The boutique model exists to do the work the larger firms have stopped doing —
+              re-scoping the role before sourcing it, referencing candidates through people
+              they did not provide, and staying in the engagement through the first ninety
+              days inside the seat. It is harder to scale. That is the point.
+            </p>
+            <p>
+              The throughline across two decades has been the same:{" "}
+              <em className="text-foreground">people are the strategy</em>. Everything else
+              is execution.
             </p>
           </div>
         </div>
@@ -214,6 +227,9 @@ export default function About() {
                     {c.title}
                   </h3>
                   <p className="text-muted-foreground font-light text-lg leading-relaxed">{c.body}</p>
+                  <p className="mt-4 font-serif italic text-foreground/80 text-base leading-relaxed">
+                    What I learned: {c.learned}
+                  </p>
                 </div>
               </div>
             ))}
