@@ -22,12 +22,12 @@ export const EditorialHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
       </div>
 
-      {/* Founder portrait , right side, blended into the dark hero */}
+      {/* Founder portrait, desktop only, blended into the dark hero */}
       <img
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="absolute -right-[8%] sm:-right-[6%] lg:right-0 top-[48%] lg:top-1/2 -translate-y-1/2 lg:-translate-y-[55%] h-[55%] sm:h-[70%] lg:h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
+        className="hidden lg:block absolute right-0 top-1/2 -translate-y-[55%] h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
         style={{
           WebkitMaskImage:
             "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
@@ -50,6 +50,20 @@ export const EditorialHero = () => {
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
             text="Leadership talent and growth infrastructure for companies scaling with intent."
           />
+          <Reveal variant="fade" delay={500}>
+            <div className="lg:hidden mt-10 -mx-6 h-[340px] relative overflow-hidden bg-primary-dark">
+              <img
+                src={chrisBetz}
+                alt="Chris Betz, CEO of proHIRE resources"
+                className="absolute inset-x-0 bottom-0 mx-auto h-full w-auto max-w-none object-contain opacity-95"
+                loading="eager"
+                width={900}
+                height={1100}
+              />
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary to-transparent" />
+            </div>
+          </Reveal>
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
               We partner with founder-led, PE-backed, and enterprise leadership teams to place senior talent, embed fractional executives, and accelerate revenue, human-first, AI-enhanced, outcome-accountable.
