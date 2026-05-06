@@ -42,8 +42,8 @@ const chapters = [
   {
     label: "Revenue leadership",
     years: "2023 — 2024",
-    title: "EVP of Sales, Stellar Consulting Solutions.",
-    body: "Sales leadership at an NMSDC Award-winning MBE technology consulting firm — closing the loop between go-to-market strategy and the human capital required to execute it. The throughline that became proHIRE resources.",
+    title: "EVP of Sales, an NMSDC Award-winning MBE technology consulting firm.",
+    body: "Sales leadership at a technology consulting firm — closing the loop between go-to-market strategy and the human capital required to execute it.",
   },
   {
     label: "The practice today",
@@ -94,7 +94,7 @@ export default function About() {
             <p className="mt-6 text-sm text-muted-foreground font-light leading-relaxed">
               Atlanta-based. Twenty years at the intersection of executive search,
               revenue leadership, and operator strategy — across Amazon, Pyramid Consulting,
-              Stellar Consulting Solutions, Randstad, and Kelly.
+              Randstad, and Kelly.
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export default function About() {
             <p>
               The throughline across two decades — from staffing floors at Randstad and Kelly,
               to running BD at Pyramid and Quest, to senior TPM hiring at Amazon, to sales
-              leadership at Stellar — has been the same: <em className="text-foreground">people are
+              leadership in technology consulting — has been the same: <em className="text-foreground">people are
               the strategy</em>. Everything else is execution.
             </p>
           </div>
