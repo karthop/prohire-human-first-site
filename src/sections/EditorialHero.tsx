@@ -30,7 +30,7 @@ export const EditorialHero = () => {
         className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[50%] h-[95%] w-auto object-contain pointer-events-none select-none"
       />
       {/* Soft left-to-right gradient over portrait so text remains crisp */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 bg-gradient-to-r from-primary via-primary/85 lg:via-primary/40 to-primary/20 lg:to-transparent pointer-events-none" />
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-primary via-primary/40 to-transparent pointer-events-none" />
 
       <div className="relative container-editorial py-28 lg:py-40">
         <div className="max-w-3xl lg:max-w-2xl">
