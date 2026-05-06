@@ -27,7 +27,7 @@ export const EditorialHero = () => {
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="hidden lg:block absolute right-0 top-1/2 -translate-y-[55%] h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
+        className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[55%] h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
         style={{
           WebkitMaskImage:
             "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
@@ -51,7 +51,7 @@ export const EditorialHero = () => {
             text="Leadership talent and growth infrastructure for companies scaling with intent."
           />
           <Reveal variant="fade" delay={500}>
-            <div className="lg:hidden mt-10 -mx-6 h-[340px] relative overflow-hidden bg-primary-dark">
+            <div className="lg:hidden mt-10 -mx-6 h-[380px] relative overflow-hidden">
               <img
                 src={chrisBetz}
                 alt="Chris Betz, CEO of proHIRE resources"
@@ -59,9 +59,13 @@ export const EditorialHero = () => {
                 loading="eager"
                 width={900}
                 height={1100}
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 70% 70% at 50% 55%, #000 40%, transparent 95%)",
+                  maskImage:
+                    "radial-gradient(ellipse 70% 70% at 50% 55%, #000 40%, transparent 95%)",
+                }}
               />
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary to-transparent" />
             </div>
           </Reveal>
           <Reveal variant="fade" delay={600}>
