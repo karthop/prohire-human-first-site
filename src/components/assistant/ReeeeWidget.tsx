@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-const STORAGE_KEY = "avery_session_v1";
-const SESSION_ID_KEY = "avery_session_id_v1";
+const STORAGE_KEY = "reeee_session_v1";
+const SESSION_ID_KEY = "reeee_session_id_v1";
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "Hello — I'm **Avery**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
+    "Hello — I'm **Reeee**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
 };
 
 function getSessionId() {
@@ -24,7 +24,7 @@ function getSessionId() {
   return id;
 }
 
-export function AveryWidget() {
+export function ReeeeWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>(() => {
     try {
@@ -89,17 +89,17 @@ export function AveryWidget() {
       });
 
       if (resp.status === 429) {
-        toast("Avery is getting a lot of questions right now. Try again in a moment.");
+        toast("Reeee is getting a lot of questions right now. Try again in a moment.");
         setMessages(next);
         return;
       }
       if (resp.status === 402) {
-        toast.error("Avery is temporarily unavailable. The team has been notified.");
+        toast.error("Reeee is temporarily unavailable. The team has been notified.");
         setMessages(next);
         return;
       }
       if (!resp.ok || !resp.body) {
-        toast.error("Couldn't reach Avery. Please try again.", {
+        toast.error("Couldn't reach Reeee. Please try again.", {
           action: { label: "Retry", onClick: () => { setInput(text); } },
         });
         setMessages(next);
@@ -143,7 +143,7 @@ export function AveryWidget() {
       }
     } catch (e) {
       console.error(e);
-      toast.error("Network error reaching Avery.");
+      toast.error("Network error reaching Reeee.");
     } finally {
       setStreaming(false);
     }
@@ -152,7 +152,7 @@ export function AveryWidget() {
   return (
     <>
       <button
-        aria-label={open ? "Close Avery" : "Open Avery, the AI assistant"}
+        aria-label={open ? "Close Reeee" : "Open Reeee, the AI assistant"}
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "fixed z-50 bottom-6 right-6 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-xl",
@@ -165,7 +165,7 @@ export function AveryWidget() {
       {open && (
         <div
           role="dialog"
-          aria-label="Avery, AI assistant"
+          aria-label="Reeee, AI assistant"
           className={cn(
             "fixed z-50 bg-background border border-border shadow-2xl flex flex-col overflow-hidden",
             "inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[400px] sm:h-[600px] sm:rounded-lg",
@@ -173,7 +173,7 @@ export function AveryWidget() {
         >
           <header className="px-5 py-4 border-b border-border bg-primary text-primary-foreground flex items-center justify-between">
             <div>
-              <div className="font-serif text-lg leading-none">Avery</div>
+              <div className="font-serif text-lg leading-none">Reeee</div>
               <div className="text-[11px] uppercase tracking-[0.18em] opacity-70 mt-1">
                 AI assistant · proHIRE resources
               </div>
