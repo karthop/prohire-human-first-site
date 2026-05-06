@@ -1,4 +1,4 @@
-// Tool definitions + executors for Reeee (proHIRE resources AI assistant).
+// Tool definitions + executors for Reece (proHIRE resources AI assistant).
 // Server-side only. Tools query the public knowledge base / settings.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";

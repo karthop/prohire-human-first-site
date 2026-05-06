@@ -23,7 +23,7 @@ const TalentSolutions = lazy(() => import("./pages/services/TalentSolutions"));
 const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-import { ReeeeWidget } from "@/components/assistant/ReeeeWidget";
+import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 
 const queryClient = new QueryClient();
 
@@ -64,7 +64,7 @@ const App = () => (
             </Routes>
           </Suspense>
           <Footer />
-          <ReeeeWidget />
+          <ReeceWidget />
         </BrowserRouter>
       </PersonaProvider>
     </TooltipProvider>
