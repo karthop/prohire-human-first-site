@@ -27,7 +27,7 @@ export const EditorialHero = () => {
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="hidden lg:block absolute right-0 bottom-0 h-[92%] w-auto object-contain object-bottom opacity-90 pointer-events-none select-none"
+        className="hidden lg:block absolute right-0 top-1/2 -translate-y-[55%] h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
         style={{
           WebkitMaskImage:
             "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
