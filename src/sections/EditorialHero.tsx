@@ -22,21 +22,19 @@ export const EditorialHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
       </div>
 
-      {/* Founder portrait — desktop, blended into the dark hero */}
       <img
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[50%] h-[95%] w-auto object-contain pointer-events-none select-none"
+        className="hidden lg:block absolute right-[7%] bottom-0 h-[88%] w-auto object-contain object-bottom pointer-events-none select-none"
       />
-      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-primary via-primary/40 to-transparent pointer-events-none" />
 
       <div className="relative container-editorial pt-20 pb-16 lg:py-40">
-        <div className="lg:hidden mb-10 flex justify-center">
+        <div className="lg:hidden mb-10 flex justify-center overflow-hidden">
           <img
             src={chrisBetz}
             alt="Chris Betz, CEO of proHIRE resources"
-            className="h-72 w-auto object-contain object-bottom select-none"
+            className="h-80 w-auto object-contain object-bottom select-none"
             loading="eager"
           />
         </div>
