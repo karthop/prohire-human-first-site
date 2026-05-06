@@ -27,7 +27,7 @@ export const EditorialHero = () => {
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="absolute right-0 top-1/2 -translate-y-1/2 lg:-translate-y-[55%] h-[70%] sm:h-[80%] lg:h-[92%] w-auto object-contain opacity-40 lg:opacity-90 pointer-events-none select-none"
+        className="absolute -right-[35%] sm:-right-[20%] lg:right-0 top-1/2 -translate-y-1/2 lg:-translate-y-[55%] h-[55%] sm:h-[70%] lg:h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
         style={{
           WebkitMaskImage:
             "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
@@ -36,7 +36,7 @@ export const EditorialHero = () => {
         }}
       />
       {/* Soft left-to-right gradient over portrait so text remains crisp */}
-      <div className="absolute inset-y-0 right-0 w-3/4 lg:w-1/2 bg-gradient-to-r from-primary via-primary/70 lg:via-primary/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 bg-gradient-to-r from-primary via-primary/85 lg:via-primary/40 to-primary/20 lg:to-transparent pointer-events-none" />
 
       <div className="relative container-editorial py-28 lg:py-40">
         <div className="max-w-3xl lg:max-w-2xl">
