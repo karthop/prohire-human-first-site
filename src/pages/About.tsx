@@ -25,31 +25,60 @@ const chapters = [
     label: "Foundation",
     years: "2003–2014",
     title: "Learning the trade at scale.",
-    body: "Early years inside Randstad and Kelly Services, engineering staffing, executive accounts, and the mechanics of placing senior talent at velocity. Then PIC Group and NobleTek: marketing, business development, and global engineering services across automotive, aerospace, and industrial clients.",
+    body: "Early years inside Randstad and Kelly Services — engineering staffing, executive accounts, and the mechanics of placing senior talent at velocity. Then PIC Group and NobleTek: marketing, business development, and global engineering services across automotive, aerospace, and industrial clients.",
+    learned: "Volume teaches you what the work is. Senior judgment teaches you what the work is for.",
   },
   {
     label: "Senior delivery",
     years: "2014–2021",
     title: "Building practices, not just placements.",
-    body: "VP and Director-level roles at Pyramid Consulting, 3i People, and Quest Group, running BD and delivery for global staffing firms serving Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
+    body: "VP and Director-level roles at Pyramid Consulting, 3i People, and Quest Group — running BD and delivery for global staffing firms serving Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
+    learned: "The hardest work in talent isn't the placement. It's the system that makes the placement repeatable.",
   },
   {
     label: "Inside the buyer",
     years: "2021–2022",
     title: "Two years at Amazon.",
-    body: "Senior Talent Acquisition Consultant for the Alexa product organization, Senior and Principal TPM hiring at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
+    body: "Senior Talent Acquisition Consultant for the Alexa product organization — Senior and Principal TPM hiring at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
+    learned: "The bar is not what you think it is. And once you've seen it, you can't un-see it.",
   },
   {
     label: "Revenue leadership",
     years: "2023–2024",
-    title: "EVP of Sales (Consulting), an NMSDC Award-winning MBE technology consulting firm.",
-    body: "A consulting engagement leading sales for a technology consulting firm, closing the loop between go-to-market strategy and the human capital required to execute it.",
+    title: "EVP of Sales for an NMSDC Award-winning MBE consulting firm.",
+    body: "A consulting engagement leading sales for a technology consulting firm — closing the loop between go-to-market strategy and the human capital required to execute it.",
+    learned: "Strategy without staffing is theater. The two cannot be separated.",
   },
   {
     label: "The practice today",
     years: "2021–Present",
     title: "proHIRE resources.",
     body: "A boutique executive talent and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. Four integrated practices: Executive Search, Talent Solutions, Growth Acceleration, and Career Advisory.",
+    learned: "The boutique model exists to do the work the larger firms have stopped doing.",
+  },
+];
+
+const situations = [
+  { tag: "Series C · Fintech", body: "CEO needed a fractional CRO with the playbook for $5M → $50M ARR before the next round." },
+  { tag: "PE-backed · Industrials", body: "Year-one value-creation plan required finance and people functions rebuilt in two quarters." },
+  { tag: "Founder-led · SaaS", body: "Confidential CEO succession during a refinance — off-books search, board-only visibility." },
+  { tag: "Series B · Logistics", body: "Enterprise account penetration play — five national-chain meetings in 30 days, two contracts inside the quarter." },
+  { tag: "Post-exit · Founder", body: "Multi-year board portfolio strategy following a strategic acquisition." },
+  { tag: "Sitting CXO · Healthcare", body: "Confidential next-chapter advisory while still in seat — eighteen-month positioning to a CEO mandate." },
+];
+
+const boutiqueReasons = [
+  {
+    h: "Partner attention, every engagement.",
+    b: "There is no junior staffing layer. The senior who pitches the engagement is the senior executing it. This is the single most consequential difference between boutique and large-firm work — and the easiest one to verify.",
+  },
+  {
+    h: "No leverage model to feed.",
+    b: "Large search and consulting firms have economics that require staffing engagements with junior associates. We don't. Our economics are aligned to do the work right, not to maximize headcount on the project plan.",
+  },
+  {
+    h: "The relationship outlasts the engagement.",
+    b: "Boutique work compounds across years and roles. Most of our engagements come from clients we've worked with at three different companies, in three different stages, for three different reasons. That's the model — and it only works if the work is honest.",
   },
 ];
 
