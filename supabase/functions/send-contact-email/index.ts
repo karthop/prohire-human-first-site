@@ -26,7 +26,7 @@ serve(async (req: Request): Promise<Response> => {
 
   try {
     const { name, email, company, role, inquiryType, message, persona }: ContactEmailRequest = await req.json();
-    const toAddress = Deno.env.get("CONTACT_EMAIL_TO") || "info@prohireresources.com";
+    const toAddress = Deno.env.get("CONTACT_EMAIL_TO") || "cbetz@prohireresources.com";
 
     const subject = persona === 'employer'
       ? `Employer Inquiry: ${name} — ${company ?? ''}`
