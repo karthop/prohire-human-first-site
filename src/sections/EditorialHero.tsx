@@ -27,13 +27,7 @@ export const EditorialHero = () => {
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
-        className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[55%] h-[92%] w-auto object-contain opacity-90 pointer-events-none select-none"
-        style={{
-          WebkitMaskImage:
-            "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
-          maskImage:
-            "radial-gradient(ellipse 65% 75% at 60% 55%, #000 45%, transparent 95%)",
-        }}
+        className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[50%] h-[95%] w-auto object-contain pointer-events-none select-none"
       />
       {/* Soft left-to-right gradient over portrait so text remains crisp */}
       <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 bg-gradient-to-r from-primary via-primary/85 lg:via-primary/40 to-primary/20 lg:to-transparent pointer-events-none" />
