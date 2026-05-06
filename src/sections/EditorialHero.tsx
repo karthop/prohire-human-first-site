@@ -45,20 +45,14 @@ export const EditorialHero = () => {
             text="Leadership talent and growth infrastructure for companies scaling with intent."
           />
           <Reveal variant="fade" delay={500}>
-            <div className="lg:hidden mt-10 -mx-6 h-[380px] relative overflow-hidden">
+            <div className="lg:hidden mt-10 flex justify-center">
               <img
                 src={chrisBetz}
                 alt="Chris Betz, CEO of proHIRE resources"
-                className="absolute inset-x-0 bottom-0 mx-auto h-full w-auto max-w-none object-contain opacity-95"
+                className="h-[380px] w-auto object-contain"
                 loading="eager"
                 width={900}
                 height={1100}
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 70% 70% at 50% 55%, #000 40%, transparent 95%)",
-                  maskImage:
-                    "radial-gradient(ellipse 70% 70% at 50% 55%, #000 40%, transparent 95%)",
-                }}
               />
             </div>
           </Reveal>
