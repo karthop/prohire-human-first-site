@@ -60,7 +60,7 @@ const comparisons = [
   },
   {
     title: "Vs. a management consulting firm",
-    body: "We do not sell decks. Our deliverables are placed leaders, built functions, and closed accounts — measurable inside one or two quarters, not one or two years.",
+    body: "We do not sell decks. Our deliverables are placed leaders, built functions, and closed accounts , measurable inside one or two quarters, not one or two years.",
   },
   {
     title: "Vs. a fractional marketplace",
@@ -73,7 +73,7 @@ export default function ServicesIndex() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Services | proHIRE resources"
-        description="Four integrated practices — executive search, workforce solutions, revenue acceleration, and senior career advisory — for founders, boards, and senior leaders."
+        description="Four integrated practices , executive search, workforce solutions, revenue acceleration, and senior career advisory , for founders, boards, and senior leaders."
       />
 
       <section className="bg-primary text-primary-foreground">
@@ -86,7 +86,7 @@ export default function ServicesIndex() {
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             We engage where senior judgment, network reach, and disciplined execution change
-            the outcome — not where a transactional vendor will do.
+            the outcome , not where a transactional vendor will do.
           </p>
         </div>
       </section>
@@ -110,7 +110,7 @@ export default function ServicesIndex() {
             </p>
             <p>
               The practices are designed to compose. We scope the situation first and configure
-              the engagement second — never the other way around.
+              the engagement second , never the other way around.
             </p>
           </div>
         </div>

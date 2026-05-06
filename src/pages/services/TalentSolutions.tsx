@@ -4,11 +4,11 @@ export default function TalentSolutions() {
   return (
     <ServiceTemplate
       seoTitle="Strategic Talent & Workforce Solutions | proHIRE resources"
-      seoDescription="Workforce architecture for high-growth companies — finance, technology, operations, and people functions built to scale, not just staffed."
+      seoDescription="Workforce architecture for high-growth companies , finance, technology, operations, and people functions built to scale, not just staffed."
       eyebrow="Talent Solutions"
       title="Strategic Talent & Workforce Solutions"
-      lead="We don't fill seats. We build functions. Specialized hiring and workforce infrastructure across finance, technology, operations, and people — designed for the speed, compliance, and quality demands of high-growth environments."
-      thesis="Most growth-stage companies don't have a hiring problem. They have a workforce architecture problem: the function isn't designed, so every search starts from scratch and every offer feels like an emergency. Strategic talent work begins one layer up — defining the function, the seats, the seams, and the cadence — and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
+      lead="We don't fill seats. We build functions. Specialized hiring and workforce infrastructure across finance, technology, operations, and people , designed for the speed, compliance, and quality demands of high-growth environments."
+      thesis="Most growth-stage companies don't have a hiring problem. They have a workforce architecture problem: the function isn't designed, so every search starts from scratch and every offer feels like an emergency. Strategic talent work begins one layer up , defining the function, the seats, the seams, and the cadence , and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
       pointOfView="Hiring is the symptom. Function design is the work."
       whoFor={[
         "Founders and CFOs scaling finance, technology, and operations teams through a funding round or capital event",
@@ -39,13 +39,13 @@ export default function TalentSolutions() {
         },
         {
           heading: "Onboarding systems",
-          body: "Modular onboarding infrastructure — planning, forms, welcome programs, manager briefs, and 30-day liaison support — included on direct-hire placements.",
+          body: "Modular onboarding infrastructure , planning, forms, welcome programs, manager briefs, and 30-day liaison support , included on direct-hire placements.",
         },
       ]}
       disciplines={[
         {
           heading: "Function design before sourcing",
-          body: "We map the function — roles, reporting lines, seams to adjacent teams, and the operating cadence — before opening any requisition. The hiring plan is a downstream artifact.",
+          body: "We map the function , roles, reporting lines, seams to adjacent teams, and the operating cadence , before opening any requisition. The hiring plan is a downstream artifact.",
         },
         {
           heading: "Senior screening, every role",
@@ -57,7 +57,7 @@ export default function TalentSolutions() {
         },
         {
           heading: "Offer integrity",
-          body: "We coach hiring managers on offer construction, comp positioning, and counter-offer dynamics. The placement is not closed when the offer is signed — it's closed when day 30 holds.",
+          body: "We coach hiring managers on offer construction, comp positioning, and counter-offer dynamics. The placement is not closed when the offer is signed , it's closed when day 30 holds.",
         },
       ]}
       methodMap={[
@@ -74,7 +74,7 @@ export default function TalentSolutions() {
       engagements={[
         { name: "Direct hire", detail: "Senior-led permanent placements with written replacement protections and onboarding support included." },
         { name: "Embedded RPO", detail: "Dedicated recruiting capacity priced as a subscription to a defined hiring plan, scalable up or down." },
-        { name: "Project squad", detail: "Time-boxed campaigns to land a defined cluster of hires inside a quarter — typical for funding-event ramps." },
+        { name: "Project squad", detail: "Time-boxed campaigns to land a defined cluster of hires inside a quarter , typical for funding-event ramps." },
         { name: "Onboarding system", detail: "Standalone install of the onboarding infrastructure for an existing team, or bundled with direct-hire placements." },
         { name: "Volume partnership", detail: "Multi-hire and annual partnerships structured with shared milestones and incentives." },
       ]}
@@ -86,11 +86,11 @@ export default function TalentSolutions() {
       faq={[
         {
           q: "How are you different from a recruiting agency?",
-          a: "An agency sells resumes. We sell function design and senior-led execution. Every engagement begins with a workforce plan, every shortlist is calibrated, and every placement comes with onboarding support. The pricing model reflects that — we are not paid to send volume.",
+          a: "An agency sells resumes. We sell function design and senior-led execution. Every engagement begins with a workforce plan, every shortlist is calibrated, and every placement comes with onboarding support. The pricing model reflects that , we are not paid to send volume.",
         },
         {
           q: "What does embedded RPO actually mean?",
-          a: "We become your recruiting team for a defined period — running intake meetings, sourcing, scheduling, and offer construction inside your tooling and your brand. Capacity scales with the hiring plan; we ramp up before a round and back down after.",
+          a: "We become your recruiting team for a defined period , running intake meetings, sourcing, scheduling, and offer construction inside your tooling and your brand. Capacity scales with the hiring plan; we ramp up before a round and back down after.",
         },
         {
           q: "Who owns the offer and the candidate relationship?",
@@ -98,7 +98,7 @@ export default function TalentSolutions() {
         },
         {
           q: "How do you handle data and IP?",
-          a: "All client data — candidate pipelines, comp benchmarks, hiring plans — is treated as confidential and is not reused across engagements. NDAs are standard. Pipelines built during an engagement remain with the client.",
+          a: "All client data , candidate pipelines, comp benchmarks, hiring plans , is treated as confidential and is not reused across engagements. NDAs are standard. Pipelines built during an engagement remain with the client.",
         },
         {
           q: "How quickly can you start?",

@@ -7,11 +7,11 @@ export default function GrowthAcceleration() {
       seoDescription="Senior business development, partnership execution, and operating infrastructure for companies between strategy and scale."
       eyebrow="Growth Acceleration"
       title="Revenue & Operational Acceleration"
-      lead="The gap between a strategy deck and a closed enterprise account is staffed wrong in most companies. We close it with senior operators on shorter time horizons — measurable revenue and operating impact in 30, 60, and 90 days."
+      lead="The gap between a strategy deck and a closed enterprise account is staffed wrong in most companies. We close it with senior operators on shorter time horizons , measurable revenue and operating impact in 30, 60, and 90 days."
       thesis="Most growth-stage companies don't lack strategy. They lack the senior execution muscle to convert strategy into closed revenue and durable operating infrastructure. Hiring a full-time CRO or COO is an 8-to-12-month exercise that the company often can't afford to wait for. We bring senior operators who have run the play before, embed them inside the team, and accept measurable accountability for the outcome."
       pointOfView="Acceleration isn't more activity. It's the right person, in the right seat, for the right twelve weeks."
       whoFor={[
-        "Founder-led companies needing senior BD execution before — or instead of — a full-time sales hire",
+        "Founder-led companies needing senior BD execution before , or instead of , a full-time sales hire",
         "PE-backed portfolios scaling go-to-market or operating capacity across multiple investments",
         "Leadership teams penetrating enterprise accounts, new geographies, or new market segments",
         "Companies whose product is ready and whose pipeline isn't",
@@ -19,7 +19,7 @@ export default function GrowthAcceleration() {
       capabilities={[
         {
           heading: "Business development execution",
-          body: "We function as your senior external BD team — running named-account campaigns, partnership development, and C-level relationship building while the leadership team focuses on strategy and product.",
+          body: "We function as your senior external BD team , running named-account campaigns, partnership development, and C-level relationship building while the leadership team focuses on strategy and product.",
           bullets: [
             "Enterprise account penetration",
             "Strategic partnership identification and structuring",
@@ -42,7 +42,7 @@ export default function GrowthAcceleration() {
         },
         {
           heading: "Strategic partnership models",
-          body: "Foundation, Growth, and Enterprise partnership shapes — modular by capability, with quarterly business reviews and shared milestones.",
+          body: "Foundation, Growth, and Enterprise partnership shapes , modular by capability, with quarterly business reviews and shared milestones.",
         },
       ]}
       disciplines={[
@@ -75,9 +75,9 @@ export default function GrowthAcceleration() {
         "Take performance-only engagements where there is no shared accountability for inputs.",
       ]}
       engagements={[
-        { name: "Foundation Partnership", detail: "Core operating infrastructure — onboarding, light recruiting, and HR foundations — for companies under 30 employees." },
+        { name: "Foundation Partnership", detail: "Core operating infrastructure , onboarding, light recruiting, and HR foundations , for companies under 30 employees." },
         { name: "Growth Partnership", detail: "Foundation plus active BD execution or fractional chief-of-staff capacity. The most common shape for Series A and B companies." },
-        { name: "Enterprise Partnership", detail: "Comprehensive multi-workstream support — BD, operating infrastructure, and fractional executive capacity in parallel." },
+        { name: "Enterprise Partnership", detail: "Comprehensive multi-workstream support , BD, operating infrastructure, and fractional executive capacity in parallel." },
         { name: "BD execution", detail: "Standalone senior BD engagement against a named-account or partnership thesis, with monthly retainer and outcome incentives." },
         { name: "Operations & HR", detail: "Standalone operating-infrastructure engagement, retainer or project-based." },
         { name: "Volume partnership", detail: "Multi-quarter and annual commitments structured with shared milestones and partnership incentives." },
@@ -85,12 +85,12 @@ export default function GrowthAcceleration() {
       caseNarrative={{
         tag: "Series B · Logistics",
         title: "Five national-chain meetings in 30 days, two converted within the quarter.",
-        body: "A Series B logistics platform had spent six months trying to break into national retail accounts and was burning founder cycles on cold outreach.\n\nWe ran our enterprise account-penetration play: a named target list of seven retailers, a senior operator who had sold into the same buyers from a prior role, and a weekly cadence with the founder.\n\nWithin 30 days, five of the seven were in active conversations. By the end of the quarter, two had become signed contracts. The internal sales hire — postponed for a year while the company looked for the wrong profile — was now scoped against actual deal motion."
+        body: "A Series B logistics platform had spent six months trying to break into national retail accounts and was burning founder cycles on cold outreach.\n\nWe ran our enterprise account-penetration play: a named target list of seven retailers, a senior operator who had sold into the same buyers from a prior role, and a weekly cadence with the founder.\n\nWithin 30 days, five of the seven were in active conversations. By the end of the quarter, two had become signed contracts. The internal sales hire , postponed for a year while the company looked for the wrong profile , was now scoped against actual deal motion."
       }}
       faq={[
         {
           q: "How fast do we see impact?",
-          a: "Most engagements show first measurable signal — a meeting set, a partnership advanced, an operating workstream stood up — within the first 30 days. We define what 30/60/90-day signal looks like at the start of each engagement, in writing.",
+          a: "Most engagements show first measurable signal , a meeting set, a partnership advanced, an operating workstream stood up , within the first 30 days. We define what 30/60/90-day signal looks like at the start of each engagement, in writing.",
         },
         {
           q: "Are you a substitute for a full-time CRO or COO?",

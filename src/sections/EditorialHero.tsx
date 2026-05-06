@@ -22,7 +22,7 @@ export const EditorialHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
       </div>
 
-      {/* Founder portrait — right side, blended into the dark hero */}
+      {/* Founder portrait , right side, blended into the dark hero */}
       <img
         src={chrisBetz}
         alt="Chris Betz, CEO of proHIRE resources"

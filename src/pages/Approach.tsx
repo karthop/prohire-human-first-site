@@ -5,22 +5,22 @@ const phases = [
   {
     n: "01",
     h: "Discovery",
-    b: "We open with a confidential, structured conversation — not a pitch and not a discovery call dressed up as one. We listen for the underlying objective behind the brief: what the engagement must deliver in twelve months, what is non-negotiable, and what was put in writing because no one wanted to argue about it. Most engagements get re-scoped at this stage; that is the value.",
+    b: "We open with a confidential, structured conversation , not a pitch and not a discovery call dressed up as one. We listen for the underlying objective behind the brief: what the engagement must deliver in twelve months, what is non-negotiable, and what was put in writing because no one wanted to argue about it. Most engagements get re-scoped at this stage; that is the value.",
     deliverable: "A written situation summary and a pressure-tested scope.",
     excludes: "We will not accept an engagement we believe is mis-scoped without re-writing it first.",
   },
   {
     n: "02",
     h: "Design",
-    b: "We design the engagement on paper before any work starts. Target profile or capability set, sourcing or execution thesis, named stakeholders, success metrics, investment shape, and timeline. The document is the contract — every subsequent decision references it.",
+    b: "We design the engagement on paper before any work starts. Target profile or capability set, sourcing or execution thesis, named stakeholders, success metrics, investment shape, and timeline. The document is the contract , every subsequent decision references it.",
     deliverable: "An engagement plan, signed by client and firm, that governs the work.",
     excludes: "We do not begin sourcing or execution until the plan is signed.",
   },
   {
     n: "03",
     h: "Execute",
-    b: "Senior-led execution against the plan. Named-target sourcing, structured stakeholder process, deep referencing — or for operating engagements, embedded delivery and named-account execution. Weekly working session with the client team, written milestone notes at the end of every week.",
-    deliverable: "Calibrated shortlists, placed leaders, closed motion, or stood-up functions — depending on the engagement.",
+    b: "Senior-led execution against the plan. Named-target sourcing, structured stakeholder process, deep referencing , or for operating engagements, embedded delivery and named-account execution. Weekly working session with the client team, written milestone notes at the end of every week.",
+    deliverable: "Calibrated shortlists, placed leaders, closed motion, or stood-up functions , depending on the engagement.",
     excludes: "We do not staff junior operators against senior mandates.",
   },
   {
@@ -39,7 +39,7 @@ const principles = [
   },
   {
     h: "AI-enhanced.",
-    b: "Modern tooling for sourcing, screening, and market intelligence — applied where it sharpens decisions, never where it replaces judgment.",
+    b: "Modern tooling for sourcing, screening, and market intelligence , applied where it sharpens decisions, never where it replaces judgment.",
   },
   {
     h: "Outcome-accountable.",
@@ -50,7 +50,7 @@ const principles = [
 const pricingPrinciples = [
   {
     h: "Transparent shapes, never published rates.",
-    b: "We use a small set of clear engagement shapes — Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in consultation, not advertised. Premium positioning and published rate cards do not coexist.",
+    b: "We use a small set of clear engagement shapes , Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in consultation, not advertised. Premium positioning and published rate cards do not coexist.",
   },
   {
     h: "Modular by capability.",
@@ -80,7 +80,7 @@ const networks = [
   },
   {
     name: "FinTech Atlanta",
-    body: "Sector advocacy and ecosystem access for fintech-adjacent engagements — capital, regulatory voice, and sector-specific candidate reach.",
+    body: "Sector advocacy and ecosystem access for fintech-adjacent engagements , capital, regulatory voice, and sector-specific candidate reach.",
   },
   {
     name: "Inspiredu",
@@ -93,7 +93,7 @@ export default function Approach() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Our Approach | proHIRE resources"
-        description="The proHIRE method — Discovery, Design, Execute, Embed — applied with boutique discipline and enterprise rigor."
+        description="The proHIRE method , Discovery, Design, Execute, Embed , applied with boutique discipline and enterprise rigor."
       />
 
       {/* Hero */}
@@ -122,7 +122,7 @@ export default function Approach() {
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 lg:pt-4 text-muted-foreground font-light text-lg leading-relaxed">
-              Every engagement runs through the same four phases — applied to the texture of
+              Every engagement runs through the same four phases , applied to the texture of
               the practice. The phases are deliberately written so the client knows, at every
               point, what they are paying for and what they should expect to receive.
             </p>
@@ -207,7 +207,7 @@ export default function Approach() {
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-primary-foreground/80 font-light text-lg leading-relaxed">
               No surprise invoices, no surprise updates. Every engagement runs on the same
-              rhythm — adjusted to the urgency of the work.
+              rhythm , adjusted to the urgency of the work.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-primary-foreground/15">
