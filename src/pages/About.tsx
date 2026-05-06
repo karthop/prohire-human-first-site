@@ -42,8 +42,8 @@ const chapters = [
   {
     label: "Revenue leadership",
     years: "2023–2024",
-    title: "EVP of Sales, an NMSDC Award-winning MBE technology consulting firm.",
-    body: "Sales leadership at a technology consulting firm, closing the loop between go-to-market strategy and the human capital required to execute it.",
+    title: "EVP of Sales (Consulting), an NMSDC Award-winning MBE technology consulting firm.",
+    body: "A consulting engagement leading sales for a technology consulting firm, closing the loop between go-to-market strategy and the human capital required to execute it.",
   },
   {
     label: "The practice today",
