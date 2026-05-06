@@ -12,7 +12,7 @@ const SESSION_ID_KEY = "reeee_session_id_v1";
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "Hello — I'm **Reeee**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
+    "Hello, I'm **Reeee**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
 };
 
 function getSessionId() {

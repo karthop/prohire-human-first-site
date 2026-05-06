@@ -2,15 +2,15 @@ import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 
 const phases = [
-  { n: "01", h: "Discovery", b: "Confidential conversation. We listen for the underlying objective — not just the role or the deliverable — and pressure-test scope against the outcome you actually need." },
+  { n: "01", h: "Discovery", b: "Confidential conversation. We listen for the underlying objective, not just the role or the deliverable, and pressure-test scope against the outcome you actually need." },
   { n: "02", h: "Design", b: "We design the engagement: target profile or capability set, sourcing strategy, stakeholders, success metrics, investment model, and timeline. Written. Specific." },
-  { n: "03", h: "Execute", b: "Senior-led execution. Named-target sourcing, deep diligence, structured stakeholder process — or fractional embedding, BD execution, and operational delivery." },
+  { n: "03", h: "Execute", b: "Senior-led execution. Named-target sourcing, deep diligence, structured stakeholder process, or fractional embedding, BD execution, and operational delivery." },
   { n: "04", h: "Embed", b: "Onboarding, integration, and 30–90 day support. The hire or the engagement only matters if the impact compounds after we step back." },
 ];
 
 const principles = [
   { h: "Human-first.", b: "Senior judgment over volume. Relationships over transactions. Discretion is non-negotiable." },
-  { h: "AI-enhanced.", b: "Modern tooling for sourcing, screening, and market intelligence — applied where it sharpens decisions, not where it replaces them." },
+  { h: "AI-enhanced.", b: "Modern tooling for sourcing, screening, and market intelligence, applied where it sharpens decisions, not where it replaces them." },
   { h: "Outcome-accountable.", b: "We commit to measurable outcomes, transparent investment, and the candor to tell you when we're not the right partner." },
 ];
 
@@ -19,7 +19,7 @@ export default function Approach() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Our Approach | proHIRE resources"
-        description="The proHIRE method — Discovery, Design, Execute, Embed. Human-first, AI-enhanced, outcome-accountable."
+        description="The proHIRE method, Discovery, Design, Execute, Embed. Human-first, AI-enhanced, outcome-accountable."
       />
       <section className="bg-primary text-primary-foreground">
         <div className="container-editorial py-20 lg:py-28">
@@ -84,10 +84,10 @@ export default function Approach() {
               in executive search and senior advisory.
             </p>
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-border">
-              <li><span className="text-foreground">C-Level Advisory</span> — global CXO advisory and capital network.</li>
-              <li><span className="text-foreground">The Curated Network™</span> — senior leadership community.</li>
-              <li><span className="text-foreground">FinTech Atlanta</span> — sector advisor and advocate.</li>
-              <li><span className="text-foreground">Inspiredu</span> — Emeritus board member, civic commitment.</li>
+              <li><span className="text-foreground">C-Level Advisory</span>, global CXO advisory and capital network.</li>
+              <li><span className="text-foreground">The Curated Network™</span>, senior leadership community.</li>
+              <li><span className="text-foreground">FinTech Atlanta</span>, sector advisor and advocate.</li>
+              <li><span className="text-foreground">Inspiredu</span>, Emeritus board member, civic commitment.</li>
             </ul>
           </div>
         </div>

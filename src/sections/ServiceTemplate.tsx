@@ -79,7 +79,7 @@ export const ServiceTemplate = ({
           <ul className="lg:col-span-8 space-y-4">
             {whoFor.map((item) => (
               <li key={item} className="flex gap-4 text-foreground text-lg font-light leading-relaxed border-b border-border pb-4">
-                <span className="text-accent text-sm pt-1">—</span>
+                <span className="text-accent text-sm pt-1">,</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -178,7 +178,7 @@ export const ServiceTemplate = ({
 
       <CTABand
         title="Discuss a partnership."
-        body="Tell us where you're headed. We'll respond with a candid view of how — and whether — we can help."
+        body="Tell us where you're headed. We'll respond with a candid view of how, and whether, we can help."
       />
 
       <div className="py-12 bg-background">

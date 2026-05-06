@@ -33,7 +33,7 @@ export function TrustLayer({
             <CardContent className="p-6">
               <div className="min-h-[96px] transition-all animate-fade-in">
                 <p className="text-lg italic text-muted-foreground">“{testimonials[index].quote}”</p>
-                <p className="mt-2 text-sm text-primary/80">— {testimonials[index].author}</p>
+                <p className="mt-2 text-sm text-primary/80">, {testimonials[index].author}</p>
               </div>
             </CardContent>
           </Card>

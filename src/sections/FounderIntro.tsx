@@ -21,7 +21,7 @@ export const FounderIntro = () => {
           <div className="lg:col-span-7 space-y-6 text-foreground leading-relaxed font-light text-lg">
             <p>
               Chris has led executive talent and revenue functions at Amazon, Pyramid Consulting,
-              Stellar Consulting Solutions, Randstad, and Kelly — supporting clients from
+              Stellar Consulting Solutions, Randstad, and Kelly, supporting clients from
               Series A startups to Fortune 50 enterprises.
             </p>
             <p>

@@ -7,7 +7,7 @@ export default function TalentSolutions() {
       seoDescription="Specialized hiring across technology, finance, and operations. Direct-hire, contract, RPO, and onboarding systems for high-growth teams."
       eyebrow="Practice 02"
       title="Strategic Talent & Workforce Solutions"
-      lead="Specialized hiring and workforce infrastructure for technology, finance, and operations roles — built for the speed, compliance, and quality demands of high-growth environments."
+      lead="Specialized hiring and workforce infrastructure for technology, finance, and operations roles, built for the speed, compliance, and quality demands of high-growth environments."
       whoFor={[
         "Founders and CFOs scaling technology, finance, and operations teams",
         "Companies needing dedicated recruiting capacity without fixed overhead",
@@ -38,7 +38,7 @@ export default function TalentSolutions() {
         },
         {
           heading: "Remote onboarding systems",
-          body: "Modular onboarding service — planning, forms, welcome programs, manager briefs, and 30-day liaison support. Complimentary on direct-hire placements.",
+          body: "Modular onboarding service, planning, forms, welcome programs, manager briefs, and 30-day liaison support. Complimentary on direct-hire placements.",
         },
       ]}
       engagements={[
@@ -52,13 +52,13 @@ export default function TalentSolutions() {
         {
           tag: "Series B · Software",
           quote:
-            "Built our entire FP&A function for the next funding round — Senior Financial Analyst and Controller delivered in 3 weeks, immediately owning our board reporting.",
+            "Built our entire FP&A function for the next funding round, Senior Financial Analyst and Controller delivered in 3 weeks, immediately owning our board reporting.",
           role: "Chief Financial Officer",
         },
         {
           tag: "28-Employee · Tech Services",
           quote:
-            "Complete operational transformation: 350% increase in employer brand visibility, 53% reduction in time-to-hire, 24% improvement in retention — while reducing total recruiting costs.",
+            "Complete operational transformation: 350% increase in employer brand visibility, 53% reduction in time-to-hire, 24% improvement in retention, while reducing total recruiting costs.",
           role: "Chief Financial Officer",
         },
       ]}

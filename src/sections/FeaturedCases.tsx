@@ -12,13 +12,13 @@ const cases = [
   {
     tag: "Series C · FinTech",
     quote:
-      "Their fractional CRO brought proven expertise from scaling a competitor from $5M to $50M ARR. This wasn't staff augmentation — this was strategic leadership acquisition.",
+      "Their fractional CRO brought proven expertise from scaling a competitor from $5M to $50M ARR. This wasn't staff augmentation, this was strategic leadership acquisition.",
     role: "Chief Executive Officer",
   },
   {
     tag: "Series A · MedTech",
     quote:
-      "Healthcare market access was our biggest challenge. proHIRE's network secured meetings with four target health systems in 30 days — relationships that would have taken 18 months to develop internally.",
+      "Healthcare market access was our biggest challenge. proHIRE's network secured meetings with four target health systems in 30 days, relationships that would have taken 18 months to develop internally.",
     role: "Chief Executive Officer",
   },
 ];
@@ -33,7 +33,7 @@ export const FeaturedCases = () => {
               Selected outcomes
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl leading-tight max-w-2xl">
-              Work that compounds — across hires, leaders, and pipeline.
+              Work that compounds, across hires, leaders, and pipeline.
             </h2>
           </Reveal>
           <Reveal variant="fade" delay={120}>
