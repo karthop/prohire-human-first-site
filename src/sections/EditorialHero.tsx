@@ -28,12 +28,6 @@ export const EditorialHero = () => {
         alt="Chris Betz, CEO of proHIRE resources"
         aria-hidden="true"
         className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-[50%] h-[95%] w-auto object-contain pointer-events-none select-none"
-        style={{
-          WebkitMaskImage:
-            "radial-gradient(ellipse 48% 50% at 50% 52%, black 48%, rgba(0,0,0,0.85) 60%, transparent 88%)",
-          maskImage:
-            "radial-gradient(ellipse 48% 50% at 50% 52%, black 48%, rgba(0,0,0,0.85) 60%, transparent 88%)",
-        }}
       />
       {/* Soft left-to-right gradient over portrait so text remains crisp */}
       <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 bg-gradient-to-r from-primary via-primary/85 lg:via-primary/40 to-primary/20 lg:to-transparent pointer-events-none" />
@@ -56,12 +50,6 @@ export const EditorialHero = () => {
                 src={chrisBetz}
                 alt="Chris Betz, CEO of proHIRE resources"
                 className="h-[380px] w-auto object-contain"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 48% 50% at 50% 52%, black 48%, rgba(0,0,0,0.85) 60%, transparent 88%)",
-                  maskImage:
-                    "radial-gradient(ellipse 48% 50% at 50% 52%, black 48%, rgba(0,0,0,0.85) 60%, transparent 88%)",
-                }}
                 loading="eager"
                 width={900}
                 height={1100}
