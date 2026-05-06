@@ -5,25 +5,25 @@ import { CTABand } from "@/sections/CTABand";
 
 const services = [
   {
-    eyebrow: "Practice 01",
+    eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
     body: "Retained search, fractional CXOs, and board advisory for inflection-point hires.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "Practice 02",
+    eyebrow: "Talent Solutions",
     title: "Strategic Talent & Workforce Solutions",
     body: "Workforce architecture and specialized hiring across finance, technology, operations, and people functions.",
     href: "/services/talent-solutions",
   },
   {
-    eyebrow: "Practice 03",
+    eyebrow: "Growth Acceleration",
     title: "Revenue & Operational Acceleration",
     body: "Senior BD execution, operating infrastructure, and partnership development on shorter time horizons.",
     href: "/services/growth-acceleration",
   },
   {
-    eyebrow: "Practice 04",
+    eyebrow: "Career Advisory",
     title: "Career Advisory for Senior Professionals",
     body: "Confidential one-to-one advisory for senior executives, board candidates, and post-exit operators.",
     href: "/services/career-advisory",

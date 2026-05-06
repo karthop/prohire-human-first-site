@@ -5,7 +5,7 @@ export default function GrowthAcceleration() {
     <ServiceTemplate
       seoTitle="Revenue & Operational Acceleration | proHIRE resources"
       seoDescription="Senior business development, partnership execution, and operating infrastructure for companies between strategy and scale."
-      eyebrow="Practice 03"
+      eyebrow="Growth Acceleration"
       title="Revenue & Operational Acceleration"
       lead="The gap between a strategy deck and a closed enterprise account is staffed wrong in most companies. We close it with senior operators on shorter time horizons — measurable revenue and operating impact in 30, 60, and 90 days."
       thesis="Most growth-stage companies don't lack strategy. They lack the senior execution muscle to convert strategy into closed revenue and durable operating infrastructure. Hiring a full-time CRO or COO is an 8-to-12-month exercise that the company often can't afford to wait for. We bring senior operators who have run the play before, embed them inside the team, and accept measurable accountability for the outcome."

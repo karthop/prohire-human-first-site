@@ -5,7 +5,7 @@ export default function ExecutiveSearch() {
     <ServiceTemplate
       seoTitle="Executive Search & Leadership Advisory | proHIRE resources"
       seoDescription="Senior-led retained executive search, fractional CXO placement, and leadership advisory for founder-led, PE-backed, and enterprise companies."
-      eyebrow="Practice 01"
+      eyebrow="Executive Search"
       title="Executive Search & Leadership Advisory"
       lead="Retained search, fractional CXOs, and board advisory for the inflection points that define a company — succession, capital events, market entry, and accelerated scale."
       thesis="Most of what's sold as executive search today is a sourcing motion in advisory clothing — a database query dressed up in a deck. The result is a market saturated with shortlists that look credible and miss the underlying scope. We rebuild the work from the question backward: what is the company actually trying to do, who can do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
