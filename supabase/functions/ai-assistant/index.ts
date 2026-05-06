@@ -131,8 +131,9 @@ Deno.serve(async (req) => {
     const systemPrompt = await buildSystemPrompt(userContext);
     const convo: any[] = [{ role: "system", content: systemPrompt }, ...messages];
 
-    // First pass: allow tool calls (non-streaming) so we can execute server-side.
-    // Loop up to 3 rounds, then stream the final answer.
+    // First pass(es): allow tool calls (non-streaming) so we can execute server-side.
+    // Loop up to 3 rounds. If a round returns content with no tool calls, emit it directly.
+    let directContent: string | null = null;
     for (let round = 0; round < 3; round++) {
       const resp = await fetch(GATEWAY, {
         method: "POST",
@@ -158,8 +159,7 @@ Deno.serve(async (req) => {
       if (!msg) break;
       const toolCalls = msg.tool_calls;
       if (!toolCalls || toolCalls.length === 0) {
-        // No more tools — stream a final pass for nice UX.
-        convo.push(msg);
+        directContent = typeof msg.content === "string" ? msg.content : "";
         break;
       }
       convo.push(msg);
@@ -169,6 +169,31 @@ Deno.serve(async (req) => {
         const result = await executeTool(tc.function?.name, args);
         convo.push({ role: "tool", tool_call_id: tc.id, content: result });
       }
+    }
+
+    // If we already have the final content from the tool-calling pass, emit it as SSE.
+    if (directContent !== null) {
+      const text = directContent;
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        start(controller) {
+          const size = 40;
+          for (let i = 0; i < text.length; i += size) {
+            const chunk = text.slice(i, i + size);
+            const payload = JSON.stringify({ choices: [{ delta: { content: chunk } }] });
+            controller.enqueue(encoder.encode(`data: ${payload}\n\n`));
+          }
+          controller.enqueue(encoder.encode("data: [DONE]\n\n"));
+          controller.close();
+          if (sessionId) {
+            const finalMessages = [...messages, { role: "assistant", content: text }];
+            logConversation(sessionId, finalMessages);
+          }
+        },
+      });
+      return new Response(stream, {
+        headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
+      });
     }
 
     // Final streaming pass (no tools — the model has all it needs).
