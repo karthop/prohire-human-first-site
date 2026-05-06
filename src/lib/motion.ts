@@ -1,4 +1,4 @@
-// Editorial motion tokens — restrained, executive tier
+// Editorial motion tokens, restrained, executive tier
 export const easeEditorial = "cubic-bezier(0.22, 1, 0.36, 1)";
 export const dur = {
   fast: 200,

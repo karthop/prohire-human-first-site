@@ -7,7 +7,7 @@ export default function GrowthAcceleration() {
       seoDescription="Fractional business development, operational infrastructure, and partnership development for companies scaling with intent."
       eyebrow="Practice 03"
       title="Revenue & Operational Acceleration"
-      lead="External business development, operational infrastructure, and partnership execution — boutique senior expertise at startup-conscious investment models, with measurable impact in 30–60 days."
+      lead="External business development, operational infrastructure, and partnership execution, boutique senior expertise at startup-conscious investment models, with measurable impact in 30–60 days."
       whoFor={[
         "Founder-led companies needing senior BD execution before a full sales hire",
         "PE-backed portfolios scaling operations across multiple investments",
@@ -16,7 +16,7 @@ export default function GrowthAcceleration() {
       capabilities={[
         {
           heading: "Business development execution",
-          body: "We function as your external BD team — executing targeted revenue initiatives while leadership focuses on strategy and product.",
+          body: "We function as your external BD team, executing targeted revenue initiatives while leadership focuses on strategy and product.",
           bullets: [
             "Enterprise account penetration",
             "Strategic partnership identification and structuring",
@@ -39,13 +39,13 @@ export default function GrowthAcceleration() {
         },
         {
           heading: "Strategic partnership models",
-          body: "Foundation, Growth, and Enterprise partnership tiers — modular by capability, with quarterly business reviews.",
+          body: "Foundation, Growth, and Enterprise partnership tiers, modular by capability, with quarterly business reviews.",
         },
       ]}
       engagements={[
-        { name: "Foundation Partnership", detail: "$3,500/month — core HR infrastructure, onboarding, light recruiting." },
-        { name: "Growth Partnership", detail: "$6,500/month — Foundation + BD execution or fractional EA." },
-        { name: "Enterprise Partnership", detail: "$12,000/month — comprehensive multi-service support." },
+        { name: "Foundation Partnership", detail: "$3,500/month, core HR infrastructure, onboarding, light recruiting." },
+        { name: "Growth Partnership", detail: "$6,500/month, Foundation + BD execution or fractional EA." },
+        { name: "Enterprise Partnership", detail: "$12,000/month, comprehensive multi-service support." },
         { name: "BD execution", detail: "$6,000–$12,000/month + performance incentives, or $12K–$25K project-based." },
         { name: "HR & operations", detail: "$2,000–$4,500/month retainer or $1,500–$4,000 project-based." },
         { name: "Volume incentives", detail: "10% off 6-month commitments · 15% off annual partnerships." },

@@ -7,7 +7,7 @@ export default function CareerAdvisory() {
       seoDescription="Confidential career advisory for senior executives, board candidates, and high-stakes professional transitions."
       eyebrow="Practice 04"
       title="Career Advisory for Senior Professionals"
-      lead="Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions — from CXO moves and board candidacies to legacy-defining career decisions."
+      lead="Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions, from CXO moves and board candidacies to legacy-defining career decisions."
       whoFor={[
         "Senior executives weighing roles, exits, or board transitions",
         "Mid-career leaders positioning for the next inflection",
@@ -28,7 +28,7 @@ export default function CareerAdvisory() {
         },
         {
           heading: "Board readiness",
-          body: "Board-track positioning — affiliations, governance preparation, and director-level introductions.",
+          body: "Board-track positioning, affiliations, governance preparation, and director-level introductions.",
         },
       ]}
       engagements={[

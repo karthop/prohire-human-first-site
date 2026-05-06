@@ -18,7 +18,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `proHIRE inquiry — ${formData.name}${formData.company ? " · " + formData.company : ""}`;
+    const subject = `proHIRE inquiry, ${formData.name}${formData.company ? " · " + formData.company : ""}`;
     const body = [
       `Name: ${formData.name}`,
       `Email: ${formData.email}`,
@@ -48,7 +48,7 @@ export default function Contact() {
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
             Tell us where you're headed. We'll respond within one business day with a candid
-            view of how — and whether — we can help.
+            view of how, and whether, we can help.
           </p>
         </div>
       </section>

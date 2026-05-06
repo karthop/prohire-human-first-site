@@ -4,15 +4,15 @@ import { CTABand } from "@/sections/CTABand";
 const principles = [
   {
     title: "Judgment over volume",
-    body: "The right hire, the right move, the right counsel — usually arrived at by saying no to the obvious answer. Most of our work begins where a keyword search ends.",
+    body: "The right hire, the right move, the right counsel, usually arrived at by saying no to the obvious answer. Most of our work begins where a keyword search ends.",
   },
   {
     title: "Operator's lens",
-    body: "Two decades inside revenue, delivery, and talent functions — at companies from Series A to Fortune 50. We've sat in the seats we now advise.",
+    body: "Two decades inside revenue, delivery, and talent functions, at companies from Series A to Fortune 50. We've sat in the seats we now advise.",
   },
   {
     title: "Discretion as a default",
-    body: "Boards, founders, and senior candidates trust us with sensitive transitions. Confidentiality isn't a feature — it's the practice.",
+    body: "Boards, founders, and senior candidates trust us with sensitive transitions. Confidentiality isn't a feature, it's the practice.",
   },
   {
     title: "Candor with care",
@@ -23,33 +23,33 @@ const principles = [
 const chapters = [
   {
     label: "Foundation",
-    years: "2003 — 2014",
+    years: "2003–2014",
     title: "Learning the trade at scale.",
-    body: "Early years inside Randstad and Kelly Services — engineering staffing, executive accounts, and the mechanics of placing senior talent at velocity. Then PIC Group and NobleTek: marketing, business development, and global engineering services across automotive, aerospace, and industrial clients.",
+    body: "Early years inside Randstad and Kelly Services, engineering staffing, executive accounts, and the mechanics of placing senior talent at velocity. Then PIC Group and NobleTek: marketing, business development, and global engineering services across automotive, aerospace, and industrial clients.",
   },
   {
     label: "Senior delivery",
-    years: "2014 — 2021",
+    years: "2014–2021",
     title: "Building practices, not just placements.",
-    body: "VP and Director-level roles at Pyramid Consulting, 3i People, and Quest Group — running BD and delivery for global staffing firms serving Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
+    body: "VP and Director-level roles at Pyramid Consulting, 3i People, and Quest Group, running BD and delivery for global staffing firms serving Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
   },
   {
     label: "Inside the buyer",
-    years: "2021 — 2022",
+    years: "2021–2022",
     title: "Two years at Amazon.",
-    body: "Senior Talent Acquisition Consultant for the Alexa product organization — Senior and Principal TPM hiring at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
+    body: "Senior Talent Acquisition Consultant for the Alexa product organization, Senior and Principal TPM hiring at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
   },
   {
     label: "Revenue leadership",
-    years: "2023 — 2024",
+    years: "2023–2024",
     title: "EVP of Sales, an NMSDC Award-winning MBE technology consulting firm.",
-    body: "Sales leadership at a technology consulting firm — closing the loop between go-to-market strategy and the human capital required to execute it.",
+    body: "Sales leadership at a technology consulting firm, closing the loop between go-to-market strategy and the human capital required to execute it.",
   },
   {
     label: "The practice today",
-    years: "2021 — Present",
+    years: "2021–Present",
     title: "proHIRE resources.",
-    body: "A boutique executive talent and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500 — with revenue scales from $15M to $150B. Four integrated practices: Executive Search, Talent Solutions, Growth Acceleration, and Career Advisory.",
+    body: "A boutique executive talent and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. Four integrated practices: Executive Search, Talent Solutions, Growth Acceleration, and Career Advisory.",
   },
 ];
 
@@ -58,7 +58,7 @@ const beliefs = [
   "Hiring is a leadership act, not a transaction.",
   "The best searches are scoped before they're sourced.",
   "A fractional executive, well-placed, can outperform a full-time hire mis-placed.",
-  "Career capital compounds — but only when invested deliberately.",
+  "Career capital compounds, but only when invested deliberately.",
 ];
 
 export default function About() {
@@ -74,10 +74,10 @@ export default function About() {
         <div className="container-editorial py-20 lg:py-32">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-            Senior judgment, applied quietly — to the moves that matter most.
+            Senior judgment, applied quietly, to the moves that matter most.
           </h1>
           <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
-            proHIRE resources is a boutique consulting and executive talent practice — built
+            proHIRE resources is a boutique consulting and executive talent practice, built
             for founders and operators who don't want a vendor, and don't need a generalist.
             We work close to the decision, not adjacent to it.
           </p>
@@ -93,7 +93,7 @@ export default function About() {
             <p className="mt-3 text-muted-foreground font-light">CEO, proHIRE resources LLC</p>
             <p className="mt-6 text-sm text-muted-foreground font-light leading-relaxed">
               Atlanta-based. Twenty years at the intersection of executive search,
-              revenue leadership, and operator strategy — across Amazon, Pyramid Consulting,
+              revenue leadership, and operator strategy, across Amazon, Pyramid Consulting,
               Randstad, and Kelly.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function About() {
             </p>
             <p>
               That sentence is the practice in a single line. Most of what's labeled
-              "executive search" today is a sourcing motion dressed up in advisory language —
+              "executive search" today is a sourcing motion dressed up in advisory language ,
               a database query with a glossy deck. The work that actually moves a company is
               slower, more specific, and almost always begins with re-scoping the question
               the client first asked.
@@ -116,9 +116,9 @@ export default function About() {
               through transitions where the wrong move costs a decade of compounding.
             </p>
             <p>
-              The throughline across two decades — from staffing floors at Randstad and Kelly,
+              The throughline across two decades, from staffing floors at Randstad and Kelly,
               to running BD at Pyramid and Quest, to senior TPM hiring at Amazon, to sales
-              leadership in technology consulting — has been the same: <em className="text-foreground">people are
+              leadership in technology consulting, has been the same: <em className="text-foreground">people are
               the strategy</em>. Everything else is execution.
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function About() {
             <div className="lg:col-span-7 lg:pt-4 text-muted-foreground font-light text-lg leading-relaxed">
               <p>
                 These aren't taglines. They are the filters we use to decide which engagements
-                to take, which candidates to introduce, and which advice to give — even when
+                to take, which candidates to introduce, and which advice to give, even when
                 the easier answer is more profitable.
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Career chapters — narrative, not resume */}
+      {/* Career chapters, narrative, not resume */}
       <section className="py-24 lg:py-32">
         <div className="container-editorial">
           <div className="max-w-3xl mb-20">

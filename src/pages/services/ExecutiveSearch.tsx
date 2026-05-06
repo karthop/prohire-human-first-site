@@ -7,7 +7,7 @@ export default function ExecutiveSearch() {
       seoDescription="Retained executive search and fractional CXO placement for founder-led, PE-backed, and enterprise companies."
       eyebrow="Practice 01"
       title="Executive Search & Leadership Advisory"
-      lead="Retained executive search and fractional CXOs for the inflection points that define a company — new market entry, capital event, succession, or accelerated scale."
+      lead="Retained executive search and fractional CXOs for the inflection points that define a company, new market entry, capital event, succession, or accelerated scale."
       whoFor={[
         "Founders and boards filling C-suite roles where the next hire shapes the next chapter",
         "PE and VC-backed companies needing leadership that has done it before",
@@ -25,7 +25,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Fractional CXO placement",
-          body: "Proven senior leaders embedded on fractional terms — typically 3–5 weeks to placement, vs. 8–10 weeks industry average.",
+          body: "Proven senior leaders embedded on fractional terms, typically 3–5 weeks to placement, vs. 8–10 weeks industry average.",
           bullets: [
             "CRO for go-to-market acceleration",
             "COO for scaling and process optimization",
@@ -39,7 +39,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Network access",
-          body: "Curated reach into our partner networks — C-Level Advisory, The Curated Network™, FinTech Atlanta — for board, capital, and go-to-market doors.",
+          body: "Curated reach into our partner networks, C-Level Advisory, The Curated Network™, FinTech Atlanta, for board, capital, and go-to-market doors.",
         },
       ]}
       engagements={[
@@ -51,7 +51,7 @@ export default function ExecutiveSearch() {
         {
           tag: "Series C · FinTech",
           quote:
-            "Their fractional CRO brought proven expertise from scaling a competitor from $5M to $50M ARR. This wasn't staff augmentation — this was strategic leadership acquisition.",
+            "Their fractional CRO brought proven expertise from scaling a competitor from $5M to $50M ARR. This wasn't staff augmentation, this was strategic leadership acquisition.",
           role: "Chief Executive Officer",
         },
         {

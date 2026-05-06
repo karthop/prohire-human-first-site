@@ -4,19 +4,19 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const pillars = [
   {
-    eyebrow: "01 — Executive Search",
+    eyebrow: "01, Executive Search",
     title: "Executive Search & Leadership Advisory",
     body: "Retained search and fractional CXOs who have scaled comparable businesses. C-suite, VP, and board-track placements with measurable time-to-impact.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "02 — Talent Solutions",
+    eyebrow: "02, Talent Solutions",
     title: "Strategic Talent & Workforce Solutions",
     body: "Specialized hiring across technology, finance, and operations. RPO, contract, contract-to-hire, and onboarding systems built for high-growth environments.",
     href: "/services/talent-solutions",
   },
   {
-    eyebrow: "03 — Growth Acceleration",
+    eyebrow: "03, Growth Acceleration",
     title: "Revenue & Operational Acceleration",
     body: "Fractional business development, operational infrastructure, and partnership development. We function as your external BD and ops arm during pivotal phases.",
     href: "/services/growth-acceleration",
@@ -38,7 +38,7 @@ export const PillarGrid = () => {
           </Reveal>
           <Reveal variant="rise" delay={120} className="lg:col-span-7 lg:col-start-6">
             <p className="text-lg text-muted-foreground leading-relaxed font-light">
-              Built for the moments that matter most — a critical hire, a leadership gap,
+              Built for the moments that matter most, a critical hire, a leadership gap,
               an inflection in revenue. We bring senior judgment, a curated network, and
               the operational execution to translate strategy into hires and outcomes.
             </p>

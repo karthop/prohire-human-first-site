@@ -47,7 +47,7 @@ export default function ServicesIndex() {
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
             We engage where senior judgment, network reach, and disciplined execution change
-            the outcome — not where a transactional vendor will do.
+            the outcome, not where a transactional vendor will do.
           </p>
         </div>
       </section>

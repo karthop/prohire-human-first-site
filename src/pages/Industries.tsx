@@ -2,7 +2,7 @@ import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 
 const industries = [
-  { name: "Technology & SaaS", body: "Series A through public — engineering, product, GTM, and CXO roles." },
+  { name: "Technology & SaaS", body: "Series A through public, engineering, product, GTM, and CXO roles." },
   { name: "FinTech & Financial Services", body: "Compliance-aware leadership, capital markets fluency, regulated growth." },
   { name: "Healthcare & MedTech", body: "Clinical, regulatory, and commercial talent for accelerated market access." },
   { name: "Supply Chain & Logistics", body: "Operations leadership and BD execution for industrial and logistics platforms." },

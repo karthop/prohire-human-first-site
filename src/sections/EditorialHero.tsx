@@ -35,7 +35,7 @@ export const EditorialHero = () => {
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
-              We partner with founder-led, PE-backed, and enterprise leadership teams to place senior talent, embed fractional executives, and accelerate revenue — human-first, AI-enhanced, outcome-accountable.
+              We partner with founder-led, PE-backed, and enterprise leadership teams to place senior talent, embed fractional executives, and accelerate revenue, human-first, AI-enhanced, outcome-accountable.
             </p>
           </Reveal>
           <Reveal variant="fade" delay={750}>

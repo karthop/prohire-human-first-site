@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* proHIRE Resources — Executive Consulting Design System */
+/* proHIRE Resources, Executive Consulting Design System */
 
 @layer base {
   :root {
@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 35% 8%;
 
-    /* Primary — deep navy authority */
+    /* Primary, deep navy authority */
     --primary: 218 55% 14%;
     --primary-foreground: 36 30% 97%;
     --primary-light: 218 45% 22%;
@@ -29,7 +29,7 @@
     --muted: 36 18% 94%;
     --muted-foreground: 220 12% 38%;
 
-    /* Single confident accent — refined consulting blue */
+    /* Single confident accent, refined consulting blue */
     --accent: 212 70% 38%;
     --accent-foreground: 36 30% 97%;
     --accent-hover: 212 75% 32%;
@@ -90,7 +90,7 @@
   }
 
   .dark {
-    /* Mirror light for v1 — dark mode disabled in app */
+    /* Mirror light for v1, dark mode disabled in app */
     --background: 36 30% 97%;
     --foreground: 220 35% 8%;
     --card: 0 0% 100%;
@@ -146,7 +146,7 @@
     transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* Arrow nudge — for inline links with trailing arrow icon */
+  /* Arrow nudge, for inline links with trailing arrow icon */
   .link-arrow svg {
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -195,7 +195,7 @@
     transform: scaleX(1);
   }
 
-  /* Slow ambient ken-burns — purely ambient, ~14s loop */
+  /* Slow ambient ken-burns, purely ambient, ~14s loop */
   .kenburns-slow {
     animation: kenburns 18s ease-in-out infinite alternate;
   }
