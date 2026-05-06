@@ -4,62 +4,105 @@ export default function TalentSolutions() {
   return (
     <ServiceTemplate
       seoTitle="Strategic Talent & Workforce Solutions | proHIRE resources"
-      seoDescription="Specialized hiring across technology, finance, and operations. Direct-hire, contract, RPO, and onboarding systems for high-growth teams."
+      seoDescription="Workforce architecture for high-growth companies — finance, technology, operations, and people functions built to scale, not just staffed."
       eyebrow="Practice 02"
       title="Strategic Talent & Workforce Solutions"
-      lead="Specialized hiring and workforce infrastructure for technology, finance, and operations roles, built for the speed, compliance, and quality demands of high-growth environments."
+      lead="We don't fill seats. We build functions. Specialized hiring and workforce infrastructure across finance, technology, operations, and people — designed for the speed, compliance, and quality demands of high-growth environments."
+      thesis="Most growth-stage companies don't have a hiring problem. They have a workforce architecture problem: the function isn't designed, so every search starts from scratch and every offer feels like an emergency. Strategic talent work begins one layer up — defining the function, the seats, the seams, and the cadence — and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
+      pointOfView="Hiring is the symptom. Function design is the work."
       whoFor={[
-        "Founders and CFOs scaling technology, finance, and operations teams",
-        "Companies needing dedicated recruiting capacity without fixed overhead",
-        "Leaders rebuilding hiring velocity after rapid growth or restructuring",
+        "Founders and CFOs scaling finance, technology, and operations teams through a funding round or capital event",
+        "Companies that need dedicated recruiting capacity without the fixed overhead of an in-house team",
+        "Leaders rebuilding hiring velocity after rapid growth, restructuring, or a leadership change",
+        "PE-backed portfolios standardizing talent infrastructure across multiple investments",
       ]}
       capabilities={[
         {
-          heading: "Finance & accounting hiring",
-          body: "Senior accountants, controllers, FP&A, tax & compliance, finance ops, and BI specialists for high-growth companies.",
-          bullets: [
-            "Roles filled in 1–3 weeks vs. 6–8 week industry average",
-            "Deep screening for startup and high-growth fit",
-            "Investor-reporting and compliance experience",
-          ],
+          heading: "Finance & accounting",
+          body: "Senior accountants, controllers, FP&A leaders, tax & compliance, finance operations, and BI specialists tuned for high-growth and investor-reporting environments.",
         },
         {
-          heading: "Technology & operations hiring",
-          body: "Senior engineering, product, data, and operations roles across technology, fintech, healthcare, and supply chain.",
+          heading: "Technology & product",
+          body: "Senior engineering, product management, data, and platform roles across SaaS, fintech, healthcare, and supply chain.",
         },
         {
-          heading: "Recruiting subscription / fractional RPO",
-          body: "Dedicated recruiting capacity that scales with hiring needs without fixed overhead.",
-          bullets: [
-            "$1,750–$2,500/week subscription model",
-            "Project-based campaigns $2,500–$5,000",
-            "Volume pricing for multiple simultaneous hires",
-          ],
+          heading: "Operations & supply chain",
+          body: "Operations leadership, supply chain, logistics, and customer operations talent built for scaling complexity.",
         },
         {
-          heading: "Remote onboarding systems",
-          body: "Modular onboarding service, planning, forms, welcome programs, manager briefs, and 30-day liaison support. Complimentary on direct-hire placements.",
+          heading: "People & HR",
+          body: "Heads of people, talent acquisition leaders, total rewards, and HR business partners who can stand up the function as the company crosses inflection points.",
         },
+        {
+          heading: "Embedded recruiting (RPO)",
+          body: "Dedicated recruiting capacity that operates as part of your team, sized to your hiring plan and scaled up or down without fixed overhead.",
+        },
+        {
+          heading: "Onboarding systems",
+          body: "Modular onboarding infrastructure — planning, forms, welcome programs, manager briefs, and 30-day liaison support — included on direct-hire placements.",
+        },
+      ]}
+      disciplines={[
+        {
+          heading: "Function design before sourcing",
+          body: "We map the function — roles, reporting lines, seams to adjacent teams, and the operating cadence — before opening any requisition. The hiring plan is a downstream artifact.",
+        },
+        {
+          heading: "Senior screening, every role",
+          body: "Every candidate engaged is interviewed by a senior recruiter who has hired into this function before. Screening is judgment work, not throughput work.",
+        },
+        {
+          heading: "Calibrated shortlists",
+          body: "We deliver three to five referenceable candidates per role, not twenty resumes. Calibration meetings re-tune the search after the first round, every time.",
+        },
+        {
+          heading: "Offer integrity",
+          body: "We coach hiring managers on offer construction, comp positioning, and counter-offer dynamics. The placement is not closed when the offer is signed — it's closed when day 30 holds.",
+        },
+      ]}
+      methodMap={[
+        { phase: "Discovery", body: "Sit with the CFO, CTO, or head of people to map the function, the gaps, and the timeline. Identify whether this is a hiring problem, an architecture problem, or both." },
+        { phase: "Design", body: "Deliver a written workforce plan: roles in priority order, scope language, comp bands, sourcing thesis, and the hiring cadence required to land the plan." },
+        { phase: "Execute", body: "Run searches in parallel against the plan, with weekly progress notes and calibration meetings. Embedded RPO capacity ramps up or down to match the rhythm." },
+        { phase: "Embed", body: "Onboarding system installs alongside the first hires. 30/60/90-day check-ins with the function lead to ensure retention is being earned, not assumed." },
+      ]}
+      wontDo={[
+        "Run as a contingent agency or compete against five firms for the same requisition.",
+        "Submit a single resume that hasn't been interviewed by a senior member of our team.",
+        "Take a hiring mandate when the underlying function is broken and the client won't re-design it first.",
       ]}
       engagements={[
-        { name: "Direct-hire", detail: "14% of first-year compensation. 90-day replacement guarantee." },
-        { name: "Contract / contract-to-hire", detail: "Custom hourly rates with conversion path." },
-        { name: "Recruiting subscription", detail: "$1,750–$2,500 per week. Month-to-month." },
-        { name: "Onboarding modular", detail: "Per-hire pricing or $1,800/month team plan." },
-        { name: "Volume partnership", detail: "10–15% discount on multi-hire and 6-month commitments." },
+        { name: "Direct hire", detail: "Senior-led permanent placements with written replacement protections and onboarding support included." },
+        { name: "Embedded RPO", detail: "Dedicated recruiting capacity priced as a subscription to a defined hiring plan, scalable up or down." },
+        { name: "Project squad", detail: "Time-boxed campaigns to land a defined cluster of hires inside a quarter — typical for funding-event ramps." },
+        { name: "Onboarding system", detail: "Standalone install of the onboarding infrastructure for an existing team, or bundled with direct-hire placements." },
+        { name: "Volume partnership", detail: "Multi-hire and annual partnerships structured with shared milestones and incentives." },
       ]}
-      outcomes={[
+      caseNarrative={{
+        tag: "Series B · Software",
+        title: "An entire FP&A function built before the next round.",
+        body: "A Series B software CFO had nine months to the next financing and a board reporting cadence the existing finance team couldn't sustain.\n\nWe re-scoped the function before opening searches: a Senior Financial Analyst plus a Controller, sequenced two weeks apart, with onboarding built in.\n\nBoth seats were filled within three weeks. By the next board meeting the new team owned the package. The CFO redirected attention to the round."
+      }}
+      faq={[
         {
-          tag: "Series B · Software",
-          quote:
-            "Built our entire FP&A function for the next funding round, Senior Financial Analyst and Controller delivered in 3 weeks, immediately owning our board reporting.",
-          role: "Chief Financial Officer",
+          q: "How are you different from a recruiting agency?",
+          a: "An agency sells resumes. We sell function design and senior-led execution. Every engagement begins with a workforce plan, every shortlist is calibrated, and every placement comes with onboarding support. The pricing model reflects that — we are not paid to send volume.",
         },
         {
-          tag: "28-Employee · Tech Services",
-          quote:
-            "Complete operational transformation: 350% increase in employer brand visibility, 53% reduction in time-to-hire, 24% improvement in retention, while reducing total recruiting costs.",
-          role: "Chief Financial Officer",
+          q: "What does embedded RPO actually mean?",
+          a: "We become your recruiting team for a defined period — running intake meetings, sourcing, scheduling, and offer construction inside your tooling and your brand. Capacity scales with the hiring plan; we ramp up before a round and back down after.",
+        },
+        {
+          q: "Who owns the offer and the candidate relationship?",
+          a: "You do, always. We coach offer construction and run final-mile closing support, but the relationship belongs to the hiring manager from day one of onboarding.",
+        },
+        {
+          q: "How do you handle data and IP?",
+          a: "All client data — candidate pipelines, comp benchmarks, hiring plans — is treated as confidential and is not reused across engagements. NDAs are standard. Pipelines built during an engagement remain with the client.",
+        },
+        {
+          q: "How quickly can you start?",
+          a: "Most engagements start within seven to ten business days of an executed engagement letter. Project squads for funding-event ramps can be stood up faster when the timing demands it.",
         },
       ]}
     />

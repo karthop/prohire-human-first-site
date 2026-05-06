@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { CTABand } from "@/sections/CTABand";
 import { Seo } from "@/components/Seo";
+import { FaqList } from "@/components/FaqList";
 
 interface Section {
   heading: string;
@@ -20,14 +21,39 @@ interface CaseQuote {
   role: string;
 }
 
+interface MethodStep {
+  phase: string;
+  body: string;
+}
+
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface CaseNarrative {
+  tag: string;
+  title: string;
+  body: string;
+}
+
 interface Props {
   eyebrow: string;
   title: string;
   lead: string;
+  thesis?: string;
+  pointOfView?: string;
   whoFor: string[];
   capabilities: Section[];
+  disciplines?: Section[];
+  rolesWeLeadOn?: string[];
+  methodMap?: MethodStep[];
+  wontDo?: string[];
   engagements: Engagement[];
+  engagementsNote?: string;
   outcomes?: CaseQuote[];
+  caseNarrative?: CaseNarrative;
+  faq?: FaqItem[];
   seoTitle: string;
   seoDescription: string;
 }
@@ -36,10 +62,19 @@ export const ServiceTemplate = ({
   eyebrow,
   title,
   lead,
+  thesis,
+  pointOfView,
   whoFor,
   capabilities,
+  disciplines,
+  rolesWeLeadOn,
+  methodMap,
+  wontDo,
   engagements,
+  engagementsNote,
   outcomes,
+  caseNarrative,
+  faq,
   seoTitle,
   seoDescription,
 }: Props) => {
@@ -62,11 +97,45 @@ export const ServiceTemplate = ({
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
             {title}
           </h1>
-          <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
+          <p className="mt-8 text-lg lg:text-xl text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             {lead}
           </p>
         </div>
       </section>
+
+      {/* Thesis */}
+      {thesis && (
+        <section className="py-20 lg:py-24 border-b border-border">
+          <div className="container-editorial grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                Our position
+              </div>
+              <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
+                Why this practice exists.
+              </h2>
+            </div>
+            <div className="lg:col-span-8 text-foreground text-lg leading-relaxed font-light">
+              <p>{thesis}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Point of view pull-quote */}
+      {pointOfView && (
+        <section className="py-20 bg-secondary/40 border-b border-border">
+          <div className="container-editorial max-w-4xl">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
+              Point of view
+            </div>
+            <blockquote className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
+              "{pointOfView}"
+            </blockquote>
+            <div className="mt-6 text-sm text-muted-foreground">— Chris Betz, CEO</div>
+          </div>
+        </section>
+      )}
 
       {/* Who it's for */}
       <section className="py-20 border-b border-border">
@@ -79,7 +148,7 @@ export const ServiceTemplate = ({
           <ul className="lg:col-span-8 space-y-4">
             {whoFor.map((item) => (
               <li key={item} className="flex gap-4 text-foreground text-lg font-light leading-relaxed border-b border-border pb-4">
-                <span className="text-accent text-sm pt-1">,</span>
+                <span className="text-accent text-sm pt-1">·</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -123,21 +192,139 @@ export const ServiceTemplate = ({
         </div>
       </section>
 
+      {/* Disciplines */}
+      {disciplines && disciplines.length > 0 && (
+        <section className="py-24 bg-secondary/40 border-y border-border">
+          <div className="container-editorial">
+            <div className="grid lg:grid-cols-12 gap-12 mb-12">
+              <div className="lg:col-span-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                  How the work is done
+                </div>
+                <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
+                  Disciplines we hold ourselves to.
+                </h2>
+              </div>
+            </div>
+            <div className="grid lg:grid-cols-12">
+              <ul className="lg:col-span-12 divide-y divide-border border-y border-border">
+                {disciplines.map((d) => (
+                  <li key={d.heading} className="grid md:grid-cols-12 gap-6 py-8">
+                    <div className="md:col-span-4">
+                      <h3 className="font-serif text-xl text-foreground leading-snug">{d.heading}</h3>
+                    </div>
+                    <p className="md:col-span-8 text-muted-foreground font-light leading-relaxed">
+                      {d.body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Roles we lead on */}
+      {rolesWeLeadOn && rolesWeLeadOn.length > 0 && (
+        <section className="py-24 border-b border-border">
+          <div className="container-editorial grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                Mandates
+              </div>
+              <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
+                Roles we lead on.
+              </h2>
+            </div>
+            <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-foreground text-lg font-light">
+              {rolesWeLeadOn.map((r) => (
+                <li key={r} className="border-b border-border pb-3">{r}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Method on this practice */}
+      {methodMap && methodMap.length > 0 && (
+        <section className="py-24">
+          <div className="container-editorial">
+            <div className="grid lg:grid-cols-12 gap-12 mb-12">
+              <div className="lg:col-span-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                  Method on this practice
+                </div>
+                <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
+                  Discovery → Design → Execute → Embed.
+                </h2>
+                <p className="mt-4 text-muted-foreground font-light leading-relaxed">
+                  Our four-phase method, mapped to the texture of this work.
+                </p>
+              </div>
+              <div className="lg:col-span-8 divide-y divide-border border-y border-border">
+                {methodMap.map((m, i) => (
+                  <div key={m.phase} className="py-6 grid grid-cols-12 gap-6">
+                    <div className="col-span-3 md:col-span-2">
+                      <div className="font-serif text-3xl text-foreground/30 tabular-nums">
+                        {String(i + 1).padStart(2, "0")}
+                      </div>
+                    </div>
+                    <div className="col-span-9 md:col-span-10">
+                      <div className="font-serif text-lg text-foreground mb-2">{m.phase}</div>
+                      <p className="text-muted-foreground font-light leading-relaxed">{m.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* What we won't do */}
+      {wontDo && wontDo.length > 0 && (
+        <section className="py-24 bg-primary text-primary-foreground">
+          <div className="container-editorial grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
+                Boundaries
+              </div>
+              <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
+                What we will not do.
+              </h2>
+              <p className="mt-4 text-primary-foreground/75 font-light leading-relaxed">
+                Discipline shows up in what's declined, not just what's delivered.
+              </p>
+            </div>
+            <ul className="lg:col-span-8 divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
+              {wontDo.map((w, i) => (
+                <li key={w} className="py-6 flex gap-6 items-baseline">
+                  <span className="font-serif text-sm text-primary-foreground/50 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-serif text-xl lg:text-2xl leading-snug">{w}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Engagement models */}
       <section className="py-24 bg-secondary/50 border-y border-border">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Investment models
+                Engagement shapes
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
                 How we engage
               </h2>
             </div>
             <p className="lg:col-span-7 lg:col-start-6 text-muted-foreground font-light text-lg leading-relaxed">
-              Transparent investment ranges. Modular by capability, with volume incentives for
-              multi-month and annual partnerships.
+              {engagementsNote ||
+                "Investment is engagement-specific and discussed in consultation. Engagements are modular by capability, with incentives for multi-month and annual partnerships."}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
@@ -151,15 +338,37 @@ export const ServiceTemplate = ({
         </div>
       </section>
 
+      {/* Case narrative */}
+      {caseNarrative && (
+        <section className="py-24 border-b border-border">
+          <div className="container-editorial grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-accent mb-4">{caseNarrative.tag}</div>
+              <h2 className="font-serif text-2xl lg:text-3xl text-foreground leading-tight">
+                {caseNarrative.title}
+              </h2>
+            </div>
+            <div className="lg:col-span-8 text-foreground text-lg font-light leading-relaxed space-y-4">
+              {caseNarrative.body.split("\n\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground pt-4">
+                Identifying details have been altered to preserve client confidentiality.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Outcomes */}
       {outcomes && outcomes.length > 0 && (
         <section className="py-24 bg-primary text-primary-foreground">
           <div className="container-editorial">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
-              Outcomes
+              Representative outcomes
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl mb-16 max-w-3xl leading-tight">
-              Representative client results.
+              What clients say after the work is done.
             </h2>
             <div className="grid md:grid-cols-2 gap-px bg-primary-foreground/15">
               {outcomes.map((o) => (
@@ -168,13 +377,16 @@ export const ServiceTemplate = ({
                     {o.tag}
                   </div>
                   <blockquote className="font-serif text-xl leading-snug">"{o.quote}"</blockquote>
-                  <div className="mt-6 text-sm text-primary-foreground/70">{o.role}</div>
+                  <div className="mt-6 text-sm text-primary-foreground/75">{o.role}</div>
                 </article>
               ))}
             </div>
           </div>
         </section>
       )}
+
+      {/* FAQ */}
+      {faq && faq.length > 0 && <FaqList items={faq} />}
 
       <CTABand
         title="Discuss a partnership."
