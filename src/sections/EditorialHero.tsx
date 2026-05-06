@@ -30,14 +30,6 @@ export const EditorialHero = () => {
       />
 
       <div className="relative container-editorial pt-20 pb-16 lg:py-40">
-        <div className="lg:hidden mb-10 flex justify-center overflow-hidden">
-          <img
-            src={chrisBetz}
-            alt="Chris Betz, CEO of proHIRE resources"
-            className="h-80 w-auto object-contain object-bottom select-none"
-            loading="eager"
-          />
-        </div>
         <div className="max-w-3xl lg:max-w-2xl">
           <Reveal variant="fade" delay={50}>
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-8 font-sans">
@@ -49,6 +41,14 @@ export const EditorialHero = () => {
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
             text="Leadership talent and growth infrastructure for companies scaling with intent."
           />
+          <div className="lg:hidden mt-10 mb-8 flex justify-center">
+            <img
+              src={chrisBetz}
+              alt="Chris Betz, CEO of proHIRE resources"
+              className="h-80 w-auto object-contain object-bottom select-none"
+              loading="eager"
+            />
+          </div>
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
               We partner with founder-led, PE-backed, and enterprise leadership teams to place senior talent, embed fractional executives, and accelerate revenue, human-first, AI-enhanced, outcome-accountable.
