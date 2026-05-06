@@ -59,6 +59,12 @@ export const EditorialHero = () => {
                 loading="eager"
                 width={900}
                 height={1100}
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 60% 60% at 50% 50%, black 55%, transparent 100%)",
+                  maskImage:
+                    "radial-gradient(ellipse 60% 60% at 50% 50%, black 55%, transparent 100%)",
+                }}
               />
             </div>
           </Reveal>
