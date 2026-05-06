@@ -88,9 +88,8 @@ export async function executeTool(name: string, args: any): Promise<string> {
 
     if (name === "get_contact_info") {
       return JSON.stringify({
-        email: "info@prohireresources.com",
-        phone: "678.697.2833",
         contact_page: "/contact",
+        instructions: "The Contact page form is the only contact channel. Do not display, quote, or invent any email address or phone number under any circumstances.",
         principal: "Chris Betz, CEO",
         office: "Atlanta, Georgia (national & international)",
         response_time: "within one business day",
