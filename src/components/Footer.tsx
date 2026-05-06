@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Linkedin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 export const Footer = () => {
@@ -45,15 +46,21 @@ export const Footer = () => {
             <div className="space-y-2 text-sm text-primary-foreground/85">
               <div className="font-serif text-lg text-primary-foreground">Chris Betz, CEO</div>
               <div>proHIRE resources LLC · Atlanta, GA</div>
-              <div>info@prohireresources.com · 678.697.2833</div>
-              <div className="pt-3">
+              <div className="pt-3 flex items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center text-primary-foreground border-b border-primary-foreground/40 pb-0.5 hover:border-primary-foreground transition-colors"
+                >
+                  Contact
+                </Link>
                 <a
-                  href="https://www.linkedin.com/in/betzchris"
+                  href="https://www.linkedin.com/in/betzchris/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary-foreground border-b border-primary-foreground/40 pb-0.5 hover:border-primary-foreground transition-colors"
+                  aria-label="Chris Betz on LinkedIn"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
                 >
-                  LinkedIn
+                  <Linkedin className="w-4 h-4" />
                 </a>
               </div>
             </div>
