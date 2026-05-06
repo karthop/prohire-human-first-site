@@ -84,7 +84,7 @@ export const ServiceTemplate = ({
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <Link
             to="/services"
             className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 hover:text-primary-foreground transition-colors"
@@ -105,7 +105,7 @@ export const ServiceTemplate = ({
 
       {/* Thesis */}
       {thesis && (
-        <section className="py-20 lg:py-24 border-b border-border">
+        <section className="py-12 lg:py-16 border-b border-border">
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
@@ -124,7 +124,7 @@ export const ServiceTemplate = ({
 
       {/* Point of view pull-quote */}
       {pointOfView && (
-        <section className="py-20 bg-secondary/40 border-b border-border">
+        <section className="py-12 bg-secondary/40 border-b border-border">
           <div className="container-editorial max-w-4xl">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Point of view
@@ -138,7 +138,7 @@ export const ServiceTemplate = ({
       )}
 
       {/* Who it's for */}
-      <section className="py-20 border-b border-border">
+      <section className="py-12 border-b border-border">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
@@ -157,7 +157,7 @@ export const ServiceTemplate = ({
       </section>
 
       {/* Capabilities */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-4">
@@ -194,7 +194,7 @@ export const ServiceTemplate = ({
 
       {/* Disciplines */}
       {disciplines && disciplines.length > 0 && (
-        <section className="py-24 bg-secondary/40 border-y border-border">
+        <section className="py-16 bg-secondary/40 border-y border-border">
           <div className="container-editorial">
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <div className="lg:col-span-4">
@@ -226,7 +226,7 @@ export const ServiceTemplate = ({
 
       {/* Roles we lead on */}
       {rolesWeLeadOn && rolesWeLeadOn.length > 0 && (
-        <section className="py-24 border-b border-border">
+        <section className="py-16 border-b border-border">
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
@@ -247,7 +247,7 @@ export const ServiceTemplate = ({
 
       {/* Method on this practice */}
       {methodMap && methodMap.length > 0 && (
-        <section className="py-24">
+        <section className="py-16">
           <div className="container-editorial">
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <div className="lg:col-span-4">
@@ -283,7 +283,7 @@ export const ServiceTemplate = ({
 
       {/* What we won't do */}
       {wontDo && wontDo.length > 0 && (
-        <section className="py-24 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground">
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
@@ -311,7 +311,7 @@ export const ServiceTemplate = ({
       )}
 
       {/* Engagement models */}
-      <section className="py-24 bg-secondary/50 border-y border-border">
+      <section className="py-16 bg-secondary/50 border-y border-border">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-4">
@@ -340,7 +340,7 @@ export const ServiceTemplate = ({
 
       {/* Case narrative */}
       {caseNarrative && (
-        <section className="py-24 border-b border-border">
+        <section className="py-16 border-b border-border">
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-accent mb-4">{caseNarrative.tag}</div>
@@ -362,7 +362,7 @@ export const ServiceTemplate = ({
 
       {/* Outcomes */}
       {outcomes && outcomes.length > 0 && (
-        <section className="py-24 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground">
           <div className="container-editorial">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
               Representative outcomes

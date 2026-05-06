@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const FounderIntro = () => {
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="py-14 lg:py-12 bg-background">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5">

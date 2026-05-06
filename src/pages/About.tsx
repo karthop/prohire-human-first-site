@@ -100,7 +100,7 @@ export default function About() {
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-32">
+        <div className="container-editorial py-14 lg:py-12">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
             Senior judgment, applied quietly, to the moves that matter most.
@@ -114,7 +114,7 @@ export default function About() {
       </section>
 
       {/* Founder narrative */}
-      <section className="py-24 lg:py-32">
+      <section className="py-14 lg:py-12">
         <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Founder</div>
@@ -168,7 +168,7 @@ export default function About() {
       </section>
 
       {/* Operating principles */}
-      <section className="py-24 bg-secondary/40 border-y border-border">
+      <section className="py-16 bg-secondary/40 border-y border-border">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
@@ -198,7 +198,7 @@ export default function About() {
       </section>
 
       {/* Career chapters, narrative, not resume */}
-      <section className="py-24 lg:py-32">
+      <section className="py-14 lg:py-12">
         <div className="container-editorial">
           <div className="max-w-3xl mb-20">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">The arc</div>
@@ -208,7 +208,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="space-y-16 lg:space-y-20">
+          <div className="space-y-10 lg:space-y-14">
             {chapters.map((c, i) => (
               <div key={c.label} className="grid lg:grid-cols-12 gap-8 lg:gap-12">
                 <div className="lg:col-span-3">
@@ -238,7 +238,7 @@ export default function About() {
       </section>
 
       {/* Beliefs */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-primary-foreground">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Beliefs</div>
@@ -262,7 +262,7 @@ export default function About() {
       </section>
 
       {/* Affiliations */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Beyond the practice</div>

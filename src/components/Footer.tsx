@@ -5,7 +5,7 @@ import { Logo } from "@/components/Logo";
 export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container-editorial py-20">
+      <div className="container-editorial py-12">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">

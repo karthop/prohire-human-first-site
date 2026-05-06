@@ -36,7 +36,7 @@ export default function Employers() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-24 lg:py-32">
+      <section className="relative bg-gradient-hero py-14 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 animate-fade-in">
             <Logo className="w-16 h-16 mx-auto" priority alt="proHIRE resources logo" />
@@ -61,7 +61,7 @@ export default function Employers() {
       </section>
 
       {/* Strategic Hiring Models */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-12 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
@@ -159,7 +159,7 @@ export default function Employers() {
       </section>
 
       {/* Solutions by Business Type */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
@@ -280,7 +280,7 @@ export default function Employers() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-12 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
@@ -373,7 +373,7 @@ export default function Employers() {
       </section>
 
       {/* Industry Expertise */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary">
@@ -410,7 +410,7 @@ export default function Employers() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-12 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -488,7 +488,7 @@ export default function Employers() {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-20 bg-gradient-primary">
+      <section className="py-12 bg-gradient-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
