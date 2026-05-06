@@ -32,6 +32,14 @@ export const EditorialHero = () => {
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-r from-primary via-primary/40 to-transparent pointer-events-none" />
 
       <div className="relative container-editorial pt-20 pb-16 lg:py-40">
+        <div className="lg:hidden mb-10 flex justify-center">
+          <img
+            src={chrisBetz}
+            alt="Chris Betz, CEO of proHIRE resources"
+            className="h-72 w-auto object-contain object-bottom select-none"
+            loading="eager"
+          />
+        </div>
         <div className="max-w-3xl lg:max-w-2xl">
           <Reveal variant="fade" delay={50}>
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-8 font-sans">
