@@ -29,7 +29,7 @@ export default function Contact() {
       "Message:",
       formData.message,
     ].join("\n");
-    const url = `mailto:info@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const url = `mailto:cbetz@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = url;
   };
 
@@ -60,10 +60,9 @@ export default function Contact() {
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Direct</div>
               <div className="font-serif text-xl text-foreground">Chris Betz</div>
               <div className="text-muted-foreground font-light">CEO, proHIRE resources LLC</div>
-              <div className="mt-3 text-foreground">
-                <a href="mailto:info@prohireresources.com" className="hover:underline">info@prohireresources.com</a>
-              </div>
-              <div className="text-foreground">678.697.2833</div>
+              <p className="mt-3 text-foreground font-light leading-relaxed">
+                Use the form to start a conversation. We respond within one business day.
+              </p>
             </div>
 
             <div>
