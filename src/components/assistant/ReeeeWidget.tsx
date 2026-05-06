@@ -12,7 +12,7 @@ const SESSION_ID_KEY = "reeee_session_id_v1";
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "Hello, I'm **Reeee**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
+    "Hello, I'm **Reece**, the AI assistant for proHIRE resources. I can answer questions about our practices, our approach, and how to engage Chris and the team. What can I help you with?",
 };
 
 function getSessionId() {
@@ -24,7 +24,7 @@ function getSessionId() {
   return id;
 }
 
-export function ReeeeWidget() {
+export function ReeceWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>(() => {
     try {
@@ -89,17 +89,17 @@ export function ReeeeWidget() {
       });
 
       if (resp.status === 429) {
-        toast("Reeee is getting a lot of questions right now. Try again in a moment.");
+        toast("Reece is getting a lot of questions right now. Try again in a moment.");
         setMessages(next);
         return;
       }
       if (resp.status === 402) {
-        toast.error("Reeee is temporarily unavailable. The team has been notified.");
+        toast.error("Reece is temporarily unavailable. The team has been notified.");
         setMessages(next);
         return;
       }
       if (!resp.ok || !resp.body) {
-        toast.error("Couldn't reach Reeee. Please try again.", {
+        toast.error("Couldn't reach Reece. Please try again.", {
           action: { label: "Retry", onClick: () => { setInput(text); } },
         });
         setMessages(next);
@@ -143,7 +143,7 @@ export function ReeeeWidget() {
       }
     } catch (e) {
       console.error(e);
-      toast.error("Network error reaching Reeee.");
+      toast.error("Network error reaching Reece.");
     } finally {
       setStreaming(false);
     }
@@ -152,7 +152,7 @@ export function ReeeeWidget() {
   return (
     <>
       <button
-        aria-label={open ? "Close Reeee" : "Open Reeee, the AI assistant"}
+        aria-label={open ? "Close Reece" : "Open Reece, the AI assistant"}
         onClick={() => setOpen((v) => !v)}
         className={cn(
           "fixed z-50 bottom-6 right-6 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-xl",
@@ -165,7 +165,7 @@ export function ReeeeWidget() {
       {open && (
         <div
           role="dialog"
-          aria-label="Reeee, AI assistant"
+          aria-label="Reece, AI assistant"
           className={cn(
             "fixed z-50 bg-background border border-border shadow-2xl flex flex-col overflow-hidden",
             "inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[400px] sm:h-[600px] sm:rounded-lg",
@@ -173,7 +173,7 @@ export function ReeeeWidget() {
         >
           <header className="px-5 py-4 border-b border-border bg-primary text-primary-foreground flex items-center justify-between">
             <div>
-              <div className="font-serif text-lg leading-none">Reeee</div>
+              <div className="font-serif text-lg leading-none">Reece</div>
               <div className="text-[11px] uppercase tracking-[0.18em] opacity-70 mt-1">
                 AI assistant · proHIRE resources
               </div>
