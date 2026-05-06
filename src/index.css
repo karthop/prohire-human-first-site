@@ -8,7 +8,7 @@
   :root {
     /* Editorial neutrals */
     --background: 36 30% 97%;        /* warm cream */
-    --foreground: 220 35% 8%;         /* near-black ink */
+    --foreground: 220 40% 5%;         /* near-black ink, deeper for readability */
 
     --card: 0 0% 100%;
     --card-foreground: 220 35% 8%;
@@ -18,7 +18,7 @@
 
     /* Primary, deep navy authority */
     --primary: 218 55% 14%;
-    --primary-foreground: 36 30% 97%;
+    --primary-foreground: 36 40% 99%;
     --primary-light: 218 45% 22%;
     --primary-dark: 218 60% 8%;
     --primary-glow: 218 40% 55%;
@@ -27,7 +27,7 @@
     --secondary-foreground: 218 55% 14%;
 
     --muted: 36 18% 94%;
-    --muted-foreground: 220 12% 38%;
+    --muted-foreground: 220 18% 26%;
 
     /* Single confident accent, refined consulting blue */
     --accent: 212 70% 38%;
@@ -233,4 +233,11 @@
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* Mobile readability: bump base size slightly and strengthen long-form body weight */
+@media (max-width: 640px) {
+  html { font-size: 17px; }
+  /* Pull thin body copy from 300 to 400 on small screens for legibility */
+  .font-light { font-weight: 400 !important; }
 }
