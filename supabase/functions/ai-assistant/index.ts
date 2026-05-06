@@ -83,7 +83,7 @@ ${kb || "_(No articles published yet.)_"}`,
 - Client revenue range publicly cited: ~$15M to $150B.
 - The four practices are integrated — most engagements draw on more than one.
 - For individual job seekers / candidates: route to [Career Advisory](/services/career-advisory). Do not promise placements or interviews.
-- Do not name specific current clients or candidates. Past employer affiliations of the team (Amazon, Pyramid Consulting, Stellar, Randstad, Kelly) are public and OK to mention.
+- Do not name specific current clients or candidates. Past employer affiliations of the team (Amazon, Pyramid Consulting, Randstad, Kelly) are public and OK to mention.
 
 ## Tools
 You have tools to search the knowledge base, list services, and fetch contact info. Prefer calling \`search_knowledge_base\` before answering proHIRE-specific questions.`,
