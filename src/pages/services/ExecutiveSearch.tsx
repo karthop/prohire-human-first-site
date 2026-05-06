@@ -7,8 +7,8 @@ export default function ExecutiveSearch() {
       seoDescription="Senior-led retained executive search, fractional CXO placement, and leadership advisory for founder-led, PE-backed, and enterprise companies."
       eyebrow="Executive Search"
       title="Executive Search & Leadership Advisory"
-      lead="Retained search, fractional CXOs, and board advisory for the inflection points that define a company — succession, capital events, market entry, and accelerated scale."
-      thesis="Most of what's sold as executive search today is a sourcing motion in advisory clothing — a database query dressed up in a deck. The result is a market saturated with shortlists that look credible and miss the underlying scope. We rebuild the work from the question backward: what is the company actually trying to do, who can do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
+      lead="Retained search, fractional CXOs, and board advisory for the inflection points that define a company , succession, capital events, market entry, and accelerated scale."
+      thesis="Most of what's sold as executive search today is a sourcing motion in advisory clothing , a database query dressed up in a deck. The result is a market saturated with shortlists that look credible and miss the underlying scope. We rebuild the work from the question backward: what is the company actually trying to do, who can do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
       pointOfView="A search is a leadership decision, not a procurement event. We engage the way a board wants to be advised, not the way a vendor wants to be paid."
       whoFor={[
         "Founders and boards filling C-suite roles where the next hire shapes the next chapter",
@@ -42,7 +42,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Network access",
-          body: "Curated reach into our partner ecosystems — C-Level Advisory, The Curated Network™, FinTech Atlanta — for board, capital, and go-to-market doors that don't open through job boards.",
+          body: "Curated reach into our partner ecosystems , C-Level Advisory, The Curated Network™, FinTech Atlanta , for board, capital, and go-to-market doors that don't open through job boards.",
         },
       ]}
       disciplines={[
@@ -56,7 +56,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "360° referencing",
-          body: "References are the work, not the formality. We speak to people the candidate did not provide — peers, former direct reports, board members — under structured protocols that surface signal, not testimonial.",
+          body: "References are the work, not the formality. We speak to people the candidate did not provide , peers, former direct reports, board members , under structured protocols that surface signal, not testimonial.",
         },
         {
           heading: "Stakeholder choreography",
@@ -80,7 +80,7 @@ export default function ExecutiveSearch() {
         "Functional VP / SVP (Sales, Finance, Engineering, People)",
       ]}
       methodMap={[
-        { phase: "Discovery", body: "Two to three structured conversations with the CEO and key board members to pressure-test the scope, the success metrics, and the unwritten constraints — comp band, geography, off-limits firms, internal politics." },
+        { phase: "Discovery", body: "Two to three structured conversations with the CEO and key board members to pressure-test the scope, the success metrics, and the unwritten constraints , comp band, geography, off-limits firms, internal politics." },
         { phase: "Design", body: "A written engagement plan: target persona, named-target list, sourcing thesis, diligence protocol, stakeholder sequence, and timeline. The document is the contract for the search." },
         { phase: "Execute", body: "Senior-led sourcing, structured first conversations, calibrated shortlist, deep referencing, and choreographed client interviews. Weekly written progress notes." },
         { phase: "Embed", body: "Offer construction, negotiation support, transition planning, and 30/60/90-day onboarding check-ins with both the placement and the hiring executive." },
@@ -99,7 +99,7 @@ export default function ExecutiveSearch() {
       caseNarrative={{
         tag: "Series C · Fintech",
         title: "A fractional CRO who had already scaled the same playbook.",
-        body: "A Series C fintech CEO had a strong product, an under-built revenue function, and a board pressing for visible go-to-market traction before the next round. A full-time CRO was 9–12 months away on the cap table.\n\nWe re-scoped the role: the company didn't need a permanent CRO yet — it needed an operator who had taken a comparable product from $5M to $50M ARR and could install the motion in two quarters.\n\nWe placed a fractional CRO from a named target list of nine operators. Within the first quarter, the pipeline doubled and the company secured the enterprise logos the board had been asking about. The fractional engagement converted into a full-time CRO mandate at the right moment, with the right person already in the seat.",
+        body: "A Series C fintech CEO had a strong product, an under-built revenue function, and a board pressing for visible go-to-market traction before the next round. A full-time CRO was 9–12 months away on the cap table.\n\nWe re-scoped the role: the company didn't need a permanent CRO yet , it needed an operator who had taken a comparable product from $5M to $50M ARR and could install the motion in two quarters.\n\nWe placed a fractional CRO from a named target list of nine operators. Within the first quarter, the pipeline doubled and the company secured the enterprise logos the board had been asking about. The fractional engagement converted into a full-time CRO mandate at the right moment, with the right person already in the seat.",
       }}
       faq={[
         {
@@ -116,7 +116,7 @@ export default function ExecutiveSearch() {
         },
         {
           q: "When should we hire fractional versus full-time?",
-          a: "Fractional makes sense when the work is real but the runway, scope, or stage doesn't justify the cost of a full-time CXO — or when you need a specific operator's playbook for a defined window. We will tell you directly when full-time is the right answer, even if it shrinks the engagement.",
+          a: "Fractional makes sense when the work is real but the runway, scope, or stage doesn't justify the cost of a full-time CXO , or when you need a specific operator's playbook for a defined window. We will tell you directly when full-time is the right answer, even if it shrinks the engagement.",
         },
         {
           q: "Will my search be confidential?",
