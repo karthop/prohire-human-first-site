@@ -1,5 +1,6 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
+import chrisBetz from "@/assets/chris-betz.png";
 
 const principles = [
   {
@@ -128,6 +129,12 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
+            <img
+              src={chrisBetz}
+              alt="Chris Betz, CEO of proHIRE resources"
+              className="mx-auto mb-8 h-80 w-auto object-contain object-bottom lg:h-[28rem]"
+              loading="eager"
+            />
             <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
               "You are more than a keyword search."
             </p>
