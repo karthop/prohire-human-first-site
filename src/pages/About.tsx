@@ -1,6 +1,5 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
-import chrisBetz from "@/assets/chris-betz.png";
 
 const principles = [
   {
@@ -118,18 +117,6 @@ export default function About() {
       <section className="py-14 lg:py-12">
         <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
-            <img
-              src={chrisBetz}
-              alt="Chris Betz, CEO of proHIRE resources"
-              loading="lazy"
-              className="w-full max-w-sm mx-auto lg:mx-0 mb-8 select-none pointer-events-none"
-              style={{
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 70% 75% at 50% 45%, #000 55%, transparent 100%)",
-                maskImage:
-                  "radial-gradient(ellipse 70% 75% at 50% 45%, #000 55%, transparent 100%)",
-              }}
-            />
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Founder</div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">Chris Betz</h2>
             <p className="mt-3 text-muted-foreground font-light">CEO, proHIRE resources LLC</p>
