@@ -23,7 +23,7 @@ const TalentSolutions = lazy(() => import("./pages/services/TalentSolutions"));
 const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-import { AveryWidget } from "@/components/assistant/AveryWidget";
+import { ReeeeWidget } from "@/components/assistant/ReeeeWidget";
 
 const queryClient = new QueryClient();
 
@@ -64,7 +64,7 @@ const App = () => (
             </Routes>
           </Suspense>
           <Footer />
-          <AveryWidget />
+          <ReeeeWidget />
         </BrowserRouter>
       </PersonaProvider>
     </TooltipProvider>
