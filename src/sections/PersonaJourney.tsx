@@ -16,7 +16,7 @@ interface PersonaJourneyProps {
 
 export function PersonaJourney({ heading, steps, className }: PersonaJourneyProps) {
   return (
-    <section className={cn("py-20 bg-muted/50", className)}>
+    <section className={cn("py-12 bg-muted/50", className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary">{heading}</h2>

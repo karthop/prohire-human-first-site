@@ -11,7 +11,7 @@ interface Props {
 
 export const FaqList = ({ items, eyebrow = "Common questions", heading = "Frequently asked." }: Props) => {
   return (
-    <section className="py-24 border-t border-border">
+    <section className="py-16 border-t border-border">
       <div className="container-editorial grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4">
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">{eyebrow}</div>

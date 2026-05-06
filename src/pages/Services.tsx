@@ -5,25 +5,25 @@ import { CTABand } from "@/sections/CTABand";
 
 const services = [
   {
-    eyebrow: "Practice 01",
+    eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
     body: "Retained search, fractional CXOs, and board advisory for inflection-point hires.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "Practice 02",
+    eyebrow: "Talent Solutions",
     title: "Strategic Talent & Workforce Solutions",
     body: "Workforce architecture and specialized hiring across finance, technology, operations, and people functions.",
     href: "/services/talent-solutions",
   },
   {
-    eyebrow: "Practice 03",
+    eyebrow: "Growth Acceleration",
     title: "Revenue & Operational Acceleration",
     body: "Senior BD execution, operating infrastructure, and partnership development on shorter time horizons.",
     href: "/services/growth-acceleration",
   },
   {
-    eyebrow: "Practice 04",
+    eyebrow: "Career Advisory",
     title: "Career Advisory for Senior Professionals",
     body: "Confidential one-to-one advisory for senior executives, board candidates, and post-exit operators.",
     href: "/services/career-advisory",
@@ -77,7 +77,7 @@ export default function ServicesIndex() {
       />
 
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">
             Services
           </div>
@@ -92,7 +92,7 @@ export default function ServicesIndex() {
       </section>
 
       {/* Integration thesis */}
-      <section className="py-20 lg:py-24 border-b border-border">
+      <section className="py-12 lg:py-16 border-b border-border">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
@@ -117,7 +117,7 @@ export default function ServicesIndex() {
       </section>
 
       {/* Practice cards */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="container-editorial grid md:grid-cols-2 gap-px bg-border">
           {services.map((s) => (
             <Link
@@ -142,7 +142,7 @@ export default function ServicesIndex() {
       </section>
 
       {/* Integration matrix */}
-      <section className="py-24 bg-secondary/40 border-y border-border">
+      <section className="py-16 bg-secondary/40 border-y border-border">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-5">
@@ -183,7 +183,7 @@ export default function ServicesIndex() {
       </section>
 
       {/* Comparisons */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-5">

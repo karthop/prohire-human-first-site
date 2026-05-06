@@ -18,7 +18,7 @@ export default function Industries() {
         description="Sector experience: technology, fintech, healthcare, supply chain, industrial, and professional services."
       />
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Industries</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
             Sector fluency across high-stakes, high-growth markets.
@@ -30,7 +30,7 @@ export default function Industries() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12">
         <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {industries.map((i) => (
             <article key={i.name} className="bg-background p-10 flex flex-col">

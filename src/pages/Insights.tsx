@@ -118,7 +118,7 @@ export default function Insights() {
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Insights</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
             Field notes from twenty years of senior search and operator work.
@@ -131,7 +131,7 @@ export default function Insights() {
       </section>
 
       {/* Featured */}
-      <section className="py-20 lg:py-24 border-b border-border">
+      <section className="py-12 lg:py-16 border-b border-border">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-accent mb-4">Featured · {featured.category}</div>
@@ -155,7 +155,7 @@ export default function Insights() {
       </section>
 
       {/* Filters + grid */}
-      <section className="py-20 lg:py-24">
+      <section className="py-12 lg:py-16">
         <div className="container-editorial">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>

@@ -25,7 +25,7 @@ const cases = [
 
 export const FeaturedCases = () => {
   return (
-    <section className="py-24 lg:py-32 bg-primary text-primary-foreground">
+    <section className="py-14 lg:py-12 bg-primary text-primary-foreground">
       <div className="container-editorial">
         <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
           <Reveal variant="rise">

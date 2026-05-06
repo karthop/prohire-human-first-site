@@ -41,7 +41,7 @@ export default function Contact() {
       />
 
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Contact</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-3xl">
             Request a confidential consultation.
@@ -53,7 +53,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5 space-y-10">
             <div>

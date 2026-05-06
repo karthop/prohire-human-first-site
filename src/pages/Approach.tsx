@@ -98,7 +98,7 @@ export default function Approach() {
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground">
-        <div className="container-editorial py-20 lg:py-28">
+        <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Approach</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
             Human-first. AI-enhanced. Outcome-accountable.
@@ -112,7 +112,7 @@ export default function Approach() {
       </section>
 
       {/* Method */}
-      <section className="py-24 lg:py-32">
+      <section className="py-14 lg:py-12">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
@@ -150,7 +150,7 @@ export default function Approach() {
       </section>
 
       {/* Operating principles */}
-      <section className="py-24 bg-secondary/50 border-y border-border">
+      <section className="py-16 bg-secondary/50 border-y border-border">
         <div className="container-editorial">
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Operating principles</div>
           <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight max-w-3xl mb-16">
@@ -168,7 +168,7 @@ export default function Approach() {
       </section>
 
       {/* Pricing philosophy */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
@@ -196,7 +196,7 @@ export default function Approach() {
       </section>
 
       {/* Cadence */}
-      <section className="py-24 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-primary-foreground">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-5">
@@ -222,7 +222,7 @@ export default function Approach() {
       </section>
 
       {/* Network */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Network</div>

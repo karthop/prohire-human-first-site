@@ -18,7 +18,7 @@ export const CTABand = ({
   ctaHref = "/contact",
 }: Props) => {
   return (
-    <section className="py-24 lg:py-32 bg-secondary/60 border-y border-border">
+    <section className="py-14 lg:py-12 bg-secondary/60 border-y border-border">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-12 gap-12 items-end">
           <Reveal variant="rise" className="lg:col-span-8">

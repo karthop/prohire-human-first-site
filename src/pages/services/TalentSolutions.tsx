@@ -5,7 +5,7 @@ export default function TalentSolutions() {
     <ServiceTemplate
       seoTitle="Strategic Talent & Workforce Solutions | proHIRE resources"
       seoDescription="Workforce architecture for high-growth companies — finance, technology, operations, and people functions built to scale, not just staffed."
-      eyebrow="Practice 02"
+      eyebrow="Talent Solutions"
       title="Strategic Talent & Workforce Solutions"
       lead="We don't fill seats. We build functions. Specialized hiring and workforce infrastructure across finance, technology, operations, and people — designed for the speed, compliance, and quality demands of high-growth environments."
       thesis="Most growth-stage companies don't have a hiring problem. They have a workforce architecture problem: the function isn't designed, so every search starts from scratch and every offer feels like an emergency. Strategic talent work begins one layer up — defining the function, the seats, the seams, and the cadence — and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
