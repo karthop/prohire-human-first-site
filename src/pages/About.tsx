@@ -1,6 +1,6 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
-import chrisBetz from "@/assets/chris-betz.png";
+
 
 const principles = [
   {
