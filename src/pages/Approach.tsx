@@ -50,7 +50,7 @@ const principles = [
 const pricingPrinciples = [
   {
     h: "Clear shapes, never published rates.",
-    b: "We use a small set of clear engagement shapes: Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in conversation, not advertised. Premium positioning and published rate cards do not coexist.",
+    b: "We use a small set of clear engagement shapes that apply across every kind of work we do, from C-suite searches to professional hires to growth and operating engagements: Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in conversation, not advertised. Premium positioning and published rate cards do not coexist.",
   },
   {
     h: "Modular by capability.",
@@ -106,7 +106,9 @@ export default function Approach() {
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             A boutique operating model run with the discipline of a much larger firm. The
             same method whether we are placing a CFO, building out a finance team, or
-            running a quarter of business development for you.
+            running a quarter of business development for you. We don't just work at the top
+            of the house. We build the teams that support it, applying the same disciplined
+            vetting to professional hires that others only reserve for the C-suite.
           </p>
         </div>
       </section>
