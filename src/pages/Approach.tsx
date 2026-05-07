@@ -92,21 +92,21 @@ export default function Approach() {
   return (
     <div className="min-h-screen pt-16 bg-background">
       <Seo
-        title="Our Approach | proHIRE resources"
-        description="The proHIRE method , Discovery, Design, Execute, Embed , applied with boutique discipline and enterprise rigor."
+        title="How We Work | proHIRE resources"
+        description="The proHIRE method: Discovery, Design, Execute, Embed. Boutique by design, with the discipline a board would expect."
       />
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Approach</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">How we work</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Human-first. AI-enhanced. Outcome-accountable.
+            Human-first. AI-enhanced. Accountable for the outcome.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            A boutique operating model with enterprise-grade discipline. The same method
-            whether we are placing a CFO, building a finance function, or executing a
-            quarter of business development.
+            A boutique operating model run with the discipline of a much larger firm. The
+            same method whether we are placing a CFO, building out a finance team, or
+            running a quarter of business development for you.
           </p>
         </div>
       </section>
@@ -122,9 +122,9 @@ export default function Approach() {
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 lg:pt-4 text-muted-foreground font-light text-lg leading-relaxed">
-              Every engagement runs through the same four phases , applied to the texture of
-              the practice. The phases are deliberately written so the client knows, at every
-              point, what they are paying for and what they should expect to receive.
+              Every engagement runs through the same four phases, applied to the texture of
+              the work. The phases are written so you know, at every point, what you are
+              paying for and what you should expect to receive.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-px bg-border">
