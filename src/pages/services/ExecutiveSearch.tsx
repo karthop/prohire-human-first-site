@@ -7,9 +7,9 @@ export default function ExecutiveSearch() {
       seoDescription="Senior-led retained executive search, fractional CXO placement, and leadership advisory for founder-led, PE-backed, and enterprise companies."
       eyebrow="Executive Search"
       title="Executive Search & Leadership Advisory"
-      lead="Retained search, fractional CXOs, and board advisory for the inflection points that define a company , succession, capital events, market entry, and accelerated scale."
-      thesis="Most of what's sold as executive search today is a sourcing motion in advisory clothing , a database query dressed up in a deck. The result is a market saturated with shortlists that look credible and miss the underlying scope. We rebuild the work from the question backward: what is the company actually trying to do, who can do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
-      pointOfView="A search is a leadership decision, not a procurement event. We engage the way a board wants to be advised, not the way a vendor wants to be paid."
+      lead="Retained search, fractional CXOs, and board advisory for the hires that decide the next chapter, succession, capital events, market entry, and the moves no one on the inside can run themselves."
+      thesis="Most of what gets sold as executive search today is a sourcing motion in advisory clothing, a database query dressed up in a deck. The result is a market full of shortlists that look credible and miss the actual scope. We build the work backward from the question: what is the company really trying to do, who can actually do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
+      pointOfView="A search is a leadership decision, not a procurement event. We work the way a board wants to be advised, not the way a vendor wants to be paid."
       whoFor={[
         "Founders and boards filling C-suite roles where the next hire shapes the next chapter",
         "PE and VC-backed companies that need leadership who has done it before, at this stage, in this category",
@@ -48,15 +48,15 @@ export default function ExecutiveSearch() {
       disciplines={[
         {
           heading: "Scope architecture",
-          body: "Before sourcing begins, we re-write the role with the CEO and the board: what outcome must this leader own in 12 months, what is non-negotiable in their resume, and what is mistakenly listed as required. Most failed searches were mis-scoped, not mis-sourced.",
+          body: "Before sourcing begins, we re-write the role with the CEO and the board: what outcome must this leader own in twelve months, what is non-negotiable on the resume, and what is mistakenly listed as required. Most failed searches were mis-scoped, not mis-sourced.",
         },
         {
           heading: "Named-target sourcing",
-          body: "We source against a written shortlist of named companies and named operators, not against a keyword query. Every candidate engaged can be traced to a thesis about why they belong on the list.",
+          body: "We source against a written list of named companies and named operators, not a keyword query. Every candidate engaged can be traced to a thesis about why they belong on the list.",
         },
         {
           heading: "360° referencing",
-          body: "References are the work, not the formality. We speak to people the candidate did not provide , peers, former direct reports, board members , under structured protocols that surface signal, not testimonial.",
+          body: "References are the work, not the formality. We speak to people the candidate did not provide, peers, former direct reports, board members, under structured protocols that surface signal, not testimonial.",
         },
         {
           heading: "Stakeholder choreography",
@@ -64,7 +64,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Onboarding accountability",
-          body: "Our work continues through the first 30, 60, and 90 days. The placement only matters if the impact compounds after we step back.",
+          body: "Our work continues through the first 30, 60, and 90 days. The placement only matters if the impact holds after we step back.",
         },
       ]}
       rolesWeLeadOn={[

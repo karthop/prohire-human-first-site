@@ -3,13 +3,13 @@ import { ServiceTemplate } from "@/sections/ServiceTemplate";
 export default function TalentSolutions() {
   return (
     <ServiceTemplate
-      seoTitle="Strategic Talent & Workforce Solutions | proHIRE resources"
-      seoDescription="Workforce architecture for high-growth companies , finance, technology, operations, and people functions built to scale, not just staffed."
-      eyebrow="Talent Solutions"
-      title="Strategic Talent & Workforce Solutions"
-      lead="We don't fill seats. We build functions. Specialized hiring and workforce infrastructure across finance, technology, operations, and people , designed for the speed, compliance, and quality demands of high-growth environments."
-      thesis="Most growth-stage companies don't have a hiring problem. They have a workforce architecture problem: the function isn't designed, so every search starts from scratch and every offer feels like an emergency. Strategic talent work begins one layer up , defining the function, the seats, the seams, and the cadence , and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
-      pointOfView="Hiring is the symptom. Function design is the work."
+      seoTitle="Hiring & Workforce Strategy | proHIRE resources"
+      seoDescription="Hiring built around the actual work, finance, technology, operations, and people, for fast-growing companies that have outgrown a generic agency."
+      eyebrow="Hiring & Workforce"
+      title="Hiring & Workforce Strategy"
+      lead="We don't fill seats. We build teams. Specialized hiring across finance, technology, operations, and people, designed for the speed, compliance, and quality demands of fast-growing companies."
+      thesis="Most growth-stage companies don't have a hiring problem. They have a team-design problem. The function isn't drawn out, so every search starts from scratch and every offer feels like an emergency. The work begins one layer up, defining the team, the seats, the seams, and the cadence, and only then does the hiring start. Done this way, the team scales. Done the other way, the team churns."
+      pointOfView="Hiring is the symptom. Designing the team is the work."
       whoFor={[
         "Founders and CFOs scaling finance, technology, and operations teams through a funding round or capital event",
         "Companies that need dedicated recruiting capacity without the fixed overhead of an in-house team",
@@ -44,20 +44,20 @@ export default function TalentSolutions() {
       ]}
       disciplines={[
         {
-          heading: "Function design before sourcing",
-          body: "We map the function , roles, reporting lines, seams to adjacent teams, and the operating cadence , before opening any requisition. The hiring plan is a downstream artifact.",
+          heading: "Design the team before sourcing",
+          body: "We map the team, roles, reporting lines, seams to adjacent groups, and the operating cadence, before opening any requisition. The hiring plan is downstream of that.",
         },
         {
-          heading: "Senior screening, every role",
-          body: "Every candidate engaged is interviewed by a senior recruiter who has hired into this function before. Screening is judgment work, not throughput work.",
+          heading: "Senior screening on every role",
+          body: "Every candidate engaged is interviewed by a senior recruiter who has hired into this kind of role before. Screening is judgment work, not throughput work.",
         },
         {
           heading: "Calibrated shortlists",
-          body: "We deliver three to five referenceable candidates per role, not twenty resumes. Calibration meetings re-tune the search after the first round, every time.",
+          body: "Three to five referenceable candidates per role, not twenty resumes. Calibration meetings re-tune the search after the first round, every time.",
         },
         {
           heading: "Offer integrity",
-          body: "We coach hiring managers on offer construction, comp positioning, and counter-offer dynamics. The placement is not closed when the offer is signed , it's closed when day 30 holds.",
+          body: "We coach hiring managers on offer construction, comp positioning, and counter-offer dynamics. The placement is not closed when the offer is signed, it is closed when day 30 holds.",
         },
       ]}
       methodMap={[
