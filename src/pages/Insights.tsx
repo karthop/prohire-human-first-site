@@ -113,7 +113,7 @@ export default function Insights() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Insights | proHIRE resources"
-        description="Plain-spoken notes on executive search, hiring, growth execution, and senior careers, from twenty years of doing the work."
+        description="Plain-spoken notes on executive search, professional hiring, fractional work, growth advisory, and senior careers."
       />
 
       {/* Hero */}
