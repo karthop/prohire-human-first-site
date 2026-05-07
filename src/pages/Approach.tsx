@@ -152,7 +152,7 @@ export default function Approach() {
       {/* Operating principles */}
       <section className="py-16 bg-secondary/50 border-y border-border">
         <div className="container-editorial">
-          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Operating principles</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">How we operate</div>
           <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight max-w-3xl mb-16">
             Three commitments that govern every engagement.
           </h2>
@@ -172,13 +172,13 @@ export default function Approach() {
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Pricing philosophy</div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">How we price</div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
                 We do not publish rates. We publish principles.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-muted-foreground font-light text-lg leading-relaxed">
-              Fee structures vary by engagement scope, urgency, and partnership shape. The
+              Fees vary by scope, urgency, and the shape of the partnership. The
               principles do not.
             </p>
           </div>
@@ -202,12 +202,12 @@ export default function Approach() {
             <div className="lg:col-span-5">
               <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Working with us</div>
               <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
-                The cadence of an engagement.
+                What an engagement actually looks like, week to week.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-primary-foreground/80 font-light text-lg leading-relaxed">
               No surprise invoices, no surprise updates. Every engagement runs on the same
-              rhythm , adjusted to the urgency of the work.
+              rhythm, adjusted to how urgent the work is.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-primary-foreground/15">
@@ -228,9 +228,9 @@ export default function Approach() {
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Network</div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">Reach beyond our walls.</h2>
             <p className="mt-4 text-muted-foreground font-light leading-relaxed">
-              Curated partnerships built over twenty years in executive search and senior
-              advisory. Used to extend client reach into board, capital, sector, and civic
-              networks that don't open through cold outreach.
+              Partnerships built over twenty years in executive search and senior advisory.
+              Used to extend client reach into board, capital, sector, and civic networks
+              that don't open through cold outreach.
             </p>
           </div>
           <div className="lg:col-span-8 divide-y divide-border border-y border-border">
