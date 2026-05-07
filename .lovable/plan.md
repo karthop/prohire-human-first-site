@@ -1,36 +1,29 @@
-## Add "Off the clock" personal note to About page
+Good catch. The website copy was rewritten, but **Reece's knowledge base** (the `ai_knowledge_articles` table that Reece searches via the `search_knowledge_base` tool) was not updated. It still contains the old language and the Pyramid/Quest references you asked to remove.
 
-Insert a short, warm personal paragraph in `src/pages/About.tsx`, immediately after the founder narrative paragraph that ends with *"people are the strategy. Everything else is execution."* — and before the "Operating principles" section.
+## What's currently in the KB (5 published articles)
 
-### Placement
+1. **About proHIRE resources** — uses "executive talent and growth advisory," "human-first, AI-enhanced, and outcome-accountable"
+2. **Our four practices** — uses "Strategic Talent & Workforce Solutions," "Leadership Advisory," "RPO," etc.
+3. **About founder Chris Betz** — explicitly names **Pyramid Consulting**, lists "Randstad and Kelly," uses "executive search, growth acceleration, and senior talent strategy"
+4. **Who we work with** — explicitly names **Pyramid Consulting**
+5. **How to engage us** — fine in tone but references "consultation"
 
-Inside the existing Founder narrative `<section>`, the new content sits as the final block of the right column (`lg:col-span-8`), visually separated by a thin top border and a small uppercase label so it reads as a distinct coda rather than another body paragraph.
+There is also a hardcoded service list in `supabase/functions/ai-assistant/tools.ts` (the `list_services` tool) that still uses the old practice names ("Executive Search & Leadership Advisory," "Strategic Talent & Workforce Solutions," "Revenue & Operational Acceleration," "Career Advisory").
 
-### Markup to add
+## Plan
 
-```tsx
-<div className="pt-8 mt-2 border-t border-border">
-  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-    Off the clock
-  </div>
-  <p className="text-foreground font-light text-lg leading-relaxed">
-    Chris is a firm believer that the best work happens when you're
-    grounded at home. For him, that means time with his two rescues,
-    Charli, a girl Catahoula, and Leo, a boy Pit Mix. They're a meaningful part
-    of his daily rhythm and a large part of why he has been a long-standing
-    supporter of rescue adoption. There's a grit and loyalty in a rescue
-    dog that he has always admired, and tried to carry into the work.
-  </p>
-</div>
-```
+1. **Rewrite all 5 knowledge base articles** (via a SQL migration that updates the rows in place) to match the new site tone:
+   - Remove "Pyramid Consulting" and "Quest" everywhere; replace with neutral phrasing (e.g., "global staffing and consulting firms," or just drop the company list and keep "twenty years across executive search and growth")
+   - Strip "talent solutions," "leadership advisory," "senior judgment," "growth acceleration" as labels, and other corporate filler
+   - Match the plain-English, founder-to-founder voice used on the live pages
+   - No em dashes
+   - Keep the existing internal links (`/contact`, `/about`, `/services/...`)
 
-### Notes
+2. **Update `supabase/functions/ai-assistant/tools.ts`** so the `list_services` tool returns the new practice names that match the site (I'll mirror whatever the current `/services` page calls them).
 
-- Uses existing semantic tokens (`text-foreground`, `text-muted-foreground`, `border-border`) — no custom colors.
-- Matches typography of surrounding founder narrative (`font-light text-lg leading-relaxed`).
-- The "Off the clock" eyebrow mirrors the small uppercase labels used elsewhere on the page ("About", "Founder", "How we work", "Beliefs").
-- Image placeholder is **not** added in this pass; once you share the photo we'll add it as a second step (likely a right-aligned image beside this paragraph, or beneath it on mobile).
+3. Leave the system prompt / `executeTool` logic alone — only data and the service list need to change.
 
-### Files changed
+## Questions before I write the plan into action
 
-- `src/pages/About.tsx` — single insertion in the founder narrative right column.
+- For the founder bio, do you want to **keep any prior-employer mentions** (e.g., "Amazon, Randstad, Kelly") and only drop Pyramid + Quest, or **drop the whole employer list** and replace with something like "twenty years across global search and consulting firms"?
+- Should I keep the four-practice names exactly as they appear on the current `/services` page, or do you want to rename any of them as part of this pass?
