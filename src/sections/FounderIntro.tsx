@@ -20,9 +20,9 @@ export const FounderIntro = () => {
 
           <div className="lg:col-span-7 space-y-6 text-foreground leading-relaxed font-light text-lg">
             <p>
-              Chris has led executive talent and revenue functions at Amazon, Pyramid Consulting,
-              Randstad, and Kelly, supporting clients from Series A startups to Fortune 50
-              enterprises.
+              Chris has led executive talent and revenue functions at Amazon, Randstad, Kelly,
+              and across a series of global staffing and consulting firms, supporting clients
+              from Series A startups to Fortune 50 enterprises.
             </p>
             <p>
               Through proHIRE resources, he partners with CEOs, CFOs, and founders to place
