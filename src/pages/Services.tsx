@@ -76,7 +76,7 @@ export default function ServicesIndex() {
         description="Four integrated practices , executive search, workforce solutions, revenue acceleration, and senior career advisory , for founders, boards, and senior leaders."
       />
 
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">
             Services
