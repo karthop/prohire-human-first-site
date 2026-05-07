@@ -1,25 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import editorialHero from "@/assets/editorial-hero.jpg";
 import { SplitHeadline } from "@/components/motion/SplitHeadline";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 
 export const EditorialHero = () => {
   return (
-    <section className="relative bg-primary text-primary-foreground overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={editorialHero}
-          alt=""
-          className="w-full h-full object-cover opacity-30 kenburns-slow"
-          loading="eager"
-          fetchPriority="high"
-          width={1920}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/60" />
-      </div>
+    <section className="relative bg-primary text-primary-foreground overflow-hidden brush-texture">
 
       <div className="relative container-editorial pt-20 pb-16 lg:py-40">
         <div className="max-w-3xl lg:max-w-2xl">
