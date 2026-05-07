@@ -100,7 +100,7 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-14 lg:py-12">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
@@ -239,7 +239,7 @@ export default function About() {
       </section>
 
       {/* Beliefs */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Beliefs</div>

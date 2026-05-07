@@ -40,7 +40,7 @@ export default function Contact() {
         description="Request a confidential executive consultation."
       />
 
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Contact</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-3xl">

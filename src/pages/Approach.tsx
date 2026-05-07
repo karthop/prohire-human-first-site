@@ -97,7 +97,7 @@ export default function Approach() {
       />
 
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Approach</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
@@ -196,7 +196,7 @@ export default function Approach() {
       </section>
 
       {/* Cadence */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-5">

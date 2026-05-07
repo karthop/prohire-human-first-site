@@ -17,7 +17,7 @@ export default function Industries() {
         title="Industries | proHIRE resources"
         description="Sector experience: technology, fintech, healthcare, supply chain, industrial, and professional services."
       />
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Industries</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">

@@ -83,7 +83,7 @@ export const ServiceTemplate = ({
       <Seo title={seoTitle} description={seoDescription} />
 
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <Link
             to="/services"
@@ -283,7 +283,7 @@ export const ServiceTemplate = ({
 
       {/* What we won't do */}
       {wontDo && wontDo.length > 0 && (
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground brush-texture">
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
@@ -362,7 +362,7 @@ export const ServiceTemplate = ({
 
       {/* Outcomes */}
       {outcomes && outcomes.length > 0 && (
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground brush-texture">
           <div className="container-editorial">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
               Representative outcomes
