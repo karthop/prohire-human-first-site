@@ -1,5 +1,6 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
+import chrisDogs from "@/assets/chris-dogs.png";
 
 
 const principles = [
@@ -126,6 +127,11 @@ export default function About() {
               revenue leadership, and operator strategy, across Amazon, Pyramid Consulting,
               Randstad, and Kelly.
             </p>
+            <img
+              src={chrisDogs}
+              alt="Chris's rescue dogs, Charlie and Leo"
+              className="mt-8 w-full h-auto block"
+            />
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
