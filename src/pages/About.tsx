@@ -35,7 +35,7 @@ const chapters = [
     label: "Senior delivery",
     years: "2014–2021",
     title: "Building practices, not just placements.",
-    body: "VP and Director-level roles at Pyramid Consulting, 3i People, and Quest Group , running BD and delivery for global staffing firms serving Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
+    body: "VP and Director-level roles across several global staffing and consulting firms , running BD and delivery for Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
     learned: "The hardest work in talent isn't the placement. It's the system that makes the placement repeatable.",
   },
   {
@@ -135,8 +135,8 @@ export default function About() {
             <p className="mt-3 text-muted-foreground font-light">CEO, proHIRE resources LLC</p>
             <p className="mt-6 text-sm text-muted-foreground font-light leading-relaxed">
               Atlanta-based. Twenty years at the intersection of executive search,
-              revenue leadership, and operator strategy, across Amazon, Pyramid Consulting,
-              Randstad, and Kelly.
+              revenue leadership, and operator strategy, across Amazon, Randstad, Kelly,
+              and a series of global staffing and consulting firms.
             </p>
             <img
               src={chrisDogs}
@@ -164,7 +164,7 @@ export default function About() {
             </p>
             <p>
               I have spent twenty years on every side of this work , staffing floors at
-              Randstad and Kelly, BD and delivery leadership at Pyramid and Quest, senior
+              Randstad and Kelly, BD and delivery leadership across global staffing firms, senior
               TPM hiring inside Amazon, and sales leadership in technology consulting. Each
               of those seats taught the same lesson from a different angle: the firms that
               get senior talent right are not the ones with the largest databases. They are
