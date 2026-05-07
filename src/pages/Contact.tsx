@@ -4,9 +4,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Seo } from "@/components/Seo";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,21 +20,31 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `proHIRE inquiry, ${formData.name}${formData.company ? " · " + formData.company : ""}`;
-    const body = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Company: ${formData.company}`,
-      `Role: ${formData.role}`,
-      `Inquiry: ${formData.inquiryType}`,
-      "",
-      "Message:",
-      formData.message,
-    ].join("\n");
-    const url = `mailto:cbetz@prohireresources.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = url;
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          role: formData.role,
+          inquiryType: formData.inquiryType || "general",
+          message: formData.message,
+        },
+      });
+      if (error) throw error;
+      setSent(true);
+      toast.success("Message sent. We'll be in touch within one business day.");
+      setFormData({ name: "", email: "", company: "", role: "", inquiryType: "", message: "" });
+    } catch (err: any) {
+      console.error("Contact form error:", err);
+      toast.error("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
