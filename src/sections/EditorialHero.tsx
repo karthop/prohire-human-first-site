@@ -12,17 +12,17 @@ export const EditorialHero = () => {
         <div className="max-w-3xl lg:max-w-2xl">
           <Reveal variant="fade" delay={50}>
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-8 font-sans">
-              Executive talent &amp; growth advisory
+              Executive search &amp; growth advisory
             </div>
           </Reveal>
           <SplitHeadline
             as="h1"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
-            text="Leadership talent and growth infrastructure for companies scaling with intent."
+            text="The right people, in the right roles, at the right time."
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
-              We partner with founder-led, PE-backed, and enterprise leadership teams to place senior talent, embed fractional executives, and accelerate revenue, human-first, AI-enhanced, outcome-accountable.
+              Executive search and growth advisory for founders, CEOs, and boards who can't afford the wrong hire. We work close to the decision, name the candidates by name, and stay in the seat with you through onboarding.
             </p>
           </Reveal>
           <Reveal variant="fade" delay={750}>
