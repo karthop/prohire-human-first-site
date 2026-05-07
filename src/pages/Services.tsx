@@ -150,12 +150,12 @@ export default function ServicesIndex() {
                 How clients use us
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                Common situations, configured engagements.
+                Common situations, real engagements.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-muted-foreground font-light text-lg leading-relaxed">
               These are the four shapes most engagements take. Yours will be specific. The
-              method is the same.
+              way we work is the same.
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">
