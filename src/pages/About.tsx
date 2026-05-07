@@ -1,7 +1,7 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 import chrisDogs from "@/assets/chris-dogs.png";
-import chrisHeadshot from "@/assets/chris-headshot.jpeg";
+import chrisHeadshot from "@/assets/chris-headshot.png";
 
 
 const principles = [
@@ -115,32 +115,12 @@ export default function About() {
               We work close to the decision, not adjacent to it.
             </p>
           </div>
-          <div
-            className="lg:col-span-4 !bg-transparent !border-0 !rounded-none !shadow-none !overflow-visible !p-0"
-            style={{
-              background: "transparent",
-              border: "none",
-              borderRadius: 0,
-              boxShadow: "none",
-              overflow: "visible",
-              padding: 0,
-            }}
-          >
+          <div className="lg:col-span-4" style={{ overflow: "visible" }}>
             <img
               src={chrisHeadshot}
               alt="Chris Betz, founder of proHIRE resources"
-              className="w-full h-auto block !border-0 !rounded-none !shadow-none !bg-transparent"
-              style={{
-                display: "block",
-                background: "transparent",
-                border: "none",
-                borderRadius: 0,
-                boxShadow: "none",
-                WebkitMaskImage: "radial-gradient(ellipse 65% 75% at 50% 40%, black 25%, rgba(0,0,0,0.5) 55%, transparent 75%)",
-                maskImage: "radial-gradient(ellipse 65% 75% at 50% 40%, black 25%, rgba(0,0,0,0.5) 55%, transparent 75%)",
-                maskComposite: "intersect",
-                WebkitMaskComposite: "source-in",
-              }}
+              className="w-full h-auto block"
+              style={{ display: "block", background: "transparent" }}
             />
           </div>
         </div>
