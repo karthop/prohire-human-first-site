@@ -121,11 +121,10 @@ export default function Insights() {
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Insights</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-            Field notes from twenty years of senior search and operator work.
+            The Work Behind the Hire.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            Short essays on the work itself: what changes when a senior hire lands, what
-            makes a growth motion durable, what makes a career move worth making.
+            Straight talk on why searches fail, how growth actually happens, and what makes a career move worth the risk.
           </p>
         </div>
       </section>
