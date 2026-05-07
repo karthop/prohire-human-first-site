@@ -1,6 +1,7 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 import chrisDogs from "@/assets/chris-dogs.png";
+import chrisHeadshot from "@/assets/chris-headshot.jpeg";
 
 
 const principles = [
@@ -101,17 +102,31 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground brush-texture">
-        <div className="container-editorial py-14 lg:py-12">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
-          <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-            Senior judgment, applied quietly, to the moves that matter most.
-          </h1>
-          <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
-            proHIRE resources is a boutique consulting and executive talent practice, built
-            for founders and operators who don't want a vendor, and don't need a generalist.
-            We work close to the decision, not adjacent to it.
-          </p>
+      <section className="text-primary-foreground brush-texture" style={{ backgroundColor: "#101E37" }}>
+        <div className="container-editorial py-14 lg:py-12 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-8">
+            <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
+            <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
+              Senior judgment, applied quietly, to the moves that matter most.
+            </h1>
+            <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
+              proHIRE resources is a boutique consulting and executive talent practice, built
+              for founders and operators who don't want a vendor, and don't need a generalist.
+              We work close to the decision, not adjacent to it.
+            </p>
+          </div>
+          <div className="lg:col-span-4" style={{ backgroundColor: "#101E37" }}>
+            <img
+              src={chrisHeadshot}
+              alt="Chris Betz, founder of proHIRE resources"
+              className="w-full h-auto"
+              style={{
+                objectFit: "cover",
+                maskImage: "radial-gradient(ellipse 75% 85% at 50% 38%, black 35%, transparent 100%)",
+                WebkitMaskImage: "radial-gradient(ellipse 75% 85% at 50% 38%, black 35%, transparent 100%)",
+              }}
+            />
+          </div>
         </div>
       </section>
 
