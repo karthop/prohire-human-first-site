@@ -115,15 +115,18 @@ export default function About() {
               We work close to the decision, not adjacent to it.
             </p>
           </div>
-          <div className="lg:col-span-4" style={{ backgroundColor: "#101E37" }}>
+          <div className="lg:col-span-4 overflow-visible">
             <img
               src={chrisHeadshot}
               alt="Chris Betz, founder of proHIRE resources"
               className="w-full h-auto"
               style={{
-                objectFit: "cover",
-                maskImage: "radial-gradient(ellipse 75% 85% at 50% 38%, black 35%, transparent 100%)",
-                WebkitMaskImage: "radial-gradient(ellipse 75% 85% at 50% 38%, black 35%, transparent 100%)",
+                display: "block",
+                background: "transparent",
+                maskImage: "radial-gradient(ellipse 70% 80% at 50% 35%, black 30%, transparent 100%)",
+                WebkitMaskImage: "radial-gradient(ellipse 70% 80% at 50% 35%, black 30%, transparent 100%)",
+                maskComposite: "intersect",
+                WebkitMaskComposite: "source-in",
               }}
             />
           </div>
