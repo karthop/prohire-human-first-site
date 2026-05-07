@@ -182,12 +182,13 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 text-sm font-medium hover:bg-primary-light transition-colors"
+              disabled={submitting}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 text-sm font-medium hover:bg-primary-light transition-colors disabled:opacity-60"
             >
-              Send inquiry <ArrowRight className="w-4 h-4" />
+              {submitting ? (<>Sending <Loader2 className="w-4 h-4 animate-spin" /></>) : (<>Send inquiry <ArrowRight className="w-4 h-4" /></>)}
             </button>
             <p className="text-xs text-muted-foreground">
-              Submitting opens a pre-filled email in your default mail client.
+              {sent ? "Message sent. We'll respond within one business day." : "We respond within one business day."}
             </p>
           </form>
         </div>
