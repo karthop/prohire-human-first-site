@@ -11,7 +11,7 @@ const principles = [
   },
   {
     title: "Operator's lens",
-    body: "Two decades inside revenue, delivery, and talent functions, at companies from Series A to Fortune 50. We've sat in the seats we now advise.",
+    body: "Two decades inside revenue, delivery, and hiring functions, at companies from Series A to Fortune 50. We have sat in the seats we now advise.",
   },
   {
     title: "Discretion as a default",
@@ -19,7 +19,7 @@ const principles = [
   },
   {
     title: "Candor with care",
-    body: "If we're not the right fit, we'll say so. If a search is mis-scoped, we'll re-scope it. The relationship outlasts the engagement.",
+    body: "If we are not the right fit, we will say so. If a search is mis-scoped, we will re-scope it. The relationship outlasts the engagement.",
   },
 ];
 
@@ -28,35 +28,35 @@ const chapters = [
     label: "Foundation",
     years: "2003–2014",
     title: "Learning the trade at scale.",
-    body: "Early years inside Randstad and Kelly Services , engineering staffing, executive accounts, and the mechanics of placing senior talent at velocity. Then PIC Group and NobleTek: marketing, business development, and global engineering services across automotive, aerospace, and industrial clients.",
-    learned: "Volume teaches you what the work is. Senior judgment teaches you what the work is for.",
+    body: "Early years inside two of the largest national staffing firms, running engineering staffing, executive accounts, and the mechanics of placing senior people at velocity. Then years on the BD and delivery side of global engineering services across automotive, aerospace, and industrial clients.",
+    learned: "Volume teaches you what the work is. Experience teaches you what the work is for.",
   },
   {
     label: "Senior delivery",
     years: "2014–2021",
     title: "Building practices, not just placements.",
-    body: "VP and Director-level roles across several global staffing and consulting firms , running BD and delivery for Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
-    learned: "The hardest work in talent isn't the placement. It's the system that makes the placement repeatable.",
+    body: "VP and Director-level roles across a series of global staffing and consulting firms, running BD and delivery for Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
+    learned: "The hardest work in hiring isn't the placement. It's the system that makes the placement repeatable.",
   },
   {
     label: "Inside the buyer",
     years: "2021–2022",
     title: "Two years at Amazon.",
-    body: "Senior Talent Acquisition Consultant for the Alexa product organization , Senior and Principal TPM hiring at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
-    learned: "The bar is not what you think it is. And once you've seen it, you can't un-see it.",
+    body: "Senior Talent Acquisition Consultant for the Alexa product organization, hiring Senior and Principal TPMs at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
+    learned: "The bar is not what you think it is. And once you have seen it, you can't un-see it.",
   },
   {
     label: "Revenue leadership",
     years: "2023–2024",
     title: "EVP of Sales for an NMSDC Award-winning MBE consulting firm.",
-    body: "A consulting engagement leading sales for a technology consulting firm , closing the loop between go-to-market strategy and the human capital required to execute it.",
-    learned: "Strategy without staffing is theater. The two cannot be separated.",
+    body: "A consulting engagement leading sales for a technology consulting firm, closing the loop between go-to-market strategy and the people required to execute it.",
+    learned: "Strategy without the right team is theater. The two cannot be separated.",
   },
   {
     label: "The practice today",
     years: "2021–Present",
     title: "proHIRE resources.",
-    body: "A boutique executive talent and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. Four integrated practices: Executive Search, Talent Solutions, Growth Acceleration, and Career Advisory.",
+    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. Four practices: Executive Search, Hiring & Workforce, Growth Acceleration, and Career Advisory.",
     learned: "The boutique model exists to do the work the larger firms have stopped doing.",
   },
 ];
@@ -89,8 +89,8 @@ const beliefs = [
   "You are more than a keyword search.",
   "Hiring is a leadership act, not a transaction.",
   "The best searches are scoped before they're sourced.",
-  "A fractional executive, well-placed, can outperform a full-time hire mis-placed.",
-  "Career capital compounds, but only when invested deliberately.",
+  "A fractional executive in the right seat will outperform a full-time hire in the wrong one.",
+  "A career compounds, but only when the moves are made deliberately.",
 ];
 
 export default function About() {
@@ -107,12 +107,13 @@ export default function About() {
           <div className="lg:col-span-8">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
             <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-              Senior judgment, applied quietly, to the moves that matter most.
+              We work close to the decision, not adjacent to it.
             </h1>
             <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
-              proHIRE resources is a boutique consulting and executive talent practice, built
-              for founders and operators who don't want a vendor, and don't need a generalist.
-              We work close to the decision, not adjacent to it.
+              proHIRE resources is a boutique executive search and advisory practice for
+              founders, CEOs, and boards who want an advisor in the room, not a vendor on
+              the call. Twenty years of knowing when to hire, when to restructure, and when
+              the answer is neither.
             </p>
           </div>
           <div className="lg:col-span-4" style={{ overflow: "visible" }}>
@@ -134,9 +135,9 @@ export default function About() {
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">Chris Betz</h2>
             <p className="mt-3 text-muted-foreground font-light">CEO, proHIRE resources LLC</p>
             <p className="mt-6 text-sm text-muted-foreground font-light leading-relaxed">
-              Atlanta-based. Twenty years at the intersection of executive search,
-              revenue leadership, and operator strategy, across Amazon, Randstad, Kelly,
-              and a series of global staffing and consulting firms.
+              Atlanta-based. Twenty years across executive search, revenue leadership, and
+              operator strategy, built inside Amazon and at some of the largest names in
+              global staffing and consulting.
             </p>
             <img
               src={chrisDogs}
@@ -163,12 +164,12 @@ export default function About() {
               through transitions where the wrong move costs a decade of compounding.
             </p>
             <p>
-              I have spent twenty years on every side of this work , staffing floors at
-              Randstad and Kelly, BD and delivery leadership across global staffing firms, senior
-              TPM hiring inside Amazon, and sales leadership in technology consulting. Each
-              of those seats taught the same lesson from a different angle: the firms that
-              get senior talent right are not the ones with the largest databases. They are
-              the ones with the most disciplined judgment.
+              I have spent twenty years on every side of this work, from staffing floors
+              at major national firms, to BD and delivery leadership across global staffing
+              and consulting groups, to senior TPM hiring inside Amazon, to sales leadership
+              in technology consulting. Each of those seats taught the same lesson from a
+              different angle: the firms that get senior hiring right are not the ones with
+              the largest databases. They are the ones with the most disciplined judgment.
             </p>
             <p>
               The boutique model exists to do the work the larger firms have stopped doing ,
@@ -212,9 +213,9 @@ export default function About() {
             </div>
             <div className="lg:col-span-7 lg:pt-4 text-muted-foreground font-light text-lg leading-relaxed">
               <p>
-                These aren't taglines. They are the filters we use to decide which engagements
-                to take, which candidates to introduce, and which advice to give, even when
-                the easier answer is more profitable.
+                These aren't taglines. They are the filters we use to decide which
+                engagements to take, which candidates to introduce, and which advice to
+                give, even when the easier answer is the more profitable one.
               </p>
             </div>
           </div>

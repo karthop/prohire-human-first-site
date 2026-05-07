@@ -13,21 +13,21 @@ export const FounderIntro = () => {
               Chris Betz
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed">
-              Atlanta-based. Twenty years at the intersection of executive search, growth
-              acceleration, and senior talent strategy.
+              Atlanta-based. Twenty years across executive search, growth advisory,
+              and senior hiring strategy.
             </p>
           </div>
 
           <div className="lg:col-span-7 space-y-6 text-foreground leading-relaxed font-light text-lg">
             <p>
-              Chris has led executive talent and revenue functions at Amazon, Randstad, Kelly,
-              and across a series of global staffing and consulting firms, supporting clients
-              from Series A startups to Fortune 50 enterprises.
+              Chris has led executive search and revenue functions inside Amazon and across
+              some of the largest names in global staffing and consulting, working with
+              companies from Series A startups to Fortune 50 enterprises.
             </p>
             <p>
-              Through proHIRE resources, he partners with CEOs, CFOs, and founders to place
-              senior talent, embed fractional CXOs, and execute the operational and revenue
-              plays that turn strategy into outcomes.
+              Through proHIRE resources, he works directly with CEOs, CFOs, and founders
+              on the hires, restructures, and revenue moves that decide what the next two
+              years actually look like.
             </p>
             <div className="pt-6 grid grid-cols-2 gap-4 text-sm border-t border-border">
               <div>

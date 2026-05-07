@@ -113,7 +113,7 @@ export default function Insights() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Insights | proHIRE resources"
-        description="Operator-level perspective on executive search, talent strategy, growth execution, and senior careers."
+        description="Plain-spoken notes on executive search, hiring, growth execution, and senior careers, from twenty years of doing the work."
       />
 
       {/* Hero */}
@@ -124,8 +124,8 @@ export default function Insights() {
             Field notes from twenty years of senior search and operator work.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            Short essays on the work itself , what changes a senior hire, what defines a
-            durable growth motion, what makes a career move worth making.
+            Short essays on the work itself: what changes when a senior hire lands, what
+            makes a growth motion durable, what makes a career move worth making.
           </p>
         </div>
       </section>

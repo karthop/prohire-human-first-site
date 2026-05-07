@@ -109,7 +109,7 @@ export const ServiceTemplate = ({
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Our position
+                Where we stand
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
                 Why this practice exists.
@@ -199,10 +199,10 @@ export const ServiceTemplate = ({
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <div className="lg:col-span-4">
                 <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                  How the work is done
+                  How the work gets done
                 </div>
                 <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                  Disciplines we hold ourselves to.
+                  How we hold ourselves to it.
                 </h2>
               </div>
             </div>
@@ -252,13 +252,13 @@ export const ServiceTemplate = ({
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <div className="lg:col-span-4">
                 <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                  Method on this practice
+                  How we run this work
                 </div>
                 <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
                   Discovery → Design → Execute → Embed.
                 </h2>
                 <p className="mt-4 text-muted-foreground font-light leading-relaxed">
-                  Our four-phase method, mapped to the texture of this work.
+                  The same four phases, applied to the texture of this work.
                 </p>
               </div>
               <div className="lg:col-span-8 divide-y divide-border border-y border-border">
@@ -287,13 +287,13 @@ export const ServiceTemplate = ({
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
-                Boundaries
+                What we say no to
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
                 What we will not do.
               </h2>
               <p className="mt-4 text-primary-foreground/75 font-light leading-relaxed">
-                Discipline shows up in what's declined, not just what's delivered.
+                What you say no to says more than what you sell.
               </p>
             </div>
             <ul className="lg:col-span-8 divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
@@ -316,15 +316,15 @@ export const ServiceTemplate = ({
           <div className="grid lg:grid-cols-12 gap-12 mb-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Engagement shapes
+                How we engage
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                How we engage
+                Ways to work together
               </h2>
             </div>
             <p className="lg:col-span-7 lg:col-start-6 text-muted-foreground font-light text-lg leading-relaxed">
               {engagementsNote ||
-                "Investment is engagement-specific and discussed in consultation. Engagements are modular by capability, with incentives for multi-month and annual partnerships."}
+                "Investment is engagement-specific and shared in conversation. Engagements compose by capability, with incentives for multi-month and annual partnerships."}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
@@ -365,10 +365,10 @@ export const ServiceTemplate = ({
         <section className="py-16 bg-primary text-primary-foreground brush-texture">
           <div className="container-editorial">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">
-              Representative outcomes
+              What clients have said
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl mb-16 max-w-3xl leading-tight">
-              What clients say after the work is done.
+              In their words, after the work was done.
             </h2>
             <div className="grid md:grid-cols-2 gap-px bg-primary-foreground/15">
               {outcomes.map((o) => (
@@ -389,8 +389,8 @@ export const ServiceTemplate = ({
       {faq && faq.length > 0 && <FaqList items={faq} />}
 
       <CTABand
-        title="Discuss a partnership."
-        body="Tell us where you're headed. We'll respond with a candid view of how, and whether, we can help."
+        title="Talk to us about a partnership."
+        body="Tell us where you're headed. We will respond with a candid view of how, and whether, we can help."
       />
 
       <div className="py-12 bg-background">

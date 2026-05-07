@@ -37,18 +37,18 @@ export default function Contact() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Contact | proHIRE resources"
-        description="Request a confidential executive consultation."
+        description="Start a confidential conversation. We respond within one business day."
       />
 
       <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Contact</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-3xl">
-            Request a confidential consultation.
+            Tell us what you're working on.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
-            Tell us where you're headed. We'll respond within one business day with a candid
-            view of how, and whether, we can help.
+            Send a few lines about where you are headed. We respond within one business day
+            with a candid view of how, and whether, we can help.
           </p>
         </div>
       </section>
@@ -142,7 +142,7 @@ export default function Contact() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="executive-search">Executive search / fractional CXO</SelectItem>
-                  <SelectItem value="talent-solutions">Talent solutions / RPO</SelectItem>
+                  <SelectItem value="talent-solutions">Hiring / embedded recruiting</SelectItem>
                   <SelectItem value="growth-acceleration">Growth acceleration / BD</SelectItem>
                   <SelectItem value="career-advisory">Career advisory (individual)</SelectItem>
                   <SelectItem value="partnership">Partnership / referral</SelectItem>

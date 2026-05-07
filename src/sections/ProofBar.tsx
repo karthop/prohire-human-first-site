@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 
 const stats = [
-  { value: "20", label: "Years in executive talent and growth" },
+  { value: "20", label: "Years in executive search and growth advisory" },
   { value: "$15M–$150B", label: "Client revenue range served" },
   { value: "Series A → F500", label: "From founders to Fortune 500" },
   { value: "30–60 days", label: "Typical time to first measurable impact" },

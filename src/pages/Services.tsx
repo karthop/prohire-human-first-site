@@ -7,25 +7,25 @@ const services = [
   {
     eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
-    body: "Retained search, fractional CXOs, and board advisory for inflection-point hires.",
+    body: "Retained search, fractional CXOs, and board advisory for the hires that decide the next two years.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "Talent Solutions",
-    title: "Strategic Talent & Workforce Solutions",
-    body: "Workforce architecture and specialized hiring across finance, technology, operations, and people functions.",
+    eyebrow: "Hiring & Workforce",
+    title: "Hiring & Workforce Strategy",
+    body: "Specialized hiring across finance, technology, operations, and people. Built for fast-growing teams that have outgrown a generic agency.",
     href: "/services/talent-solutions",
   },
   {
     eyebrow: "Growth Acceleration",
     title: "Revenue & Operational Acceleration",
-    body: "Senior BD execution, operating infrastructure, and partnership development on shorter time horizons.",
+    body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons.",
     href: "/services/growth-acceleration",
   },
   {
     eyebrow: "Career Advisory",
     title: "Career Advisory for Senior Professionals",
-    body: "Confidential one-to-one advisory for senior executives, board candidates, and post-exit operators.",
+    body: "Confidential, one-to-one advisory for senior executives, board candidates, and post-exit operators.",
     href: "/services/career-advisory",
   },
 ];
@@ -38,8 +38,8 @@ const integrations = [
   },
   {
     situation: "PE value-creation plan, year one",
-    play: "Talent Solutions + Operating Infrastructure",
-    body: "Build the finance and people functions on the new operating cadence the sponsor expects.",
+    play: "Hiring & Workforce + Operating Infrastructure",
+    body: "Build the finance and people teams on the cadence the sponsor expects.",
   },
   {
     situation: "Confidential CEO succession",
@@ -49,22 +49,22 @@ const integrations = [
   {
     situation: "Enterprise market entry",
     play: "Revenue Acceleration + Executive Search",
-    body: "Run the named-account play for two quarters; convert to a permanent enterprise leader once motion is real.",
+    body: "Run the named-account play for two quarters; convert to a permanent enterprise leader once the motion is real.",
   },
 ];
 
 const comparisons = [
   {
     title: "Vs. a traditional search firm",
-    body: "We are senior-led from intake to onboarding. No junior associates running the search behind a partner-fronted pitch. Scope is re-architected before sourcing begins.",
+    body: "We are senior-led from intake to onboarding. No junior associates running the search behind a partner-fronted pitch. Scope gets re-written before sourcing begins.",
   },
   {
     title: "Vs. a management consulting firm",
-    body: "We do not sell decks. Our deliverables are placed leaders, built functions, and closed accounts , measurable inside one or two quarters, not one or two years.",
+    body: "We do not sell decks. The deliverables are placed leaders, built teams, and closed accounts, measurable inside one or two quarters, not one or two years.",
   },
   {
     title: "Vs. a fractional marketplace",
-    body: "We are not a roster. Every fractional executive we place is matched against a written scope, referenced through our own protocols, and accountable to written milestones.",
+    body: "We are not a roster. Every fractional executive we place is matched to a written scope, referenced through our own protocols, and accountable to written milestones.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function ServicesIndex() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Services | proHIRE resources"
-        description="Four integrated practices , executive search, workforce solutions, revenue acceleration, and senior career advisory , for founders, boards, and senior leaders."
+        description="Four practices: executive search, hiring and workforce strategy, growth acceleration, and senior career advisory. For founders, boards, and senior leaders."
       />
 
       <section className="bg-primary text-primary-foreground brush-texture">
@@ -82,11 +82,11 @@ export default function ServicesIndex() {
             Services
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Four practices, configured to the moment.
+            Four practices, shaped to the moment you are in.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            We engage where senior judgment, network reach, and disciplined execution change
-            the outcome , not where a transactional vendor will do.
+            We engage where experienced judgment, real network reach, and disciplined
+            execution actually change the outcome, not where a transactional vendor will do.
           </p>
         </div>
       </section>
@@ -104,13 +104,13 @@ export default function ServicesIndex() {
           </div>
           <div className="lg:col-span-8 text-foreground text-lg font-light leading-relaxed space-y-4">
             <p>
-              Most of our engagements draw on more than one practice. A founder scaling toward a
-              capital event rarely needs a single placement; they need a leader, the function
+              Most engagements draw on more than one practice. A founder scaling toward a
+              capital event rarely needs a single placement. They need a leader, the team
               under that leader, and the operating cadence that holds it together.
             </p>
             <p>
-              The practices are designed to compose. We scope the situation first and configure
-              the engagement second , never the other way around.
+              The practices are designed to fit together. We scope the situation first and
+              configure the engagement second, never the other way around.
             </p>
           </div>
         </div>
@@ -150,12 +150,12 @@ export default function ServicesIndex() {
                 How clients use us
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                Common situations, configured engagements.
+                Common situations, real engagements.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-muted-foreground font-light text-lg leading-relaxed">
               These are the four shapes most engagements take. Yours will be specific. The
-              method is the same.
+              way we work is the same.
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">

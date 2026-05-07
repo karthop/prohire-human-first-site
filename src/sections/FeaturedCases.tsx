@@ -6,19 +6,19 @@ const cases = [
   {
     tag: "Series B · AI Platform",
     quote:
-      "proHIRE's integrated approach delivered immediate operational impact: 5 technical hires and complete BD function buildout in 60 days, generating $1.2M qualified pipeline in the first quarter.",
+      "Five technical hires and a built-out BD function in 60 days, with $1.2M of qualified pipeline in the first quarter. The work moved as fast as the company needed it to.",
     role: "Chief Technology Officer",
   },
   {
     tag: "Series C · FinTech",
     quote:
-      "Their fractional CRO brought proven expertise from scaling a competitor from $5M to $50M ARR. This wasn't staff augmentation, this was strategic leadership acquisition.",
+      "The fractional CRO they placed had already taken a comparable product from $5M to $50M ARR. That isn't a resume match, that is the right person walking in the door already knowing the play.",
     role: "Chief Executive Officer",
   },
   {
     tag: "Series A · MedTech",
     quote:
-      "Healthcare market access was our biggest challenge. proHIRE's network secured meetings with four target health systems in 30 days, relationships that would have taken 18 months to develop internally.",
+      "Health system access was the wall we kept hitting. Four target health systems agreed to meet inside 30 days, relationships that would have taken us a year and a half to build on our own.",
     role: "Chief Executive Officer",
   },
 ];

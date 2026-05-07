@@ -4,11 +4,11 @@ export default function CareerAdvisory() {
   return (
     <ServiceTemplate
       seoTitle="Career Advisory for Senior Professionals | proHIRE resources"
-      seoDescription="Confidential one-to-one career advisory for senior executives, board candidates, and operators navigating high-stakes transitions."
+      seoDescription="Confidential one-to-one advisory for senior executives, board candidates, and operators navigating high-stakes transitions."
       eyebrow="Career Advisory"
       title="Career Advisory for Senior Professionals"
-      lead="Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions , CXO moves, board candidacies, post-exit chapters, and the legacy-defining decisions that arrive without warning."
-      thesis="Senior careers compound. The wrong move costs a decade , not because the next role fails, but because every subsequent role gets recruited from the last one. The market does not give senior executives a structured way to make these decisions. Recruiters work for the company. Coaches work on personal development. Board networks are closed. Career advisory at this level is the work between those layers: the strategic positioning, the targeted activation, and the calibration of judgment that turns a transition into a deliberate move rather than a reactive one."
+      lead="Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions, CXO moves, board candidacies, post-exit chapters, and the legacy-defining decisions that arrive without warning."
+      thesis="Senior careers compound. The wrong move costs a decade, not because the next role fails, but because every role after that gets recruited from the last one. The market doesn't give senior executives a structured way to make these decisions. Recruiters work for the company. Coaches work on personal development. Board networks are closed. Career advisory at this level is the work between those layers: the positioning, the activation, and the calibration of judgment that turns a transition into a deliberate move rather than a reactive one."
       pointOfView="Senior careers should be designed years before they're needed. By the time the call comes, the work should already be done."
       whoFor={[
         "Sitting CXOs evaluating an inbound opportunity, an exit, or an internal succession",

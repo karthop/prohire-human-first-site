@@ -21,7 +21,7 @@ export default function Industries() {
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Industries</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Sector fluency across high-stakes, high-growth markets.
+            Sectors where the wrong hire costs the most.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
             Twenty years of placements and partnerships across the sectors most exposed to
@@ -42,8 +42,8 @@ export default function Industries() {
       </section>
 
       <CTABand
-        title="Talent and growth, sector-aware."
-        body="Bring us your industry context. We'll meet it with senior judgment, named-target sourcing, and disciplined execution."
+        title="Bring us your industry context."
+        body="We will meet it with experienced people, named-target sourcing, and disciplined work, not a generic pitch."
       />
     </div>
   );
