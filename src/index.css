@@ -141,35 +141,44 @@
     @apply max-w-6xl mx-auto px-6 lg:px-8;
   }
 
-  /* Brushstroke texture, applied over deep navy primary surfaces.
-     Two large, soft, low-contrast painterly sweeps in lighter blue,
-     plus a faint grain. Pointer-events disabled so it never blocks UI. */
-  .brush-texture { position: relative; isolation: isolate; }
+  /* Edge-to-edge brushstroke texture for deep navy primary surfaces.
+     The overlay is viewport-wide so it never creates a framed rectangle inside sections. */
+  .brush-texture { position: relative; isolation: isolate; overflow: hidden; }
   .brush-texture > * { position: relative; z-index: 1; }
   .brush-texture::before {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.55;
+    opacity: 0.62;
     background-image:
-      radial-gradient(ellipse 70% 38% at 12% 22%, hsl(var(--primary-glow) / 0.22), transparent 65%),
-      radial-gradient(ellipse 60% 30% at 88% 78%, hsl(var(--primary-glow) / 0.18), transparent 70%),
-      radial-gradient(ellipse 40% 24% at 65% 18%, hsl(var(--primary-glow) / 0.10), transparent 75%);
+      linear-gradient(104deg, transparent 0%, hsl(var(--primary-glow) / 0.08) 18%, hsl(var(--primary-glow) / 0.14) 34%, transparent 58%),
+      linear-gradient(76deg, hsl(var(--primary-glow) / 0.10) 0%, transparent 32%, hsl(var(--primary-glow) / 0.08) 74%, transparent 100%),
+      radial-gradient(ellipse 72% 42% at 18% 24%, hsl(var(--primary-glow) / 0.16), transparent 70%),
+      radial-gradient(ellipse 78% 36% at 92% 72%, hsl(var(--primary-glow) / 0.14), transparent 72%);
     mix-blend-mode: screen;
   }
   .brush-texture::after {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.18;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'><defs><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.04' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.72  0 0 0 0 0.95  0 0 0 0.9 0'/></filter></defs><g filter='url(%23r)'><path d='M -50 180 C 200 80, 520 260, 820 140 S 1250 220, 1300 160 L 1300 260 C 1000 320, 700 200, 400 300 S 50 260, -50 320 Z' fill='%23ffffff'/><path d='M -40 420 C 260 360, 560 500, 880 420 S 1280 460, 1320 420 L 1320 520 C 980 560, 660 460, 340 540 S 40 500, -40 540 Z' fill='%23ffffff'/></g></svg>");
-    background-size: 140% 100%;
+    opacity: 0.16;
+    background-image:
+      repeating-linear-gradient(91deg, hsl(var(--primary-foreground) / 0.05) 0 1px, transparent 1px 18px),
+      repeating-linear-gradient(2deg, hsl(var(--primary-foreground) / 0.035) 0 1px, transparent 1px 22px);
+    background-size: 100vw 100%, 100vw 100%;
     background-position: center;
-    background-repeat: no-repeat;
     mix-blend-mode: soft-light;
   }
 
