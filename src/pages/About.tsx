@@ -183,20 +183,9 @@ export default function About() {
               is execution.
             </p>
 
-            <div className="pt-8 mt-2 border-t border-border">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Off the clock
-              </div>
-              <p className="text-foreground font-light text-lg leading-relaxed">
-                Chris is a firm believer that the best work happens when you're
-                grounded at home. For him, that means time with his two rescues,
-                Charli, a girl Catahoula, and Leo, a boy Pit Mix. They're a
-                meaningful part of his daily rhythm and a large part of why he
-                has been a long-standing supporter of rescue adoption. There's a
-                grit and loyalty in a rescue dog that he has always admired, and
-                tried to carry into the work.
-              </p>
-            </div>
+            <p>
+              Chris is a firm believer that the best work happens when you're grounded at home. For him, that means time with his two rescues — Charlie, a Catahoula, and Leo, a Pit Mix. They're a meaningful part of his daily rhythm and a big reason he has been a long-standing supporter of rescue adoption. There's a grit and loyalty in a rescue dog that he has always admired, and he brings that same dedication to every client he works with.
+            </p>
           </div>
         </div>
       </section>
