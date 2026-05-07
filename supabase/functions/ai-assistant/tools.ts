@@ -79,9 +79,9 @@ export async function executeTool(name: string, args: any): Promise<string> {
       return JSON.stringify({
         services: [
           { name: "Executive Search & Leadership Advisory", path: "/services/executive-search" },
-          { name: "Strategic Talent & Workforce Solutions", path: "/services/talent-solutions" },
+          { name: "Hiring & Workforce Strategy", path: "/services/talent-solutions" },
           { name: "Revenue & Operational Acceleration", path: "/services/growth-acceleration" },
-          { name: "Career Advisory", path: "/services/career-advisory" },
+          { name: "Career Advisory for Senior Professionals", path: "/services/career-advisory" },
         ],
       });
     }
