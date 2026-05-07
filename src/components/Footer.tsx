@@ -13,8 +13,8 @@ export const Footer = () => {
               <span className="font-serif text-xl">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed font-light max-w-sm">
-              Executive talent and growth advisory. Boutique by design, human-first,
-              AI-enhanced, outcome-accountable.
+              Executive search and growth advisory. Boutique by design. Human-first,
+              AI-enhanced, accountable for the outcome.
             </p>
             <p className="text-primary-foreground/60 text-sm italic font-serif">
               "You are more than just a keyword search."
@@ -25,7 +25,7 @@ export const Footer = () => {
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Services</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search</Link></li>
-              <li><Link to="/services/talent-solutions" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Talent Solutions</Link></li>
+              <li><Link to="/services/talent-solutions" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Hiring &amp; Workforce</Link></li>
               <li><Link to="/services/growth-acceleration" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Growth Acceleration</Link></li>
               <li><Link to="/services/career-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Career Advisory</Link></li>
             </ul>
