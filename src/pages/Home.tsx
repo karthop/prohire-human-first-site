@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="min-h-screen pt-16 bg-background">
       <Seo
-        title="proHIRE resources, Executive Talent & Growth Advisory"
-        description="Leadership talent, fractional executives, and growth infrastructure for founder-led, PE-backed, and enterprise companies scaling with intent."
+        title="proHIRE resources, Executive Search & Growth Advisory"
+        description="Executive search and growth advisory for founders, CEOs, and boards who can't afford the wrong hire. Boutique by design, close to the decision."
       />
       <EditorialHero />
       <ProofBar />
