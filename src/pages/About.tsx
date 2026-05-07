@@ -107,7 +107,7 @@ export default function About() {
           <div className="lg:col-span-8">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
             <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-              We work close to the decision, not adjacent to it.
+              Twenty years on every side of the table.
             </h1>
             <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
               proHIRE resources is a boutique executive search and advisory practice for
