@@ -300,7 +300,7 @@ export default function About() {
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Beyond the practice</div>
-            <h2 className="font-serif text-3xl text-foreground leading-tight">Networks &amp; civic</h2>
+            <h2 className="font-serif text-3xl text-foreground leading-tight">Networks &amp; Civic</h2>
             <p className="mt-4 text-muted-foreground font-light leading-relaxed">
               The communities and boards that keep the work honest, current, and connected to
               the city we call home.
