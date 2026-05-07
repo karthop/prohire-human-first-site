@@ -5,28 +5,28 @@ const phases = [
   {
     n: "01",
     h: "Discovery",
-    b: "We open with a confidential, structured conversation , not a pitch and not a discovery call dressed up as one. We listen for the underlying objective behind the brief: what the engagement must deliver in twelve months, what is non-negotiable, and what was put in writing because no one wanted to argue about it. Most engagements get re-scoped at this stage; that is the value.",
+    b: "We open with a real conversation, not a pitch and not a discovery call dressed up as one. We listen for what the engagement actually has to deliver in twelve months, what is non-negotiable, and what was written down because no one wanted to argue about it. Most engagements get re-scoped here. That is the value.",
     deliverable: "A written situation summary and a pressure-tested scope.",
-    excludes: "We will not accept an engagement we believe is mis-scoped without re-writing it first.",
+    excludes: "We will not take an engagement we believe is mis-scoped without re-writing it first.",
   },
   {
     n: "02",
     h: "Design",
-    b: "We design the engagement on paper before any work starts. Target profile or capability set, sourcing or execution thesis, named stakeholders, success metrics, investment shape, and timeline. The document is the contract , every subsequent decision references it.",
+    b: "We design the engagement on paper before any work starts. Target profile, sourcing thesis, named stakeholders, success metrics, investment shape, and timeline. The document is the contract. Every decision after this references it.",
     deliverable: "An engagement plan, signed by client and firm, that governs the work.",
     excludes: "We do not begin sourcing or execution until the plan is signed.",
   },
   {
     n: "03",
     h: "Execute",
-    b: "Senior-led execution against the plan. Named-target sourcing, structured stakeholder process, deep referencing , or for operating engagements, embedded delivery and named-account execution. Weekly working session with the client team, written milestone notes at the end of every week.",
-    deliverable: "Calibrated shortlists, placed leaders, closed motion, or stood-up functions , depending on the engagement.",
-    excludes: "We do not staff junior operators against senior mandates.",
+    b: "Senior-led work against the plan. Named-target sourcing, structured stakeholder process, deep referencing, or for operating engagements, embedded delivery and named-account work. One scheduled working session each week, written milestone notes at the end of every week.",
+    deliverable: "Calibrated shortlists, placed leaders, closed motion, or stood-up functions, depending on the engagement.",
+    excludes: "We do not put junior people on senior mandates.",
   },
   {
     n: "04",
     h: "Embed",
-    b: "Onboarding, integration, and 30-, 60-, and 90-day check-ins with both the placement and the hiring executive. For operating engagements, hand-off plans to internal teams and the next full-time hire. The work is only finished when the impact compounds after we step back.",
+    b: "Onboarding, integration, and 30-, 60-, and 90-day check-ins with both the placement and the hiring executive. For operating engagements, hand-off plans to the internal team and the next full-time hire. The work is only finished when the impact holds after we step back.",
     deliverable: "A documented hand-off and structured post-engagement check-ins.",
     excludes: "We do not disappear at offer signing or at engagement close.",
   },
@@ -35,26 +35,26 @@ const phases = [
 const principles = [
   {
     h: "Human-first.",
-    b: "Senior judgment over volume. Relationships over transactions. Discretion is not a feature; it is the practice.",
+    b: "Real judgment over volume. Real relationships over transactions. Discretion is not a feature, it is the practice.",
   },
   {
     h: "AI-enhanced.",
-    b: "Modern tooling for sourcing, screening, and market intelligence , applied where it sharpens decisions, never where it replaces judgment.",
+    b: "Modern tooling for sourcing, screening, and market intelligence, used where it sharpens a decision, never where it replaces one.",
   },
   {
-    h: "Outcome-accountable.",
-    b: "We commit to measurable outcomes, transparent investment shapes, and the candor to tell a client when we are not the right partner.",
+    h: "Accountable for the outcome.",
+    b: "We commit to outcomes you can measure, investment shapes you can read, and the candor to tell you when we are not the right partner.",
   },
 ];
 
 const pricingPrinciples = [
   {
-    h: "Transparent shapes, never published rates.",
-    b: "We use a small set of clear engagement shapes , Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in consultation, not advertised. Premium positioning and published rate cards do not coexist.",
+    h: "Clear shapes, never published rates.",
+    b: "We use a small set of clear engagement shapes: Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in conversation, not advertised. Premium positioning and published rate cards do not coexist.",
   },
   {
     h: "Modular by capability.",
-    b: "Engagements compose by practice and by workstream. Clients pay for the capability they engage, with bundled incentives for multi-month and annual commitments.",
+    b: "Engagements compose by practice and by workstream. You pay for the capability you actually use, with bundled incentives for multi-month and annual commitments.",
   },
   {
     h: "Shared accountability.",
@@ -66,7 +66,7 @@ const cadence = [
   { h: "Weekly working session", b: "One scheduled hour with the client team to drive execution, surface blockers, and review progress against the written plan." },
   { h: "Written milestone notes", b: "End-of-week notes capturing what shipped, what is at risk, and what changes for next week. No verbal-only updates." },
   { h: "Monthly steering check-in", b: "One scheduled hour with the CEO or executive sponsor for higher-altitude review and re-scoping decisions." },
-  { h: "Quarterly review", b: "A formal review against the engagement's written success metrics. Honest grading, with engagement adjustments made on paper, not by drift." },
+  { h: "Quarterly review", b: "A formal review against the engagement's written success metrics. Honest grading, with adjustments made on paper, not by drift." },
 ];
 
 const networks = [
@@ -80,7 +80,7 @@ const networks = [
   },
   {
     name: "FinTech Atlanta",
-    body: "Sector advocacy and ecosystem access for fintech-adjacent engagements , capital, regulatory voice, and sector-specific candidate reach.",
+    body: "Sector advocacy and ecosystem access for fintech-adjacent engagements: capital, regulatory voice, and sector-specific candidate reach.",
   },
   {
     name: "Inspiredu",
