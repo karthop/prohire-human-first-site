@@ -18,11 +18,11 @@ export const EditorialHero = () => {
           <SplitHeadline
             as="h1"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
-            text="Executive search is an art, not a database query."
+            text="The art of the search is only half of it."
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
-              Executive search and growth advisory for founders, CEOs, and boards who can't afford the wrong hire. We work close to the decision, name the candidates by name, and stay in the seat with you through onboarding.
+              From fractional executives to hard-to-fill searches to building an entire department from scratch, we sit with you before the job description exists, shape the engagement around what the business actually needs, and stay involved through day ninety.
             </p>
           </Reveal>
           <Reveal variant="fade" delay={750}>
