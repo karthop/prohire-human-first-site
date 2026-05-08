@@ -60,6 +60,10 @@ const App = () => (
               {/* Legacy redirects */}
               <Route path="/employers" element={<Navigate to="/services/talent-solutions" replace />} />
               <Route path="/professionals" element={<Navigate to="/services/career-advisory" replace />} />
+              <Route path="/talent-areas" element={<Navigate to="/services" replace />} />
+              <Route path="/networking-strategies" element={<Navigate to="/insights" replace />} />
+              <Route path="/dei-mindful-humans" element={<Navigate to="/about" replace />} />
+              <Route path="/resume-cover-letter-writing" element={<Navigate to="/services/career-advisory" replace />} />
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
           </Suspense>
