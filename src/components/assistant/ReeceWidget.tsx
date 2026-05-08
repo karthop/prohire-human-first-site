@@ -203,7 +203,7 @@ export function ReeceWidget() {
                 )}
               >
                 {m.role === "assistant" ? (
-                  <div className="prose prose-sm max-w-none prose-p:my-2 prose-a:text-primary prose-a:underline prose-strong:text-foreground">
+                  <div className="prose prose-sm max-w-none prose-p:my-2 prose-a:text-primary prose-a:font-medium prose-a:underline prose-a:underline-offset-2 prose-a:decoration-primary/60 hover:prose-a:decoration-primary prose-strong:text-foreground">
                     {m.content ? (
                       <ReactMarkdown>{m.content}</ReactMarkdown>
                     ) : (
