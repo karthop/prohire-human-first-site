@@ -63,7 +63,11 @@ export const Navigation = () => {
             >
               Contact
             </Link>
+            <ThemeToggle className="ml-1" />
           </div>
+
+          <div className="lg:hidden flex items-center gap-1">
+            <ThemeToggle />
 
           <button
             type="button"
