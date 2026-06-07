@@ -49,10 +49,6 @@ export const PillarGrid = () => {
                 to={p.href}
                 className="group bg-background p-8 lg:p-10 hover:bg-secondary/50 transition-colors duration-500 flex flex-col h-full"
               >
-                <div className="rule-grow text-accent mb-6" />
-                <div className="text-xs uppercase tracking-[0.18em] text-accent mb-4">
-                  {p.eyebrow}
-                </div>
                 <h3 className="font-serif text-2xl leading-snug text-foreground mb-4 transition-colors duration-300 group-hover:text-accent">
                   {p.title}
                 </h3>
