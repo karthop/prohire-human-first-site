@@ -1,47 +1,83 @@
-## Goal
+## What this does, in plain terms
 
-1. Add three new evergreen articles to the Field Notes page, written from a 2026 vantage point, grounded in current research and specific to proHIRE resources' service lines and ideal clients.
-2. Remove every em-dash (—) and en-dash (–) from visible copy across the entire site, replacing each with the punctuation that best preserves the sentence (period, comma, colon, parentheses).
+Right now your site has two separate content sections that confuse the reader: Field Notes (research-backed pieces) and Insights (operator-voice pieces). This consolidates both into one place called **What We're Seeing**, accessible from a single nav item. Every existing article moves over, nothing is rewritten or lost. Each article picks up two small tags: one telling the reader what kind of piece it is, one telling them who it's written for. Readers can filter by either, or just scroll the whole feed.
 
-## Three new articles
+## Navigation change
 
-All four existing articles stay as-is (aside from dash removal). Three new entries get appended to the `articles` array in `src/pages/FieldNotes.tsx`.
+In `src/components/Navigation.tsx` and `src/components/Footer.tsx`:
+- Remove the two separate links: "Insights" and "Field Notes."
+- Replace with one link: **What We're Seeing** pointing to `/what-were-seeing`.
 
-**Article 5 — "Why the next search you run should not go to a brand-name firm."**
-- Category: Search
-- Angle: The structural case for boutique executive search in 2026. The large global firms have scaled into a volume model with off-limits constraints that block half their own network, junior associates running the actual search, and standardized scorecards that flatten what makes a senior hire actually work. Boutique firms own the engagement end-to-end with a senior operator, hold a far smaller off-limits list, and earn the role of advisor rather than vendor.
-- 2026 grounding: AESC and Hunt Scanlon market data on the continued share shift from global firms to boutique and specialized practices through 2024 and 2025; the off-limits math (a firm that places 800 executives a year at Fortune 1000 companies cannot recruit from any of them for two years); the senior-led delivery question that nearly every search RFP in 2025 started asking; cost-per-placement comparisons that no longer favor the global firms once retainer plus equity-style backend fees are normalized.
+In `src/App.tsx`:
+- Add a route `/what-were-seeing` rendering a new `WhatWereSeeing` page.
+- Keep old `/insights` and `/field-notes` routes as redirects to `/what-were-seeing` so any existing inbound links still work.
 
-**Article 6 — "Hiring a senior leader in 2026 takes 94 days. Most of that is not searching."**
-- Category: Talent
-- Angle: Time-to-hire data for executive and senior roles has not improved despite AI sourcing. The bottleneck moved. Scope iteration, interview choreography across distributed decision-makers, compensation negotiation in a comp-compressed market, and reference verification (post-synthetic-candidate era) now consume more time than candidate identification ever did. The leaders who shorten the cycle do specific things differently.
-- 2026 grounding: LinkedIn and Workable 2025 time-to-hire benchmarks (senior roles trending 80-100+ days); the AI-sourcing-doesn't-fix-time paradox; Gartner data on interview-loop bloat; the rise of "second offer" attrition where a hired exec resigns inside 90 days because comp benchmarking moved during the search.
+## The new page
 
-**Article 7 — "Statement of work is the engagement model nobody is asking for, and most companies need."**
-- Category: Fractional
-- Angle: Beyond retained search and fractional leadership, an SOW-based engagement (scoped deliverable, fixed fee, defined outcome, time-bound) is increasingly the right shape for one-off senior interventions: a single VP search bundled with onboarding through day 90, a leadership team assessment, a comp framework rebuild, a succession plan for the top two layers. Most firms do not offer it because it caps revenue. proHIRE resources will. This article explains when SOW is the right model and when retained or fractional still wins.
-- 2026 grounding: Procurement trends in mid-market and PE-backed companies pushing every advisory spend toward defined-scope SOW; the shift away from open-ended retainers in legal, consulting, and now talent advisory; the practical comparison matrix (retained vs. fractional vs. SOW) by trigger event.
+New file `src/pages/WhatWereSeeing.tsx` (the existing FieldNotes.tsx and Insights.tsx files get deleted once the merge is in place).
 
-Each article matches the existing schema: `id`, `title`, `dek`, `category`, `readTime`, `excerpt`, `body[]`. Length and structure mirror the existing four. No publish dates. Categories already exist in the filter row, so no UI changes needed.
+**Hero / opening:**
+- Eyebrow: "What We're Seeing"
+- Headline: "Thinking on talent, leadership, and the work of building great organizations."
+- Sub-line (one sentence, restrained): "Grounded observations on hiring, executive search, and leadership from a firm actively doing the work."
 
-## Em-dash and en-dash removal
+That's it for framing. No further explanation.
 
-A site-wide pass on all visible-copy `.tsx` files under `src/pages/`, `src/sections/`, `src/components/`, and any data files that feed copy. Each occurrence reviewed individually so the replacement reads naturally:
-- Em-dash separating two independent thoughts → period and new sentence.
-- Em-dash setting off a parenthetical → comma pair or parentheses.
-- Em-dash before a list or punchline → colon.
-- En-dash in number ranges (e.g., "2024–2025") → hyphen ("2024-2025").
+**Article feed:**
+- Single unified list of all 13 articles (7 from Field Notes, 6 from Insights).
+- Each card shows: title, dek, two small tag pills (content type + audience), and an expand-to-read interaction matching the existing Field Notes/Insights collapsible pattern.
+- No read-time labels. No publish dates surfaced as primary metadata (the dates on Insights pieces can stay in the data but won't be displayed prominently, to match how Field Notes already behaves).
 
-Files certain to need edits based on the existing codebase pattern: `FieldNotes.tsx`, `Insights.tsx`, `Services.tsx`, `Industries.tsx`, `Approach.tsx`, `About.tsx`, `Home.tsx`, the service sub-pages, and any shared sections (`CTABand`, hero components, footer copy). A grep for `—` and `–` will catch the full set before edits start.
+**Filter row (above the feed):**
+- Two filter groups, both optional, both default to "All":
+  - **Type:** All · Analysis · Perspective
+  - **Audience:** All · Executive Leadership · HR & Talent · Hiring & Management
+- Filters combine (AND). Default state shows every article.
+- Visual style matches the existing pill-filter pattern already used on Insights/Field Notes so nothing feels new.
+
+## Tag assignments
+
+Content-type tag: **Analysis** = research/data-backed (current Field Notes pieces). **Perspective** = first-person operator voice (current Insights pieces).
+
+Audience tag is assigned per piece based on who the article actually speaks to:
+
+| Article | Type | Audience |
+|---|---|---|
+| The CFO seat won't stay filled | Analysis | Executive Leadership |
+| AI didn't replace the recruiter | Analysis | HR & Talent |
+| Fractional is no longer a bridge | Analysis | Executive Leadership |
+| The return-to-office fight is over | Analysis | HR & Talent |
+| Why the next search you run should not go to a brand-name firm | Analysis | Executive Leadership |
+| Hiring a senior leader in 2026 takes 94 days | Analysis | Hiring & Management |
+| Statement of work is the engagement model nobody is asking for | Analysis | Executive Leadership |
+| The end of keyword search | Perspective | Executive Leadership |
+| Fractional, full-time, or none of the above | Perspective | Executive Leadership |
+| Onboarding is the search | Perspective | Hiring & Management |
+| Scope before sourcing | Perspective | Hiring & Management |
+| Hiring through a capital event | Perspective | Executive Leadership |
+| Career capital | Perspective | Executive Leadership |
+
+## Data model
+
+A single `articles` array in `WhatWereSeeing.tsx` with this shape:
+
+```
+{ id, title, dek, body: string[], type: 'Analysis' | 'Perspective',
+  audience: 'Executive Leadership' | 'HR & Talent' | 'Hiring & Management' }
+```
+
+The old `category` and `readTime` fields are dropped from the displayed UI. Body content is copied over verbatim from both source files. No copy is rewritten.
+
+## Punctuation pass
+
+Everything new gets a final em-dash and en-dash scrub per the existing project rule. No em dashes, no en dashes anywhere in the new page or the nav/footer label.
+
+## Memory update
+
+Update `mem://index.md` core rules to replace the two-section model with the single hub, so future work doesn't accidentally re-split the content.
 
 ## Out of scope
 
-- No design, layout, routing, or navigation changes.
-- No changes to the existing four Field Notes articles other than dash removal.
-- No changes to logo, fonts, colors, or component structure.
-
-## Technical notes
-
-- Edits are confined to `src/pages/FieldNotes.tsx` (new articles + dash removal) plus dash-only edits across other copy files.
-- Article body paragraphs are plain strings in the existing array; no new dependencies, no schema changes.
-- The category filter already includes Search, Talent, Fractional, Workplace; the three new articles fall into Search, Talent, and Fractional respectively.
+- No rewriting of any article body.
+- No design system, color, or typography changes.
+- No changes to other pages.

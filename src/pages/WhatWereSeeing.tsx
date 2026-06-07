@@ -4,16 +4,16 @@ import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
-type Category = "Search" | "Talent" | "Fractional" | "Workplace";
+type ContentType = "Analysis" | "Perspective";
+type Audience = "Executive Leadership" | "HR & Talent" | "Hiring & Management";
 
 interface Article {
   id: string;
   title: string;
   dek: string;
-  category: Category;
-  readTime: string;
-  excerpt: string;
   body: string[];
+  type: ContentType;
+  audience: Audience;
 }
 
 const articles: Article[] = [
@@ -21,10 +21,8 @@ const articles: Article[] = [
     id: "cfo-seat",
     title: "The CFO seat won't stay filled.",
     dek: "Finance chiefs are turning over at the fastest pace in two decades, and the bench underneath them is thinner than most boards believe.",
-    category: "Search",
-    readTime: "6 min",
-    excerpt:
-      "The Crist Kolder Volatility Report has tracked Fortune 500 and S&P 500 CFO turnover every year since 2005. The 2024 reading came in at 18.5%, the highest rate they have ever recorded, and the 2025 update kept the number in that same elevated band. Average tenure is now hovering at roughly 4.7 years and falling. This is not a blip.",
+    type: "Analysis",
+    audience: "Executive Leadership",
     body: [
       "The Crist Kolder Volatility Report has tracked Fortune 500 and S&P 500 CFO turnover every year since 2005. The 2024 reading came in at 18.5%, the highest rate they have ever recorded, and the 2025 update kept the number in that same elevated band. Average tenure is now hovering at roughly 4.7 years and falling. This is not a blip.",
       "Russell Reynolds' quarterly CFO Turnover Index has been telling the same story from a different vantage point: announced CFO departures across the S&P 500, FTSE 100, ASX 200, and CAC 40 hit multi-year highs through 2024 and have not meaningfully cooled. The pattern is consistent across geography and sector, which makes the usual explanations insufficient. One bad industry or one capital cycle does not account for it.",
@@ -38,10 +36,8 @@ const articles: Article[] = [
     id: "ai-shortlist",
     title: "AI didn't replace the recruiter. It replaced the shortlist.",
     dek: "What generative AI has actually changed inside senior hiring, and the new failure modes nobody is putting on a slide.",
-    category: "Talent",
-    readTime: "7 min",
-    excerpt:
-      "LinkedIn's 2025 Future of Recruiting report found that 73% of talent acquisition professionals now consider AI a top priority and 37% are actively integrating it into sourcing and screening. SHRM's 2024 and 2025 data shows roughly one in four U.S. employers using AI somewhere in their hiring workflow, concentrated in sourcing, resume screening, and interview scheduling. The sourcing layer has effectively collapsed in cost and speed. That is the real change. Almost everything else being sold as 'AI in hiring' is downstream of it.",
+    type: "Analysis",
+    audience: "HR & Talent",
     body: [
       "LinkedIn's 2025 Future of Recruiting report found that 73% of talent acquisition professionals now consider AI a top priority and 37% are actively integrating it into sourcing and screening. SHRM's 2024 and 2025 data shows roughly one in four U.S. employers using AI somewhere in their hiring workflow, concentrated in sourcing, resume screening, and interview scheduling. The sourcing layer has effectively collapsed in cost and speed. That is the real change. Almost everything else being sold as 'AI in hiring' is downstream of it.",
       "For senior roles, the collapse cuts both ways. Identifying a long list of plausibly qualified candidates is now a commodity. So is writing an outreach sequence, drafting a job description, and producing a competency-mapped scorecard. The work that used to fill the first three weeks of a search now fills the first three days.",
@@ -57,10 +53,8 @@ const articles: Article[] = [
     id: "fractional-permanent",
     title: "Fractional is no longer a bridge.",
     dek: "The fractional executive market has crossed a line. For a growing share of mid-market and PE-backed companies, it is the operating model, not the gap before one.",
-    category: "Fractional",
-    readTime: "5 min",
-    excerpt:
-      "The shift is most visible in three seats: CMO, CFO, and Chief People Officer. Industry trackers including Chief Outsiders and BTA's fractional executive surveys put the U.S. fractional executive population in the tens of thousands and growing at double-digit rates year over year. Harvard Business Review's 2024 coverage of the fractional C-suite framed it as a structural rather than cyclical shift, and the pattern through 2025 has confirmed that read.",
+    type: "Analysis",
+    audience: "Executive Leadership",
     body: [
       "The shift is most visible in three seats: CMO, CFO, and Chief People Officer. Industry trackers including Chief Outsiders and BTA's fractional executive surveys put the U.S. fractional executive population in the tens of thousands and growing at double-digit rates year over year. Harvard Business Review's 2024 coverage of the fractional C-suite framed it as a structural rather than cyclical shift, and the pattern through 2025 has confirmed that read.",
       "The reasons are not mysterious. Senior talent burned by 2022 and 2023 layoffs is unwilling to re-bet on a single employer. Companies between $10M and $150M in revenue cannot afford a full-time CXO at current comp benchmarks but cannot grow without that caliber of judgment. Capital constraints have made every full-time senior hire a 12-month commitment the CEO does not want to make until the motion is proven.",
@@ -74,10 +68,8 @@ const articles: Article[] = [
     id: "rto-retention",
     title: "The return-to-office fight is over. The retention fight isn't.",
     dek: "RTO mandates have largely landed. The senior attrition they triggered is the part most leadership teams are still under-counting.",
-    category: "Workplace",
-    readTime: "6 min",
-    excerpt:
-      "By mid-2025, Resume Builder's tracking showed roughly 9 in 10 companies that wanted employees back in the office had implemented a mandate, with full five-day-in-office requirements rising sharply through the year. KPMG's 2024 CEO Outlook found 83% of CEOs expected a full return within three years, and most are now executing on that view. The mandate fight is, functionally, over. What it produced is a quieter, more expensive problem.",
+    type: "Analysis",
+    audience: "HR & Talent",
     body: [
       "By mid-2025, Resume Builder's tracking showed roughly 9 in 10 companies that wanted employees back in the office had implemented a mandate, with full five-day-in-office requirements rising sharply through the year. KPMG's 2024 CEO Outlook found 83% of CEOs expected a full return within three years, and most are now executing on that view. The mandate fight is, functionally, over. What it produced is a quieter, more expensive problem.",
       "The data on senior-level attrition tied to RTO is now solid enough to take seriously. A widely-cited University of Pittsburgh and Baylor study of S&P 500 firms found that companies implementing strict RTO mandates experienced significantly higher turnover among senior, longer-tenured, and higher-skilled employees, and notably slower backfilling. Gartner's 2024 research put the threatened attrition rate at around 35% among high-performers in companies with full-time office mandates. Gallup's State of the Global Workplace shows employee engagement at a decade low, with managers (the layer that actually holds the operating model together) hit hardest.",
@@ -90,10 +82,8 @@ const articles: Article[] = [
     id: "boutique-vs-brand",
     title: "Why the next search you run should not go to a brand-name firm.",
     dek: "The structural advantages of boutique executive search compounded through 2024 and 2025. Going into 2026, the math on the global firms has stopped working for most mid-market and PE-backed mandates.",
-    category: "Search",
-    readTime: "6 min",
-    excerpt:
-      "Hunt Scanlon's 2025 market data shows the boutique and specialized segment of executive search continuing to take share from the global brands for the fifth consecutive year. AESC's own membership reporting tells the same story from inside the industry: the fastest growth is at firms under 50 consultants, not at the names every board still defaults to. There is a structural reason for it, and most search committees only discover it after the second failed engagement.",
+    type: "Analysis",
+    audience: "Executive Leadership",
     body: [
       "Hunt Scanlon's 2025 market data shows the boutique and specialized segment of executive search continuing to take share from the global brands for the fifth consecutive year. AESC's own membership reporting tells the same story from inside the industry: the fastest growth is at firms under 50 consultants, not at the names every board still defaults to. There is a structural reason for it, and most search committees only discover it after the second failed engagement.",
       "Start with off-limits. The global firms run a placement volume that mathematically blocks them from recruiting at the companies they serve. A firm that places hundreds of executives a year across the Fortune 1000 cannot touch any of those companies' talent for 12 to 24 months under standard off-limits clauses. By 2025, that effectively removed a meaningful slice of the senior talent universe from those firms' addressable pool. Boards rarely ask the question on the front end. They feel it on the back end when the shortlist is thinner than the brand suggested.",
@@ -107,10 +97,8 @@ const articles: Article[] = [
     id: "time-to-hire",
     title: "Hiring a senior leader in 2026 takes 94 days. Most of that is not searching.",
     dek: "Time-to-hire for senior roles has not improved despite AI sourcing. The bottleneck moved. The companies shortening the cycle are doing specific things, and almost none of it has to do with technology.",
-    category: "Talent",
-    readTime: "6 min",
-    excerpt:
-      "LinkedIn's 2025 Talent Trends and Workable's benchmark data both put median time-to-fill for senior and executive roles in the 80 to 100 day range, and rising. AI has compressed the sourcing layer by an order of magnitude, but total cycle time has barely moved. That is the paradox everyone in talent acquisition is quietly grappling with. The bottleneck is not finding people. It has not been finding people for two years.",
+    type: "Analysis",
+    audience: "Hiring & Management",
     body: [
       "LinkedIn's 2025 Talent Trends and Workable's benchmark data both put median time-to-fill for senior and executive roles in the 80 to 100 day range, and rising. AI has compressed the sourcing layer by an order of magnitude, but total cycle time has barely moved. That is the paradox everyone in talent acquisition is quietly grappling with. The bottleneck is not finding people. It has not been finding people for two years.",
       "Four things actually consume the calendar.",
@@ -126,10 +114,8 @@ const articles: Article[] = [
     id: "sow-engagement",
     title: "Statement of work is the engagement model nobody is asking for, and most companies need.",
     dek: "Retained search and fractional leadership are not the only two shapes a senior talent engagement can take. For a specific class of problem, a defined-scope SOW is the right answer, and almost no firm offers it because it caps revenue.",
-    category: "Fractional",
-    readTime: "6 min",
-    excerpt:
-      "Procurement has spent the last three years pushing every category of advisory spend (legal, consulting, technology, and now talent) toward defined-scope, fixed-fee engagements. The pattern is clearest at PE-backed and mid-market companies, where open-ended retainers no longer survive a portfolio review. Talent advisory is the last category to feel it, and 2026 is the year the question gets asked at most search RFP meetings: can we do this as an SOW instead?",
+    type: "Analysis",
+    audience: "Executive Leadership",
     body: [
       "Procurement has spent the last three years pushing every category of advisory spend (legal, consulting, technology, and now talent) toward defined-scope, fixed-fee engagements. The pattern is clearest at PE-backed and mid-market companies, where open-ended retainers no longer survive a portfolio review. Talent advisory is the last category to feel it, and 2026 is the year the question gets asked at most search RFP meetings: can we do this as an SOW instead?",
       "The short answer is yes, for a specific class of problem, and most firms will not offer it because the model caps revenue. A retained search bills as a percentage of comp regardless of how hard the work actually was. An SOW bills for the scope you actually agreed to. The economics favor the buyer when the scope is well-defined and the firm when the scope is genuinely ambiguous. Honest firms tell you which one you have before quoting.",
@@ -143,68 +129,172 @@ const articles: Article[] = [
       "For VPs of HR and CFOs sitting on advisory budgets in 2026, the practical move is to stop asking 'retained or fractional?' and start asking 'what is the smallest, cleanest scope of work that gets us the outcome we actually need?' For a meaningful share of senior talent problems, the honest answer is an SOW that no one has offered you yet.",
     ],
   },
+  {
+    id: "end-of-keyword-search",
+    title: "The end of keyword search.",
+    dek: "Why committed executive search has to re-earn its premium, and what that actually looks like in practice.",
+    type: "Perspective",
+    audience: "Executive Leadership",
+    body: [
+      "A lot of what is sold as committed or strategic executive search today is a sourcing motion dressed up in advisory language. A database query, a partner-fronted pitch, and a junior team running the actual work behind the curtain. It is worth naming, because plenty of firms still do the work the right way and they are getting confused with the firms that do not.",
+      "Boards are starting to notice. The premium fee survived as long as two assumptions held: that the firm's network was meaningfully closed, and that its judgment was meaningfully experienced. Both assumptions are now testable. LinkedIn made the first one transparent. AI sourcing tools made the second one auditable. A fair number of firms struggle with the test.",
+      "The work that justifies the fee is not the sourcing. It is the scope architecture at intake, the deep referencing through actual relationships rather than supplied lists, the candid read on candidates the client likes for the wrong reasons, and the stakeholder choreography around a difficult hire. That work is harder to scale, harder to package, and harder to delegate to a 26-year-old associate. Which is exactly why it is what you are paying for.",
+      "The firms that will keep commanding the premium over the next five years are the ones willing to be smaller on purpose. They will run fewer searches per partner, they will turn down assignments that do not fit, and they will be in the room for the parts of the process that matter rather than handing those off the moment the engagement letter signs.",
+      "If you are a board member or a CEO buying executive search right now, the diligence question is no longer 'what is your network?' Every credible firm has a comparable surface network. The question is 'who, by name, is doing the work on my search after week two, and how much of their time am I getting?' If the answer is vague, you already have your answer.",
+    ],
+  },
+  {
+    id: "fractional-or-full-time",
+    title: "Fractional, full-time, or none of the above.",
+    dek: "A decision framework for founders weighing senior leadership hires against runway, stage, and the work that actually needs to happen.",
+    type: "Perspective",
+    audience: "Executive Leadership",
+    body: [
+      "The default question, 'should we hire a CRO?', is almost always the wrong starting point. The right question is, 'what does the next twelve months of revenue motion need to look like, and what is the smallest senior intervention that gets us there?' The framing matters because the default question forces a binary answer, and the binary is wrong roughly half the time.",
+      "Fractional makes sense in three patterns. When the runway cannot yet carry a full-time CXO at market comp. When the company needs a specific operator's playbook for a defined window, such as a pricing reset, a GTM redesign, or a finance function rebuild. And when the role is real but the underlying motion is not yet validated, meaning a full-time hire would be optimizing a system that is still being designed.",
+      "Full-time makes sense when three different conditions hold. The work is permanent, not project-shaped. The comp is supportable on the current plan without forcing a round. And the company has earned the right to a specific person who will not work fractionally at any price. The third condition is the one most founders skip, and it is the one that determines whether the search is realistic or aspirational.",
+      "There is a third answer that more founders should consider than do: none of the above. Sometimes the honest read is that the company does not need a CXO yet. It needs a senior individual contributor, or a strong director, or a few months of advisory time from someone who has run the function before. Hiring a CXO into a company that is not ready for one is one of the most expensive mistakes a founder can make, because the wrong senior hire takes 12 to 18 months to unwind and costs the company momentum it may not get back.",
+      "The discipline is to separate the work from the title. Write down the four or five outcomes that have to be true twelve months from now. Then ask which configuration of human time, at what seniority, actually delivers those outcomes. The title falls out of that conversation. It should not lead it.",
+    ],
+  },
+  {
+    id: "onboarding-is-the-search",
+    title: "Onboarding is the search.",
+    dek: "Why the first ninety days inside the role decide whether a placement is a hire or a write-off, and what changes when the firm stays in the room.",
+    type: "Perspective",
+    audience: "Hiring & Management",
+    body: [
+      "Most firms quietly treat the offer letter as the finish line. The placement is announced, the fee invoices, and the firm disappears. Eighteen months later, the placement leaves and no one is sure why. The firm's reporting will record the search as successful, because the metric the firm tracks ends at start date.",
+      "The honest answer, most of the time, is that onboarding was not part of the engagement. Scope was right, sourcing was right, the candidate was right, and then the company handed them a laptop and a Slack invitation and called it integration. Senior leaders fail in the first year for predictable reasons: an unspoken disagreement with the CEO about scope, a peer relationship that was never reset after their arrival, or a board member with a private mandate the new hire never heard about.",
+      "The hire is finished at day ninety, not at day one. Structured 30, 60, and 90-day check-ins, run with both the placement and the hiring executive, surface the issues that destroy placements before they become unrecoverable. The conversations are short, they are uncomfortable on purpose, and they are the cheapest insurance the engagement can buy.",
+      "The check-ins also keep the firm honest about the work it actually did. If a placement is struggling at day 60 because the role was mis-scoped at intake, that is information the firm should have to sit with. The firms that are willing to be present for that conversation are the firms that learn. The firms that disappear at start date keep making the same mistakes on behalf of the next client.",
+      "For the company, the practical move is to write onboarding accountability into the engagement letter before signing. Define the check-in cadence, the participants, and what happens if the relationship is in trouble at day 90. A firm that resists those terms is telling you, in writing, where their work stops. Pay attention to that.",
+    ],
+  },
+  {
+    id: "scope-before-sourcing",
+    title: "Scope before sourcing.",
+    dek: "The single most common reason senior searches fail, and the one conversation that prevents it.",
+    type: "Perspective",
+    audience: "Hiring & Management",
+    body: [
+      "We have done the post-mortem on dozens of failed senior searches over the years, our own and others'. The same pattern shows up almost every time. The role was mis-scoped at intake, and no one re-wrote it before sourcing began. Everything downstream then optimized against the wrong target.",
+      "Mis-scoped means the job description is a wishlist of every quality the leadership team admires, rather than a structured statement of the outcomes the leader must own and the constraints they must operate within. The shortlist that follows is unfocused. The interviews are exploratory rather than evaluative. The offer, when it comes, is a compromise that nobody in the room will defend out loud.",
+      "The conversation that prevents this is uncomfortable. It involves telling a CEO that the role they have written cannot be filled by a single human, or that two of the listed requirements contradict each other, or that the comp band they have approved does not match the market for what they are actually asking for. It is also, almost always, the most valuable hour of the engagement.",
+      "The output of that hour is a one-page scope document that the entire interviewing team agrees to before the first candidate is contacted. Three to five outcomes the leader must produce in the first twelve months. The two or three constraints that make the role unusually hard. The non-negotiables and, more importantly, the requirements that look non-negotiable but are not. That page becomes the rubric for every interview, every reference, and every offer conversation.",
+      "Companies that do this work upfront close searches faster, with cleaner offers, and with hires that survive past the eighteen-month mark. Companies that skip it pay for the same search twice. The math on that is not subtle, and yet the temptation to start sourcing on day one, before the scope is honest, is the single hardest discipline to hold in this business.",
+    ],
+  },
+  {
+    id: "hiring-through-a-capital-event",
+    title: "Hiring through a capital event.",
+    dek: "What changes about senior hiring when the cap table changes, and how to build the team the next round actually needs.",
+    type: "Perspective",
+    audience: "Executive Leadership",
+    body: [
+      "The team that got the company to a Series B is rarely the team that takes it to a Series D. This is not a criticism of the original team. It is a statement about scope. Different stages require different operators, and the most common failure mode is hiring the previous stage's team again, one round late.",
+      "A capital event is also a forcing function for honesty. The diligence the lead investor runs on the team is, in effect, a third-party scope audit. Companies that have been deferring leadership decisions for two quarters often have those decisions made for them at the term sheet, in the form of a board-mandated CFO search or a CRO replacement written into the closing conditions.",
+      "The work begins six months before the round, not six months after. By the time the wire hits, the senior plan should already be on paper. The named-target list for the priority seats should already be sourced. The first conversations, framed as exploratory, should already be underway. Founders who wait until after close to start the searches lose the first six to nine months of the new capital to recruiting cycles, and the round runs out faster than the model said it would.",
+      "There is a second-order effect worth naming. The senior people you can hire in the four weeks after a round announces are not the same people you can hire in the four months before. Public capital events compress the market. Every search firm in town knows the company just raised, every passive candidate gets ten inbounds the same week, and the negotiating leverage shifts hard toward the candidate. The companies that recruit ahead of the announcement get materially better outcomes.",
+      "The discipline is to treat the round and the team as one plan, not two. The pitch the founder takes to the board for the round should include the leadership map for the twelve months after close, with names, sequence, and expected cost. If that map does not exist when the term sheet arrives, the round is, in a real sense, only half-prepared.",
+    ],
+  },
+  {
+    id: "career-capital",
+    title: "Career capital.",
+    dek: "Why the most consequential moves in a senior career should be planned years before they are made.",
+    type: "Perspective",
+    audience: "Executive Leadership",
+    body: [
+      "Senior careers compound. The next role is recruited from the last role. The next board seat is offered to the operator who has been visibly board-ready for eighteen months. The next exit option is structured by the choices made three roles ago. None of this is accidental, and very little of it is improvised at the moment of decision.",
+      "Most senior leaders, however, treat career decisions reactively. They evaluate inbound conversations as they arrive, rather than constructing a deliberate portfolio of positioning, relationships, and target experiences. The market does not reward this. The leaders who land the consequential roles, and the consequential boards, have been building toward them for years in ways that look like luck from the outside.",
+      "Career advisory at this level is the work of building the position before it is needed. Positioning means having a sharp, defensible answer to 'what kind of operator are you?' that is consistent across your public surface, your private references, and the way recruiters describe you when you are not in the room. Narrative means knowing which one or two stories from the last role you want to be known for, and making sure those stories actually reach the people who matter for the next role.",
+      "Network means building, before you need them, the dozen or so relationships that will surface the consequential opportunities. Those relationships are not LinkedIn connections. They are senior operators, two or three search partners with real reach in your sector, and a small number of board members and investors who would take a call on you without thinking about it. None of that gets built in a quarter.",
+      "Target landscape means knowing, with specificity, the twenty or thirty roles that would be the right next move and the conditions under which each of them is likely to open. That list is updated quarterly, quietly, in the background. When one of them opens, you are not starting from scratch. You are activating six to twenty-four months of preparation.",
+      "The leaders who do this work look, from the outside, like they are perpetually being offered the right thing at the right time. They are not. They are running a process. The earlier in a senior career that process starts, the more consequential the eventual moves become.",
+    ],
+  },
 ];
 
-const filters: ("All" | Category)[] = ["All", "Search", "Talent", "Fractional", "Workplace"];
+const typeFilters: ("All" | ContentType)[] = ["All", "Analysis", "Perspective"];
+const audienceFilters: ("All" | Audience)[] = ["All", "Executive Leadership", "HR & Talent", "Hiring & Management"];
 
-export default function FieldNotes() {
-  const [filter, setFilter] = useState<"All" | Category>("All");
+export default function WhatWereSeeing() {
+  const [typeFilter, setTypeFilter] = useState<"All" | ContentType>("All");
+  const [audienceFilter, setAudienceFilter] = useState<"All" | Audience>("All");
   const [openId, setOpenId] = useState<string | null>(null);
 
   const filtered = useMemo(
-    () => (filter === "All" ? articles : articles.filter((a) => a.category === filter)),
-    [filter],
+    () =>
+      articles.filter(
+        (a) =>
+          (typeFilter === "All" || a.type === typeFilter) &&
+          (audienceFilter === "All" || a.audience === audienceFilter),
+      ),
+    [typeFilter, audienceFilter],
   );
 
   return (
     <div className="min-h-screen pt-16 bg-background">
       <Seo
-        title="Field Notes | proHIRE resources"
-        description="Operator-grade observations on executive search, senior hiring, fractional leadership, and workplace strategy, grounded in current market data."
+        title="What We're Seeing | proHIRE resources"
+        description="Grounded observations on hiring, executive search, and leadership from a firm actively doing the work."
       />
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
           <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">
-            Field Notes
+            What We're Seeing
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-            What we are seeing in the market.
+            Thinking on talent, leadership, and the work of building great organizations.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            Short, current observations from inside live engagements, grounded in the data
-            boards and senior HR leaders are working with right now.
+            Grounded observations on hiring, executive search, and leadership from a firm actively doing the work.
           </p>
         </div>
       </section>
 
-      {/* Filters + grid */}
+      {/* Filters + feed */}
       <section className="py-12 lg:py-16">
         <div className="container-editorial">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="space-y-6 mb-12">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-                The notes
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Type</div>
+              <div className="flex flex-wrap gap-2">
+                {typeFilters.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setTypeFilter(f)}
+                    className={`text-xs uppercase tracking-[0.18em] px-4 py-2 border transition-colors ${
+                      typeFilter === f
+                        ? "border-foreground text-background bg-foreground"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-foreground"
+                    }`}
+                  >
+                    {f}
+                  </button>
+                ))}
               </div>
-              <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                Current reading.
-              </h2>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {filters.map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`text-xs uppercase tracking-[0.18em] px-4 py-2 border transition-colors ${
-                    filter === f
-                      ? "border-foreground text-background bg-foreground"
-                      : "border-border text-muted-foreground hover:text-foreground hover:border-foreground"
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Audience</div>
+              <div className="flex flex-wrap gap-2">
+                {audienceFilters.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setAudienceFilter(f)}
+                    className={`text-xs uppercase tracking-[0.18em] px-4 py-2 border transition-colors ${
+                      audienceFilter === f
+                        ? "border-foreground text-background bg-foreground"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-foreground"
+                    }`}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -213,8 +303,13 @@ export default function FieldNotes() {
               const isOpen = openId === a.id;
               return (
                 <article key={a.id} className="bg-background p-8 lg:p-10 flex flex-col">
-                  <div className="text-xs uppercase tracking-[0.18em] text-accent mb-4">
-                    {a.category} · {a.readTime} read
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    <span className="text-[10px] uppercase tracking-[0.18em] px-2.5 py-1 border border-accent text-accent">
+                      {a.type}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.18em] px-2.5 py-1 border border-border text-muted-foreground">
+                      {a.audience}
+                    </span>
                   </div>
                   <h3 className="font-serif text-2xl text-foreground leading-snug mb-3">
                     {a.title}
@@ -223,7 +318,7 @@ export default function FieldNotes() {
                     {a.dek}
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed flex-1">
-                    {a.excerpt}
+                    {a.body[0]}
                   </p>
 
                   <Collapsible open={isOpen} onOpenChange={(o) => setOpenId(o ? a.id : null)}>
@@ -253,7 +348,7 @@ export default function FieldNotes() {
 
           {filtered.length === 0 && (
             <p className="text-muted-foreground font-light text-center py-12">
-              No notes in this category yet.
+              No pieces match these filters yet.
             </p>
           )}
         </div>
