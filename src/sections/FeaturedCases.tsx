@@ -38,7 +38,7 @@ export const FeaturedCases = () => {
           </Reveal>
           <Reveal variant="fade" delay={120}>
             <Link
-              to="/insights"
+              to="/what-were-seeing"
               className="link-arrow inline-flex items-center gap-2 text-sm font-medium border-b border-primary-foreground/40 pb-1 hover:border-primary-foreground transition-colors"
             >
               More client work <ArrowRight className="w-4 h-4" />
