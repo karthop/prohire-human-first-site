@@ -139,11 +139,6 @@ export default function About() {
               operator strategy, built inside Amazon and at some of the largest names in
               global staffing and consulting.
             </p>
-            <img
-              src={chrisDogs}
-              alt="Chris's rescue dogs, Charlie and Leo"
-              className="mt-8 w-full h-auto block"
-            />
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
@@ -181,10 +176,6 @@ export default function About() {
               The throughline across two decades has been the same:{" "}
               <em className="text-foreground">people are the strategy</em>. Everything else
               is execution.
-            </p>
-
-            <p>
-              Chris is a firm believer that the best work happens when you're grounded at home. For him, that means time with his two rescues: Charlie, a Catahoula, and Leo, a Pit Mix. They're a meaningful part of his daily rhythm and a big reason he has been a long-standing supporter of rescue adoption. There's a grit and loyalty in a rescue dog that he has always admired, and he brings that same dedication to every client he works with.
             </p>
           </div>
         </div>
