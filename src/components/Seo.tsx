@@ -4,9 +4,10 @@ interface SeoProps {
   title: string;
   description?: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
-export function Seo({ title, description, canonical }: SeoProps) {
+export function Seo({ title, description, canonical, noindex = false }: SeoProps) {
   useEffect(() => {
     document.title = title;
 
@@ -28,7 +29,19 @@ export function Seo({ title, description, canonical }: SeoProps) {
     }
     const url = canonical || window.location.origin + window.location.pathname;
     link.setAttribute('href', url);
-  }, [title, description, canonical]);
+
+    let robots = document.querySelector('meta[name="robots"]');
+    if (noindex) {
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.setAttribute('name', 'robots');
+        document.head.appendChild(robots);
+      }
+      robots.setAttribute('content', 'noindex, follow');
+    } else if (robots?.getAttribute('content') === 'noindex, follow') {
+      robots.remove();
+    }
+  }, [title, description, canonical, noindex]);
 
   return null;
 }
