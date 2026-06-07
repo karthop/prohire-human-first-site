@@ -28,6 +28,12 @@ const services = [
     body: "Confidential, one-to-one advisory for senior executives, board candidates, and post-exit operators.",
     href: "/services/career-advisory",
   },
+  {
+    eyebrow: "Early Career Advisory",
+    title: "The First Move",
+    body: "Most careers are won or lost before the first interview. The First Move is proHIRE's early career advisory practice — built around one of the most competitive and underserved moments in a young person's professional life: landing the right internship. We work with high school juniors and seniors and college students to build a LinkedIn profile that actually gets found and taken seriously, craft a resume that reflects real potential, and develop the networking instincts that most people don't figure out until years into their career. That means learning how to identify and reach the right leaders and decision-makers, how to introduce themselves in a way that sparks genuine interest rather than triggers the delete button, and how to build organic relationships with people who can open doors — not by asking for a job, but by showing up with enough curiosity, ambition, and polish that the right people want to help them. Through individual coaching sessions and group workshops, we teach students how to be seen, how to be remembered, and how to turn a LinkedIn connection into an internship offer. Available for individual engagements and institutional partnerships with high schools and universities.",
+    href: "/services/the-first-move",
+  },
 ];
 
 const integrations = [
@@ -73,7 +79,7 @@ export default function ServicesIndex() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="Services | proHIRE resources"
-        description="Four practices: executive search, hiring and workforce strategy, growth acceleration, and senior career advisory. For founders, boards, and senior leaders."
+        description="Five practices: executive search, hiring and workforce strategy, growth acceleration, senior career advisory, and early career advisory. For founders, boards, senior leaders, and the next generation."
       />
 
       <section className="bg-primary text-primary-foreground brush-texture">
@@ -82,7 +88,7 @@ export default function ServicesIndex() {
             Services
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Four practices, shaped to the moment you are in.
+            Five practices, shaped to the moment you are in.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             We engage where experienced judgment, real network reach, and disciplined
