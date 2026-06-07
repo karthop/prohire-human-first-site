@@ -40,15 +40,15 @@ export const HeroAmbient = () => {
 
       // Density scales with area, capped for performance
       const area = width * height;
-      const count = Math.min(90, Math.max(28, Math.round(area / 16000)));
+      const count = Math.min(120, Math.max(42, Math.round(area / 10500)));
       points = new Array(count).fill(0).map(() => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        // Very slow drift, pixels per frame at ~60fps
-        vx: (Math.random() - 0.5) * 0.12,
-        vy: (Math.random() - 0.5) * 0.12,
-        r: 0.6 + Math.random() * 1.2,
-        a: 0.25 + Math.random() * 0.45,
+        // Noticeable slow drift, pixels per frame at ~60fps
+        vx: (Math.random() - 0.5) * 0.34,
+        vy: (Math.random() - 0.5) * 0.26,
+        r: 0.8 + Math.random() * 1.7,
+        a: 0.36 + Math.random() * 0.5,
       }));
     };
 
@@ -58,7 +58,7 @@ export const HeroAmbient = () => {
 
       // Connection threshold — scales with the smaller dimension so it feels
       // consistent across viewports
-      const linkDist = Math.min(160, Math.max(90, Math.min(width, height) * 0.18));
+      const linkDist = Math.min(190, Math.max(115, Math.min(width, height) * 0.24));
       const linkDistSq = linkDist * linkDist;
 
       // Move + draw points
@@ -76,7 +76,7 @@ export const HeroAmbient = () => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         // Warm off-white, low alpha — reads as ambient, not as content
-        ctx.fillStyle = `rgba(247, 245, 241, ${p.a * 0.55})`;
+        ctx.fillStyle = `rgba(247, 245, 241, ${p.a * 0.72})`;
         ctx.fill();
       }
 
@@ -90,7 +90,7 @@ export const HeroAmbient = () => {
           const d2 = dx * dx + dy * dy;
           if (d2 < linkDistSq) {
             const t = 1 - d2 / linkDistSq; // 0..1, 1 when closest
-            const alpha = t * 0.18; // very faint at peak
+            const alpha = t * 0.32; // visible, still premium
             ctx.strokeStyle = `rgba(201, 168, 76, ${alpha})`; // accent (warm gold)
             ctx.lineWidth = 0.6;
             ctx.beginPath();
@@ -146,7 +146,7 @@ export const HeroAmbient = () => {
   }, []);
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div className="hero-ambient-layer pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
       {/* Aurora layer 1 — deep indigo glow, slow drift */}
       <div className="hero-aurora hero-aurora-1" />
       {/* Aurora layer 2 — warm gold ember, even slower, very low opacity */}
