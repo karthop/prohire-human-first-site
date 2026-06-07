@@ -283,3 +283,36 @@
   /* Pull thin body copy from 300 to 400 on small screens for legibility */
   .font-light { font-weight: 400 !important; }
 }
+
+/* Hero ambient auroras — slow drifting gradients behind the headline */
+.hero-aurora {
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  filter: blur(60px);
+  will-change: transform, opacity;
+}
+.hero-aurora-1 {
+  background: radial-gradient(closest-side, hsl(218 60% 28% / 0.55), transparent 70%);
+  animation: hero-aurora-drift-1 32s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+.hero-aurora-2 {
+  background: radial-gradient(closest-side, hsl(40 55% 55% / 0.16), transparent 70%);
+  animation: hero-aurora-drift-2 44s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+@keyframes hero-aurora-drift-1 {
+  0%   { transform: translate3d(-8%, -6%, 0) scale(1);   opacity: 0.7; }
+  50%  { transform: translate3d(6%, 4%, 0)  scale(1.08); opacity: 0.95; }
+  100% { transform: translate3d(-4%, 8%, 0) scale(1.02); opacity: 0.75; }
+}
+@keyframes hero-aurora-drift-2 {
+  0%   { transform: translate3d(10%, 12%, 0)  scale(1);    opacity: 0.5; }
+  50%  { transform: translate3d(-6%, -8%, 0)  scale(1.12); opacity: 0.9; }
+  100% { transform: translate3d(8%, -4%, 0)   scale(1.04); opacity: 0.6; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora-1, .hero-aurora-2 { animation: none; }
+}

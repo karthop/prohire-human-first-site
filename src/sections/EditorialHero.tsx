@@ -3,10 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { SplitHeadline } from "@/components/motion/SplitHeadline";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
+import { HeroAmbient } from "@/components/motion/HeroAmbient";
 
 export const EditorialHero = () => {
   return (
     <section className="relative bg-primary text-primary-foreground overflow-hidden brush-texture">
+      <HeroAmbient />
 
       <div className="relative container-editorial pt-20 pb-16 lg:py-40">
         <div className="max-w-3xl lg:max-w-2xl">
