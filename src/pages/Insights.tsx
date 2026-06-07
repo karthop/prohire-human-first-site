@@ -181,15 +181,27 @@ export default function Insights() {
 
           <div className="grid md:grid-cols-2 gap-px bg-border">
             {filtered.map((a) => (
-              <article key={a.id} className="bg-background p-8 lg:p-10 flex flex-col">
-                <div className="text-xs uppercase tracking-[0.18em] text-accent mb-4">{a.category}</div>
-                <h3 className="font-serif text-2xl text-foreground leading-snug mb-3">{a.title}</h3>
-                <p className="font-serif text-base text-muted-foreground leading-snug mb-4">{a.dek}</p>
-                <p className="text-muted-foreground font-light leading-relaxed flex-1">{a.excerpt[0]}</p>
-                <div className="mt-6 pt-4 border-t border-border text-xs uppercase tracking-[0.15em] text-muted-foreground">
-                  {formatDate(a.date)} · {a.readTime} read
-                </div>
-              </article>
+              <Collapsible key={a.id} asChild>
+                <article className="bg-background p-8 lg:p-10 flex flex-col group">
+                  <div className="text-xs uppercase tracking-[0.18em] text-accent mb-4">{a.category}</div>
+                  <h3 className="font-serif text-2xl text-foreground leading-snug mb-3">{a.title}</h3>
+                  <p className="font-serif text-base text-muted-foreground leading-snug mb-4">{a.dek}</p>
+                  <p className="text-muted-foreground font-light leading-relaxed">{a.excerpt[0]}</p>
+                  <CollapsibleContent className="space-y-4 pt-4 text-muted-foreground font-light leading-relaxed">
+                    {a.excerpt.slice(1).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </CollapsibleContent>
+                  <CollapsibleTrigger className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors [&[data-state=open]>svg]:rotate-180">
+                    <span>{a.readTime} read</span>
+                    <span className="flex items-center gap-2">
+                      <span className="group-data-[state=open]:hidden">Read</span>
+                      <span className="hidden group-data-[state=open]:inline">Close</span>
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform" />
+                    </span>
+                  </CollapsibleTrigger>
+                </article>
+              </Collapsible>
             ))}
           </div>
 
