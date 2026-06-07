@@ -60,7 +60,7 @@ ${kb || "_(No articles published yet.)_"}`,
     userCtx,
 
     `## Key pages
-- [Home](/) · [Services](/services) · [About](/about) · [Approach](/approach) · [Industries](/industries) · [Insights](/insights) · [Contact](/contact)
+- [Home](/) · [Services](/services) · [About](/about) · [Approach](/approach) · [Industries](/industries) · [What We're Seeing](/what-were-seeing) · [Contact](/contact)
 - Practices: [Executive Search](/services/executive-search) · [Talent Solutions](/services/talent-solutions) · [Growth Acceleration](/services/growth-acceleration) · [Career Advisory](/services/career-advisory)`,
 
     `## Universal hard rules
