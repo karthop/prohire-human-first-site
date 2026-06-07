@@ -7,31 +7,31 @@ const services = [
   {
     eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
-    body: "Retained search, fractional CXOs, and board advisory for the hires that decide the next two years.",
+    body: "Retained C-suite, VP, and board-track search, plus fractional CXOs who have scaled comparable businesses. Senior-led from intake through onboarding, with scope re-written before sourcing begins and measurable time-to-impact written into the engagement.",
     href: "/services/executive-search",
   },
   {
     eyebrow: "Hiring & Workforce",
     title: "Hiring & Workforce Strategy",
-    body: "Specialized hiring across finance, technology, operations, and people. Built for fast-growing teams that have outgrown a generic agency.",
+    body: "Specialized hiring across finance, technology, operations, and people functions. Embedded recruiting, contract, contract-to-hire, and onboarding infrastructure for teams scaling past the point a generic agency can serve, with the bar calibrated to the company you are building.",
     href: "/services/talent-solutions",
   },
   {
     eyebrow: "Growth Acceleration",
     title: "Revenue & Operational Acceleration",
-    body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons.",
+    body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons than a full-time hire allows. We run the named-account play, build the operating cadence, and convert to a permanent leader once the motion is real.",
     href: "/services/growth-acceleration",
   },
   {
     eyebrow: "Career Advisory",
     title: "Career Advisory for Senior Professionals",
-    body: "Confidential, one-to-one advisory for senior executives, board candidates, and post-exit operators.",
+    body: "Confidential, one-to-one advisory for sitting CXOs, board candidates, and post-exit operators navigating CXO moves, board candidacies, succession, and the legacy-defining decisions that arrive without warning. Positioning, search strategy, interview and negotiation, and board readiness — all under NDA.",
     href: "/services/career-advisory",
   },
   {
     eyebrow: "Early Career Advisory",
     title: "The First Move",
-    body: "Most careers are won or lost before the first interview. The First Move is proHIRE's early career advisory practice — built around one of the most competitive and underserved moments in a young person's professional life: landing the right internship. We work with high school juniors and seniors and college students to build a LinkedIn profile that actually gets found and taken seriously, craft a resume that reflects real potential, and develop the networking instincts that most people don't figure out until years into their career. That means learning how to identify and reach the right leaders and decision-makers, how to introduce themselves in a way that sparks genuine interest rather than triggers the delete button, and how to build organic relationships with people who can open doors — not by asking for a job, but by showing up with enough curiosity, ambition, and polish that the right people want to help them. Through individual coaching sessions and group workshops, we teach students how to be seen, how to be remembered, and how to turn a LinkedIn connection into an internship offer. Available for individual engagements and institutional partnerships with high schools and universities.",
+    body: "Early career advisory for high school juniors and seniors and college students competing for the internships that set the trajectory. We build a LinkedIn profile that gets found, a resume that reflects real potential, and the networking instincts most people don't develop until years into their career — through individual coaching and institutional partnerships with high schools and universities.",
     href: "/services/the-first-move",
   },
 ];

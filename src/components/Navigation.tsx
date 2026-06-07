@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const primary = [
+  { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
   { to: "/industries", label: "Industries" },
   { to: "/approach", label: "Approach" },
