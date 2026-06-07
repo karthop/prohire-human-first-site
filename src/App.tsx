@@ -27,6 +27,39 @@ import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 
 const queryClient = new QueryClient();
 
+const legacyRedirects: Record<string, string> = {
+  "/insights": "/what-were-seeing",
+  "/field-notes": "/what-were-seeing",
+  "/employers": "/services/talent-solutions",
+  "/professionals": "/services/career-advisory",
+  "/talent-areas": "/services",
+  "/networking-strategies": "/what-were-seeing",
+  "/dei-mindful-humans": "/about",
+  "/resume-cover-letter-writing": "/services/career-advisory",
+};
+
+const LegacyRedirect = ({ to }: { to: string }) => {
+  useEffect(() => {
+    let canonical: HTMLLinkElement | null = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", `https://prohireresources.com${to}`);
+
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.setAttribute("name", "robots");
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute("content", "noindex, follow");
+  }, [to]);
+
+  return <Navigate to={to} replace />;
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -55,17 +88,17 @@ const App = () => (
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
               <Route path="/what-were-seeing" element={<PageTransition><WhatWereSeeing /></PageTransition>} />
-              <Route path="/insights" element={<Navigate to="/what-were-seeing" replace />} />
-              <Route path="/field-notes" element={<Navigate to="/what-were-seeing" replace />} />
+              <Route path="/insights" element={<LegacyRedirect to={legacyRedirects["/insights"]} />} />
+              <Route path="/field-notes" element={<LegacyRedirect to={legacyRedirects["/field-notes"]} />} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
               {/* Legacy redirects */}
-              <Route path="/employers" element={<Navigate to="/services/talent-solutions" replace />} />
-              <Route path="/professionals" element={<Navigate to="/services/career-advisory" replace />} />
-              <Route path="/talent-areas" element={<Navigate to="/services" replace />} />
-              <Route path="/networking-strategies" element={<Navigate to="/what-were-seeing" replace />} />
-              <Route path="/dei-mindful-humans" element={<Navigate to="/about" replace />} />
-              <Route path="/resume-cover-letter-writing" element={<Navigate to="/services/career-advisory" replace />} />
+              <Route path="/employers" element={<LegacyRedirect to={legacyRedirects["/employers"]} />} />
+              <Route path="/professionals" element={<LegacyRedirect to={legacyRedirects["/professionals"]} />} />
+              <Route path="/talent-areas" element={<LegacyRedirect to={legacyRedirects["/talent-areas"]} />} />
+              <Route path="/networking-strategies" element={<LegacyRedirect to={legacyRedirects["/networking-strategies"]} />} />
+              <Route path="/dei-mindful-humans" element={<LegacyRedirect to={legacyRedirects["/dei-mindful-humans"]} />} />
+              <Route path="/resume-cover-letter-writing" element={<LegacyRedirect to={legacyRedirects["/resume-cover-letter-writing"]} />} />
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
           </Suspense>
