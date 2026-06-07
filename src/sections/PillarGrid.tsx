@@ -5,27 +5,27 @@ import { Reveal } from "@/components/motion/Reveal";
 const pillars = [
   {
     title: "Executive Search & Leadership Advisory",
-    body: "Retained search and fractional CXOs who have actually scaled a comparable business. C-suite, VP, and board-track placements with measurable time-to-impact.",
+    body: "The hires that decide the next two years — led by senior partners, not associates behind a pitch.",
     href: "/services/executive-search",
   },
   {
     title: "Hiring & Workforce Strategy",
-    body: "Specialized hiring across technology, finance, and operations. Embedded recruiting, contract, contract-to-hire, and onboarding built for fast-growing teams.",
+    body: "Embedded recruiting for teams that have outgrown the generic agency model.",
     href: "/services/talent-solutions",
   },
   {
     title: "Revenue & Operational Acceleration",
-    body: "Fractional business development, operating infrastructure, and partnership work. We act as your external BD and ops bench during the moments that matter.",
+    body: "An external BD and operations bench for the quarters that have to land.",
     href: "/services/growth-acceleration",
   },
   {
     title: "Career Advisory for Senior Professionals",
-    body: "Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions, CXO moves, board candidacies, and post-exit chapters.",
+    body: "Discreet counsel for CXOs, board candidates, and operators making a defining move.",
     href: "/services/career-advisory",
   },
   {
     title: "The First Move",
-    body: "Early career advisory for high school and college students — LinkedIn, resume, and the networking instincts that turn a connection into an internship offer.",
+    body: "Early career advisory for students competing for the internships that set the trajectory.",
     href: "/services/the-first-move",
   },
 ];
