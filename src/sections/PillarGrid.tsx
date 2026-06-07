@@ -23,6 +23,11 @@ const pillars = [
     body: "Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions, CXO moves, board candidacies, and post-exit chapters.",
     href: "/services/career-advisory",
   },
+  {
+    title: "The First Move",
+    body: "Early career advisory for high school and college students — LinkedIn, resume, and the networking instincts that turn a connection into an internship offer.",
+    href: "/services/the-first-move",
+  },
 ];
 
 export const PillarGrid = () => {
@@ -35,7 +40,7 @@ export const PillarGrid = () => {
               What we do
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl leading-tight text-foreground">
-              Four practices, one way of working.
+              Five practices, one way of working.
             </h2>
           </Reveal>
           <Reveal variant="rise" delay={120} className="lg:col-span-7 lg:col-start-6">
@@ -47,7 +52,7 @@ export const PillarGrid = () => {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {pillars.map((p, i) => (
             <Reveal key={p.title} delay={i * 80} variant="rise" className="h-full">
               <Link
