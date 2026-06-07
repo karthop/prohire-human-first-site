@@ -24,6 +24,7 @@ const ExecutiveSearch = lazy(() => import("./pages/services/ExecutiveSearch"));
 const TalentSolutions = lazy(() => import("./pages/services/TalentSolutions"));
 const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
+const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 
@@ -96,6 +97,7 @@ const App = () => (
               <Route path="/services/talent-solutions" element={<PageTransition><TalentSolutions /></PageTransition>} />
               <Route path="/services/growth-acceleration" element={<PageTransition><GrowthAcceleration /></PageTransition>} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
+              <Route path="/services/the-first-move" element={<PageTransition><TheFirstMove /></PageTransition>} />
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
               <Route path="/what-were-seeing" element={<PageTransition><WhatWereSeeing /></PageTransition>} />
