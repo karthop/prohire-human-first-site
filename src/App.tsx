@@ -117,6 +117,7 @@ const App = () => (
         </BrowserRouter>
       </PersonaProvider>
     </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
