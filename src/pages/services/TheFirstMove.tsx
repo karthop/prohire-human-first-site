@@ -27,29 +27,29 @@ export default function TheFirstMove() {
         },
         {
           heading: "Networking instincts",
-          body: "How to identify and reach the right leaders and decision-makers, how to introduce yourself in a way that sparks interest rather than triggers the delete button, and how to follow up without burning the relationship.",
+          detail: "How to identify and reach the right leaders and decision-makers, how to introduce yourself in a way that sparks interest rather than triggers the delete button, and how to follow up without burning the relationship.",
         },
         {
           heading: "Outreach that opens doors",
-          body: "Building organic relationships with people who can help — not by asking for a job, but by showing up with curiosity, ambition, and polish.",
+          detail: "Building organic relationships with people who can help — not by asking for a job, but by showing up with curiosity, ambition, and polish.",
         },
         {
           heading: "Group workshops and institutional partnerships",
-          body: "Workshops and structured programs for high schools and universities that want to give students a real advantage in the internship market.",
+          detail: "Workshops and structured programs for high schools and universities that want to give students a real advantage in the internship market.",
         },
       ]}
       engagements={[
         {
           name: "Individual coaching",
-          body: "One-to-one engagements with a student over a defined window — typically a semester or summer leading into recruiting season.",
+          detail: "One-to-one engagements with a student over a defined window — typically a semester or summer leading into recruiting season.",
         },
         {
           name: "Group workshops",
-          body: "Cohort-based sessions for small groups of students on LinkedIn, resume, and networking, run privately or with a partner institution.",
+          detail: "Cohort-based sessions for small groups of students on LinkedIn, resume, and networking, run privately or with a partner institution.",
         },
         {
           name: "Institutional partnerships",
-          body: "Multi-session programs embedded with high schools and universities to support students through the internship search end-to-end.",
+          detail: "Multi-session programs embedded with high schools and universities to support students through the internship search end-to-end.",
         },
       ]}
     />
