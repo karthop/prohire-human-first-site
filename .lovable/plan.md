@@ -1,83 +1,56 @@
-## What this does, in plain terms
+## Part 1 — Homepage practice grid: 3 → 4
 
-Right now your site has two separate content sections that confuse the reader: Field Notes (research-backed pieces) and Insights (operator-voice pieces). This consolidates both into one place called **What We're Seeing**, accessible from a single nav item. Every existing article moves over, nothing is rewritten or lost. Each article picks up two small tags: one telling the reader what kind of piece it is, one telling them who it's written for. Readers can filter by either, or just scroll the whole feed.
+**File:** `src/sections/PillarGrid.tsx`
 
-## Navigation change
+- Add a fourth entry to the `pillars` array: **Career Advisory for Senior Professionals**, linking to `/services/career-advisory`, with a one-line description consistent with the Services page tone (confidential, one-to-one advisory for senior leaders navigating high-stakes transitions).
+- Change the section eyebrow + headline from "Three practices, one way of working." to "Four practices, one way of working."
+- Change the grid layout from `md:grid-cols-3` to `md:grid-cols-2 lg:grid-cols-4` so four tiles read cleanly on desktop and stack two-up on tablet, one-up on mobile.
+- No other files touched. Services page already shows all four.
 
-In `src/components/Navigation.tsx` and `src/components/Footer.tsx`:
-- Remove the two separate links: "Insights" and "Field Notes."
-- Replace with one link: **What We're Seeing** pointing to `/what-were-seeing`.
+## Part 2 — Per-article URLs for "What We're Seeing"
 
-In `src/App.tsx`:
-- Add a route `/what-were-seeing` rendering a new `WhatWereSeeing` page.
-- Keep old `/insights` and `/field-notes` routes as redirects to `/what-were-seeing` so any existing inbound links still work.
+### What changes for the visitor
+- `/what-were-seeing` — unchanged layout, but each article card becomes a link.
+- New: `/what-were-seeing/:slug` — dedicated page for a single article (full body, tags, references, "Back to all" link, copy-link button).
+- Shareable links preview properly on LinkedIn/email/text with the article's own title and description.
 
-## The new page
+### Technical implementation
 
-New file `src/pages/WhatWereSeeing.tsx` (the existing FieldNotes.tsx and Insights.tsx files get deleted once the merge is in place).
+**1. Article data — `src/pages/WhatWereSeeing.tsx`**
+- Extract the `articles` array into a new shared module `src/content/articles.ts` so both the index page and the detail page can import it.
+- Add a `slug` field to each article (kebab-case from title, e.g. `the-disappearing-entry-level-job`).
+- Add a `publishedAt` ISO date field (for JSON-LD + sort order).
+- Existing fields (title, type, audience, body, references) carry over unchanged.
 
-**Hero / opening:**
-- Eyebrow: "What We're Seeing"
-- Headline: "Thinking on talent, leadership, and the work of building great organizations."
-- Sub-line (one sentence, restrained): "Grounded observations on hiring, executive search, and leadership from a firm actively doing the work."
+**2. New detail page — `src/pages/WhatWereSeeingArticle.tsx`**
+- Reads `:slug` param, looks up the article, renders 404 (existing `NotFound`) if not found.
+- Layout: small back-link, type + audience tag chips, title (serif), publish date, body, references list, "Copy link" button, and a "More perspectives" footer with 2–3 other article cards.
+- Per-page SEO via `react-helmet-async`: `<title>{article.title} | proHIRE resources</title>`, meta description from a short excerpt, canonical `https://prohireresources.com/what-were-seeing/{slug}`, og:title/og:description/og:url/og:type=article, and JSON-LD `Article` schema (headline, datePublished, author = "Chris Betz", publisher = "proHIRE resources").
 
-That's it for framing. No further explanation.
+**3. SEO plumbing — one-time setup**
+- Install `react-helmet-async`.
+- Wrap `<App />` in `<HelmetProvider>` in `src/main.tsx`.
+- Remove the static `<link rel="canonical">` from `index.html` so per-route canonicals from Helmet don't double up. Leave sitewide og:* in `index.html` as a fallback for non-JS social crawlers.
+- Existing `src/components/Seo.tsx` already exists — reuse/extend it for the article page rather than calling Helmet directly, so the rest of the site can adopt the same pattern over time.
 
-**Article feed:**
-- Single unified list of all 13 articles (7 from Field Notes, 6 from Insights).
-- Each card shows: title, dek, two small tag pills (content type + audience), and an expand-to-read interaction matching the existing Field Notes/Insights collapsible pattern.
-- No read-time labels. No publish dates surfaced as primary metadata (the dates on Insights pieces can stay in the data but won't be displayed prominently, to match how Field Notes already behaves).
+**4. Routing — `src/App.tsx`**
+- Add `<Route path="/what-were-seeing/:slug" element={<WhatWereSeeingArticle />} />` next to the existing `/what-were-seeing` route.
 
-**Filter row (above the feed):**
-- Two filter groups, both optional, both default to "All":
-  - **Type:** All · Analysis · Perspective
-  - **Audience:** All · Executive Leadership · HR & Talent · Hiring & Management
-- Filters combine (AND). Default state shows every article.
-- Visual style matches the existing pill-filter pattern already used on Insights/Field Notes so nothing feels new.
+**5. Index page link-up — `src/pages/WhatWereSeeing.tsx`**
+- Each article card becomes a `<Link to={\`/what-were-seeing/${slug}\`}>`.
+- Filters/tags continue to work as today.
 
-## Tag assignments
+**6. Sitemap — `public/sitemap.xml`**
+- Add a `<url>` entry per article so Google can discover and index each one.
 
-Content-type tag: **Analysis** = research/data-backed (current Field Notes pieces). **Perspective** = first-person operator voice (current Insights pieces).
+### Honest constraint to flag
 
-Audience tag is assigned per piece based on who the article actually speaks to:
+This is a client-side React app (no server-side rendering). That means:
+- **Google** will index each article correctly — it executes JavaScript.
+- **LinkedIn / Slack / iMessage previews** see only the static `index.html` head, so the link preview will show the sitewide title/description, not the article-specific one. Fixing that properly requires SSR, which is a much bigger architectural change. Recommend we accept this limitation for now; it can be revisited later.
 
-| Article | Type | Audience |
-|---|---|---|
-| The CFO seat won't stay filled | Analysis | Executive Leadership |
-| AI didn't replace the recruiter | Analysis | HR & Talent |
-| Fractional is no longer a bridge | Analysis | Executive Leadership |
-| The return-to-office fight is over | Analysis | HR & Talent |
-| Why the next search you run should not go to a brand-name firm | Analysis | Executive Leadership |
-| Hiring a senior leader in 2026 takes 94 days | Analysis | Hiring & Management |
-| Statement of work is the engagement model nobody is asking for | Analysis | Executive Leadership |
-| The end of keyword search | Perspective | Executive Leadership |
-| Fractional, full-time, or none of the above | Perspective | Executive Leadership |
-| Onboarding is the search | Perspective | Hiring & Management |
-| Scope before sourcing | Perspective | Hiring & Management |
-| Hiring through a capital event | Perspective | Executive Leadership |
-| Career capital | Perspective | Executive Leadership |
-
-## Data model
-
-A single `articles` array in `WhatWereSeeing.tsx` with this shape:
-
-```
-{ id, title, dek, body: string[], type: 'Analysis' | 'Perspective',
-  audience: 'Executive Leadership' | 'HR & Talent' | 'Hiring & Management' }
-```
-
-The old `category` and `readTime` fields are dropped from the displayed UI. Body content is copied over verbatim from both source files. No copy is rewritten.
-
-## Punctuation pass
-
-Everything new gets a final em-dash and en-dash scrub per the existing project rule. No em dashes, no en dashes anywhere in the new page or the nav/footer label.
-
-## Memory update
-
-Update `mem://index.md` core rules to replace the two-section model with the single hub, so future work doesn't accidentally re-split the content.
-
-## Out of scope
-
-- No rewriting of any article body.
-- No design system, color, or typography changes.
-- No changes to other pages.
+### Out of scope (not doing unless you ask)
+- Changing article copy or adding new articles
+- Comments, likes, view counts
+- RSS feed
+- Author bio block

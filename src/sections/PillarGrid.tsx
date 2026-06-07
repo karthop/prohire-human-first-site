@@ -18,6 +18,11 @@ const pillars = [
     body: "Fractional business development, operating infrastructure, and partnership work. We act as your external BD and ops bench during the moments that matter.",
     href: "/services/growth-acceleration",
   },
+  {
+    title: "Career Advisory for Senior Professionals",
+    body: "Confidential, one-to-one advisory for senior leaders navigating high-stakes transitions, CXO moves, board candidacies, and post-exit chapters.",
+    href: "/services/career-advisory",
+  },
 ];
 
 export const PillarGrid = () => {
@@ -30,7 +35,7 @@ export const PillarGrid = () => {
               What we do
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl leading-tight text-foreground">
-              Three practices, one way of working.
+              Four practices, one way of working.
             </h2>
           </Reveal>
           <Reveal variant="rise" delay={120} className="lg:col-span-7 lg:col-start-6">
@@ -42,14 +47,14 @@ export const PillarGrid = () => {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
           {pillars.map((p, i) => (
             <Reveal key={p.title} delay={i * 80} variant="rise" className="h-full">
               <Link
                 to={p.href}
-                className="group bg-background p-8 lg:p-10 hover:bg-secondary/50 transition-colors duration-500 flex flex-col h-full"
+                className="group bg-background p-8 lg:p-8 hover:bg-secondary/50 transition-colors duration-500 flex flex-col h-full"
               >
-                <h3 className="font-serif text-2xl leading-snug text-foreground mb-4 transition-colors duration-300 group-hover:text-accent">
+                <h3 className="font-serif text-xl lg:text-2xl leading-snug text-foreground mb-4 transition-colors duration-300 group-hover:text-accent">
                   {p.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed font-light flex-1">

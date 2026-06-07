@@ -1,49 +1,53 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface SeoProps {
   title: string;
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  ogType?: "website" | "article";
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-export function Seo({ title, description, canonical, noindex = false }: SeoProps) {
-  useEffect(() => {
-    document.title = title;
+const SITE_URL = "https://prohireresources.com";
 
-    // Description meta
-    let desc = document.querySelector('meta[name="description"]');
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.setAttribute('name', 'description');
-      document.head.appendChild(desc);
-    }
-    if (description) desc.setAttribute('content', description);
+export function Seo({
+  title,
+  description,
+  canonical,
+  noindex = false,
+  ogType = "website",
+  ogImage,
+  jsonLd,
+}: SeoProps) {
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
+  const url = canonical || `${SITE_URL}${pathname}`;
 
-    // Canonical link
-    let link: HTMLLinkElement | null = document.querySelector('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      document.head.appendChild(link);
-    }
-    const url = canonical || window.location.origin + window.location.pathname;
-    link.setAttribute('href', url);
+  return (
+    <Helmet>
+      <title>{title}</title>
+      {description && <meta name="description" content={description} />}
+      <link rel="canonical" href={url} />
+      {noindex && <meta name="robots" content="noindex, follow" />}
 
-    let robots = document.querySelector('meta[name="robots"]');
-    if (noindex) {
-      if (!robots) {
-        robots = document.createElement('meta');
-        robots.setAttribute('name', 'robots');
-        document.head.appendChild(robots);
-      }
-      robots.setAttribute('content', 'noindex, follow');
-    } else if (robots?.getAttribute('content') === 'noindex, follow') {
-      robots.remove();
-    }
-  }, [title, description, canonical, noindex]);
+      <meta property="og:title" content={title} />
+      {description && <meta property="og:description" content={description} />}
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content={ogType} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
 
-  return null;
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      {description && <meta name="twitter:description" content={description} />}
+
+      {jsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+      )}
+    </Helmet>
+  );
 }
 
 export default Seo;

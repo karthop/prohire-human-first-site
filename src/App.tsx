@@ -16,6 +16,7 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const WhatWereSeeing = lazy(() => import("./pages/WhatWereSeeing"));
+const WhatWereSeeingArticle = lazy(() => import("./pages/WhatWereSeeingArticle"));
 const Approach = lazy(() => import("./pages/Approach"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Services = lazy(() => import("./pages/Services"));
@@ -98,6 +99,7 @@ const App = () => (
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
               <Route path="/what-were-seeing" element={<PageTransition><WhatWereSeeing /></PageTransition>} />
+              <Route path="/what-were-seeing/:slug" element={<PageTransition><WhatWereSeeingArticle /></PageTransition>} />
               <Route path="/insights" element={<LegacyRedirect to={legacyRedirects["/insights"]} />} />
               <Route path="/field-notes" element={<LegacyRedirect to={legacyRedirects["/field-notes"]} />} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
