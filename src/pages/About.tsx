@@ -26,7 +26,7 @@ const principles = [
 const chapters = [
   {
     label: "Foundation",
-    years: "2003–2014",
+    years: "2003-2014",
     title: "Learning the trade at scale.",
     body: "Early years inside two of the largest national staffing firms, running engineering staffing, executive accounts, and the mechanics of placing senior people at velocity. Then years on the BD and delivery side of global engineering services across automotive, aerospace, and industrial clients.",
     learned: "Volume teaches you what the work is. Experience teaches you what the work is for.",
