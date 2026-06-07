@@ -1,32 +1,33 @@
-import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
+interface Props {
+  className?: string;
+}
+
+export const ThemeToggle = ({ className = "" }: Props) => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return null;
-
-  const current = theme === 'system' ? systemTheme : theme;
-  const isDark = current === 'dark';
+  const current = theme === "system" ? systemTheme : theme;
+  const isDark = current === "dark";
 
   return (
-    <Button
-      variant="outline"
-      size="icon"
-      aria-label="Toggle dark mode"
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="transition-colors"
+    <button
+      type="button"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={isDark}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`inline-flex items-center justify-center w-9 h-9 -my-1 text-muted-foreground hover:text-foreground transition-colors ${className}`}
     >
-      {isDark ? (
-        <Sun className="h-4 w-4" />
+      {mounted ? (
+        isDark ? <Sun className="w-[18px] h-[18px]" strokeWidth={1.5} /> : <Moon className="w-[18px] h-[18px]" strokeWidth={1.5} />
       ) : (
-        <Moon className="h-4 w-4" />
+        <Moon className="w-[18px] h-[18px] opacity-0" strokeWidth={1.5} />
       )}
-    </Button>
+    </button>
   );
-}
+};

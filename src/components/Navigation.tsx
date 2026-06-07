@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const primary = [
   { to: "/services", label: "Services" },
@@ -62,16 +63,21 @@ export const Navigation = () => {
             >
               Contact
             </Link>
+            <ThemeToggle className="ml-1" />
           </div>
 
-          <button
-            type="button"
-            className="lg:hidden p-2 -mr-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation"
-          >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-1">
+            <ThemeToggle />
+
+            <button
+              type="button"
+              className="p-2 -mr-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         {isOpen && (
