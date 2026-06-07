@@ -14,8 +14,7 @@ import { PersonaProvider } from "@/context/PersonaContext";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Insights = lazy(() => import("./pages/Insights"));
-const FieldNotes = lazy(() => import("./pages/FieldNotes"));
+const WhatWereSeeing = lazy(() => import("./pages/WhatWereSeeing"));
 const Approach = lazy(() => import("./pages/Approach"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Services = lazy(() => import("./pages/Services"));
@@ -55,15 +54,16 @@ const App = () => (
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
-              <Route path="/insights" element={<PageTransition><Insights /></PageTransition>} />
-              <Route path="/field-notes" element={<PageTransition><FieldNotes /></PageTransition>} />
+              <Route path="/what-were-seeing" element={<PageTransition><WhatWereSeeing /></PageTransition>} />
+              <Route path="/insights" element={<Navigate to="/what-were-seeing" replace />} />
+              <Route path="/field-notes" element={<Navigate to="/what-were-seeing" replace />} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<Navigate to="/services/talent-solutions" replace />} />
               <Route path="/professionals" element={<Navigate to="/services/career-advisory" replace />} />
               <Route path="/talent-areas" element={<Navigate to="/services" replace />} />
-              <Route path="/networking-strategies" element={<Navigate to="/insights" replace />} />
+              <Route path="/networking-strategies" element={<Navigate to="/what-were-seeing" replace />} />
               <Route path="/dei-mindful-humans" element={<Navigate to="/about" replace />} />
               <Route path="/resume-cover-letter-writing" element={<Navigate to="/services/career-advisory" replace />} />
               <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
