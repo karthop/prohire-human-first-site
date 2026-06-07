@@ -1,98 +1,65 @@
-Below is a single, copy-paste-ready prompt to drop into the **ridge-build-strong** Lovable project. It tells that agent to build an AI chatbot patterned after Reece (the assistant on proHIRE resources), but rebuilt around Ridge Planning & Engineering's content, voice, and industry — civil engineering, land planning, due diligence, and entitlements across Georgia and the Southeast. Copy everything between the two horizontal rules.
 
----
+## What I reviewed
 
-## Build a site-wide AI assistant for Ridge Planning & Engineering
+- **Services:** Executive Search & Leadership Advisory, Hiring & Workforce Strategy, Revenue & Operational Acceleration, Career Advisory.
+- **Industries:** Tech/SaaS, FinTech, Healthcare/MedTech, Supply Chain, Industrial/Energy, Professional Services.
+- **Client shape:** Founders, boards, PE-backed CEOs, VPs of HR, senior operators — Series A through PE-backed mid-market.
+- **Voice:** Plain-spoken, senior, consultative, restraint over decoration. Cream background, serif headings, editorial layout with hairline borders and grid dividers.
 
-I want you to add an AI chatbot to this site, modeled on a pattern I've used successfully on another project. Do **not** copy any content, branding, voice, or industry references from that other project — this assistant is exclusively about Ridge Planning & Engineering: civil engineering, land planning, due diligence, and entitlements, primarily across Georgia and the Southeast, serving residential (mostly single-family and mixed-use), commercial, retail, light industrial, and some recreational/municipal work.
+An `Insights` page already exists with a similar pattern. The new page will be a separate, more practical destination focused on what's happening right now in the market, distinct from the more essay-style Insights archive.
 
-Before writing code, read the existing project end-to-end (pages, components, `src/data/`, `src/assets/`, `index.css`, `tailwind.config.ts`, SEO setup, Supabase config) so the assistant's knowledge base, tone, and visual styling match what's actually on the site today. Then propose a plan before implementing.
+## Page name — three options
 
-### 1. Architecture
+1. **Field Notes** — operator-grade, observational, boutique-advisor feel. Distinct from "Insights."
+2. **The Brief** — short, consultative, sounds like something a VP of HR would actually open.
+3. **Signal** — current, market-aware, suggests filtering noise from what matters.
 
-- **Frontend widget**: a floating button bottom-right on every page, opening a chat panel. Use the existing design tokens (warm cream background, deep blue primary, Source Serif 4 headings, Inter body). No purple gradients, no glassmorphism, no generic "AI sparkle" aesthetic.
-- **Streaming backend**: a Supabase Edge Function that calls the **Lovable AI Gateway** using the **Vercel AI SDK** (`ai`, `@ai-sdk/openai-compatible`) with the shared `createLovableAiGatewayProvider` helper. Default model: `google/gemini-3-flash-preview`. Stream responses with `streamText` + `toUIMessageStreamResponse`. Keep the system prompt, tool execution, and `LOVABLE_API_KEY` server-side.
-- **Knowledge base in Supabase**: tables `ai_knowledge_articles` (title, content, category, tags, published) and `ai_assistant_settings` (seasonal_message_enabled, seasonal_message_text). Public read on published rows; admin-only write via a `user_roles` table + `has_role()` security-definer function. RLS on everything.
-- **Conversation logging**: `ai_conversations` table keyed by `session_id` (anonymous UUID in localStorage), append assistant text on stream completion. Admin-only read.
-- **Tools the assistant can call** (server-side, AI SDK `tool()` with Zod `inputSchema`):
-  1. `search_knowledge_base(query)` — token-scored search over published articles.
-  2. `list_services` — returns the four service pillars and their routes (Civil Engineering, Land Planning, Due Diligence, Entitlements).
-  3. `list_industries_served` — Residential, Mixed-Use, Commercial, Retail, Light Industrial, Recreational/Municipal.
-  4. `get_contact_info` — returns only the route `/contact` and the instruction that the contact form is the single channel; never expose email or phone.
-  5. `list_jurisdictions` — returns the jurisdictions/municipalities list from `src/data/` (or returns "not yet populated" if the file is a TODO).
-- Use `stepCountIs(50)` for the tool loop. Surface 429 (rate limit) and 402 (credits) cleanly to the UI.
+**Recommended: Field Notes.** It matches the senior, plain-spoken brand voice better than the others, signals firsthand observation rather than thought-leadership posturing, and pairs naturally with the existing "The Work Behind the Hire" tone on Insights without duplicating it.
 
-### 2. Assistant identity & voice
+Route: `/field-notes`. Add to primary nav between **Insights** and **About** (or replace if you prefer — flag this in feedback).
 
-- **Name**: pick a short, grounded name that fits a civil/planning firm — propose 3 options in your plan (e.g. *Ridge*, *Survey*, *Plat*, *Marker*, *Bench* — surveyor's bench mark). I'll choose one.
-- **Voice**: plainspoken, technically literate, consultative. Sounds like a senior project manager who has actually pulled permits, not a chipper sales bot. No "synergy", "leverage", "rockstar", no exclamation points, no emoji.
-- **Markdown**: render replies as markdown. Use relative links (`[Services](/services)`), never full URLs.
-- **Self-reference**: refer to itself by its chosen name; confirm it's an AI if asked.
+## The four articles (topics + angle)
 
-### 3. System prompt requirements
+Each is grounded in real, current (2025–2026) industry data I will pull during build via web research. Each speaks directly to a VP of HR / founder / PE operator. No filler, no recycled LinkedIn-style content.
 
-The system prompt (built server-side, with the KB articles inlined) must enforce:
+1. **"The CFO seat won't stay filled."**
+   Record CFO turnover (Russell Reynolds / Crist Kolder data shows Fortune 500 CFO tenure at multi-year lows, ~50% leaving inside 3 years). What's actually driving it, why internal benches are thin, and what changes about scoping the search.
 
-- **Domain lock**: only answers questions about Ridge Planning & Engineering, civil engineering, land planning, due diligence, entitlements, and adjacent topics (zoning, stormwater, grading, utilities, geotech, DRI, variances, rezonings, plats, site plans, LDP). Redirect off-topic questions in one sentence.
-- **No invented facts**. Never fabricate fees, timelines, jurisdictions served, project names, client names, certifications, PE license numbers, or staff bios. If the KB is silent: *"I don't have that detail. The Ridge team can answer directly — please use the [contact form](/contact)."*
-- **No professional advice**. No legal, engineering stamp, code-compliance, surveying, or environmental determinations. Recommend a licensed professional and link to `/contact`.
-- **Permitted intuition**: the assistant *may* explain general industry concepts (what a variance is, what stormwater detention means, what due diligence typically covers) when the KB doesn't speak to it — but must label such answers as general industry context, not Ridge-specific commitments, and end with a `/contact` nudge.
-- **Contact rule** (hard): every mention of contacting, reaching out, getting in touch, requesting a proposal, scheduling a consultation, or asking for a quote **must** be a markdown link to `/contact`. Never display, quote, hint at, or invent any email address or phone number, even if a KB article or tool response contains one. If a user asks for an email or phone, decline once and link to `/contact`.
-- **Confidentiality**: never disclose internal fees, margins, client lists beyond what's publicly on the site, or unreleased work. Decline once and stop if pressed.
-- **Source-of-truth precedence**: KB articles > general industry knowledge > escalate. Prefer calling `search_knowledge_base` before answering Ridge-specific questions.
-- **Safety**: for emergencies (active flooding, sinkhole, structural collapse, gas line strike, etc.), tell the user to call local emergency services / 811 / their utility, and do not improvise hotline numbers.
-- **Privacy**: never request or echo sensitive data (SSN, payment info, government IDs).
-- **Honesty about being AI** if asked.
+2. **"AI didn't replace the recruiter. It replaced the shortlist."**
+   What generative AI has actually changed in senior hiring through 2025–2026 — sourcing collapse, candidate-side AI in interviews, the new failure modes (synthetic candidates, AI-written assessments), and what the human work now has to be.
 
-### 4. Seed knowledge-base articles
+3. **"Fractional is no longer a bridge."**
+   The fractional executive market has crossed from stopgap to permanent fixture, especially for CMO, CFO, and Chief People roles. Real data on adoption, the engagement patterns that actually work, and the three situations where fractional is the wrong call.
 
-Pre-populate `ai_knowledge_articles` (published=true) with at least:
+4. **"The return-to-office fight is over. The retention fight isn't."**
+   Where RTO mandates actually landed in 2025, what the data says about senior-level attrition tied to them, and the more uncomfortable question for VPs of HR: which of your leaders are quietly interviewing because of how the mandate was rolled out, not the mandate itself.
 
-- About Ridge Planning & Engineering (firm overview, geography, project types — pull from existing site copy, do not invent).
-- The four service pillars, one article each, using existing site language.
-- Industries served (six, as listed above).
-- Typical project lifecycle (feasibility → due diligence → entitlements → civil design → permitting → construction admin), in plain language.
-- "How to engage Ridge" — explains the consultation flow and links to `/contact`. Never lists a fee.
-- Jurisdictions served — placeholder article noting the list is being finalized; link to `/contact` for specific jurisdiction questions. Mark with a `// TODO: populate from owner-provided list` comment in the seed migration.
-- Glossary: variance, rezoning, DRI, LDP, stormwater detention vs retention, ESA Phase I, ALTA survey, plat vs site plan, geotech report. Short, neutral definitions.
+Research sources I'll draw from during build: Russell Reynolds Global Leadership Monitor, Crist Kolder Volatility Report, Heidrick CEO/CFO turnover reports, Korn Ferry Workforce 2025, BCG / McKinsey talent reports, BLS JOLTS, Gartner HR research, SHRM, Bain fractional executive studies. Every statistic cited will be attributable to a named, recent source.
 
-If the existing site already has copy that covers any of these, use that copy verbatim rather than rewriting.
+## Article card behavior
 
-### 5. Frontend widget
+Each article renders as a card matching the existing `Insights` grid (hairline border dividers, serif title, category eyebrow, short dek, excerpt). Clicking "Read full piece" expands the card inline using the existing `Collapsible` primitive — no separate detail route needed, no page reload, keeps the editorial feel. No publish dates anywhere.
 
-- Floating launcher button (bottom-right, ~56px), site-themed, with a sensible domain icon (compass, T-square, or transit — not Sparkles).
-- Panel: ~380px wide on desktop, full-width sheet on mobile. Header with assistant name + short tagline ("Civil engineering & land planning, Georgia Southeast"). Close button. Reset/new-conversation button.
-- Message list renders `message.parts` (not just a flat string). Render markdown with `react-markdown`. Show a tasteful "thinking..." shimmer while `status` is `submitted` or `streaming`.
-- Input: textarea with Enter-to-send, Shift+Enter newline, send button disabled while streaming. Autofocus on open and after each send.
-- Quick-start chips above the input on first open: "What services do you offer?", "Where do you work?", "How do I start a project?", "What's involved in due diligence?". Clicking a chip sends that exact message.
-- Persist `session_id` and message history in `localStorage` so the conversation survives reloads. Provide a clear "Start over" action.
-- Errors: 429 → "I'm getting a lot of questions right now — try again in a moment." 402 → quiet admin-only console log + a generic "I'm temporarily unavailable; please use the [contact form](/contact)." Network errors → same generic fallback with `/contact` link.
+## Visual & structural design
 
-### 6. Admin surface (optional but recommended)
+- Same hero treatment as `Insights` / `Services` / `Industries`: dark primary band, eyebrow, serif H1, light supporting paragraph.
+- Category filter row matching `Insights` (categories: *Search*, *Talent*, *Fractional*, *Workplace*).
+- Two-column grid of expandable article cards on the cream background using the same `bg-border` 1px-gap grid pattern.
+- Closes with the shared `CTABand`.
+- All colors and type via existing semantic tokens — no new design tokens needed.
 
-A simple `/admin/assistant` route gated by the `admin` role:
-- CRUD for `ai_knowledge_articles` (title, content, category, tags, published toggle).
-- Toggle + textarea for `ai_assistant_settings.seasonal_message` (e.g. "Holiday hours Dec 23–Jan 2").
-- Read-only list of recent `ai_conversations` for QA.
+## Technical implementation
 
-If you don't have time to build the UI in this pass, at minimum create the tables, RLS, and seed data so I can manage rows directly.
+- New file: `src/pages/FieldNotes.tsx` (mirrors `Insights.tsx` patterns, uses `Seo`, `CTABand`, `Collapsible`).
+- Article content stored in-file as a typed array (same shape as Insights), with full `body` paragraphs in addition to `excerpt`.
+- Route added in `src/App.tsx`: `/field-notes` lazy-loaded with `PageTransition`.
+- Nav link added in `src/components/Navigation.tsx` primary array.
+- SEO: title "Field Notes | proHIRE resources", concise description, evergreen (no dates in markup or JSON-LD).
+- No backend, no schema changes, no new dependencies.
 
-### 7. Scope guardrails
+## Open questions before I build
 
-- Do **not** copy content, prompts, tone, or tool names from any other project I've built. Rebuild from this site's actual content.
-- Do **not** add new top-level pages beyond `/admin/assistant` (and only if you build it).
-- Do **not** introduce new animation libraries, chat UI kits, or CSS frameworks.
-- Do **not** invent fees, jurisdictions, certifications, or staff bios.
-- Do **not** display or store email addresses or phone numbers in assistant output.
-- Use the existing design tokens; do not introduce new colors outside `index.css` / `tailwind.config.ts`.
+- Keep both **Insights** and **Field Notes** in the nav, or replace Insights with Field Notes?
+- Approve the name **Field Notes**, or prefer **The Brief** / **Signal**?
 
-### 8. Deliverables
-
-1. A short written plan listing: assistant name options, tables/migrations, edge function structure, tool list, widget component tree, and seed articles you intend to write.
-2. Wait for my approval on the name and the seed-article outline before generating final copy.
-3. Then implement: migrations → edge function → widget → seed data → admin (if in scope).
-4. Verify: send 5 test prompts (a service question, an off-topic question, a "what's your phone number" question, a "give me a quote" question, and an emergency question) and paste the responses so I can sanity-check the guardrails.
-
----
-
-That's the full prompt. Paste it into ridge-build-strong as a single message and let it run through its plan step before approving implementation.
+If you want me to proceed with Field Notes added alongside Insights and the four articles above, just say go.
