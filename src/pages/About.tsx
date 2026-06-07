@@ -307,6 +307,28 @@ export default function About() {
         </div>
       </section>
 
+      {/* Grounded at home */}
+      <section className="py-16 bg-secondary/40 border-t border-border">
+        <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5">
+            <img
+              src={chrisDogs}
+              alt="Chris's rescue dogs, Charli and Leo"
+              className="w-full h-auto block"
+            />
+          </div>
+          <div className="lg:col-span-7">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Grounded at home</div>
+            <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight mb-6">
+              Charli and Leo.
+            </h2>
+            <p className="text-muted-foreground font-light text-lg leading-relaxed">
+              Chris is a firm believer that the best work happens when you're grounded at home. For him, that means time with his two rescues: Charli, a Catahoula, and Leo, a Pit Mix. They're a meaningful part of his daily rhythm and a big reason he has been a long-standing supporter of rescue adoption. There's a grit and loyalty in a rescue dog that he has always admired, and he brings that same dedication to every client he works with.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CTABand />
     </div>
   );
