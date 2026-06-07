@@ -8,6 +8,7 @@ const primary = [
   { to: "/industries", label: "Industries" },
   { to: "/approach", label: "Approach" },
   { to: "/insights", label: "Insights" },
+  { to: "/field-notes", label: "Field Notes" },
   { to: "/about", label: "About" },
 ];
 
