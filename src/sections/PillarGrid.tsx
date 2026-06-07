@@ -4,19 +4,16 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const pillars = [
   {
-    eyebrow: "01, Executive Search",
     title: "Executive Search & Leadership Advisory",
     body: "Retained search and fractional CXOs who have actually scaled a comparable business. C-suite, VP, and board-track placements with measurable time-to-impact.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "02, Hiring & Workforce",
     title: "Hiring & Workforce Strategy",
     body: "Specialized hiring across technology, finance, and operations. Embedded recruiting, contract, contract-to-hire, and onboarding built for fast-growing teams.",
     href: "/services/talent-solutions",
   },
   {
-    eyebrow: "03, Growth Acceleration",
     title: "Revenue & Operational Acceleration",
     body: "Fractional business development, operating infrastructure, and partnership work. We act as your external BD and ops bench during the moments that matter.",
     href: "/services/growth-acceleration",
