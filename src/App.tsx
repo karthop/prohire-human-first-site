@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { PageLoadingSkeleton } from "@/components/ui/loading-skeleton";
@@ -39,6 +39,8 @@ const legacyRedirects: Record<string, string> = {
 };
 
 const LegacyRedirect = ({ to }: { to: string }) => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     let canonical: HTMLLinkElement | null = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -55,9 +57,15 @@ const LegacyRedirect = ({ to }: { to: string }) => {
       document.head.appendChild(robots);
     }
     robots.setAttribute("content", "noindex, follow");
-  }, [to]);
 
-  return <Navigate to={to} replace />;
+    const redirectTimer = window.setTimeout(() => {
+      navigate(to, { replace: true });
+    }, 75);
+
+    return () => window.clearTimeout(redirectTimer);
+  }, [navigate, to]);
+
+  return null;
 };
 
 const ScrollToTop = () => {
