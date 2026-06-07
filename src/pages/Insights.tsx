@@ -205,7 +205,7 @@ export default function Insights() {
                     ))}
                   </CollapsibleContent>
                   <CollapsibleTrigger className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors [&[data-state=open]>svg]:rotate-180">
-                    <span>{a.readTime} read</span>
+                    <span>{readTimeFor(a.excerpt)} read</span>
                     <span className="flex items-center gap-2">
                       <span className="group-data-[state=open]:hidden">Read</span>
                       <span className="hidden group-data-[state=open]:inline">Close</span>
