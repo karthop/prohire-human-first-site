@@ -149,7 +149,7 @@ export default function Insights() {
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-accent mb-4">Featured · {featured.category}</div>
             <div className="text-sm text-muted-foreground">
-              {formatDate(featured.date)} · {featured.readTime} read
+              {formatDate(featured.date)} · {readTimeFor(featured.excerpt)} read
             </div>
           </div>
           <article className="lg:col-span-8 space-y-6">
