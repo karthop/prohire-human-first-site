@@ -148,9 +148,6 @@ export default function Insights() {
                 <p key={i}>{p}</p>
               ))}
             </div>
-            <div className="pt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              Full essay forthcoming.
-            </div>
           </article>
         </div>
       </section>
