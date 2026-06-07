@@ -90,7 +90,7 @@
   }
 
   .dark {
-    /* Editorial dark mode — warm ink, deep navy elevation, restrained */
+    /* Editorial dark mode: warm ink, deep navy elevation, restrained */
     --background: 220 28% 6%;             /* near-black with warm cool ink */
     --foreground: 36 28% 92%;              /* warm cream copy */
 
@@ -335,7 +335,7 @@
   .font-light { font-weight: 400 !important; }
 }
 
-/* Hero ambient auroras — slow drifting gradients behind the headline */
+/* Hero ambient auroras: slow drifting gradients behind the headline */
 .hero-aurora {
   position: absolute;
   inset: -35%;

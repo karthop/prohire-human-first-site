@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
  * - Two slow CSS radial-gradient "auroras" drift at 30s+ cycles (depth).
  * - A canvas constellation of faint points drifts slowly, with hairline
  *   connections that fade in when points pass near each other.
- *   The metaphor is the network of senior relationships — quiet, premium,
+ *   The metaphor is the network of senior relationships: quiet, premium,
  *   on-brand for an executive search firm. Never competes with the headline.
  * - Respects prefers-reduced-motion (falls back to a static composition).
  */
@@ -56,7 +56,7 @@ export const HeroAmbient = () => {
       if (!running) return;
       ctx.clearRect(0, 0, width, height);
 
-      // Connection threshold — scales with the smaller dimension so it feels
+      // Connection threshold scales with the smaller dimension so it feels
       // consistent across viewports
       const linkDist = Math.min(190, Math.max(115, Math.min(width, height) * 0.24));
       const linkDistSq = linkDist * linkDist;
@@ -75,7 +75,7 @@ export const HeroAmbient = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        // Warm off-white, low alpha — reads as ambient, not as content
+        // Warm off-white, low alpha, reads as ambient, not as content
         ctx.fillStyle = `rgba(247, 245, 241, ${p.a * 0.72})`;
         ctx.fill();
       }
@@ -147,9 +147,9 @@ export const HeroAmbient = () => {
 
   return (
     <div className="hero-ambient-layer pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Aurora layer 1 — deep indigo glow, slow drift */}
+      {/* Aurora layer 1: deep indigo glow, slow drift */}
       <div className="hero-aurora hero-aurora-1" />
-      {/* Aurora layer 2 — warm gold ember, even slower, very low opacity */}
+      {/* Aurora layer 2: warm gold ember, even slower, very low opacity */}
       <div className="hero-aurora hero-aurora-2" />
       {/* Constellation canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
