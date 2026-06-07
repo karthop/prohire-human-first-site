@@ -1,65 +1,47 @@
+## Goal
 
-## What I reviewed
+1. Add three new evergreen articles to the Field Notes page, written from a 2026 vantage point, grounded in current research and specific to proHIRE resources' service lines and ideal clients.
+2. Remove every em-dash (—) and en-dash (–) from visible copy across the entire site, replacing each with the punctuation that best preserves the sentence (period, comma, colon, parentheses).
 
-- **Services:** Executive Search & Leadership Advisory, Hiring & Workforce Strategy, Revenue & Operational Acceleration, Career Advisory.
-- **Industries:** Tech/SaaS, FinTech, Healthcare/MedTech, Supply Chain, Industrial/Energy, Professional Services.
-- **Client shape:** Founders, boards, PE-backed CEOs, VPs of HR, senior operators — Series A through PE-backed mid-market.
-- **Voice:** Plain-spoken, senior, consultative, restraint over decoration. Cream background, serif headings, editorial layout with hairline borders and grid dividers.
+## Three new articles
 
-An `Insights` page already exists with a similar pattern. The new page will be a separate, more practical destination focused on what's happening right now in the market, distinct from the more essay-style Insights archive.
+All four existing articles stay as-is (aside from dash removal). Three new entries get appended to the `articles` array in `src/pages/FieldNotes.tsx`.
 
-## Page name — three options
+**Article 5 — "Why the next search you run should not go to a brand-name firm."**
+- Category: Search
+- Angle: The structural case for boutique executive search in 2026. The large global firms have scaled into a volume model with off-limits constraints that block half their own network, junior associates running the actual search, and standardized scorecards that flatten what makes a senior hire actually work. Boutique firms own the engagement end-to-end with a senior operator, hold a far smaller off-limits list, and earn the role of advisor rather than vendor.
+- 2026 grounding: AESC and Hunt Scanlon market data on the continued share shift from global firms to boutique and specialized practices through 2024 and 2025; the off-limits math (a firm that places 800 executives a year at Fortune 1000 companies cannot recruit from any of them for two years); the senior-led delivery question that nearly every search RFP in 2025 started asking; cost-per-placement comparisons that no longer favor the global firms once retainer plus equity-style backend fees are normalized.
 
-1. **Field Notes** — operator-grade, observational, boutique-advisor feel. Distinct from "Insights."
-2. **The Brief** — short, consultative, sounds like something a VP of HR would actually open.
-3. **Signal** — current, market-aware, suggests filtering noise from what matters.
+**Article 6 — "Hiring a senior leader in 2026 takes 94 days. Most of that is not searching."**
+- Category: Talent
+- Angle: Time-to-hire data for executive and senior roles has not improved despite AI sourcing. The bottleneck moved. Scope iteration, interview choreography across distributed decision-makers, compensation negotiation in a comp-compressed market, and reference verification (post-synthetic-candidate era) now consume more time than candidate identification ever did. The leaders who shorten the cycle do specific things differently.
+- 2026 grounding: LinkedIn and Workable 2025 time-to-hire benchmarks (senior roles trending 80-100+ days); the AI-sourcing-doesn't-fix-time paradox; Gartner data on interview-loop bloat; the rise of "second offer" attrition where a hired exec resigns inside 90 days because comp benchmarking moved during the search.
 
-**Recommended: Field Notes.** It matches the senior, plain-spoken brand voice better than the others, signals firsthand observation rather than thought-leadership posturing, and pairs naturally with the existing "The Work Behind the Hire" tone on Insights without duplicating it.
+**Article 7 — "Statement of work is the engagement model nobody is asking for, and most companies need."**
+- Category: Fractional
+- Angle: Beyond retained search and fractional leadership, an SOW-based engagement (scoped deliverable, fixed fee, defined outcome, time-bound) is increasingly the right shape for one-off senior interventions: a single VP search bundled with onboarding through day 90, a leadership team assessment, a comp framework rebuild, a succession plan for the top two layers. Most firms do not offer it because it caps revenue. proHIRE resources will. This article explains when SOW is the right model and when retained or fractional still wins.
+- 2026 grounding: Procurement trends in mid-market and PE-backed companies pushing every advisory spend toward defined-scope SOW; the shift away from open-ended retainers in legal, consulting, and now talent advisory; the practical comparison matrix (retained vs. fractional vs. SOW) by trigger event.
 
-Route: `/field-notes`. Add to primary nav between **Insights** and **About** (or replace if you prefer — flag this in feedback).
+Each article matches the existing schema: `id`, `title`, `dek`, `category`, `readTime`, `excerpt`, `body[]`. Length and structure mirror the existing four. No publish dates. Categories already exist in the filter row, so no UI changes needed.
 
-## The four articles (topics + angle)
+## Em-dash and en-dash removal
 
-Each is grounded in real, current (2025–2026) industry data I will pull during build via web research. Each speaks directly to a VP of HR / founder / PE operator. No filler, no recycled LinkedIn-style content.
+A site-wide pass on all visible-copy `.tsx` files under `src/pages/`, `src/sections/`, `src/components/`, and any data files that feed copy. Each occurrence reviewed individually so the replacement reads naturally:
+- Em-dash separating two independent thoughts → period and new sentence.
+- Em-dash setting off a parenthetical → comma pair or parentheses.
+- Em-dash before a list or punchline → colon.
+- En-dash in number ranges (e.g., "2024–2025") → hyphen ("2024-2025").
 
-1. **"The CFO seat won't stay filled."**
-   Record CFO turnover (Russell Reynolds / Crist Kolder data shows Fortune 500 CFO tenure at multi-year lows, ~50% leaving inside 3 years). What's actually driving it, why internal benches are thin, and what changes about scoping the search.
+Files certain to need edits based on the existing codebase pattern: `FieldNotes.tsx`, `Insights.tsx`, `Services.tsx`, `Industries.tsx`, `Approach.tsx`, `About.tsx`, `Home.tsx`, the service sub-pages, and any shared sections (`CTABand`, hero components, footer copy). A grep for `—` and `–` will catch the full set before edits start.
 
-2. **"AI didn't replace the recruiter. It replaced the shortlist."**
-   What generative AI has actually changed in senior hiring through 2025–2026 — sourcing collapse, candidate-side AI in interviews, the new failure modes (synthetic candidates, AI-written assessments), and what the human work now has to be.
+## Out of scope
 
-3. **"Fractional is no longer a bridge."**
-   The fractional executive market has crossed from stopgap to permanent fixture, especially for CMO, CFO, and Chief People roles. Real data on adoption, the engagement patterns that actually work, and the three situations where fractional is the wrong call.
+- No design, layout, routing, or navigation changes.
+- No changes to the existing four Field Notes articles other than dash removal.
+- No changes to logo, fonts, colors, or component structure.
 
-4. **"The return-to-office fight is over. The retention fight isn't."**
-   Where RTO mandates actually landed in 2025, what the data says about senior-level attrition tied to them, and the more uncomfortable question for VPs of HR: which of your leaders are quietly interviewing because of how the mandate was rolled out, not the mandate itself.
+## Technical notes
 
-Research sources I'll draw from during build: Russell Reynolds Global Leadership Monitor, Crist Kolder Volatility Report, Heidrick CEO/CFO turnover reports, Korn Ferry Workforce 2025, BCG / McKinsey talent reports, BLS JOLTS, Gartner HR research, SHRM, Bain fractional executive studies. Every statistic cited will be attributable to a named, recent source.
-
-## Article card behavior
-
-Each article renders as a card matching the existing `Insights` grid (hairline border dividers, serif title, category eyebrow, short dek, excerpt). Clicking "Read full piece" expands the card inline using the existing `Collapsible` primitive — no separate detail route needed, no page reload, keeps the editorial feel. No publish dates anywhere.
-
-## Visual & structural design
-
-- Same hero treatment as `Insights` / `Services` / `Industries`: dark primary band, eyebrow, serif H1, light supporting paragraph.
-- Category filter row matching `Insights` (categories: *Search*, *Talent*, *Fractional*, *Workplace*).
-- Two-column grid of expandable article cards on the cream background using the same `bg-border` 1px-gap grid pattern.
-- Closes with the shared `CTABand`.
-- All colors and type via existing semantic tokens — no new design tokens needed.
-
-## Technical implementation
-
-- New file: `src/pages/FieldNotes.tsx` (mirrors `Insights.tsx` patterns, uses `Seo`, `CTABand`, `Collapsible`).
-- Article content stored in-file as a typed array (same shape as Insights), with full `body` paragraphs in addition to `excerpt`.
-- Route added in `src/App.tsx`: `/field-notes` lazy-loaded with `PageTransition`.
-- Nav link added in `src/components/Navigation.tsx` primary array.
-- SEO: title "Field Notes | proHIRE resources", concise description, evergreen (no dates in markup or JSON-LD).
-- No backend, no schema changes, no new dependencies.
-
-## Open questions before I build
-
-- Keep both **Insights** and **Field Notes** in the nav, or replace Insights with Field Notes?
-- Approve the name **Field Notes**, or prefer **The Brief** / **Signal**?
-
-If you want me to proceed with Field Notes added alongside Insights and the four articles above, just say go.
+- Edits are confined to `src/pages/FieldNotes.tsx` (new articles + dash removal) plus dash-only edits across other copy files.
+- Article body paragraphs are plain strings in the existing array; no new dependencies, no schema changes.
+- The category filter already includes Search, Talent, Fractional, Workplace; the three new articles fall into Search, Talent, and Fractional respectively.

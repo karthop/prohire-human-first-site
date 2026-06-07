@@ -26,35 +26,35 @@ const principles = [
 const chapters = [
   {
     label: "Foundation",
-    years: "2003–2014",
+    years: "2003-2014",
     title: "Learning the trade at scale.",
     body: "Early years inside two of the largest national staffing firms, running engineering staffing, executive accounts, and the mechanics of placing senior people at velocity. Then years on the BD and delivery side of global engineering services across automotive, aerospace, and industrial clients.",
     learned: "Volume teaches you what the work is. Experience teaches you what the work is for.",
   },
   {
     label: "Senior delivery",
-    years: "2014–2021",
+    years: "2014-2021",
     title: "Building practices, not just placements.",
     body: "VP and Director-level roles across a series of global staffing and consulting firms, running BD and delivery for Fortune 500 buyers. The work shifted from individual searches to architecting the teams, processes, and partnerships behind them.",
     learned: "The hardest work in hiring isn't the placement. It's the system that makes the placement repeatable.",
   },
   {
     label: "Inside the buyer",
-    years: "2021–2022",
+    years: "2021-2022",
     title: "Two years at Amazon.",
     body: "Senior Talent Acquisition Consultant for the Alexa product organization, hiring Senior and Principal TPMs at one of the most demanding bars in tech. The view from inside a hyperscaler reshaped how we now advise founders and CHROs on what \"good\" actually looks like.",
     learned: "The bar is not what you think it is. And once you have seen it, you can't un-see it.",
   },
   {
     label: "Revenue leadership",
-    years: "2023–2024",
+    years: "2023-2024",
     title: "EVP of Sales for an NMSDC Award-winning MBE consulting firm.",
     body: "A consulting engagement leading sales for a technology consulting firm, closing the loop between go-to-market strategy and the people required to execute it.",
     learned: "Strategy without the right team is theater. The two cannot be separated.",
   },
   {
     label: "The practice today",
-    years: "2021–Present",
+    years: "2021-Present",
     title: "proHIRE resources.",
     body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. Four practices: Executive Search, Hiring & Workforce, Growth Acceleration, and Career Advisory.",
     learned: "The boutique model exists to do the work the larger firms have stopped doing.",
@@ -184,7 +184,7 @@ export default function About() {
             </p>
 
             <p>
-              Chris is a firm believer that the best work happens when you're grounded at home. For him, that means time with his two rescues — Charlie, a Catahoula, and Leo, a Pit Mix. They're a meaningful part of his daily rhythm and a big reason he has been a long-standing supporter of rescue adoption. There's a grit and loyalty in a rescue dog that he has always admired, and he brings that same dedication to every client he works with.
+              Chris is a firm believer that the best work happens when you're grounded at home. For him, that means time with his two rescues: Charlie, a Catahoula, and Leo, a Pit Mix. They're a meaningful part of his daily rhythm and a big reason he has been a long-standing supporter of rescue adoption. There's a grit and loyalty in a rescue dog that he has always admired, and he brings that same dedication to every client he works with.
             </p>
           </div>
         </div>

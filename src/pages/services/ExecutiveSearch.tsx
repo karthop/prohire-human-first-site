@@ -99,7 +99,7 @@ export default function ExecutiveSearch() {
       caseNarrative={{
         tag: "Series C · Fintech",
         title: "A fractional CRO who had already scaled the same playbook.",
-        body: "A Series C fintech CEO had a strong product, an under-built revenue function, and a board pressing for visible go-to-market traction before the next round. A full-time CRO was 9–12 months away on the cap table.\n\nWe re-scoped the role: the company didn't need a permanent CRO yet , it needed an operator who had taken a comparable product from $5M to $50M ARR and could install the motion in two quarters.\n\nWe placed a fractional CRO from a named target list of nine operators. Within the first quarter, the pipeline doubled and the company secured the enterprise logos the board had been asking about. The fractional engagement converted into a full-time CRO mandate at the right moment, with the right person already in the seat.",
+        body: "A Series C fintech CEO had a strong product, an under-built revenue function, and a board pressing for visible go-to-market traction before the next round. A full-time CRO was 9-12 months away on the cap table.\n\nWe re-scoped the role: the company didn't need a permanent CRO yet , it needed an operator who had taken a comparable product from $5M to $50M ARR and could install the motion in two quarters.\n\nWe placed a fractional CRO from a named target list of nine operators. Within the first quarter, the pipeline doubled and the company secured the enterprise logos the board had been asking about. The fractional engagement converted into a full-time CRO mandate at the right moment, with the right person already in the seat.",
       }}
       faq={[
         {
