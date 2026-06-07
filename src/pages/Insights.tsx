@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 type Category = "Search" | "Talent" | "Growth" | "Career" | "Operator notes";
 
