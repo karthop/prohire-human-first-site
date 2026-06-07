@@ -10,6 +10,7 @@ import { PageTransition } from "@/components/motion/PageTransition";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { PersonaProvider } from "@/context/PersonaContext";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
