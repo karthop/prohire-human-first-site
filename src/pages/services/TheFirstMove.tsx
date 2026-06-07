@@ -27,15 +27,15 @@ export default function TheFirstMove() {
         },
         {
           heading: "Networking instincts",
-          detail: "How to identify and reach the right leaders and decision-makers, how to introduce yourself in a way that sparks interest rather than triggers the delete button, and how to follow up without burning the relationship.",
+          body: "How to identify and reach the right leaders and decision-makers, how to introduce yourself in a way that sparks interest rather than triggers the delete button, and how to follow up without burning the relationship.",
         },
         {
           heading: "Outreach that opens doors",
-          detail: "Building organic relationships with people who can help — not by asking for a job, but by showing up with curiosity, ambition, and polish.",
+          body: "Building organic relationships with people who can help — not by asking for a job, but by showing up with curiosity, ambition, and polish.",
         },
         {
           heading: "Group workshops and institutional partnerships",
-          detail: "Workshops and structured programs for high schools and universities that want to give students a real advantage in the internship market.",
+          body: "Workshops and structured programs for high schools and universities that want to give students a real advantage in the internship market.",
         },
       ]}
       engagements={[
