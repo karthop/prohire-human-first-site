@@ -20,7 +20,7 @@ const articles: Article[] = [
     title: "The end of keyword search.",
     dek: "One perspective on why committed executive search has to re-earn its premium, and what that looks like in practice.",
     excerpt: [
-      "A lot of what's sold as committed or strategic executive search today is a sourcing motion dressed up in advisory language — a database query, a partner-fronted pitch, and a junior team running the actual work behind the curtain. It's worth naming, because plenty of firms still do the work the right way.",
+      "A lot of what's sold as committed or strategic executive search today is a sourcing motion dressed up in advisory language: a database query, a partner-fronted pitch, and a junior team running the actual work behind the curtain. It's worth naming, because plenty of firms still do the work the right way.",
       "Boards are starting to notice. The premium fee survived as long as the assumption that the firm's network was meaningfully closed and its judgment meaningfully experienced. Both assumptions are now testable, and a fair number of firms struggle with the test.",
       "The work that justifies the fee is not the sourcing. It is the scope architecture, the deep referencing, and the stakeholder choreography around a difficult hire. That work is harder to scale, harder to package, and harder to delegate. Which is exactly why it is what you are paying for.",
     ],
