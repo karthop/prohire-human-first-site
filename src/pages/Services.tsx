@@ -25,13 +25,13 @@ const services = [
   {
     eyebrow: "Career Advisory",
     title: "Career Advisory for Senior Professionals",
-    body: "Confidential, one-to-one advisory for sitting CXOs, board candidates, and post-exit operators navigating CXO moves, board candidacies, succession, and the legacy-defining decisions that arrive without warning. Positioning, search strategy, interview and negotiation, and board readiness — all under NDA.",
+    body: "Confidential, one-to-one advisory for sitting CXOs, board candidates, and post-exit operators navigating CXO moves, board candidacies, succession, and the legacy-defining decisions that arrive without warning. Positioning, search strategy, interview and negotiation, and board readiness, all under NDA.",
     href: "/services/career-advisory",
   },
   {
     eyebrow: "Early Career Advisory",
     title: "The First Move",
-    body: "Early career advisory for high school juniors and seniors and college students competing for the internships that set the trajectory. We build a LinkedIn profile that gets found, a resume that reflects real potential, and the networking instincts most people don't develop until years into their career — through individual coaching and institutional partnerships with high schools and universities.",
+    body: "Early career advisory for high school juniors and seniors and college students competing for the internships that set the trajectory. We build a LinkedIn profile that gets found, a resume that reflects real potential, and the networking instincts most people don't develop until years into their career, through individual coaching and institutional partnerships with high schools and universities.",
     href: "/services/the-first-move",
   },
 ];
