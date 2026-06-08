@@ -6,7 +6,7 @@ import { FaqList } from "@/components/FaqList";
 
 interface Section {
   heading: string;
-  body?: string;
+  body?: React.ReactNode;
   bullets?: string[];
 }
 
