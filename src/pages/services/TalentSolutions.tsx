@@ -39,7 +39,7 @@ export default function TalentSolutions() {
         },
         {
           heading: "Onboarding systems",
-          body: "Modular onboarding infrastructure , planning, forms, welcome programs, manager briefs, and 30-day liaison support , included on direct-hire placements.",
+          body: "Onboarding infrastructure included on direct-hire placements — planning, manager briefs, and 30-day check-ins built in.",
         },
       ]}
       disciplines={[

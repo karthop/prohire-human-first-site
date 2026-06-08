@@ -43,6 +43,7 @@ interface Props {
   lead: string;
   thesis?: string;
   pointOfView?: string;
+  pointOfViewPlain?: boolean;
   whoFor: string[];
   capabilities: Section[];
   disciplines?: Section[];
@@ -64,6 +65,7 @@ export const ServiceTemplate = ({
   lead,
   thesis,
   pointOfView,
+  pointOfViewPlain,
   whoFor,
   capabilities,
   disciplines,
@@ -129,10 +131,18 @@ export const ServiceTemplate = ({
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
               Point of view
             </div>
-            <blockquote className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
-              "{pointOfView}"
-            </blockquote>
-            <div className="mt-6 text-sm text-muted-foreground">, Chris Betz, CEO</div>
+            {pointOfViewPlain ? (
+              <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
+                {pointOfView}
+              </p>
+            ) : (
+              <>
+                <blockquote className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
+                  "{pointOfView}"
+                </blockquote>
+                <div className="mt-6 text-sm text-muted-foreground">— Chris Betz, CEO</div>
+              </>
+            )}
           </div>
         </section>
       )}
