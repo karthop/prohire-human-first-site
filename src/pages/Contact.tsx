@@ -32,14 +32,15 @@ export default function Contact() {
           email: formData.email,
           company: formData.company,
           role: formData.role,
-          inquiryType: formData.inquiryType || "general",
+          phone: formData.phone,
+          inquiryType: formData.inquiryType,
           message: formData.message,
         },
       });
       if (error) throw error;
       setSent(true);
       toast.success("Message sent. We'll be in touch within one business day.");
-      setFormData({ name: "", email: "", company: "", role: "", inquiryType: "", message: "" });
+      setFormData({ name: "", email: "", company: "", role: "", phone: "", inquiryType: "", message: "" });
     } catch (err: any) {
       console.error("Contact form error:", err);
       toast.error("Something went wrong sending your message. Please try again.");
