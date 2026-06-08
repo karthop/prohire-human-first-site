@@ -14,10 +14,13 @@ interface ContactEmailRequest {
   email: string;
   company?: string;
   role?: string;
+  phone?: string;
   inquiryType: string;
   message: string;
-  persona?: 'employer' | 'professional' | null;
 }
+
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 serve(async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
@@ -25,48 +28,67 @@ serve(async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, company, role, inquiryType, message, persona }: ContactEmailRequest = await req.json();
+    const { name, email, company, role, phone, inquiryType, message }: ContactEmailRequest = await req.json();
     const toAddress = Deno.env.get("CONTACT_EMAIL_TO") || "cbetz@prohireresources.com";
 
-    const subject = persona === 'employer'
-      ? `Employer Inquiry: ${name} — ${company ?? ''}`
-      : persona === 'professional'
-      ? `Professional Inquiry: ${name}`
-      : `New Inquiry from ${name}`;
+    const subject = `New Inquiry from ${name}${company ? ` — ${company}` : ""}`;
 
-    const html = `
+    const notificationHtml = `
       <h2>New contact submission</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
-      ${role ? `<p><strong>Role:</strong> ${role}</p>` : ''}
-      <p><strong>Inquiry type:</strong> ${inquiryType}</p>
-      <p><strong>Persona:</strong> ${persona ?? 'not specified'}</p>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}
+      ${role ? `<p><strong>Role:</strong> ${escapeHtml(role)}</p>` : ""}
+      ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
+      <p><strong>Inquiry type:</strong> ${escapeHtml(inquiryType)}</p>
       <hr />
-      <p>${message.replace(/\n/g, '<br/>')}</p>
+      <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
     `;
 
-    const fromAddress = Deno.env.get("RESEND_FROM") || "proHIRE resources <onboarding@resend.dev>";
+    const notificationFrom = Deno.env.get("RESEND_FROM") || "proHIRE resources <info@prohireresources.com>";
+    const confirmationFrom = Deno.env.get("RESEND_CONFIRMATION_FROM") || "proHIRE resources <info@prohireresources.com>";
 
-    const emailResponse = await resend.emails.send({
-      from: fromAddress,
+    const notificationResp = await resend.emails.send({
+      from: notificationFrom,
       to: [toAddress],
       reply_to: email,
       subject,
-      html,
+      html: notificationHtml,
     });
 
-    // If Resend returns an error, bubble it up so the client can handle fallback
-    if (emailResponse.error) {
-      console.error("Resend send failed:", emailResponse.error);
-      return new Response(JSON.stringify({ error: emailResponse.error }), {
+    if (notificationResp.error) {
+      console.error("Resend notification failed:", notificationResp.error);
+      return new Response(JSON.stringify({ error: notificationResp.error }), {
         status: 400,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
     }
 
-    // Success
-    return new Response(JSON.stringify({ data: emailResponse.data }), {
+    // Confirmation auto-reply to the submitter
+    const firstName = (name || "").trim().split(/\s+/)[0] || "there";
+    const confirmationHtml = `
+      <p>Hi ${escapeHtml(firstName)},</p>
+      <p>Thanks for reaching out to proHIRE resources. We've received your note and will respond within one business day.</p>
+      <p>In the meantime, if anything urgent comes up, just reply to this email.</p>
+      <p>— Chris Betz<br/>CEO, proHIRE resources</p>
+    `;
+
+    try {
+      const confirmationResp = await resend.emails.send({
+        from: confirmationFrom,
+        to: [email],
+        reply_to: "cbetz@prohireresources.com",
+        subject: "We received your inquiry — proHIRE resources",
+        html: confirmationHtml,
+      });
+      if (confirmationResp.error) {
+        console.error("Resend confirmation failed:", confirmationResp.error);
+      }
+    } catch (e) {
+      console.error("Confirmation send threw:", e);
+    }
+
+    return new Response(JSON.stringify({ data: notificationResp.data }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
