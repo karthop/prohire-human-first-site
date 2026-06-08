@@ -7,26 +7,31 @@ const pillars = [
     title: "Executive Search & Leadership Advisory",
     body: "The hires that decide the next two years, led by senior partners, not associates behind a pitch.",
     href: "/services/executive-search",
+    linkText: "Explore Executive Search",
   },
   {
     title: "Hiring & Workforce Strategy",
     body: "Embedded recruiting for teams that have outgrown the generic agency model.",
     href: "/services/talent-solutions",
+    linkText: "Explore Talent Solutions",
   },
   {
     title: "Revenue & Operational Acceleration",
     body: "An external BD and operations bench for the quarters that have to land.",
     href: "/services/growth-acceleration",
+    linkText: "Explore Growth Acceleration",
   },
   {
     title: "Career Advisory for Senior Professionals",
     body: "Discreet counsel for CXOs, board candidates, and operators making a defining move.",
     href: "/services/career-advisory",
+    linkText: "Explore Career Advisory",
   },
   {
     title: "The First Move",
     body: "Early career advisory for students competing for the internships that set the trajectory.",
     href: "/services/the-first-move",
+    linkText: "Explore The First Move",
   },
 ];
 
@@ -66,7 +71,7 @@ export const PillarGrid = () => {
                   {p.body}
                 </p>
                 <div className="link-arrow mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                  Learn more
+                  {p.linkText}
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </Link>
