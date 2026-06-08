@@ -26,6 +26,7 @@ const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleratio
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 
 const queryClient = new QueryClient();
@@ -106,6 +107,7 @@ const App = () => (
               <Route path="/field-notes" element={<LegacyRedirect to={legacyRedirects["/field-notes"]} />} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="/unsubscribe" element={<PageTransition><Unsubscribe /></PageTransition>} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<LegacyRedirect to={legacyRedirects["/employers"]} />} />
               <Route path="/professionals" element={<LegacyRedirect to={legacyRedirects["/professionals"]} />} />
