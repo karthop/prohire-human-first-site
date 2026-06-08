@@ -129,6 +129,7 @@ export default function Contact() {
                 <Label htmlFor="company" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Company</Label>
                 <Input
                   id="company"
+                  required
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
@@ -138,11 +139,23 @@ export default function Contact() {
                 <Label htmlFor="role" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Role</Label>
                 <Input
                   id="role"
+                  required
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                   className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
                 />
               </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Phone <span className="normal-case tracking-normal text-muted-foreground/70">(optional)</span></Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="border-0 border-b border-border rounded-none bg-transparent px-0 focus-visible:ring-0 focus-visible:border-foreground h-11"
+              />
             </div>
 
             <div className="space-y-2">
@@ -152,6 +165,7 @@ export default function Contact() {
               <Select
                 value={formData.inquiryType}
                 onValueChange={(v) => setFormData({ ...formData, inquiryType: v })}
+                required
               >
                 <SelectTrigger className="border-0 border-b border-border rounded-none bg-transparent px-0 focus:ring-0 h-11">
                   <SelectValue placeholder="Select" />
