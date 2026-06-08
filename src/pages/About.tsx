@@ -46,13 +46,6 @@ const chapters = [
     learned: "The bar is not what you think it is. And once you have seen it, you can't un-see it.",
   },
   {
-    label: "Revenue leadership",
-    years: "2023-2024",
-    title: "EVP of Sales for an NMSDC Award-winning MBE consulting firm.",
-    body: "A consulting engagement leading sales for a technology consulting firm, closing the loop between go-to-market strategy and the people required to execute it.",
-    learned: "Strategy without the right team is theater. The two cannot be separated.",
-  },
-  {
     label: "The practice today",
     years: "2021-Present",
     title: "proHIRE resources.",
@@ -217,7 +210,7 @@ export default function About() {
           <div className="max-w-3xl mb-20">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">The arc</div>
             <h2 className="font-serif text-3xl lg:text-5xl text-foreground leading-[1.1]">
-              Five chapters, one consistent question:<br />
+              Four chapters, one consistent question:<br />
               <span className="text-muted-foreground">what does this leader actually need?</span>
             </h2>
           </div>
@@ -288,19 +281,27 @@ export default function About() {
           </div>
           <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-8 text-foreground font-light leading-relaxed">
             <div>
-              <div className="font-serif text-lg text-foreground">C-Level Advisory</div>
+              <div className="font-serif text-lg text-foreground">
+                <a href="https://www.linkedin.com/company/c-level-advisory-llc" target="_blank" rel="noopener noreferrer" className="hover:underline">C-Level Advisory</a>
+              </div>
               <p className="text-muted-foreground text-sm mt-1">Consulting Specialist · CXO advisory and capital network.</p>
             </div>
             <div>
-              <div className="font-serif text-lg text-foreground">The Curated Network™</div>
+              <div className="font-serif text-lg text-foreground">
+                <a href="https://www.linkedin.com/company/c-level-advisory-llc" target="_blank" rel="noopener noreferrer" className="hover:underline">The Curated Network™</a>
+              </div>
               <p className="text-muted-foreground text-sm mt-1">Member of the senior leadership community.</p>
             </div>
             <div>
-              <div className="font-serif text-lg text-foreground">FinTech Atlanta</div>
+              <div className="font-serif text-lg text-foreground">
+                <a href="https://fintechatlanta.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">FinTech Atlanta</a>
+              </div>
               <p className="text-muted-foreground text-sm mt-1">Advisor and advocate for the city's fintech ecosystem.</p>
             </div>
             <div>
-              <div className="font-serif text-lg text-foreground">Inspiredu</div>
+              <div className="font-serif text-lg text-foreground">
+                <a href="https://www.iuatl.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">Inspiredu</a>
+              </div>
               <p className="text-muted-foreground text-sm mt-1">Emeritus Board Member · digital literacy and access in Atlanta.</p>
             </div>
           </div>

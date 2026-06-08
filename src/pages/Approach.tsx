@@ -72,18 +72,22 @@ const cadence = [
 const networks = [
   {
     name: "C-Level Advisory",
+    url: "https://www.linkedin.com/company/c-level-advisory-llc",
     body: "A global network of CXO advisors and capital partners. Used for board and capital introductions, peer references, and senior advisory access on transformation work.",
   },
   {
     name: "The Curated Network™",
+    url: "https://www.linkedin.com/company/c-level-advisory-llc",
     body: "A senior leadership community we draw on for off-market candidate access, peer benchmarking, and confidential succession conversations.",
   },
   {
     name: "FinTech Atlanta",
+    url: "https://fintechatlanta.org/",
     body: "Sector advocacy and ecosystem access for fintech-adjacent engagements: capital, regulatory voice, and sector-specific candidate reach.",
   },
   {
     name: "Inspiredu",
+    url: "https://www.iuatl.org/",
     body: "Civic commitment to digital literacy and access in Atlanta. Emeritus board service that anchors the firm's community accountability.",
   },
 ];
@@ -239,7 +243,13 @@ export default function Approach() {
             {networks.map((n) => (
               <div key={n.name} className="grid md:grid-cols-12 gap-6 py-6">
                 <div className="md:col-span-4">
-                  <h3 className="font-serif text-xl text-foreground">{n.name}</h3>
+                  <h3 className="font-serif text-xl text-foreground">
+                    {n.url ? (
+                      <a href={n.url} target="_blank" rel="noopener noreferrer" className="hover:underline">{n.name}</a>
+                    ) : (
+                      n.name
+                    )}
+                  </h3>
                 </div>
                 <p className="md:col-span-8 text-muted-foreground font-light leading-relaxed">{n.body}</p>
               </div>

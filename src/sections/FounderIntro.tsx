@@ -35,7 +35,7 @@ export const FounderIntro = () => {
                   Affiliations
                 </div>
                 <div className="text-foreground">
-                  C-Level Advisory · The Curated Network™
+                  <a href="https://www.linkedin.com/company/c-level-advisory-llc" target="_blank" rel="noopener noreferrer" className="hover:underline">C-Level Advisory · The Curated Network™</a>
                 </div>
               </div>
               <div>
@@ -43,7 +43,9 @@ export const FounderIntro = () => {
                   Civic
                 </div>
                 <div className="text-foreground">
-                  Inspiredu (Emeritus) · FinTech Atlanta
+                  <a href="https://www.iuatl.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">Inspiredu (Emeritus)</a>
+                  {" · "}
+                  <a href="https://fintechatlanta.org/" target="_blank" rel="noopener noreferrer" className="hover:underline">FinTech Atlanta</a>
                 </div>
               </div>
             </div>
