@@ -1,28 +1,21 @@
-Plain English: the current contact form does not truly send the message from the site. It opens the visitor’s email app with a draft addressed to Chris. That can fail silently if the visitor has no mail app configured. The fix is to restore a real form submission path so the website sends the inquiry reliably.
+Five specific copy edits across four files. No design, layout, structure, or navigation changes.
 
-Plan:
+1. CTABand.tsx (default props)
+   - Change `body` default from: "A confidential 30-minute call. No pitch, no deck. We will tell you straight whether this is the kind of work we are right for."
+   - To: "A confidential 30-minute call. Tell us what you're working on."
 
-1. Restore server-side contact submission
-   - Recreate the contact email handler that receives the form data.
-   - Send the inquiry to `cbetz@prohireresources.com`.
-   - Do not display the email address publicly on the page.
+2. Footer.tsx (tagline paragraph)
+   - Change: "Boutique by design. Human-first, AI-enhanced, accountable for the outcome."
+   - To: "Boutique by design. Accountable for the outcome."
 
-2. Update the contact page submit behavior
-   - Replace the current `mailto:` redirect with a real submit call.
-   - Show a clear success message only after the send succeeds.
-   - Show a clear failure message if sending fails.
-   - Keep the current form layout and copy unless required for the fix.
+3. Services.tsx — two edits
+   a. Hero paragraph (line ~94): Remove the trailing clause ", not where a transactional vendor will do."
+   b. Integration thesis subheader (line ~108): Change "The boundaries are deliberate. The seams are the work." to "The boundaries are deliberate. Most engagements draw on more than one practice."
 
-3. Confirm email configuration before finalizing
-   - Check whether the project currently has the required email secret/provider configured.
-   - If the required sender credential is missing, stop and request only that missing credential instead of pretending it works.
+4. Industries.tsx (CTABand override)
+   - Change `body` prop from: "We will meet it with experienced people, named-target sourcing, and disciplined work, not a generic pitch."
+   - To: "We will meet it with experienced people, named-target sourcing, and disciplined work."
 
-4. Verify the result
-   - Test that the form calls the send path successfully.
-   - Confirm there are no remaining `mailto:` submissions on the contact form.
-
-Technical details:
-- This changes `src/pages/Contact.tsx` and restores the deleted contact email function/config if needed.
-- Recipient stays `cbetz@prohireresources.com`.
-- Public page still does not print the email address.
-- I will not change unrelated pages or old migration text.
+5. About.tsx — two edits
+   a. Charli and Leo paragraph: Remove final sentence. Stop after "...he has been a long-standing supporter of rescue adoption."
+   b. Em dashes with spaces: Verified via search — no spaced em dashes ( — ) currently exist in the file. No action needed.

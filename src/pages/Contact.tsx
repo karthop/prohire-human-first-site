@@ -4,22 +4,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Seo } from "@/components/Seo";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-
-const inquiryLabels: Record<string, string> = {
-  "executive-search": "Executive search / fractional CXO",
-  "talent-solutions": "Hiring / embedded recruiting",
-  "growth-acceleration": "Growth acceleration / BD",
-  "career-advisory": "Career advisory (individual)",
-  partnership: "Partnership / referral",
-  general: "General inquiry",
-};
+import { toast } from "sonner";
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,59 +25,25 @@ export default function Contact() {
     e.preventDefault();
     if (submitting) return;
     setSubmitting(true);
-    setErrorMsg(null);
-
-    const submissionId =
-      (typeof crypto !== "undefined" && "randomUUID" in crypto
-        ? crypto.randomUUID()
-        : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
-
-    const templateData = {
-      name: formData.name,
-      email: formData.email,
-      company: formData.company,
-      role: formData.role,
-      phone: formData.phone,
-      inquiryType: inquiryLabels[formData.inquiryType] ?? formData.inquiryType,
-      message: formData.message,
-    };
-
     try {
-      const ownerRes = await supabase.functions.invoke("send-transactional-email", {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
         body: {
-          templateName: "contact-owner-notification",
-          idempotencyKey: `contact-owner-${submissionId}`,
-          templateData,
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          role: formData.role,
+          phone: formData.phone,
+          inquiryType: formData.inquiryType,
+          message: formData.message,
         },
       });
-
-      if (ownerRes.error) throw ownerRes.error;
-
-      // Confirmation to the submitter — non-blocking for success state.
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-confirmation",
-          recipientEmail: formData.email,
-          idempotencyKey: `contact-confirm-${submissionId}`,
-          templateData: { name: formData.name },
-        },
-      });
-
+      if (error) throw error;
       setSent(true);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        role: "",
-        phone: "",
-        inquiryType: "",
-        message: "",
-      });
-    } catch (err) {
-      console.error("Contact form submission failed", err);
-      setErrorMsg(
-        "Something went wrong sending your message. Please try again in a moment."
-      );
+      toast.success("Message sent. We'll be in touch within one business day.");
+      setFormData({ name: "", email: "", company: "", role: "", phone: "", inquiryType: "", message: "" });
+    } catch (err: any) {
+      console.error("Contact form error:", err);
+      toast.error("Something went wrong sending your message. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -244,14 +201,10 @@ export default function Contact() {
               disabled={submitting}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 text-sm font-medium hover:bg-primary-light transition-colors disabled:opacity-60"
             >
-              {submitting ? "Sending…" : "Send inquiry"} <ArrowRight className="w-4 h-4" />
+              {submitting ? (<>Sending <Loader2 className="w-4 h-4 animate-spin" /></>) : (<>Send inquiry <ArrowRight className="w-4 h-4" /></>)}
             </button>
-            <p className="text-xs text-muted-foreground" role="status" aria-live="polite">
-              {errorMsg
-                ? errorMsg
-                : sent
-                ? "Thank you. Your message has been sent — we respond within one business day. A confirmation has also been sent to your inbox."
-                : "We respond within one business day."}
+            <p className="text-xs text-muted-foreground">
+              {sent ? "Message sent. We'll respond within one business day." : "We respond within one business day."}
             </p>
           </form>
         </div>
