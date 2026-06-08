@@ -43,7 +43,7 @@ export default function Industries() {
 
       <CTABand
         title="Bring us your industry context."
-        body="We will meet it with experienced people, named-target sourcing, and disciplined work, not a generic pitch."
+        body="We will meet it with experienced people, named-target sourcing, and disciplined work."
       />
     </div>
   );
