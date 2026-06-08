@@ -1,49 +1,23 @@
-Plain English first: you do not need to paste every page into Google manually. Google is supposed to discover pages through `/sitemap.xml`. I will make that sitemap pull from the actual React routes and the article list, so when a new article is added to the site’s article data, the sitemap updates automatically during preview/build/publish. Then you submit one URL in Search Console: `https://prohireresources.com/sitemap.xml`.
+Plain English first: the project code now points at the corrected `v4` favicon files, but the live ProHire domain that Google is seeing is still serving the older `v3` favicon references. That means the last favicon fix exists in the project, but it has not reached the public site Google is crawling yet. Google is not showing a Lovable app name in the result; it is showing the old circular Lovable-style favicon next to the correct proHIRE result.
 
 Plan:
 
-1. Create an automatic sitemap generator
-   - Add `scripts/generate-sitemap.ts`.
-   - It will include the real public app routes only:
-     - `/`
-     - `/about`
-     - `/approach`
-     - `/services`
-     - `/services/executive-search`
-     - `/services/talent-solutions`
-     - `/services/growth-acceleration`
-     - `/services/career-advisory`
-     - `/services/the-first-move`
-     - `/industries`
-     - `/what-were-seeing`
-     - `/contact`
-   - It will also import the real `articles` list and generate one `/what-were-seeing/{slug}` URL per article.
+1. Confirm the favicon assets are the correct ProHire files
+   - Check the live `/favicon.ico`, `/favicon-48x48.png`, `/favicon-96x96.png`, `/apple-touch-icon.png`, and `/prohire-favicon.png` assets against the corrected project files.
+   - If any still contain the wrong icon, replace those exact public files with the corrected ProHire favicon assets.
 
-2. Wire the generator into the project lifecycle
-   - Add `predev` and `prebuild` scripts in `package.json`.
-   - This makes `public/sitemap.xml` regenerate automatically before local preview and before production build.
-   - Result: future article additions do not require manually editing the sitemap.
+2. Make the public HTML point only to the corrected favicon version
+   - Keep the favicon links in `index.html` on the cache-busted `v4` files.
+   - Make sure `/favicon.ico` also exists and is correct, because browsers and Google often request that path directly even when other favicon tags exist.
 
-3. Replace the current static sitemap content with generated output
-   - Keep the base domain as `https://prohireresources.com`.
-   - Remove any risk of stale made-up URLs being left behind.
-   - Keep priorities/changefreq consistent with the current sitemap.
+3. Publish the corrected site to the live ProHire domain
+   - The live domain currently serves `?v=3`; the project has `?v=4`.
+   - Publishing is the immediate fix needed so `https://prohireresources.com` serves the corrected favicon references.
 
-4. Verify crawler access
-   - Check `public/robots.txt` and ensure it allows crawling and points Google to `https://prohireresources.com/sitemap.xml` if appropriate.
+4. Verify the live domain after publish
+   - Fetch `https://prohireresources.com/` and confirm the live `<head>` now references `?v=4` favicon files.
+   - Fetch the favicon URLs directly and confirm they return real image files from the ProHire domain.
 
-After this is implemented, your ongoing process becomes:
-
-1. Add/publish a new article in the site content.
-2. Publish the site.
-3. Google reads the updated sitemap.
-4. If you want faster discovery, submit/resubmit only this sitemap URL in Search Console:
-   `https://prohireresources.com/sitemap.xml`
-
-Technical details:
-
-- No backend email service.
-- No Firecrawl integration needed.
-- No manual list of article URLs in Search Console.
-- The article URLs will come directly from `src/content/articles.ts`, so the sitemap tracks the actual content source.
-- The sitemap mechanism will remain a standard static `public/sitemap.xml`, but generated automatically before build.
+5. Give Google the clean recrawl target
+   - In the ProHire Google Search Console account, request indexing for `https://prohireresources.com/`.
+   - Google’s visible search result favicon may still take time to update because SERP favicons are cached by Google, but after the live domain serves the corrected files, the technical problem is fixed on the site side.
