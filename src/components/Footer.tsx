@@ -13,8 +13,7 @@ export const Footer = () => {
               <span className="font-serif text-xl">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed font-light max-w-sm">
-              Executive search and growth advisory. Boutique by design. Human-first,
-              AI-enhanced, accountable for the outcome.
+              Executive search and growth advisory. Boutique by design. Accountable for the outcome.
             </p>
             <p className="text-primary-foreground/60 text-sm italic font-serif">
               "You are more than just a keyword search."

@@ -92,7 +92,7 @@ export default function ServicesIndex() {
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             We engage where experienced judgment, real network reach, and disciplined
-            execution actually change the outcome, not where a transactional vendor will do.
+            execution actually change the outcome.
           </p>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function ServicesIndex() {
               How the practices fit together
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              The boundaries are deliberate. The seams are the work.
+              The boundaries are deliberate. Most engagements draw on more than one practice.
             </h2>
           </div>
           <div className="lg:col-span-8 text-foreground text-lg font-light leading-relaxed space-y-4">
