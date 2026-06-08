@@ -75,9 +75,9 @@ export default function GrowthAcceleration() {
         "Take performance-only engagements where there is no shared accountability for inputs.",
       ]}
       engagements={[
-        { name: "Foundation Partnership", detail: "Core operating infrastructure , onboarding, light recruiting, and HR foundations , for companies under 30 employees." },
-        { name: "Growth Partnership", detail: "Foundation plus active BD execution or fractional chief-of-staff capacity. The most common shape for Series A and B companies." },
-        { name: "Enterprise Partnership", detail: "Comprehensive multi-workstream support , BD, operating infrastructure, and fractional executive capacity in parallel." },
+        { name: "Foundation Partnership", detail: "Core operating infrastructure for companies under 30 employees — onboarding, light recruiting, and HR foundations that scale with the headcount." },
+        { name: "Growth Partnership", detail: "Active BD execution and operating infrastructure for Series A and B companies. The most common engagement shape we run." },
+        { name: "Enterprise Partnership", detail: "BD execution, operating infrastructure, and fractional executive capacity running in parallel — for companies that need senior firepower across more than one function at once." },
         { name: "BD execution", detail: "Standalone senior BD engagement against a named-account or partnership thesis, with monthly retainer and outcome incentives." },
         { name: "Operations & HR", detail: "Standalone operating-infrastructure engagement, retainer or project-based." },
         { name: "Volume partnership", detail: "Multi-quarter and annual commitments structured with shared milestones and partnership incentives." },

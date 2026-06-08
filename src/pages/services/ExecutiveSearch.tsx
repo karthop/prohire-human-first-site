@@ -8,7 +8,7 @@ export default function ExecutiveSearch() {
       eyebrow="Executive Search"
       title="Executive Search & Leadership Advisory"
       lead="Retained search, fractional CXOs, and board advisory for the hires that decide the next chapter, succession, capital events, market entry, and the moves no one on the inside can run themselves."
-      thesis="Most of what gets sold as executive search today is a sourcing motion in advisory clothing, a database query dressed up in a deck. The result is a market full of shortlists that look credible and miss the actual scope. We build the work backward from the question: what is the company really trying to do, who can actually do it, and how do we get them to say yes? The hire is the artifact. The judgment is the practice."
+      thesis="Most of what gets sold as executive search today is a sourcing motion in advisory clothing, a database query dressed up in a deck. The result is a market full of shortlists that look credible and miss the actual scope. We build the work backward from the question: what is the company really trying to do, who can actually do it, and how do we get them to say yes? The hire is the outcome. The judgment is how we get there."
       pointOfView="A search is a leadership decision, not a procurement event. We work the way a board wants to be advised, not the way a vendor wants to be paid."
       whoFor={[
         "Founders and boards filling C-suite roles where the next hire shapes the next chapter",
@@ -42,7 +42,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Network access",
-          body: "Curated reach into our partner ecosystems , C-Level Advisory, The Curated Network™, FinTech Atlanta , for board, capital, and go-to-market doors that don't open through job boards.",
+          body: "Curated reach into our partner ecosystems — C-Level Advisory, The Curated Network™, and FinTech Atlanta — for board, capital, and go-to-market doors that don't open through job boards.",
         },
       ]}
       disciplines={[
