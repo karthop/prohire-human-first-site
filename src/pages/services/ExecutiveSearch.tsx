@@ -42,7 +42,29 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Network access",
-          body: "Curated reach into our partner ecosystems — C-Level Advisory, The Curated Network™, and FinTech Atlanta — for board, capital, and go-to-market doors that don't open through job boards.",
+          body: (
+            <>
+              Curated reach into our partner ecosystems —{" "}
+              <a
+                href="https://www.linkedin.com/company/c-level-advisory-llc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                C-Level Advisory, The Curated Network™
+              </a>
+              , and{" "}
+              <a
+                href="https://fintechatlanta.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                FinTech Atlanta
+              </a>
+              {" "}— for board, capital, and go-to-market doors that don't open through job boards.
+            </>
+          ),
         },
       ]}
       disciplines={[
