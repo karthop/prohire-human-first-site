@@ -5,8 +5,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Seo } from "@/components/Seo";
 import { ArrowRight, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+
+const CONTACT_EMAIL = "cbetz@prohireresources.com";
+
+const inquiryLabels: Record<string, string> = {
+  "executive-search": "Executive search / fractional CXO",
+  "talent-solutions": "Hiring / embedded recruiting",
+  "growth-acceleration": "Growth acceleration / BD",
+  "career-advisory": "Career advisory (individual)",
+  partnership: "Partnership / referral",
+  general: "General inquiry",
+};
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
@@ -25,28 +34,24 @@ export default function Contact() {
     e.preventDefault();
     if (submitting) return;
     setSubmitting(true);
-    try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          role: formData.role,
-          phone: formData.phone,
-          inquiryType: formData.inquiryType,
-          message: formData.message,
-        },
-      });
-      if (error) throw error;
-      setSent(true);
-      toast.success("Message sent. We'll be in touch within one business day.");
-      setFormData({ name: "", email: "", company: "", role: "", phone: "", inquiryType: "", message: "" });
-    } catch (err: any) {
-      console.error("Contact form error:", err);
-      toast.error("Something went wrong sending your message. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
+
+    const subject = `Inquiry from ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company}`,
+      `Role: ${formData.role}`,
+      formData.phone ? `Phone: ${formData.phone}` : "",
+      `Inquiry: ${inquiryLabels[formData.inquiryType] || formData.inquiryType}`,
+      "",
+      formData.message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+    setSubmitting(false);
   };
 
   return (
@@ -204,7 +209,7 @@ export default function Contact() {
               {submitting ? (<>Sending <Loader2 className="w-4 h-4 animate-spin" /></>) : (<>Send inquiry <ArrowRight className="w-4 h-4" /></>)}
             </button>
             <p className="text-xs text-muted-foreground">
-              {sent ? "Message sent. We'll respond within one business day." : "We respond within one business day."}
+              {sent ? "Your email client has been opened with the inquiry details." : "We respond within one business day."}
             </p>
           </form>
         </div>
