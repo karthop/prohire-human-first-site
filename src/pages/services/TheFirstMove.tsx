@@ -39,7 +39,6 @@ export default function TheFirstMove() {
           body: "Workshops and structured programs for high schools and universities that want to give students a real advantage in the internship market.",
         },
       ]}
-      ]}
       wontDo={[
         "Guarantee internship placements or specific outcomes. We build the tools and instincts — the student does the work.",
         "Run a generic resume mill. Every engagement is one-to-one and built around the specific student, their story, and their target.",
