@@ -1,28 +1,49 @@
-Plain English first: Google is still seeing or caching the old Lovable icon because the site still points crawlers at the favicon files in `public`, and those need to be replaced everywhere Google can read them. The new service page also is not in `sitemap.xml`, so Google has no clean sitemap entry for `/services/the-first-move`. I will fix the files Google reads, then you will need to publish the frontend update so Google can crawl the corrected public site.
+Plain English first: you do not need to paste every page into Google manually. Google is supposed to discover pages through `/sitemap.xml`. I will make that sitemap pull from the actual React routes and the article list, so when a new article is added to the site’s article data, the sitemap updates automatically during preview/build/publish. Then you submit one URL in Search Console: `https://prohireresources.com/sitemap.xml`.
 
 Plan:
 
-1. Replace every Google-facing icon file
-   - Regenerate the favicon set from the real proHIRE logo instead of the Lovable icon.
-   - Replace `public/favicon.ico`, `public/favicon-48x48.png`, `public/favicon-96x96.png`, `public/apple-touch-icon.png`, and `public/prohire-favicon.png`.
-   - Keep the files square, crawlable, and at valid favicon sizes so Google accepts them.
+1. Create an automatic sitemap generator
+   - Add `scripts/generate-sitemap.ts`.
+   - It will include the real public app routes only:
+     - `/`
+     - `/about`
+     - `/approach`
+     - `/services`
+     - `/services/executive-search`
+     - `/services/talent-solutions`
+     - `/services/growth-acceleration`
+     - `/services/career-advisory`
+     - `/services/the-first-move`
+     - `/industries`
+     - `/what-were-seeing`
+     - `/contact`
+   - It will also import the real `articles` list and generate one `/what-were-seeing/{slug}` URL per article.
 
-2. Strengthen the favicon declarations in `index.html`
-   - Keep explicit icon links in the document head.
-   - Add versioned icon URLs so browsers and crawlers do not keep reusing the stale Lovable asset.
-   - Make the Organization JSON-LD logo point to the corrected proHIRE image.
+2. Wire the generator into the project lifecycle
+   - Add `predev` and `prebuild` scripts in `package.json`.
+   - This makes `public/sitemap.xml` regenerate automatically before local preview and before production build.
+   - Result: future article additions do not require manually editing the sitemap.
 
-3. Fix sitemap coverage for the new page
-   - Add `https://prohireresources.com/services/the-first-move` to `public/sitemap.xml`.
-   - Confirm all live public routes in `src/App.tsx` that should be indexed are represented in the sitemap.
-   - Keep legacy redirect routes out of the sitemap.
+3. Replace the current static sitemap content with generated output
+   - Keep the base domain as `https://prohireresources.com`.
+   - Remove any risk of stale made-up URLs being left behind.
+   - Keep priorities/changefreq consistent with the current sitemap.
 
-4. Verify crawl basics
-   - Confirm `robots.txt` allows Google and points to `https://prohireresources.com/sitemap.xml`.
-   - Confirm the new service route has a canonical URL through the existing SEO component.
-   - Check for any remaining Lovable favicon references in source and public files.
+4. Verify crawler access
+   - Check `public/robots.txt` and ensure it allows crawling and points Google to `https://prohireresources.com/sitemap.xml` if appropriate.
 
-5. After implementation, immediate publication and Google follow-up
-   - You will need to click Publish or Update so these frontend assets go live on `https://prohireresources.com`.
-   - Once published, the corrected favicon and sitemap will be live for Google.
-   - If the Search Console connection is available, I can then request recrawl or resubmission for the sitemap and the new URLs. Google still controls the exact timing, but this removes the site-side blockers.
+After this is implemented, your ongoing process becomes:
+
+1. Add/publish a new article in the site content.
+2. Publish the site.
+3. Google reads the updated sitemap.
+4. If you want faster discovery, submit/resubmit only this sitemap URL in Search Console:
+   `https://prohireresources.com/sitemap.xml`
+
+Technical details:
+
+- No backend email service.
+- No Firecrawl integration needed.
+- No manual list of article URLs in Search Console.
+- The article URLs will come directly from `src/content/articles.ts`, so the sitemap tracks the actual content source.
+- The sitemap mechanism will remain a standard static `public/sitemap.xml`, but generated automatically before build.
