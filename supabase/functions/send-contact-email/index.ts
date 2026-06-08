@@ -45,8 +45,10 @@ serve(async (req: Request): Promise<Response> => {
       <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
     `;
 
-    const notificationFrom = Deno.env.get("RESEND_FROM") || "proHIRE resources <info@prohireresources.com>";
-    const confirmationFrom = Deno.env.get("RESEND_CONFIRMATION_FROM") || "proHIRE resources <info@prohireresources.com>";
+    // NOTE: Using Resend's test sender until prohireresources.com is verified in Resend.
+    // Once verified, swap these back to "proHIRE resources <info@prohireresources.com>".
+    const notificationFrom = Deno.env.get("RESEND_FROM") || "proHIRE resources <onboarding@resend.dev>";
+    const confirmationFrom = Deno.env.get("RESEND_CONFIRMATION_FROM") || "proHIRE resources <onboarding@resend.dev>";
 
     const notificationResp = await resend.emails.send({
       from: notificationFrom,
