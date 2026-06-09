@@ -29,6 +29,7 @@ const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
+import { BackToTop } from "@/components/BackToTop";
 
 const queryClient = new QueryClient();
 
@@ -121,6 +122,7 @@ const App = () => (
             </Routes>
           </Suspense>
           <Footer />
+          <BackToTop />
           <ReeceWidget />
         </BrowserRouter>
       </PersonaProvider>

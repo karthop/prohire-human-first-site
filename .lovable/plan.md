@@ -1,21 +1,21 @@
-Five specific copy edits across four files. No design, layout, structure, or navigation changes.
+# Add a "Back to Top" button
 
-1. CTABand.tsx (default props)
-   - Change `body` default from: "A confidential 30-minute call. No pitch, no deck. We will tell you straight whether this is the kind of work we are right for."
-   - To: "A confidential 30-minute call. Tell us what you're working on."
+## What this does
+A small, unobtrusive button will appear in the bottom-right corner of every page after the user scrolls down past a threshold (400px). When clicked, it smoothly scrolls the page back to the top. The button uses the site's existing design tokens so it looks like it belongs.
 
-2. Footer.tsx (tagline paragraph)
-   - Change: "Boutique by design. Human-first, AI-enhanced, accountable for the outcome."
-   - To: "Boutique by design. Accountable for the outcome."
+## Design
+- **Position**: fixed, bottom-right, with margin from viewport edges
+- **Size**: 40x40 circular button (subtle, not large or distracting)
+- **Color**: deep navy primary background (`--primary`) with cream foreground (`--primary-foreground`), matching the footer
+- **Icon**: up arrow from lucide-react (`ArrowUp`)
+- **Visibility**: fades in after scrolling > 400px, fades out near the top
+- **Interaction**: smooth scroll to top via `window.scrollTo({ top: 0, behavior: 'smooth' })`
+- **Motion**: opacity and translateY transition using existing `ease-editorial` easing (cubic-bezier 0.22, 1, 0.36, 1)
+- **Accessibility**: `aria-label="Back to top"`, keyboard focusable
+- **Reduced motion**: respects `prefers-reduced-motion` by disabling the smooth scroll and transition
 
-3. Services.tsx — two edits
-   a. Hero paragraph (line ~94): Remove the trailing clause ", not where a transactional vendor will do."
-   b. Integration thesis subheader (line ~108): Change "The boundaries are deliberate. The seams are the work." to "The boundaries are deliberate. Most engagements draw on more than one practice."
+## Files changed
+1. **Create `src/components/BackToTop.tsx`** — new component with scroll listener, visibility state, and click handler
+2. **Edit `src/App.tsx`** — import and render `<BackToTop />` inside the router so it appears on every page
 
-4. Industries.tsx (CTABand override)
-   - Change `body` prop from: "We will meet it with experienced people, named-target sourcing, and disciplined work, not a generic pitch."
-   - To: "We will meet it with experienced people, named-target sourcing, and disciplined work."
-
-5. About.tsx — two edits
-   a. Charli and Leo paragraph: Remove final sentence. Stop after "...he has been a long-standing supporter of rescue adoption."
-   b. Em dashes with spaces: Verified via search — no spaced em dashes ( — ) currently exist in the file. No action needed.
+No other design elements, layout, or content will be modified.
