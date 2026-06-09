@@ -103,7 +103,7 @@ const sections = [
   {
     heading: "Contact",
     body: [
-      "Questions about these Terms should be directed to Chris Betz through the Contact page.",
+      "Questions about these Terms should be directed to us at info@proHIREresources.com.",
     ],
   },
 ];

@@ -62,7 +62,7 @@ const sections = [
   {
     heading: "How to exercise your rights",
     body: [
-      "To make a request under GDPR, CCPA, or any other applicable privacy law, contact Chris Betz through the form on our Contact page. We will respond within the timeframes required by the applicable law and may need to verify your identity before fulfilling the request.",
+      "To make a request under GDPR, CCPA, or any other applicable privacy law, contact us at info@proHIREresources.com. We will respond within the timeframes required by the applicable law and may need to verify your identity before fulfilling the request.",
     ],
   },
   {
@@ -92,7 +92,7 @@ const sections = [
   {
     heading: "Contact",
     body: [
-      "Questions about this Privacy Policy or about how your information is handled should be directed to Chris Betz through the Contact page.",
+      "Questions about this Privacy Policy or about how your information is handled should be directed to us at info@proHIREresources.com.",
     ],
   },
 ];
