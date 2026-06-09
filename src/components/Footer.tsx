@@ -68,7 +68,11 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/15 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/55">
           <div>© {new Date().getFullYear()} proHIRE resources LLC. All rights reserved.</div>
-          <div>Atlanta · National reach</div>
+          <div className="flex items-center gap-5">
+            <Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary-foreground transition-colors">Terms &amp; Conditions</Link>
+            <span>Atlanta · National reach</span>
+          </div>
         </div>
       </div>
     </footer>

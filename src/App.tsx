@@ -13,6 +13,8 @@ import { PersonaProvider } from "@/context/PersonaContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const Home = lazy(() => import("./pages/Home"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const WhatWereSeeing = lazy(() => import("./pages/WhatWereSeeing"));
@@ -106,6 +108,8 @@ const App = () => (
               <Route path="/field-notes" element={<LegacyRedirect to={legacyRedirects["/field-notes"]} />} />
               <Route path="/about" element={<PageTransition><About /></PageTransition>} />
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+              <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
+              <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<LegacyRedirect to={legacyRedirects["/employers"]} />} />
               <Route path="/professionals" element={<LegacyRedirect to={legacyRedirects["/professionals"]} />} />
