@@ -1,27 +1,24 @@
 ## What changes
 
-Rebuild `src/components/BackToTop.tsx` so it visually matches the Reece chat widget exactly, just mirrored to the opposite corner with an upward chevron inside.
+Add a single new entry to `src/content/articles.ts`. Both the index card and the full article page render from this data — no other files need changes.
 
-## Steps
+## The new article entry
 
-1. Overwrite `src/components/BackToTop.tsx`.
-2. Match Reece's launcher classes 1:1, only swapping `right-6` → `left-6`:
-   - `fixed z-50 bottom-6 left-6 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-xl`
-   - Same hover/focus treatment as Reece's button
-3. Icon: lucide `ChevronUp` (soft, editorial feel), centered, sized to match Reece's icon weight.
-4. Visibility:
-   - Hidden by default (`opacity-0 pointer-events-none`)
-   - Fades to `opacity-100 pointer-events-auto` when `window.scrollY > 300`
-   - Fades back out below the threshold
-   - Smooth opacity transition; respect `prefers-reduced-motion` on the scroll itself
-5. Click → `window.scrollTo({ top: 0, behavior: 'smooth' })` (or `'auto'` if reduced motion).
-6. `aria-label="Back to top"`.
-7. Keep the existing `<BackToTop />` mount in `src/App.tsx`. No other files touched.
+- **slug:** `internship-is-the-new-entry-point`
+- **title:** "The internship is the new entry point. Most students don't know how to get in the door."
+- **dek:** "The application volume has doubled. The postings have declined. And the students who are landing the right internships aren't just more qualified — they showed up before the posting existed."
+- **type:** `Perspective`
+- **audience:** `Hiring & Management`
+- **publishedAt:** `2026-06-10` (places it at the top of the index, ahead of the current most-recent 2026-06-01 entry)
+- **body:** 13 paragraphs, exact copy as provided, with the closing References paragraph included as the final body entry (consistent with the existing "Canaries in the Coal Mine" article that ends the same way)
 
-## Verification
+## What renders automatically
 
-Reload preview, scroll past 300px, confirm a navy circle identical in size/shape/shadow to Reece appears in the bottom-left with a chevron-up inside, click it, confirm smooth scroll to top and fade-out.
+- **Card on `/what-were-seeing`** — sorted by `publishedAt` desc, so the new card appears first. Tags, title, dek, and "Read" link all derive from the data.
+- **Full article page at `/what-were-seeing/internship-is-the-new-entry-point`** — `WhatWereSeeingArticle.tsx` resolves the slug from the URL, renders the navy header with the two tags (`Perspective` | `Hiring & Management`), the title, the dek, the formatted date ("June 10, 2026"), and "proHIRE resources" as the byline.
+- **"More for Hiring & Management"** — the article page already filters by matching audience and shows up to three sibling articles; this will populate from the existing Hiring & Management entries.
+- **"Start a conversation" CTA band** — already mounted at the bottom of every article page via `<CTABand />`.
 
 ## Out of scope
 
-No edits to Reece, navigation, footer, routes, or any page content.
+No new components, routes, styles, or sitemap changes. The sitemap generator (`scripts/generate-sitemap.ts`) already iterates the articles array, so the new URL is picked up automatically on the next build.
