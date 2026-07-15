@@ -20,7 +20,7 @@ export const EditorialHero = () => {
           <SplitHeadline
             as="h1"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
-            text="Solutions that scale companies from A to Enterprise."
+            text="A to Enterprise"
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
