@@ -206,7 +206,7 @@ export default function PeopleAndOrganizationAdvisory() {
     <div className="min-h-screen pt-16 bg-background">
       <Seo
         title="People & Organization Advisory | proHIRE resources"
-        description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, and workforce strategy, scaled from startup to enterprise."
+        description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, and workforce strategy, scaled from Startup to Enterprise."
       />
 
       {/* Hero */}
