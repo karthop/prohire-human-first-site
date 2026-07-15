@@ -216,18 +216,11 @@ export default function About() {
           </div>
 
           <div className="space-y-10 lg:space-y-14">
-            {chapters.map((c, i) => (
+            {chapters.map((c) => (
               <div key={c.label} className="grid lg:grid-cols-12 gap-8 lg:gap-12">
                 <div className="lg:col-span-3">
-                  <div className="flex items-baseline gap-4 lg:flex-col lg:gap-2">
-                    <div className="font-serif text-5xl lg:text-6xl text-foreground/20 leading-none tabular-nums">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{c.label}</div>
-                      <div className="text-sm text-muted-foreground mt-1 tracking-wide">{c.years}</div>
-                    </div>
-                  </div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{c.label}</div>
+                  <div className="text-sm text-muted-foreground mt-1 tracking-wide">{c.years}</div>
                 </div>
                 <div className="lg:col-span-9 lg:border-l border-border lg:pl-12">
                   <h3 className="font-serif text-2xl lg:text-3xl text-foreground leading-tight mb-4">
@@ -255,11 +248,8 @@ export default function About() {
           </div>
           <div className="lg:col-span-8">
             <ul className="divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
-              {beliefs.map((b, i) => (
-                <li key={b} className="py-6 flex gap-6 items-baseline">
-                  <span className="font-serif text-sm text-primary-foreground/50 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+              {beliefs.map((b) => (
+                <li key={b} className="py-6">
                   <span className="font-serif text-xl lg:text-2xl leading-snug">{b}</span>
                 </li>
               ))}

@@ -272,17 +272,10 @@ export const ServiceTemplate = ({
                 </p>
               </div>
               <div className="lg:col-span-8 divide-y divide-border border-y border-border">
-                {methodMap.map((m, i) => (
-                  <div key={m.phase} className="py-6 grid grid-cols-12 gap-6">
-                    <div className="col-span-3 md:col-span-2">
-                      <div className="font-serif text-3xl text-foreground/30 tabular-nums">
-                        {String(i + 1).padStart(2, "0")}
-                      </div>
-                    </div>
-                    <div className="col-span-9 md:col-span-10">
-                      <div className="font-serif text-lg text-foreground mb-2">{m.phase}</div>
-                      <p className="text-muted-foreground font-light leading-relaxed">{m.body}</p>
-                    </div>
+                {methodMap.map((m) => (
+                  <div key={m.phase} className="py-6">
+                    <div className="font-serif text-lg text-foreground mb-2">{m.phase}</div>
+                    <p className="text-muted-foreground font-light leading-relaxed">{m.body}</p>
                   </div>
                 ))}
               </div>
@@ -307,11 +300,8 @@ export const ServiceTemplate = ({
               </p>
             </div>
             <ul className="lg:col-span-8 divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
-              {wontDo.map((w, i) => (
-                <li key={w} className="py-6 flex gap-6 items-baseline">
-                  <span className="font-serif text-sm text-primary-foreground/50 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+              {wontDo.map((w) => (
+                <li key={w} className="py-6">
                   <span className="font-serif text-xl lg:text-2xl leading-snug">{w}</span>
                 </li>
               ))}
