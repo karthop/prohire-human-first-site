@@ -35,7 +35,7 @@ export default function CareerAdvisory() {
         },
         {
           heading: "Exit and post-exit chapters",
-          body: "Structured advisory for founders post-exit and CXOs post-transaction on the next chapter , operator, investor, advisor, or board portfolio.",
+          body: "Structured advisory for founders post-exit and CXOs post-transaction on the next chapter , operator, investor, advisor, or board portfolio. For company-side outplacement and workforce transitions handled with the same care, see People & Organization Advisory.",
         },
       ]}
       disciplines={[

@@ -38,7 +38,7 @@ export default function ExecutiveSearch() {
         },
         {
           heading: "Leadership advisory",
-          body: "Trusted-advisor support to CEOs, founders, and boards on transformation, capital events, succession, and the human capital decisions that follow.",
+          body: "Trusted-advisor support to CEOs, founders, and boards on transformation, capital events, succession, and the human capital decisions that follow. Placing a CHRO or Head of People? Ask about the CHRO Transition & 100-Day Partnership inside People & Organization Advisory.",
         },
         {
           heading: "Network access",
