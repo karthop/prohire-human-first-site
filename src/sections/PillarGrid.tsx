@@ -11,7 +11,7 @@ const pillars = [
   },
   {
     title: "People & Organization Advisory",
-    body: "The execution partner behind the HR leader. Build, strengthen, or transform the people function, from startup to enterprise.",
+    body: "The execution partner behind the HR leader. Build, strengthen, or transform the people function, from Startup to Enterprise.",
     href: "/services/people-and-organization-advisory",
     linkText: "Explore People & Organization",
   },
