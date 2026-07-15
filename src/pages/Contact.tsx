@@ -172,7 +172,7 @@ export default function Contact() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="executive-search">Executive search / fractional CXO</SelectItem>
-                  <SelectItem value="talent-solutions">Hiring / embedded recruiting</SelectItem>
+                  <SelectItem value="people-organization">People &amp; Organization / HR advisory</SelectItem>
                   <SelectItem value="growth-acceleration">Growth acceleration / BD</SelectItem>
                   <SelectItem value="career-advisory">Career advisory (individual)</SelectItem>
                   <SelectItem value="partnership">Partnership / referral</SelectItem>
