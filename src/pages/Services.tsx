@@ -11,10 +11,10 @@ const services = [
     href: "/services/executive-search",
   },
   {
-    eyebrow: "Hiring & Workforce",
-    title: "Hiring & Workforce Strategy",
-    body: "Specialized hiring across finance, technology, operations, and people functions. Embedded recruiting, contract, contract-to-hire, and onboarding infrastructure for teams scaling past the point a generic agency can serve, with the bar calibrated to the company you are building.",
-    href: "/services/talent-solutions",
+    eyebrow: "People & Organization",
+    title: "People & Organization Advisory",
+    body: "The execution partner behind the HR leader. Senior expertise and execution capacity to help CEOs, CHROs, and Heads of People build, strengthen, and transform the people function. Includes HR leadership advisory, function build-out, workforce planning, and the specialized hiring that follows, from startup to enterprise.",
+    href: "/services/people-and-organization-advisory",
   },
   {
     eyebrow: "Growth Acceleration",
@@ -44,8 +44,8 @@ const integrations = [
   },
   {
     situation: "PE value-creation plan, year one",
-    play: "Hiring & Workforce + Operating Infrastructure",
-    body: "Build the finance and people teams on the cadence the sponsor expects.",
+    play: "People & Organization + Executive Search",
+    body: "Design the people function around the value-creation plan, then build the finance and people teams on the cadence the sponsor expects.",
   },
   {
     situation: "Confidential CEO succession",
