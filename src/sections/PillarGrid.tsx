@@ -10,10 +10,10 @@ const pillars = [
     linkText: "Explore Executive Search",
   },
   {
-    title: "Hiring & Workforce Strategy",
-    body: "Embedded recruiting for teams that have outgrown the generic agency model.",
-    href: "/services/talent-solutions",
-    linkText: "Explore Talent Solutions",
+    title: "People & Organization Advisory",
+    body: "The execution partner behind the HR leader. Build, strengthen, or transform the people function, from startup to enterprise.",
+    href: "/services/people-and-organization-advisory",
+    linkText: "Explore People & Organization",
   },
   {
     title: "Revenue & Operational Acceleration",

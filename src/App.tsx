@@ -23,7 +23,7 @@ const Approach = lazy(() => import("./pages/Approach"));
 const Industries = lazy(() => import("./pages/Industries"));
 const Services = lazy(() => import("./pages/Services"));
 const ExecutiveSearch = lazy(() => import("./pages/services/ExecutiveSearch"));
-const TalentSolutions = lazy(() => import("./pages/services/TalentSolutions"));
+const PeopleAndOrganizationAdvisory = lazy(() => import("./pages/services/PeopleAndOrganizationAdvisory"));
 const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
@@ -36,7 +36,8 @@ const queryClient = new QueryClient();
 const legacyRedirects: Record<string, string> = {
   "/insights": "/what-were-seeing",
   "/field-notes": "/what-were-seeing",
-  "/employers": "/services/talent-solutions",
+  "/employers": "/services/people-and-organization-advisory",
+  "/services/talent-solutions": "/services/people-and-organization-advisory",
   "/professionals": "/services/career-advisory",
   "/talent-areas": "/services",
   "/networking-strategies": "/what-were-seeing",
@@ -97,7 +98,8 @@ const App = () => (
               <Route path="/" element={<PageTransition><Home /></PageTransition>} />
               <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
               <Route path="/services/executive-search" element={<PageTransition><ExecutiveSearch /></PageTransition>} />
-              <Route path="/services/talent-solutions" element={<PageTransition><TalentSolutions /></PageTransition>} />
+              <Route path="/services/people-and-organization-advisory" element={<PageTransition><PeopleAndOrganizationAdvisory /></PageTransition>} />
+              <Route path="/services/talent-solutions" element={<LegacyRedirect to={legacyRedirects["/services/talent-solutions"]} />} />
               <Route path="/services/growth-acceleration" element={<PageTransition><GrowthAcceleration /></PageTransition>} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/services/the-first-move" element={<PageTransition><TheFirstMove /></PageTransition>} />
