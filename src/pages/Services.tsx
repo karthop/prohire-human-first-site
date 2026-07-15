@@ -13,7 +13,7 @@ const services = [
   {
     eyebrow: "People & Organization",
     title: "People & Organization Advisory",
-    body: "The execution partner behind the HR leader. Senior expertise and execution capacity to help CEOs, CHROs, and Heads of People build, strengthen, and transform the people function. Includes HR leadership advisory, function build-out, workforce planning, and the specialized hiring that follows, from startup to enterprise.",
+    body: "The execution partner behind the HR leader. Senior expertise and execution capacity to help CEOs, CHROs, and Heads of People build, strengthen, and transform the people function. Includes HR leadership advisory, function build-out, workforce planning, and the specialized hiring that follows, from Startup to Enterprise.",
     href: "/services/people-and-organization-advisory",
   },
   {
