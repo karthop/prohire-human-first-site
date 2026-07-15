@@ -15,6 +15,25 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "new-chro-first-90-days-is-a-resourcing-problem",
+    title: "The new CHRO's first 90 days is a resourcing problem, not a strategy problem.",
+    dek: "Newly appointed CHROs know what HR is. What they need in the first ninety days is execution capacity, not another framework.",
+    type: "Perspective",
+    audience: "Executive Leadership",
+    publishedAt: "2026-07-15",
+    body: [
+      "A 500-person company brings in a new CHRO. The board is watching, the CEO is watching, and the first real board meeting is inside the ninety-day window. Every established framework says the first 90 days are about learning the business, aligning with the CEO, assessing the team, and building the plan. That is correct, and it is also insufficient. Because a CHRO who spends ninety days learning without capacity to act arrives at day 91 with a diagnosis and no delivery.",
+      "The industry-standard research is remarkably consistent on this. Spencer Stuart's CHRO transition work, Deloitte's Human Capital reporting, and Gartner's 2026 CHRO priorities all point to the same conclusion: the first ninety days is not a strategy exercise. It is a resourcing exercise. The strategy is not the constraint. Time, hands, and independent intelligence are the constraint.",
+      "The pattern we see, repeatedly, is a new CHRO who inherits three things at once. A team they did not build. A set of active initiatives they did not scope. And an HR technology stack they did not choose. Under those conditions, the CHRO's own bandwidth is the scarcest resource in the building. Every hour spent on the audit is an hour not spent building the CEO relationship, and every hour on the CEO relationship is an hour not spent stabilizing the team. This is where most CHRO transitions quietly go sideways, not in the ninety-first day, but in the first thirty.",
+      "The reframe is straightforward. Treat the first ninety days as a partnered engagement, not a solo effort. The CHRO owns the leadership. Someone else owns the diagnostic workstreams running underneath it: the HR function capability assessment, the workforce and leadership risk map, the compensation benchmarking, the technology audit, the vendor review. Those workstreams can and should run in parallel with the CHRO's own listening tour. When they land at day 60, the CHRO has a substantive package to synthesize, not a blank page to build from.",
+      "Gartner's 2026 priorities put leader and manager development, workforce planning, and change readiness in the top three CHRO priorities for the second year running. Every one of those requires diagnostic work before it requires strategic work. And every one of them is a poor use of the CHRO's own first-ninety-days hours, because the CHRO's leverage is highest in the rooms only they can be in: the CEO's office, the executive team, the board.",
+      "The practical shape of this, when we run it, is a 30/60/90 partnered engagement. Days 1 through 30 are business and stakeholder discovery, HR data assessment, initial workforce and leadership risk scan, and identification of urgent issues. Days 31 through 60 are the HR function capability assessment, team structure and role recommendations, prioritized people agenda, and technology and process priorities. Days 61 through 90 are a written twelve-month roadmap, executive-team alignment, and a board-ready people strategy summary. The CHRO is the author of the strategy. The engagement is the research team, the analyst desk, and the execution capacity underneath it.",
+      "The reason this matters for the CEO and the board is not that HR consulting is a good idea in the abstract. It is that a CHRO who arrives at their first board meeting with a diagnosed, prioritized, twelve-month plan is a CHRO who has established credibility inside the window when credibility is cheapest to establish and most expensive to lose. A CHRO who arrives at that same meeting with observations and questions is a CHRO who will spend the next twelve months making up ground they never should have lost.",
+      "This is not a case for outsourcing the CHRO's judgment. It is a case for resourcing it. The CHRO remains the leader. The engagement provides independent intelligence, structured diagnostic capacity, and access to specialist talent, so that the leader can spend their scarce ninety-day bandwidth on the parts of the job no partner can do for them.",
+      "For companies about to bring in a new CHRO, or ones that just did, the question worth asking is simple. What is the ninety-day plan for supporting the person we just hired, before we ask them for a ninety-day plan of their own?",
+    ],
+  },
+  {
     slug: "cfo-seat-wont-stay-filled",
     title: "The CFO seat won't stay filled.",
     dek: "Finance chiefs are turning over at the fastest pace in two decades, and the bench underneath them is thinner than most boards believe.",
