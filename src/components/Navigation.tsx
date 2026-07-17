@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 const services = [
   { to: "/services/executive-search", label: "Executive Search & Leadership Advisory" },
-  { to: "/services/people-and-organization-advisory", label: "People & Organization Advisory" },
+  { to: "/services/hr-support-advisory", label: "HR Support & Advisory" },
   { to: "/services/growth-acceleration", label: "Revenue & Operational Acceleration" },
   { to: "/services/career-advisory", label: "Career Advisory" },
   { to: "/services/the-first-move", label: "The First Move" },
