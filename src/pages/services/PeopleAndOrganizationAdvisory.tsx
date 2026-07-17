@@ -235,9 +235,9 @@ export default function PeopleAndOrganizationAdvisory() {
           <p className="mt-8 text-lg lg:text-xl text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             The execution partner behind the HR leader. Senior expertise and execution
             capacity to help CEOs, CHROs, and Heads of People build, strengthen, and
-            transform the people function, with specialized talent delivery, direct-hire,
-            contract, contract-to-hire, and statement-of-work, scaled to the stage of the
-            company.
+            transform the people function. Recruiting sits inside the practice, with
+            direct-hire, contract, contract-to-hire, and statement-of-work delivery scaled
+            to the stage of the company.
           </p>
         </div>
       </section>
