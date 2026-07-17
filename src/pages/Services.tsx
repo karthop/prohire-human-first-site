@@ -44,7 +44,7 @@ const integrations = [
   },
   {
     situation: "PE value-creation plan, year one",
-    play: "People & Organization + Executive Search",
+    play: "HR Support & Advisory + Executive Search",
     body: "Design the people function around the value-creation plan, then build the finance and people teams on the cadence the sponsor expects.",
   },
   {
