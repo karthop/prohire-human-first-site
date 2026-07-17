@@ -58,7 +58,7 @@ const flagships = [
   },
   {
     heading: "Workforce & Organization Planning",
-    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions.",
+    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions, executed through direct-hire, contract, contract-to-hire, and statement-of-work engagements.",
     bullets: [
       "Skills mapping against the reorg or AI redesign",
       "Restructuring and post-reorganization hiring plans",
