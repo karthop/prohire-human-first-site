@@ -36,7 +36,7 @@ const flagships = [
       "30-day discovery, 60-day diagnostic, 90-day roadmap",
       "Independent view of the team they inherited",
       "Search or interim placements for missing HR capabilities",
-      "Embedded recruiting behind the new leader from day one, direct-hire, contract, contract-to-hire, and statement-of-work",
+      "Embedded recruiting behind the new leader from day one, across direct-hire, contract, contract-to-hire, and statement-of-work.",
     ],
   },
   {
