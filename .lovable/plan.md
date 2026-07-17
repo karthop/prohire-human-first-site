@@ -1,114 +1,109 @@
-## What we're building
+# Editorial Audit: Findings Only
 
-A new pillar — **People & Organization Advisory** — that absorbs the existing Hiring & Workforce Strategy work and expands proHIRE into HR leadership advisory, function build-out, workforce planning, and CHRO-level execution support. One long page, richer structure, five pillars total.
+No files will be edited until you approve. Below is the page-by-page report. Once you say go, I'll fix everything flagged in a single pass.
 
-## Pillar name and placement
+## Sitewide patterns (worst offenders first)
 
-- **Name (nav label):** People & Organization Advisory
-- **URL:** `/services/people-and-organization-advisory`
-- **Order (five pillars):** Executive Search & Leadership Advisory → **People & Organization Advisory** → Revenue & Operational Acceleration → Career Advisory → The First Move
-- **Old URL:** `/services/talent-solutions` → 301-style client-side redirect to the new URL (preserves inbound links and search equity)
+1. **Broken " , " artifacts (em dashes stripped and left as space-comma-space).** ~30 instances. These read as typos everywhere they appear.
+   - ExecutiveSearch: 3 · CareerAdvisory: 9 · GrowthAcceleration: 9 (highest density) · About: 7
+2. **Literal em dashes (—) still in the copy despite the no-em-dashes rule.** 7 places:
+   - ExecutiveSearch.tsx L47, L65 (JSX dividers around a link)
+   - GrowthAcceleration.tsx L78, L80 (engagement descriptions)
+   - PeopleAndOrganizationAdvisory.tsx L279 (attribution)
+   - TheFirstMove.tsx L43 (wontDo)
+   - ServiceTemplate.tsx L143 (shared attribution — affects every service page using pointOfView)
+3. **Brand quote inconsistency:** "You are more than a keyword search" (About) vs. "You are more than just a keyword search" (Footer). Same signature line, two wordings.
+4. **Overused crutch words/phrases:** "senior-led," "named-target/named-account," "written [plan/artifact/milestone]," "re-scope," and the "X is not Y, it's Z" contrast structure reused as the pointOfView on nearly every service page.
+5. **Missing mailto:** `cbetz@prohireresources.com` does not appear anywhere in the codebase. Contact page has a form only, no mailto fallback. Flagging for your call.
 
-## Page structure (single scroll, no sub-pages)
+## Page-by-page
 
-```text
-1. Hero + subhead
-2. Framing: three situations we're built for
-   - Build the function
-   - Strengthen the function
-   - Transform the function
-3. Four signature offers (flagships)
-   - CHRO Transition & 100-Day Partnership
-   - HR Function Diagnostic & Roadmap
-   - Fractional & Interim HR Leadership
-   - Workforce & Organization Planning
-4. Sized for your stage
-   - Startup (<100)      → Flagship: People Foundation Build
-   - Growth (100-500)    → Flagship: New HR Leader Launch
-   - Mid-market (500-2,500) → Flagship: Strategic Workforce Planning
-   - Enterprise (2,500+) → Flagship: Confidential leadership & interim
-5. What the practice covers (eight capability areas grouped as supporting lines,
-   not top-level pitches):
-   HR Function Strategy & Operating Model · Office of the CHRO ·
-   Fractional & Interim HR Leadership · Workforce Planning & Org Design ·
-   Leadership, Performance & Succession · Compensation & People Analytics ·
-   HR Technology, Process & Responsible AI · Change, Integration & Special Situations
-6. How we deliver: senior-led, specialist-supported
-   (Chris owns diagnosis, judgment, accountability; curated specialist bench executes)
-7. Engagement models
-   Diagnostic · Project · Embedded Advisory · Fractional/Interim ·
-   Transformation Office · Annual Partnership
-8. What we don't do (guardrail section)
-   Not a PEO. Not payroll. Not benefits brokerage. Not ERISA fiduciary.
-   Not employment-law opinions. Compliance work is readiness and coordination
-   with qualified counsel, not legal advice.
-9. Situation-based entry points
-   ("You just hired a new CHRO", "Your HR team is buried in execution",
-   "You are restructuring or acquiring", "You need senior HR leadership
-   but not yet a permanent hire", etc.)
-10. FAQ
-11. CTA — mailto:cbetz@prohireresources.com
-```
+### Home / EditorialHero
+- Hero renders only "A to Enterprise" as animated text. Without a visible "Series" prefix, it reads cryptic to a first-time visitor.
+- SEO description ("founders, CEOs, and boards who can't afford the wrong hire") is narrower than the actual five-pillar scope; excludes advisory clients and students.
 
-Tone matches the Approach page: direct, plain, accountable. No em dashes. No PEO/outsourcing/"empowering people teams" language.
+### Services
+- Same idea printed twice back-to-back: "Most engagements draw on more than one practice" appears as an h2 and again as the very next body sentence.
+- "Explore practice" repeated as CTA on every card — template-flavored.
+- Echoes Approach/ExecutiveSearch language verbatim ("senior-led from intake to onboarding").
 
-## Companion article (launched with the page)
+### Executive Search
+- Two literal em dashes (JSX dividers L47/65).
+- Three broken " , " artifacts: L105, L124, L141.
+- "Senior-led from intake to offer" duplicates Services/Approach wording.
 
-New article on **What We're Seeing**, published same release:
+### People & Organization Advisory
+- Broken idiom: "Not one-size-fits." (L243) — reads as a mid-edit fragment.
+- Duplicate attribution em dash (L279) mirroring the shared ServiceTemplate line.
+- "Senior" appears as the load-bearing modifier 4+ times on this page alone.
 
-- **Title:** "The new CHRO's first 90 days is a resourcing problem, not a strategy problem."
-- **Type tag:** Perspective
-- **Audience tags:** Executive Leadership; HR & Talent
-- Cross-linked from the new pillar page's CHRO Transition flagship section.
+### Growth Acceleration
+- Highest concentration of broken " , " artifacts (9 instances: L14 ×2, L22, L45, L88 ×2, L93 ×2, plus one on L14).
+- Two literal em dashes in engagement descriptions (L78, L80).
+- Tone drifts more "startup operator" (firepower, motion, bench, playbook) vs. the patrician register on ExecutiveSearch/CareerAdvisory/About.
+- "Named-account/named play" repeated 5+ times.
 
-## Sitewide updates
+### Career Advisory
+- Nine broken " , " artifacts: L16, L38, L44 (×2), L52, L63, L66, L83, L95.
+- "Written [artifacts/plan/plan/plan]" used 6+ times on this page.
 
-- **Navigation:** `Navbar.tsx` Services dropdown — replace "Hiring & Workforce Strategy" with "People & Organization Advisory" in the same slot.
-- **Homepage:** `PillarGrid.tsx` — replace the Hiring & Workforce card with the new pillar card, same slot. Rewrite the card blurb.
-- **Services index:** `Services.tsx` — replace the corresponding pillar card and description.
-- **Footer:** `Footer.tsx` — update the Services list entry.
-- **About page:** correct the practice count so it reads five (currently references four in places). Only this count/description text; no other About changes.
-- **Cross-links on other service pages:**
-  - `ExecutiveSearch.tsx` — add one line: "Placing a CHRO? Ask about the CHRO Transition & 100-Day Partnership." linking to the new pillar.
-  - `CareerAdvisory.tsx` — add outplacement/transition cross-reference into the new pillar's Change & Special Situations area.
-  - `GrowthAcceleration.tsx`, `TheFirstMove.tsx` — light cross-link in the "related practices" area if present.
-- **Redirect:** keep the `/services/talent-solutions` route registered in `App.tsx` and render `<Navigate to="/services/people-and-organization-advisory" replace />` so inbound links and any old search results still land correctly.
-- **Sitemap:** update `public/sitemap.xml` and `scripts/generate-sitemap.ts` — remove `/services/talent-solutions`, add `/services/people-and-organization-advisory`, add the new article slug.
-- **SEO / metadata on the new page:**
-  - Title: `People & Organization Advisory | proHIRE resources`
-  - Meta description: "Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, and workforce strategy, scaled from startup to enterprise."
-  - Target phrases woven naturally: new CHRO first 90 days, fractional CHRO, strategic workforce planning, HR function diagnostic, interim HR leadership, HR partner for startups.
-  - JSON-LD Service schema matching existing pillar pages.
+### The First Move
+- Tone drops out of register: "triggers the delete button" is colloquial vs. rest of site.
+- One literal em dash (L43 wontDo).
+- Thesis, lead, and first capability all say "LinkedIn that gets found" three different ways.
+- "Most careers are won or lost before the first interview" mildly overclaims for a pre-professional audience.
 
-## Files touched
+### Industries
+- Per-industry blurbs are terse enough that they don't clarify *what* proHIRE does for each sector (search only? advisory? both?). Clarity gap, not an error.
 
-**New**
-- `src/pages/services/PeopleAndOrganizationAdvisory.tsx` (built from `TalentSolutions.tsx` as starting scaffold, then rewritten to the structure above)
-- New article entry in `src/content/articles.ts` for the CHRO first-90-days piece
+### Approach
+- The h1 slogan "Human-first. AI-enhanced. Accountable for the outcome." — the first two beats are common industry boilerplate right now; borderline template-sounding.
+- This page is the origin of the "senior-led / written / named-target / Discovery → Design → Execute → Embed" phrasing that cascades everywhere. Not a defect here, just the source of the sitewide repetition.
 
-**Modified**
-- `src/App.tsx` (add new route; convert old route to `<Navigate>`)
-- `src/components/Navbar.tsx`
-- `src/components/PillarGrid.tsx`
-- `src/pages/Services.tsx`
-- `src/components/Footer.tsx`
-- `src/pages/About.tsx` (practice count/description only)
-- `src/pages/services/ExecutiveSearch.tsx` (single cross-link line)
-- `src/pages/services/CareerAdvisory.tsx` (single cross-link line)
-- `src/pages/services/GrowthAcceleration.tsx` (light related-practices update if applicable)
-- `src/pages/services/TheFirstMove.tsx` (light related-practices update if applicable)
-- `public/sitemap.xml`
-- `scripts/generate-sitemap.ts`
+### What We're Seeing (index)
+- "Grounded observations on hiring, executive search, and leadership from a firm actively doing the work" appears verbatim as the SEO description and again as the hero body copy on the same page.
 
-**Removed**
-- `src/pages/services/TalentSolutions.tsx` (content absorbed into the new pillar; route stays as a redirect)
+### What We're Seeing (article template)
+- Clean.
 
-## What is explicitly not changing
+### About
+- Seven broken " , " artifacts: L60, L61, L63, L69, L77, L143, L163.
+- Signature line "You are more than a keyword search" — Footer says "more than just a keyword search." Pick one canonical wording.
 
-- No backend, no forms, no email services, no notifications. All CTAs remain `mailto:cbetz@prohireresources.com`.
-- Email and phone number stay hidden — mailto only.
-- LinkedIn icon in footer only. No new social links.
-- No em dashes anywhere in new copy.
-- No pricing on the page. Engagement models named, no numbers.
-- The other four pillars (Executive Search, Revenue & Operational Acceleration, Career Advisory, The First Move) keep their existing content — only the small cross-link lines noted above are added.
-- Older `/employers` or `/areas`-style legacy pages are out of scope for this change unless we discover a stale one directly linked from updated surfaces; anything else stays as-is per your 72-hour-window rule.
+### Contact
+- Compliant on display rules (no visible email/phone). But no mailto fallback anywhere. Flagging.
+
+### Privacy / Terms
+- Clean. Brand name and email casing correct throughout. Legal-formal register is appropriate for these pages.
+
+### Shared components
+- **ServiceTemplate.tsx L143** — literal em dash on the attribution block. Fixing this one line propagates to every service page using non-plain pointOfView.
+- **Footer.tsx L19** — brand quote variant mismatch (see About).
+- **Navigation.tsx** — clean.
+
+### TrustLayer.tsx (flagged, needs your call)
+- Not imported by any audited page. Appears to be dead scaffold.
+- If it *is* live somewhere:
+  - "Trusted by startups and enterprise teams alike" — textbook boilerplate the brand rules prohibit.
+  - "95% of hires onboarded successfully within 45 days" — unsubstantiated, and inconsistent with ProofBar's "30-60 days."
+  - Stray leading comma render artifact: `, {author}` at L36.
+- **Recommend: delete the file** unless you tell me it's used.
+
+### PillarGrid / FounderIntro
+- "The hires that decide the next two years" (PillarGrid) and "the hires, restructures, and revenue moves that decide what the next two years actually look like" (FounderIntro) sit back-to-back on the homepage and repeat the "next two years" framing.
+
+### CTABand
+- Default title and default body both say "Tell us what you're working on." Redundant when both defaults render together; most call sites override.
+
+## Decisions I need from you before the edit pass
+
+1. **" , " artifacts:** Replace with the correct punctuation for each context (usually a colon or a period, sometimes just a comma with the leading space removed). Confirm this approach.
+2. **Literal em dashes:** Replace with commas, periods, colons, or parentheses depending on the sentence. Confirm.
+3. **Hero headline "A to Enterprise":** Leave as-is, or reintroduce a visible "Series" qualifier for clarity? (You explicitly asked for "A to Enterprise" earlier — I'll only touch it if you say so.)
+4. **Signature quote canonical form:** "You are more than a keyword search" (About) or "You are more than just a keyword search" (Footer)?
+5. **cbetz@prohireresources.com mailto:** Add it to Contact (and/or Footer) as a fallback, or leave the site form-only?
+6. **TrustLayer.tsx:** Delete (recommended) or fix in place?
+7. **Overused crutch words:** Do a light pass to vary "senior-led," "written," "named-account" where it reads repetitive, or leave the vocabulary as-is?
+8. **The First Move tone:** Lift the register on the thesis/lead so it matches the rest of the site, or keep it slightly more approachable for a student/parent audience?
+
+Reply with answers (or "your call on all of them") and I'll execute the full sweep in one pass.
