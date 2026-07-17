@@ -41,7 +41,7 @@ export default function WhatWereSeeing() {
             Thinking on talent, leadership, and the work of building great organizations.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            Grounded observations on hiring, executive search, and leadership from a firm actively doing the work.
+            Field notes from inside the work, written for founders, boards, and the leaders they hire. Published when there is something worth saying, not on a content calendar.
           </p>
         </div>
       </section>

@@ -140,7 +140,7 @@ export const ServiceTemplate = ({
                 <blockquote className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
                   "{pointOfView}"
                 </blockquote>
-                <div className="mt-6 text-sm text-muted-foreground">— Chris Betz, CEO</div>
+                <div className="mt-6 text-sm text-muted-foreground">Chris Betz, CEO</div>
               </>
             )}
           </div>

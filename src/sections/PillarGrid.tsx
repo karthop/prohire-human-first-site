@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 const pillars = [
   {
     title: "Executive Search & Leadership Advisory",
-    body: "The hires that decide the next two years, led by senior partners, not associates behind a pitch.",
+    body: "The hires that set the next chapter of the company, led by senior partners, not associates behind a pitch.",
     href: "/services/executive-search",
     linkText: "Explore Executive Search",
   },
