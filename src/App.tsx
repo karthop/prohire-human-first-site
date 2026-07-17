@@ -36,8 +36,9 @@ const queryClient = new QueryClient();
 const legacyRedirects: Record<string, string> = {
   "/insights": "/what-were-seeing",
   "/field-notes": "/what-were-seeing",
-  "/employers": "/services/people-and-organization-advisory",
-  "/services/talent-solutions": "/services/people-and-organization-advisory",
+  "/employers": "/services/hr-support-advisory",
+  "/services/talent-solutions": "/services/hr-support-advisory",
+  "/services/people-and-organization-advisory": "/services/hr-support-advisory",
   "/professionals": "/services/career-advisory",
   "/talent-areas": "/services",
   "/networking-strategies": "/what-were-seeing",
