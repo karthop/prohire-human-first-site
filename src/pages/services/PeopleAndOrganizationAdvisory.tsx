@@ -58,9 +58,11 @@ const flagships = [
     ],
   },
   {
-    heading: "Workforce & Organization Planning",
-    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions, executed through direct-hire, contract, contract-to-hire, and statement-of-work engagements.",
+    heading: "Recruiting, Workforce & Organization Planning",
+    body: "Specialized recruiting and the workforce architecture around it. Direct-hire, contract, contract-to-hire, and statement-of-work delivery across finance, technology, operations, and people functions, paired with headcount planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions.",
     bullets: [
+      "Direct-hire, contract, contract-to-hire, and statement-of-work delivery",
+      "Embedded recruiting teams sized to the hiring plan",
       "Skills mapping against the reorg or AI redesign",
       "Restructuring and post-reorganization hiring plans",
       "Succession risk analysis and critical-role coverage",
