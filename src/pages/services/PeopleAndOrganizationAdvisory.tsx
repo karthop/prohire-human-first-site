@@ -409,7 +409,7 @@ export default function PeopleAndOrganizationAdvisory() {
               What the practice covers
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              Eight capability areas.
+              Nine capability areas.
             </h2>
             <p className="mt-4 text-muted-foreground font-light leading-relaxed">
               These are the domains the flagship offers pull from. We do not launch every
