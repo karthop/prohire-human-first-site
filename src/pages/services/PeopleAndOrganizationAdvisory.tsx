@@ -258,7 +258,8 @@ export default function PeopleAndOrganizationAdvisory() {
               HR leaders are being asked to carry more than ever: leadership development,
               workforce planning, restructures, AI-driven change, usually with a smaller
               team than the job requires. The strategy is rarely the problem. Capacity and
-              execution are. We do not replace the function. We equip it.
+              execution are. We do not replace the function. We equip it, and we put
+              embedded recruiting behind it so the hiring plan actually gets executed.
             </p>
             <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
               {modes.map((m) => (
