@@ -36,6 +36,7 @@ const flagships = [
       "30-day discovery, 60-day diagnostic, 90-day roadmap",
       "Independent view of the team they inherited",
       "Search or interim placements for missing HR capabilities",
+      "Embedded recruiting behind the new leader from day one, direct-hire, contract, contract-to-hire, and statement-of-work",
     ],
   },
   {
@@ -57,9 +58,11 @@ const flagships = [
     ],
   },
   {
-    heading: "Workforce & Organization Planning",
-    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions, executed through direct-hire, contract, contract-to-hire, and statement-of-work engagements.",
+    heading: "Recruiting, Workforce & Organization Planning",
+    body: "Specialized recruiting and the workforce architecture around it. Direct-hire, contract, contract-to-hire, and statement-of-work delivery across finance, technology, operations, and people functions, paired with headcount planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions.",
     bullets: [
+      "Direct-hire, contract, contract-to-hire, and statement-of-work delivery",
+      "Embedded recruiting teams sized to the hiring plan",
       "Skills mapping against the reorg or AI redesign",
       "Restructuring and post-reorganization hiring plans",
       "Succession risk analysis and critical-role coverage",
@@ -102,6 +105,7 @@ const capabilityAreas = [
   "HR Function Strategy & Operating Model",
   "Office of the CHRO",
   "Fractional & Interim HR Leadership",
+  "Recruiting & Talent Delivery",
   "Workforce Planning & Organization Design",
   "Leadership, Performance & Succession",
   "Compensation & People Analytics",
@@ -231,9 +235,9 @@ export default function PeopleAndOrganizationAdvisory() {
           <p className="mt-8 text-lg lg:text-xl text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             The execution partner behind the HR leader. Senior expertise and execution
             capacity to help CEOs, CHROs, and Heads of People build, strengthen, and
-            transform the people function, with specialized talent delivery, direct-hire,
-            contract, contract-to-hire, and statement-of-work, scaled to the stage of the
-            company.
+            transform the people function. Recruiting sits inside the practice, with
+            direct-hire, contract, contract-to-hire, and statement-of-work delivery scaled
+            to the stage of the company.
           </p>
         </div>
       </section>
@@ -254,7 +258,8 @@ export default function PeopleAndOrganizationAdvisory() {
               HR leaders are being asked to carry more than ever: leadership development,
               workforce planning, restructures, AI-driven change, usually with a smaller
               team than the job requires. The strategy is rarely the problem. Capacity and
-              execution are. We do not replace the function. We equip it.
+              execution are. We do not replace the function. We equip it, and we put
+              embedded recruiting behind it so the hiring plan actually gets executed.
             </p>
             <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
               {modes.map((m) => (
@@ -405,7 +410,7 @@ export default function PeopleAndOrganizationAdvisory() {
               What the practice covers
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              Eight capability areas.
+              Nine capability areas.
             </h2>
             <p className="mt-4 text-muted-foreground font-light leading-relaxed">
               These are the domains the flagship offers pull from. We do not launch every
