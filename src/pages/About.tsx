@@ -57,16 +57,16 @@ const chapters = [
 const situations = [
   { tag: "Series C · Fintech", body: "CEO needed a fractional CRO with the playbook for $5M → $50M ARR before the next round." },
   { tag: "PE-backed · Industrials", body: "Year-one value-creation plan required finance and people functions rebuilt in two quarters." },
-  { tag: "Founder-led · SaaS", body: "Confidential CEO succession during a refinance , off-books search, board-only visibility." },
-  { tag: "Series B · Logistics", body: "Enterprise account penetration play , five national-chain meetings in 30 days, two contracts inside the quarter." },
+  { tag: "Founder-led · SaaS", body: "Confidential CEO succession during a refinance: off-books search, board-only visibility." },
+  { tag: "Series B · Logistics", body: "Enterprise account penetration play: five national-chain meetings in 30 days, two contracts inside the quarter." },
   { tag: "Post-exit · Founder", body: "Multi-year board portfolio strategy following a strategic acquisition." },
-  { tag: "Sitting CXO · Healthcare", body: "Confidential next-chapter advisory while still in seat , eighteen-month positioning to a CEO mandate." },
+  { tag: "Sitting CXO · Healthcare", body: "Confidential next-chapter advisory while still in seat: eighteen-month positioning to a CEO mandate." },
 ];
 
 const boutiqueReasons = [
   {
     h: "Partner attention, every engagement.",
-    b: "There is no junior staffing layer. The senior who pitches the engagement is the senior executing it. This is the single most consequential difference between boutique and large-firm work , and the easiest one to verify.",
+    b: "There is no junior staffing layer. The senior who pitches the engagement is the senior executing it. This is the single most consequential difference between boutique and large-firm work, and the easiest one to verify.",
   },
   {
     h: "No leverage model to feed.",
@@ -74,12 +74,12 @@ const boutiqueReasons = [
   },
   {
     h: "The relationship outlasts the engagement.",
-    b: "Boutique work compounds across years and roles. Most of our engagements come from clients we've worked with at three different companies, in three different stages, for three different reasons. That's the model , and it only works if the work is honest.",
+    b: "Boutique work compounds across years and roles. Most of our engagements come from clients we've worked with at three different companies, in three different stages, for three different reasons. That's the model, and it only works if the work is honest.",
   },
 ];
 
 const beliefs = [
-  "You are more than a keyword search.",
+  "You are more than just a keyword search.",
   "Hiring is a leadership act, not a transaction.",
   "The best searches are scoped before they're sourced.",
   "A fractional executive in the right seat will outperform a full-time hire in the wrong one.",
@@ -136,11 +136,11 @@ export default function About() {
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
             <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
-              "You are more than a keyword search."
+              "You are more than just a keyword search."
             </p>
             <p>
               That sentence is the practice in a single line. Most of what's labeled
-              "executive search" today is a sourcing motion dressed up in advisory language ,
+              "executive search" today is a sourcing motion dressed up in advisory language,
               a database query with a glossy deck. The work that actually moves a company is
               slower, more specific, and almost always begins with re-scoping the question
               the client first asked.
@@ -160,7 +160,7 @@ export default function About() {
               the largest databases. They are the ones with the most disciplined judgment.
             </p>
             <p>
-              The boutique model exists to do the work the larger firms have stopped doing ,
+              The boutique model exists to do the work the larger firms have stopped doing:
               re-scoping the role before sourcing it, referencing candidates through people
               they did not provide, and staying in the engagement through the first ninety
               days inside the seat. It is harder to scale. That is the point.

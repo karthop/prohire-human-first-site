@@ -7,8 +7,8 @@ export default function TheFirstMove() {
       seoDescription="Early career advisory for high school and college students. LinkedIn, resume, and networking coaching built around landing the right internship."
       eyebrow="Early Career Advisory"
       title="The First Move"
-      lead="Most careers are won or lost before the first interview. The First Move is proHIRE's early career advisory practice, built around one of the most competitive and underserved moments in a young person's professional life: landing the right internship."
-      thesis="We work with high school juniors and seniors and college students to build a LinkedIn profile that actually gets found and taken seriously, craft a resume that reflects real potential, and develop the networking instincts that most people don't figure out until years into their career. That means learning how to identify and reach the right leaders and decision-makers, how to introduce themselves in a way that sparks genuine interest rather than triggers the delete button, and how to build organic relationships with people who can open doors, not by asking for a job, but by showing up with enough curiosity, ambition, and polish that the right people want to help them."
+      lead="The strongest candidates are built before the first interview. The First Move is proHIRE's early career advisory practice, built around one of the most competitive and underserved moments in a young person's professional life: landing the right internship."
+      thesis="We work with high school juniors and seniors and college students to build a LinkedIn profile that actually gets found and taken seriously, craft a resume that reflects real potential, and develop the networking instincts that most people don't figure out until years into their career. That means learning how to identify and reach the right leaders and decision-makers, how to introduce themselves in a way that earns a real reply rather than gets ignored, and how to build organic relationships with people who can open doors, not by asking for a job, but by showing up with enough curiosity, ambition, and polish that the right people want to help them."
       pointOfView="Most students don't lose the internship in the interview. They lose it before anyone knows their name. We fix that."
       pointOfViewPlain
       whoFor={[
@@ -40,7 +40,7 @@ export default function TheFirstMove() {
         },
       ]}
       wontDo={[
-        "Guarantee internship placements or specific outcomes. We build the tools and instincts — the student does the work.",
+        "Guarantee internship placements or specific outcomes. We build the tools and instincts. The student does the work.",
         "Run a generic resume mill. Every engagement is one-to-one and built around the specific student, their story, and their target.",
         "Take an engagement when the student isn't genuinely ready to do the work. Preparation only lands when the person in the seat is committed to it.",
       ]}
