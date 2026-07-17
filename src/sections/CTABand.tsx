@@ -13,7 +13,7 @@ interface Props {
 export const CTABand = ({
   eyebrow = "Start a conversation",
   title = "Tell us what you're working on.",
-  body = "A confidential 30-minute call. Tell us what you're working on.",
+  body = "A confidential 30-minute call. We respond within one business day with a candid view of how, and whether, we can help.",
   ctaLabel = "Request a conversation",
   ctaHref = "/contact",
 }: Props) => {

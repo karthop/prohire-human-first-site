@@ -7,7 +7,7 @@ const services = [
   {
     eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
-    body: "Retained C-suite, VP, and board-track search, plus fractional CXOs who have scaled comparable businesses. Senior-led from intake through onboarding, with scope re-written before sourcing begins and measurable time-to-impact written into the engagement.",
+    body: "Retained C-suite, VP, and board-track search, plus fractional CXOs who have scaled comparable businesses. Partner-led from intake through onboarding, with the scope rewritten before sourcing begins and measurable time-to-impact written into the engagement.",
     href: "/services/executive-search",
   },
   {
@@ -19,7 +19,7 @@ const services = [
   {
     eyebrow: "Growth Acceleration",
     title: "Revenue & Operational Acceleration",
-    body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons than a full-time hire allows. We run the named-account play, build the operating cadence, and convert to a permanent leader once the motion is real.",
+    body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons than a full-time hire allows. We run the target-account campaign, build the operating cadence, and convert to a permanent leader once the motion is real.",
     href: "/services/growth-acceleration",
   },
   {
@@ -55,14 +55,14 @@ const integrations = [
   {
     situation: "Enterprise market entry",
     play: "Revenue Acceleration + Executive Search",
-    body: "Run the named-account play for two quarters; convert to a permanent enterprise leader once the motion is real.",
+    body: "Run the target-account campaign for two quarters; convert to a permanent enterprise leader once the motion is real.",
   },
 ];
 
 const comparisons = [
   {
     title: "Vs. a traditional search firm",
-    body: "We are senior-led from intake to onboarding. No junior associates running the search behind a partner-fronted pitch. Scope gets re-written before sourcing begins.",
+    body: "The founder runs every engagement from intake to onboarding. No junior associates behind a partner-fronted pitch. Scope gets rewritten before sourcing begins.",
   },
   {
     title: "Vs. a management consulting firm",
@@ -105,7 +105,7 @@ export default function ServicesIndex() {
               How the practices fit together
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              The boundaries are deliberate. Most engagements draw on more than one practice.
+              The boundaries are deliberate. The overlaps are where the real work lives.
             </h2>
           </div>
           <div className="lg:col-span-8 text-foreground text-lg font-light leading-relaxed space-y-4">

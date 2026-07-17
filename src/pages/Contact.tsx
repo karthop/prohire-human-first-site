@@ -79,6 +79,16 @@ export default function Contact() {
               <p className="mt-3 text-foreground font-light leading-relaxed">
                 Use the form to start a conversation. We respond within one business day.
               </p>
+              <p className="mt-3 text-sm text-muted-foreground font-light leading-relaxed">
+                Prefer email? Write directly to{" "}
+                <a
+                  href="mailto:cbetz@prohireresources.com"
+                  className="text-foreground border-b border-foreground/30 pb-0.5 hover:border-foreground transition-colors"
+                >
+                  cbetz@prohireresources.com
+                </a>
+                .
+              </p>
             </div>
 
             <div>

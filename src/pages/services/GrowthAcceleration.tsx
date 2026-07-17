@@ -11,7 +11,7 @@ export default function GrowthAcceleration() {
       thesis="Most growth-stage companies don't lack strategy. They lack the senior execution muscle to turn it into closed revenue and durable operating infrastructure. Hiring a full-time CRO or COO is an 8-to-12-month exercise the company often can't afford to wait for. We bring operators who have run the play before, embed them inside the team, and accept real accountability for the outcome."
       pointOfView="Acceleration isn't more activity. It's the right person, in the right seat, for the right twelve weeks."
       whoFor={[
-        "Founder-led companies needing senior BD execution before , or instead of , a full-time sales hire",
+        "Founder-led companies needing senior BD execution before, or instead of, a full-time sales hire",
         "PE-backed portfolios scaling go-to-market or operating capacity across multiple investments",
         "Leadership teams penetrating enterprise accounts, new geographies, or new market segments",
         "Companies whose product is ready and whose pipeline isn't",
@@ -19,7 +19,7 @@ export default function GrowthAcceleration() {
       capabilities={[
         {
           heading: "Business development execution",
-          body: "We function as your senior external BD team , running named-account campaigns, partnership development, and C-level relationship building while the leadership team focuses on strategy and product.",
+          body: "We function as your senior external BD team, running target-account campaigns, partnership development, and C-level relationship building while the leadership team focuses on strategy and product.",
           bullets: [
             "Enterprise account penetration",
             "Strategic partnership identification and structuring",
@@ -42,7 +42,7 @@ export default function GrowthAcceleration() {
         },
         {
           heading: "Strategic partnership models",
-          body: "Foundation, Growth, and Enterprise partnership shapes , modular by capability, with quarterly business reviews and shared milestones.",
+          body: "Foundation, Growth, and Enterprise partnership shapes, modular by capability, with quarterly business reviews and shared milestones.",
         },
       ]}
       disciplines={[
@@ -66,7 +66,7 @@ export default function GrowthAcceleration() {
       methodMap={[
         { phase: "Discovery", body: "Two to three structured conversations with the CEO and revenue or operations leadership to identify the highest-leverage play and the constraint that's been blocking it." },
         { phase: "Design", body: "A written 12-week plan: named accounts or workstreams, weekly cadence, success metrics, and the senior operator who will run it. Reviewed and signed jointly." },
-        { phase: "Execute", body: "Senior-led execution against the plan. Weekly working sessions with the client team, written milestone notes, and monthly steering check-in with the CEO or sponsor." },
+        { phase: "Execute", body: "Partner-led execution against the plan. Weekly working sessions with the client team, written milestone notes, and monthly steering check-in with the CEO or sponsor." },
         { phase: "Embed", body: "Hand-off plan to the internal team or recommended next hire. The play continues running after we step back; the playbook stays with the client." },
       ]}
       wontDo={[
@@ -75,22 +75,22 @@ export default function GrowthAcceleration() {
         "Take performance-only engagements where there is no shared accountability for inputs.",
       ]}
       engagements={[
-        { name: "Foundation Partnership", detail: "Core operating infrastructure for companies under 30 employees — onboarding, light recruiting, and HR foundations that scale with the headcount." },
+        { name: "Foundation Partnership", detail: "Core operating infrastructure for companies under 30 employees. Onboarding, light recruiting, and HR foundations that scale with the headcount." },
         { name: "Growth Partnership", detail: "Active BD execution and operating infrastructure for Series A and B companies. The most common engagement shape we run." },
-        { name: "Enterprise Partnership", detail: "BD execution, operating infrastructure, and fractional executive capacity running in parallel — for companies that need senior firepower across more than one function at once." },
-        { name: "BD execution", detail: "Standalone senior BD engagement against a named-account or partnership thesis, with monthly retainer and outcome incentives." },
+        { name: "Enterprise Partnership", detail: "BD execution, operating infrastructure, and fractional executive capacity running in parallel, for companies that need senior capacity across more than one function at once." },
+        { name: "BD execution", detail: "Standalone senior BD engagement against a target-account or partnership thesis, with monthly retainer and outcome incentives." },
         { name: "Operations & HR", detail: "Standalone operating-infrastructure engagement, retainer or project-based." },
         { name: "Volume partnership", detail: "Multi-quarter and annual commitments structured with shared milestones and partnership incentives." },
       ]}
       caseNarrative={{
         tag: "Series B · Logistics",
         title: "Five national-chain meetings in 30 days, two converted within the quarter.",
-        body: "A Series B logistics platform had spent six months trying to break into national retail accounts and was burning founder cycles on cold outreach.\n\nWe ran our enterprise account-penetration play: a named target list of seven retailers, a senior operator who had sold into the same buyers from a prior role, and a weekly cadence with the founder.\n\nWithin 30 days, five of the seven were in active conversations. By the end of the quarter, two had become signed contracts. The internal sales hire , postponed for a year while the company looked for the wrong profile , was now scoped against actual deal motion."
+        body: "A Series B logistics platform had spent six months trying to break into national retail accounts and was burning founder cycles on cold outreach.\n\nWe ran our enterprise account-penetration play: a target list of seven retailers, a senior operator who had sold into the same buyers from a prior role, and a weekly cadence with the founder.\n\nWithin 30 days, five of the seven were in active conversations. By the end of the quarter, two had become signed contracts. The internal sales hire, postponed for a year while the company looked for the wrong profile, was now scoped against actual deal motion."
       }}
       faq={[
         {
           q: "How fast do we see impact?",
-          a: "Most engagements show first measurable signal , a meeting set, a partnership advanced, an operating workstream stood up , within the first 30 days. We define what 30/60/90-day signal looks like at the start of each engagement, in writing.",
+          a: "Most engagements show first measurable signal (a meeting set, a partnership advanced, an operating workstream stood up) within the first 30 days. We define what 30/60/90-day signal looks like at the start of each engagement, in writing.",
         },
         {
           q: "Are you a substitute for a full-time CRO or COO?",
@@ -102,7 +102,7 @@ export default function GrowthAcceleration() {
         },
         {
           q: "What does a typical week look like?",
-          a: "One working session with the client team, named-account or workstream execution between sessions, and a written milestone note at the end of the week. A monthly steering check-in with the CEO or sponsor.",
+          a: "One working session with the client team, target-account or workstream execution between sessions, and a written milestone note at the end of the week. A monthly steering check-in with the CEO or sponsor.",
         },
         {
           q: "Who owns the relationships built during the engagement?",

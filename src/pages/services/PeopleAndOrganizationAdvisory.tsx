@@ -240,7 +240,7 @@ export default function PeopleAndOrganizationAdvisory() {
               Where we stand
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              Build, strengthen, or transform. Not one-size-fits.
+              Build, strengthen, or transform. Not one-size-fits-all.
             </h2>
           </div>
           <div className="lg:col-span-8 text-foreground text-lg leading-relaxed font-light">
@@ -276,7 +276,7 @@ export default function PeopleAndOrganizationAdvisory() {
             "We help leadership determine what the people function needs to become, put the
             right capability around it, and stay accountable until it works."
           </blockquote>
-          <div className="mt-6 text-sm text-muted-foreground">— Chris Betz, CEO</div>
+          <div className="mt-6 text-sm text-muted-foreground">Chris Betz, CEO</div>
         </div>
       </section>
 
