@@ -105,6 +105,7 @@ const capabilityAreas = [
   "HR Function Strategy & Operating Model",
   "Office of the CHRO",
   "Fractional & Interim HR Leadership",
+  "Recruiting & Talent Delivery",
   "Workforce Planning & Organization Design",
   "Leadership, Performance & Succession",
   "Compensation & People Analytics",
