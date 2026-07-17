@@ -10,10 +10,10 @@ const pillars = [
     linkText: "Explore Executive Search",
   },
   {
-    title: "People & Organization Advisory",
+    title: "HR Support & Advisory",
     body: "The execution partner behind the HR leader. Build, strengthen, or transform the people function, from Startup to Enterprise.",
-    href: "/services/people-and-organization-advisory",
-    linkText: "Explore People & Organization",
+    href: "/services/hr-support-advisory",
+    linkText: "Explore HR Support & Advisory",
   },
   {
     title: "Revenue & Operational Acceleration",
