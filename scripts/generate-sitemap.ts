@@ -22,7 +22,7 @@ const staticEntries: SitemapEntry[] = [
   { path: "/approach", changefreq: "monthly", priority: "0.8" },
   { path: "/services", changefreq: "monthly", priority: "0.8" },
   { path: "/services/executive-search", changefreq: "monthly", priority: "0.7" },
-  { path: "/services/people-and-organization-advisory", changefreq: "monthly", priority: "0.7" },
+  { path: "/services/hr-support-advisory", changefreq: "monthly", priority: "0.7" },
   { path: "/services/growth-acceleration", changefreq: "monthly", priority: "0.7" },
   { path: "/services/career-advisory", changefreq: "monthly", priority: "0.7" },
   { path: "/services/the-first-move", changefreq: "monthly", priority: "0.7" },

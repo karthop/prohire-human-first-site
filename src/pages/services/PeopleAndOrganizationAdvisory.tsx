@@ -58,7 +58,7 @@ const flagships = [
   },
   {
     heading: "Workforce & Organization Planning",
-    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions.",
+    body: "The bridge between our recruiting work and the people function. Headcount and workforce planning, organizational structure, span-of-control, workforce cost, critical-role identification, and build-versus-buy-versus-contract decisions, executed through direct-hire, contract, contract-to-hire, and statement-of-work engagements.",
     bullets: [
       "Skills mapping against the reorg or AI redesign",
       "Restructuring and post-reorganization hiring plans",
@@ -169,6 +169,10 @@ const engagements = [
     detail: "A named executive or specialist operating inside the company for an agreed period.",
   },
   {
+    name: "Talent Delivery",
+    detail: "Direct-hire, contract, contract-to-hire, and statement-of-work engagements, delivered by the same team leading the practice.",
+  },
+  {
     name: "Transformation Office",
     detail: "A senior lead and specialist team managing several connected workstreams across the inflection.",
   },
@@ -205,8 +209,8 @@ export default function PeopleAndOrganizationAdvisory() {
   return (
     <div className="min-h-screen pt-16 bg-background">
       <Seo
-        title="People & Organization Advisory | proHIRE resources"
-        description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, and workforce strategy, scaled from Startup to Enterprise."
+        title="HR Support & Advisory | proHIRE resources"
+        description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, workforce strategy, and specialized talent delivery, from Startup to Enterprise."
       />
 
       {/* Hero */}
@@ -219,15 +223,17 @@ export default function PeopleAndOrganizationAdvisory() {
             ← All services
           </Link>
           <div className="mt-6 text-xs uppercase tracking-[0.2em] text-accent mb-6">
-            People & Organization
+            HR Support & Advisory
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            People & Organization Advisory
+            HR Support & Advisory
           </h1>
           <p className="mt-8 text-lg lg:text-xl text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             The execution partner behind the HR leader. Senior expertise and execution
             capacity to help CEOs, CHROs, and Heads of People build, strengthen, and
-            transform the people function, scaled to the stage of the company.
+            transform the people function, with specialized talent delivery, direct-hire,
+            contract, contract-to-hire, and statement-of-work, scaled to the stage of the
+            company.
           </p>
         </div>
       </section>

@@ -24,7 +24,7 @@ export const Footer = () => {
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Services</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search</Link></li>
-              <li><Link to="/services/people-and-organization-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">People &amp; Organization</Link></li>
+              <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR Support &amp; Advisory</Link></li>
               <li><Link to="/services/growth-acceleration" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Growth Acceleration</Link></li>
               <li><Link to="/services/career-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Career Advisory</Link></li>
             </ul>
