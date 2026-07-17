@@ -99,7 +99,8 @@ const App = () => (
               <Route path="/" element={<PageTransition><Home /></PageTransition>} />
               <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
               <Route path="/services/executive-search" element={<PageTransition><ExecutiveSearch /></PageTransition>} />
-              <Route path="/services/people-and-organization-advisory" element={<PageTransition><PeopleAndOrganizationAdvisory /></PageTransition>} />
+              <Route path="/services/hr-support-advisory" element={<PageTransition><PeopleAndOrganizationAdvisory /></PageTransition>} />
+              <Route path="/services/people-and-organization-advisory" element={<LegacyRedirect to={legacyRedirects["/services/people-and-organization-advisory"]} />} />
               <Route path="/services/talent-solutions" element={<LegacyRedirect to={legacyRedirects["/services/talent-solutions"]} />} />
               <Route path="/services/growth-acceleration" element={<PageTransition><GrowthAcceleration /></PageTransition>} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
