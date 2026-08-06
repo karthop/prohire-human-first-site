@@ -88,7 +88,7 @@ const beliefs = [
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="About | proHIRE resources"
         description="Atlanta-based boutique executive talent and growth advisory practice founded by Chris Betz. Twenty years of operator-level judgment for founders, CEOs, and boards."

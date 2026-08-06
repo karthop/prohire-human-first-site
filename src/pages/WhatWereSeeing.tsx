@@ -25,7 +25,7 @@ export default function WhatWereSeeing() {
   );
 
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="What We're Seeing | proHIRE resources"
         description="Grounded observations on hiring, executive search, and leadership from a firm actively doing the work."

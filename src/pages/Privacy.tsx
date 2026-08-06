@@ -99,7 +99,7 @@ const sections = [
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Privacy Policy | proHIRE resources"
         description="How proHIRE resources collects, uses, and protects information submitted through our Site, including rights under GDPR and CCPA."

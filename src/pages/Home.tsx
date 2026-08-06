@@ -8,7 +8,7 @@ import { CTABand } from "@/sections/CTABand";
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="proHIRE resources, Executive Search & Growth Advisory"
         description="Executive search and growth advisory for founders, CEOs, and boards who can't afford the wrong hire. Boutique by design, close to the decision."

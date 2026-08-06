@@ -12,7 +12,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Industries | proHIRE resources"
         description="Sector experience: technology, fintech, healthcare, supply chain, industrial, and professional services."

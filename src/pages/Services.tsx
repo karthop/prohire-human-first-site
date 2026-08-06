@@ -76,7 +76,7 @@ const comparisons = [
 
 export default function ServicesIndex() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Services | proHIRE resources"
         description="Five practices: executive search, hiring and workforce strategy, growth acceleration, senior career advisory, and early career advisory. For founders, boards, senior leaders, and the next generation."

@@ -81,7 +81,7 @@ export const ServiceTemplate = ({
   seoDescription,
 }: Props) => {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo title={seoTitle} description={seoDescription} />
 
       {/* Hero */}
