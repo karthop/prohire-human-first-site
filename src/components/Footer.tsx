@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
-              <Logo className="w-9 h-9" />
+              <Logo className="w-12 h-12" />
               <span className="font-serif text-xl">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed font-light max-w-sm">
