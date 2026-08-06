@@ -59,7 +59,7 @@ export default function WhatWereSeeingArticle() {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title={`${article.title} | proHIRE resources`}
         description={article.dek}

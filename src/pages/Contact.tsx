@@ -50,7 +50,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Contact | proHIRE resources"
         description="Start a confidential conversation. We respond within one business day."

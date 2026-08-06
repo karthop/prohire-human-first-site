@@ -110,7 +110,7 @@ const sections = [
 
 export default function Terms() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Terms and Conditions | proHIRE resources"
         description="Terms governing use of prohireresources.com and professional services engagements with proHIRE resources LLC."

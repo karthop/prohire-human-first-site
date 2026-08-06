@@ -34,7 +34,7 @@ export default function Employers() {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-14 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

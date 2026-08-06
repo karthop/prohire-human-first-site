@@ -211,7 +211,7 @@ const faq = [
 
 export default function PeopleAndOrganizationAdvisory() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="HR Support & Advisory | proHIRE resources"
         description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, workforce strategy, and specialized talent delivery, from Startup to Enterprise."

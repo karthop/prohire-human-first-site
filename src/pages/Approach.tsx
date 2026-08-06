@@ -94,7 +94,7 @@ const networks = [
 
 export default function Approach() {
   return (
-    <div className="min-h-screen pt-16 bg-background">
+    <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="How We Work | proHIRE resources"
         description="The proHIRE method: Discovery, Design, Execute, Embed. Boutique by design, with the discipline a board would expect."
