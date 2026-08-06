@@ -61,10 +61,11 @@ export const Navigation = () => {
       }`}
     >
       <div className="container-editorial">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
-            <Logo className="w-8 h-8" priority />
-            <span className="font-serif text-lg text-foreground">proHIRE resources</span>
+            <Logo className="w-12 h-12" priority />
+            <span className="font-serif text-xl text-foreground">proHIRE resources</span>
+
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
