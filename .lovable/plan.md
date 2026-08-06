@@ -1,25 +1,32 @@
-## What your screenshots confirm
+# Update the site to the new logo
 
-1. **Checkout and Payment Links**
-   - Do nothing on this page.
-   - This page controls Checkout behavior and options. It does not contain a general website-domain field.
-   - Checkout completion URLs such as `success_url`, `cancel_url`, or `return_url` are created by the application when it starts a Stripe session. They are not changed on this Stripe settings page.
+In plain terms: the new logo you uploaded becomes the single source image for every place the old logo shows up: the navbar mark, the footer mark, the browser tab icon (favicon), the iPhone home-screen icon, and the small logo Google reads from article pages. Nothing about layout, wording, or navigation changes.
 
-2. **Workbench → Webhooks**
-   - Do nothing here.
-   - Your only active destination points to a Supabase Edge Function URL ending in `/functions/v1/stripe-webhook`.
-   - It does not point to `hello.karthop.com`, so changing it would break Stripe event delivery.
+## What gets replaced
 
-3. **Connect settings**
-   - Do nothing here.
-   - The current Connect page shown in your screenshot has no general Branding or Redirects domain field. The earlier instruction claiming that it did was incorrect.
-   - Connect OAuth redirect addresses only apply when an application explicitly uses Stripe Connect OAuth. They are not a general website-domain setting on this page.
+1. **In-app logo** (navbar and footer, via the shared `Logo` component)
+   - Replace `src/assets/proHIRE_Logo_circle_full.png` with the new file. No code changes needed since every usage points at that one import.
 
-4. **Payment Method Domains**
-   - You already completed the only required Dashboard change: register `preview.karthop.com` and disable the old `hello.karthop.com` entry.
+2. **Favicons and app icons in `public/`** (regenerated from the new logo, same filenames so `index.html` stays untouched)
+   - `favicon.ico` (multi-size: 16, 32, 48)
+   - `favicon-48x48.png`
+   - `favicon-96x96.png`
+   - `prohire-google-favicon-192x192.png`
+   - `apple-touch-icon.png` (180x180)
 
-## Final resolution
+3. **Structured-data logo** used in article JSON-LD
+   - `public/prohire-favicon.png` and `public/prohire-logo-512.png` regenerated from the new logo.
 
-For the four Stripe links you were given, **you are finished**. Do not continue searching those remaining three pages and do not change the Supabase webhook.
+## Sizing approach
 
-If Stripe Checkout itself later redirects customers to `hello.karthop.com`, that address must be corrected in the Karthop application's Checkout-session code, not in any of these three Stripe Dashboard pages. The project currently open here is the proHIRE project, and a source scan found neither `hello.karthop.com` nor `preview.karthop.com`, so no Karthop code change can be made safely from this project.
+Full circular logo for 96x96, 192x192, 180x180, 512, and the in-app mark. For 48x48 and the small ICO frames, use a tight crop of the moon and silhouette (no text), matching what was done previously so the tab icon stays legible.
+
+## Not touched
+
+- `index.html` head tags (filenames unchanged)
+- The older versioned duplicates in `public/` (`*-v4`, `*-v5`, `*-v6`) since nothing references them
+- Any copy, layout, or routing
+
+## Verification
+
+Generate the new files, confirm dimensions and ICO frame counts, and show you a preview sheet of all icons plus a screenshot of the navbar and footer before you publish.
