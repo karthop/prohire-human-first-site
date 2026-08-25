@@ -20,14 +20,13 @@ export const FounderIntro = () => {
 
           <div className="lg:col-span-7 space-y-6 text-foreground leading-relaxed font-light text-lg">
             <p>
-              Chris has led executive search and revenue functions inside Amazon and across
-              some of the largest names in global staffing and consulting, working with
-              companies from Series A startups to Fortune 50 enterprises.
+              Chris Betz brings twenty years of executive search, talent strategy, and
+              growth advisory experience to proHIRE resources. He has led search and
+              revenue functions inside Amazon as well as top global consulting firms.
             </p>
             <p>
-              Through proHIRE resources, he works directly with CEOs, CFOs, and founders
-              on the hires, restructures, and revenue moves that decide what the next two
-              years actually look like.
+              Chris works directly with CEOs, CFOs, and founders to execute the hires and
+              operational restructures that shape their long-term growth.
             </p>
             <div className="pt-6 grid grid-cols-2 gap-4 text-sm border-t border-border">
               <div>
