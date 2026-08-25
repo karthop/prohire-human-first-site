@@ -33,7 +33,7 @@ export const EditorialHero = () => {
                 to="/approach"
                 className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-primary-foreground border-b border-primary-foreground/40 pb-1 hover:border-primary-foreground transition-colors"
               >
-                Explore our approach <ArrowRight className="w-4 h-4" />
+                See how we work <ArrowRight className="w-4 h-4" />
               </MagneticButton>
               <Link
                 to="/contact"
