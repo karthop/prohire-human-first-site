@@ -39,7 +39,7 @@ export const EditorialHero = () => {
                 to="/contact"
                 className="link-underline-grow text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                Request a consultation
+                Schedule a Confidential Call
               </Link>
             </div>
           </Reveal>
