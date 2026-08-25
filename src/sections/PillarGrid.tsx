@@ -45,14 +45,15 @@ export const PillarGrid = () => {
               What we do
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl leading-tight text-foreground">
-              Five practices, one way of working.
+              Focused Capabilities. Uncompromising Execution.
             </h2>
           </Reveal>
           <Reveal variant="rise" delay={120} className="lg:col-span-7 lg:col-start-6">
             <p className="text-lg text-muted-foreground leading-relaxed font-light">
-              Built for the moments that decide a company: a critical hire, a leadership
-              gap, an inflection in revenue. We bring experienced people, a real network,
-              and the discipline to turn the plan into actual hires and actual outcomes.
+              When your business reaches a critical inflection point, whether you are
+              addressing a leadership gap or accelerating revenue, we provide hands-on
+              advisory, deep talent networks, and the operational discipline needed to
+              turn strategic plans into measurable results.
             </p>
           </Reveal>
         </div>
