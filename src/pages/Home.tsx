@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="proHIRE resources, Executive Search & Growth Advisory"
-        description="Executive search and growth advisory for founders, CEOs, and boards who can't afford the wrong hire. Boutique by design, close to the decision."
+        description="We help founders and enterprise leaders make critical executive hires, build teams from scratch, and scale revenue. Senior partners run every engagement."
       />
       <EditorialHero />
       <ProofBar />
