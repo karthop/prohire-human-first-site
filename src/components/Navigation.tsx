@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "@/components/Logo";
@@ -19,14 +19,13 @@ const primary = [
   { to: "/approach", label: "Approach" },
   { to: "/what-were-seeing", label: "What We're Seeing" },
   { to: "/about", label: "About" },
+  { to: "https://app.prohireresources.com", label: "proHIRE Platform", external: true },
 ];
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const closeTimer = useRef<number | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -38,21 +37,16 @@ export const Navigation = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    setServicesOpen(false);
     setMobileServicesOpen(false);
   }, [location.pathname]);
 
   const isActive = (path: string) =>
     path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
 
-  const openServices = () => {
-    if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    setServicesOpen(true);
-  };
-  const scheduleCloseServices = () => {
-    if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    closeTimer.current = window.setTimeout(() => setServicesOpen(false), 120);
-  };
+  const linkClasses = (path: string) =>
+    `text-base transition-colors ${
+      isActive(path) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+    }`;
 
   return (
     <nav
@@ -60,102 +54,21 @@ export const Navigation = () => {
         scrolled ? "border-border" : "border-transparent"
       }`}
     >
-      <div className="container-editorial">
+      <div className="container-editorial relative">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <Logo className="w-12 h-12" priority />
             <span className="font-serif text-xl text-foreground">proHIRE resources</span>
-
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10">
-            {primary.map((l) =>
-              l.children ? (
-                <div
-                  key={l.to}
-                  className="relative"
-                  onMouseEnter={openServices}
-                  onMouseLeave={scheduleCloseServices}
-                >
-                  <Link
-                    to={l.to}
-                    aria-current={isActive(l.to) ? "page" : undefined}
-                    aria-expanded={servicesOpen}
-                    aria-haspopup="menu"
-                    onFocus={openServices}
-                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors ${
-                      isActive(l.to) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {l.label}
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                    />
-                  </Link>
-                  {servicesOpen && (
-                    <div
-                      role="menu"
-                      className="absolute left-0 top-full pt-3 w-[22rem]"
-                      onMouseEnter={openServices}
-                      onMouseLeave={scheduleCloseServices}
-                    >
-                      <div className="bg-background border border-border shadow-lg py-2">
-                        {l.children.map((c) => (
-                          <Link
-                            key={c.to}
-                            to={c.to}
-                            role="menuitem"
-                            className={`block px-5 py-3 text-sm transition-colors ${
-                              isActive(c.to)
-                                ? "text-foreground bg-secondary/60"
-                                : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                            }`}
-                          >
-                            {c.label}
-                          </Link>
-                        ))}
-                        <div className="border-t border-border mt-2 pt-2">
-                          <Link
-                            to="/services"
-                            className="block px-5 py-2 text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground"
-                          >
-                            View all services
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  aria-current={isActive(l.to) ? "page" : undefined}
-                  className={`text-sm font-medium transition-colors ${
-                    isActive(l.to) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              )
-            )}
-            <Link
-              to="/contact"
-              className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2.5 hover:bg-primary-light transition-colors"
-            >
-              Contact
-            </Link>
-            <ThemeToggle className="ml-1" />
-          </div>
-
-          <div className="lg:hidden flex items-center gap-1">
+          <div className="flex items-center gap-1">
             <ThemeToggle />
-
             <button
               type="button"
               className="p-2 -mr-2 text-foreground"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -163,7 +76,7 @@ export const Navigation = () => {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden py-6 border-t border-border">
+          <div className="w-full lg:absolute lg:right-0 lg:top-full lg:w-80 lg:border lg:shadow-lg border-t lg:border-t border-border bg-background py-6 lg:px-6">
             <div className="flex flex-col gap-5">
               {primary.map((l) =>
                 l.children ? (
@@ -172,6 +85,7 @@ export const Navigation = () => {
                       <Link
                         to={l.to}
                         className={`text-base ${isActive(l.to) ? "text-foreground" : "text-muted-foreground"}`}
+                        onClick={() => setIsOpen(false)}
                       >
                         {l.label}
                       </Link>
@@ -203,11 +117,25 @@ export const Navigation = () => {
                       </div>
                     )}
                   </div>
+                ) : l.external ? (
+                  <a
+                    key={l.to}
+                    href={l.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClasses(l.to)}
+                    onClick={() => setIsOpen(false)}
+                    aria-label="proHIRE Platform (opens in new tab)"
+                  >
+                    {l.label}
+                  </a>
                 ) : (
                   <Link
                     key={l.to}
                     to={l.to}
-                    className={`text-base ${isActive(l.to) ? "text-foreground" : "text-muted-foreground"}`}
+                    aria-current={isActive(l.to) ? "page" : undefined}
+                    className={linkClasses(l.to)}
+                    onClick={() => setIsOpen(false)}
                   >
                     {l.label}
                   </Link>
@@ -216,6 +144,7 @@ export const Navigation = () => {
               <Link
                 to="/contact"
                 className="text-base font-medium bg-primary text-primary-foreground px-5 py-3 inline-block w-fit"
+                onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
