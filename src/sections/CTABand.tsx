@@ -11,10 +11,10 @@ interface Props {
 }
 
 export const CTABand = ({
-  eyebrow = "Start a conversation",
-  title = "Tell us what you're working on.",
-  body = "A confidential 30-minute call. We respond within one business day with a candid view of how, and whether, we can help.",
-  ctaLabel = "Request a conversation",
+  eyebrow = "Schedule a Confidential Call",
+  title = "Schedule a Confidential Conversation",
+  body = "Tell us about your current hiring or growth priorities. In a concise 30-minute call, we will give you a candid assessment of how, and whether, we can help you achieve your goals.",
+  ctaLabel = "Schedule a Confidential Call",
   ctaHref = "/contact",
 }: Props) => {
   return (
