@@ -5,31 +5,31 @@ import { Reveal } from "@/components/motion/Reveal";
 const pillars = [
   {
     title: "Executive Search & Leadership Advisory",
-    body: "The hires that set the next chapter of the company, led by senior partners, not associates behind a pitch.",
+    body: "Secure the leaders who define your company's next phase of growth. Every search is managed directly by senior partners, never passed down to junior associates after the pitch.",
     href: "/services/executive-search",
     linkText: "Explore Executive Search",
   },
   {
     title: "HR Support & Advisory",
-    body: "The execution partner behind the HR leader. Build, strengthen, or transform the people function, from Startup to Enterprise.",
+    body: "We act as the tactical execution partner for your HR leadership, helping you build, structure, and scale your people operations from Series A through enterprise.",
     href: "/services/hr-support-advisory",
     linkText: "Explore HR Support & Advisory",
   },
   {
     title: "Revenue & Operational Acceleration",
-    body: "An external BD and operations bench for the quarters that have to land.",
+    body: "An embedded business development and operations team designed to deliver target revenue and hit critical quarterly milestones.",
     href: "/services/growth-acceleration",
-    linkText: "Explore Growth Acceleration",
+    linkText: "Explore Revenue & Operational Acceleration",
   },
   {
     title: "Career Advisory for Senior Professionals",
-    body: "Discreet counsel for CXOs, board candidates, and operators making a defining move.",
+    body: "Discreet, strategic guidance for CXOs, board candidates, and executive operators navigating pivotal career transitions.",
     href: "/services/career-advisory",
     linkText: "Explore Career Advisory",
   },
   {
     title: "The First Move",
-    body: "Early career advisory for students competing for the internships that set the trajectory.",
+    body: "Targeted coaching for top early-career talent competing for high-impact internships and foundational roles.",
     href: "/services/the-first-move",
     linkText: "Explore The First Move",
   },
