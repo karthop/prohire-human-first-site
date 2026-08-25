@@ -13,7 +13,7 @@ export const Footer = () => {
               <span className="font-serif text-xl">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed font-light max-w-sm">
-              Executive search and growth advisory. Boutique by design. Accountable for the outcome.
+              Built for high-stakes hires and revenue growth. Fully accountable for results.
             </p>
             <p className="text-primary-foreground/60 text-sm italic font-serif">
               "You are more than just a keyword search."
@@ -21,7 +21,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Services</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Capabilities</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search</Link></li>
               <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR Support &amp; Advisory</Link></li>
@@ -33,9 +33,9 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Firm</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Approach</Link></li>
+              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">How We Work</Link></li>
               <li><Link to="/industries" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Industries</Link></li>
-              <li><Link to="/what-were-seeing" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">What We're Seeing</Link></li>
+              <li><Link to="/what-were-seeing" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Insights &amp; Market Trends</Link></li>
               <li><Link to="/about" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">About</Link></li>
             </ul>
           </div>

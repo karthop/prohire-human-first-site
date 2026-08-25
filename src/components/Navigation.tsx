@@ -14,10 +14,10 @@ const services = [
 
 const primary = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services", children: services },
+  { to: "/services", label: "Capabilities", children: services },
   { to: "/industries", label: "Industries" },
-  { to: "/approach", label: "Approach" },
-  { to: "/what-were-seeing", label: "What We're Seeing" },
+  { to: "/approach", label: "How We Work" },
+  { to: "/what-were-seeing", label: "Insights & Market Trends" },
   { to: "/about", label: "About" },
   { to: "https://app.prohireresources.com", label: "proSCREEN", external: true },
 ];

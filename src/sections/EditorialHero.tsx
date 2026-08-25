@@ -20,11 +20,11 @@ export const EditorialHero = () => {
           <SplitHeadline
             as="h1"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
-            text="Series A to Enterprise"
+            text="Executive Search & Growth Advisory for Growing Companies"
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
-              From fractional executives to hard-to-fill searches to building an entire department from scratch, we sit with you before the job description exists, shape the engagement around what the business actually needs, and stay involved through day ninety.
+              We help founders and enterprise leaders make critical executive hires, build functional teams from scratch, and scale revenue capabilities. Before a job description is ever written, we work alongside you to align hiring strategy with business reality, and we stay deeply engaged through the first 90 days.
             </p>
           </Reveal>
           <Reveal variant="fade" delay={750}>
@@ -33,13 +33,13 @@ export const EditorialHero = () => {
                 to="/approach"
                 className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-primary-foreground border-b border-primary-foreground/40 pb-1 hover:border-primary-foreground transition-colors"
               >
-                Explore our approach <ArrowRight className="w-4 h-4" />
+                See how we work <ArrowRight className="w-4 h-4" />
               </MagneticButton>
               <Link
                 to="/contact"
                 className="link-underline-grow text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
-                Request a consultation
+                Schedule a Confidential Call
               </Link>
             </div>
           </Reveal>

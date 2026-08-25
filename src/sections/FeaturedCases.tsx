@@ -33,7 +33,7 @@ export const FeaturedCases = () => {
               Selected outcomes
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl leading-tight max-w-2xl">
-              Work that compounds, across hires, leaders, and pipeline.
+              Proven Impact Across Leadership, Teams, and Revenue Pipeline
             </h2>
           </Reveal>
           <Reveal variant="fade" delay={120}>
