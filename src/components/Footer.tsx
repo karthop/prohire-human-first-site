@@ -21,7 +21,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Services</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Capabilities</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search</Link></li>
               <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR Support &amp; Advisory</Link></li>
