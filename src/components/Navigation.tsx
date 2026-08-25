@@ -19,7 +19,7 @@ const primary = [
   { to: "/approach", label: "Approach" },
   { to: "/what-were-seeing", label: "What We're Seeing" },
   { to: "/about", label: "About" },
-  { to: "https://app.prohireresources.com", label: "proHIRE Platform", external: true },
+  { to: "https://app.prohireresources.com", label: "proSCREEN", external: true },
 ];
 
 export const Navigation = () => {
@@ -125,7 +125,7 @@ export const Navigation = () => {
                     rel="noopener noreferrer"
                     className={linkClasses(l.to)}
                     onClick={() => setIsOpen(false)}
-                    aria-label="proHIRE Platform (opens in new tab)"
+                    aria-label="proSCREEN (opens in new tab)"
                   >
                     {l.label}
                   </a>
