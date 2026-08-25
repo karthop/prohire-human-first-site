@@ -33,9 +33,9 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Firm</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Approach</Link></li>
+              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">How We Work</Link></li>
               <li><Link to="/industries" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Industries</Link></li>
-              <li><Link to="/what-were-seeing" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">What We're Seeing</Link></li>
+              <li><Link to="/what-were-seeing" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Insights &amp; Market Trends</Link></li>
               <li><Link to="/about" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">About</Link></li>
             </ul>
           </div>
