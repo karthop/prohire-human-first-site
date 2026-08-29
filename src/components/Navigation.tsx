@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Logo } from "@/components/Logo";
@@ -7,9 +7,9 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const services = [
   { to: "/services/executive-search", label: "Executive Search & Leadership Advisory" },
   { to: "/services/hr-support-advisory", label: "HR Support & Advisory" },
-  { to: "/services/growth-acceleration", label: "Revenue & Operational Acceleration" },
-  { to: "/services/career-advisory", label: "Career Advisory" },
+  { to: "/services/growth-acceleration", label: "Growth Acceleration" },
   { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
+  { to: "/services/career-advisory", label: "Career Advisory" },
   { to: "/services/the-first-move", label: "The First Move" },
 ];
 
@@ -26,8 +26,9 @@ const primary = [
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const hoverTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -38,7 +39,7 @@ export const Navigation = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    setMobileServicesOpen(false);
+    setServicesOpen(false);
   }, [location.pathname]);
 
   const isActive = (path: string) =>
@@ -48,6 +49,33 @@ export const Navigation = () => {
     `text-base transition-colors ${
       isActive(path) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
     }`;
+
+  const openServices = () => {
+    if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
+    setServicesOpen(true);
+  };
+
+  const closeServices = () => {
+    hoverTimerRef.current = window.setTimeout(() => {
+      setServicesOpen(false);
+    }, 150);
+  };
+
+  const handleCapabilitiesClick = () => {
+    if (window.innerWidth >= 1024) {
+      openServices();
+    } else {
+      setServicesOpen((v) => !v);
+    }
+  };
+
+  const handleCapabilitiesEnter = () => {
+    if (window.innerWidth >= 1024) openServices();
+  };
+
+  const handleCapabilitiesLeave = () => {
+    if (window.innerWidth >= 1024) closeServices();
+  };
 
   return (
     <nav
@@ -67,7 +95,12 @@ export const Navigation = () => {
             <button
               type="button"
               className="p-2 -mr-2 text-foreground"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() =>
+                setIsOpen((v) => {
+                  if (v) setServicesOpen(false);
+                  return !v;
+                })
+              }
               aria-label="Toggle navigation"
               aria-expanded={isOpen}
             >
@@ -81,29 +114,43 @@ export const Navigation = () => {
             <div className="flex flex-col gap-5">
               {primary.map((l) =>
                 l.children ? (
-                  <div key={l.to} className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <Link
-                        to={l.to}
-                        className={`text-base ${isActive(l.to) ? "text-foreground" : "text-muted-foreground"}`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {l.label}
-                      </Link>
-                      <button
-                        type="button"
-                        onClick={() => setMobileServicesOpen((v) => !v)}
-                        aria-expanded={mobileServicesOpen}
-                        aria-label="Toggle services submenu"
-                        className="p-2 -mr-2 text-muted-foreground"
-                      >
+                  <div
+                    key={l.to}
+                    className="flex flex-col gap-3"
+                    onMouseEnter={handleCapabilitiesEnter}
+                    onMouseLeave={handleCapabilitiesLeave}
+                  >
+                    <button
+                      type="button"
+                      onClick={handleCapabilitiesClick}
+                      aria-expanded={servicesOpen}
+                      aria-label="Toggle Capabilities submenu"
+                      className={`flex items-center justify-between w-full text-left text-base transition-colors ${
+                        isActive(l.to) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      <span>{l.label}</span>
+                      <span className="flex items-center justify-center w-8 h-8 rounded-md bg-muted/60">
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                          className={`w-5 h-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
                         />
-                      </button>
-                    </div>
-                    {mobileServicesOpen && (
+                      </span>
+                    </button>
+                    {servicesOpen && (
                       <div className="flex flex-col gap-3 pl-4 border-l border-border">
+                        <Link
+                          to="/services"
+                          className={`text-sm ${
+                            isActive("/services") ? "text-foreground" : "text-muted-foreground"
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <span className="block font-medium">Overview</span>
+                          <span className="block text-xs text-muted-foreground">
+                            Explore all proHIRE capabilities
+                          </span>
+                        </Link>
+                        <div className="h-px bg-border" />
                         {l.children.map((c) => (
                           <Link
                             key={c.to}
@@ -111,6 +158,7 @@ export const Navigation = () => {
                             className={`text-sm ${
                               isActive(c.to) ? "text-foreground" : "text-muted-foreground"
                             }`}
+                            onClick={() => setIsOpen(false)}
                           >
                             {c.label}
                           </Link>
