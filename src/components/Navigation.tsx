@@ -146,11 +146,10 @@ export const Navigation = () => {
                           onClick={() => setIsOpen(false)}
                         >
                           <span className="block font-medium">Overview</span>
-                          <span className="block text-xs text-muted-foreground">
+                          <span className="block text-muted-foreground">
                             Explore all proHIRE capabilities
                           </span>
                         </Link>
-                        <div className="h-px bg-border" />
                         {l.children.map((c) => (
                           <Link
                             key={c.to}
