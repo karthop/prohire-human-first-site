@@ -72,18 +72,24 @@ const capabilities = [
 interface Project {
   name: string;
   category: string;
+  /** Optional qualifier shown beside the category, e.g. a product rather than a site. */
+  format?: string;
   context: string;
-  /** Live site. Null means the URL has not been supplied/verified yet. */
+  /** Live site. Null means the URL has not been supplied yet. */
   url: string | null;
-  /** Supplied logo asset. Null means no logo file has been provided yet. */
+  /** Supplied logo asset. Null falls back to a typographic panel. */
   logo: string | null;
   logoAlt: string;
+  /**
+   * Which panel the supplied logo needs in order to read correctly.
+   * "dark" = light-on-dark artwork, shown on the navy panel.
+   * "light" = dark-on-transparent artwork, shown on a white panel that stays
+   * white in both themes so the wordmark never disappears in dark mode.
+   */
+  logoTheme: "dark" | "light";
   /** Visitors are already on this site, so no external CTA is shown. */
   internal?: boolean;
-  /**
-   * Only published projects render. Entries stay here so a project can be turned
-   * on by supplying a live URL and logo file — no structural change required.
-   */
+  /** Only published projects render. */
   published: boolean;
 }
 
@@ -96,50 +102,65 @@ const projects: Project[] = [
     url: null,
     logo: prohireMark,
     logoAlt: "proHIRE resources",
+    logoTheme: "dark",
     internal: true,
     published: true,
   },
-  // Awaiting supplied live URLs and logo files. Set url, logo and published to
-  // bring each of these into the Selected Work section.
   {
     name: "Rack & Robots",
     category: "Warehouse Automation & Intralogistics",
     context:
       "A technical, product-intensive business requiring a digital presence capable of communicating warehouse automation, robotics, storage systems and integrated solutions clearly to enterprise buyers.",
-    url: null,
+    url: "https://www.rackandrobots.com",
     logo: null,
     logoAlt: "Rack & Robots",
-    published: false,
+    logoTheme: "dark",
+    published: true,
   },
   {
     name: "Ratchet Outreach",
     category: "Marketing & Growth Advisory",
     context:
       "A professional-services presence designed to translate expertise, methodology and commercial value into a clear and credible market story.",
-    url: null,
+    url: "https://ratchetoutreach.com",
     logo: null,
     logoAlt: "Ratchet Outreach",
-    published: false,
+    logoTheme: "light",
+    published: true,
   },
   {
     name: "Martin Franchise Consultants",
     category: "Franchise Advisory",
     context:
       "A consultant-led business where personal credibility, professional positioning and the service offering needed to operate together as one brand.",
-    url: null,
+    url: "https://martinfranchiseconsultants.com",
     logo: null,
     logoAlt: "Martin Franchise Consultants",
-    published: false,
+    logoTheme: "light",
+    published: true,
   },
   {
     name: "HuviFit",
     category: "Fitness Technology",
     context:
       "A consumer-facing fitness platform combining brand development, digital product experience and web presence.",
-    url: null,
+    url: "https://huvifit.com",
     logo: null,
     logoAlt: "HuviFit",
-    published: false,
+    logoTheme: "light",
+    published: true,
+  },
+  {
+    name: "proSCREEN",
+    category: "Recruiting Technology & AI",
+    format: "Web application",
+    context:
+      "A purpose-built recruiting application designed to help evaluate candidate resumes against active positions, assess fit and readiness, support recruiter decision-making, and manage the workflow from initial resume review through candidate disposition. Not a marketing site, but the same discipline applied to a working product.",
+    url: "https://app.prohireresources.com",
+    logo: null,
+    logoAlt: "proSCREEN by proHIRE resources",
+    logoTheme: "dark",
+    published: true,
   },
 ];
 
@@ -185,28 +206,41 @@ const faq = [
   },
 ];
 
-const ProjectPanel = ({ project }: { project: Project }) => (
-  <div className="relative aspect-[16/10] bg-primary brush-texture flex items-center justify-center overflow-hidden">
-    {project.logo ? (
-      <OptimizedImage
-        src={project.logo}
-        alt={project.logoAlt}
-        className="w-32 h-32 lg:w-40 lg:h-40 [&_img]:object-contain"
-      />
-    ) : (
-      <span className="font-serif text-2xl text-primary-foreground/80 px-8 text-center">
-        {project.name}
-      </span>
-    )}
-  </div>
-);
+const ProjectPanel = ({ project }: { project: Project }) => {
+  const onDark = project.logoTheme === "dark";
+  return (
+    <div
+      className={`relative aspect-[16/10] flex items-center justify-center overflow-hidden ${
+        onDark
+          ? "bg-primary brush-texture"
+          : "bg-white border border-border"
+      }`}
+    >
+      {project.logo ? (
+        <OptimizedImage
+          src={project.logo}
+          alt={project.logoAlt}
+          className="w-[62%] max-w-[280px] h-[62%] [&_img]:object-contain"
+        />
+      ) : (
+        <span
+          className={`font-serif text-2xl lg:text-3xl px-8 text-center ${
+            onDark ? "text-primary-foreground/80" : "text-primary/80"
+          }`}
+        >
+          {project.name}
+        </span>
+      )}
+    </div>
+  );
+};
 
 export default function DigitalPositioning() {
   const published = projects.filter((p) => p.published);
   const workLead =
     published.length === 1 && published[0].internal
       ? "Start with the site you are reading. It was built the same way every engagement is: positioning first, architecture second, design and build last."
-      : "Digital positioning and website engagements across professional services, technical B2B and consumer businesses, shown as finished work rather than written case studies.";
+      : "Digital positioning and website engagements across professional services, technical B2B and consumer businesses, shown as finished work rather than written case studies. Where the business need calls for it, the same work extends into digital products.";
 
   return (
     <div className="min-h-screen pt-20 bg-background">
@@ -441,6 +475,9 @@ export default function DigitalPositioning() {
                   >
                     <div className="text-xs uppercase tracking-[0.18em] text-accent mb-4">
                       {p.category}
+                      {p.format && (
+                        <span className="text-muted-foreground"> · {p.format}</span>
+                      )}
                     </div>
                     <h3 className="font-serif text-2xl lg:text-3xl text-foreground leading-snug mb-4">
                       {p.name}
