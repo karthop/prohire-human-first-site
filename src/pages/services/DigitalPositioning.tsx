@@ -85,13 +85,6 @@ interface Project {
   /** Supplied logo asset. Null falls back to a typographic panel. */
   logo: string | null;
   logoAlt: string;
-  /**
-   * Which panel the supplied logo needs in order to read correctly.
-   * "dark" = light-on-dark artwork, shown on the navy panel.
-   * "light" = dark-on-transparent artwork, shown on a white panel that stays
-   * white in both themes so the wordmark never disappears in dark mode.
-   */
-  logoTheme: "dark" | "light";
   /** Per-logo optical sizing so unlike aspect ratios carry comparable weight. */
   compactLogoClass: string;
   panelLogoClass: string;
@@ -110,7 +103,6 @@ const projects: Project[] = [
     url: "https://www.rackandrobots.com",
     logo: rackAndRobotsLogo,
     logoAlt: "Rack & Robots",
-    logoTheme: "dark",
     compactLogoClass: "w-[92%] h-[82%]",
     panelLogoClass: "w-[88%] h-[78%]",
     published: true,
@@ -123,7 +115,6 @@ const projects: Project[] = [
     url: "https://ratchetoutreach.com",
     logo: ratchetOutreachLogo,
     logoAlt: "Ratchet Outreach",
-    logoTheme: "light",
     compactLogoClass: "w-[88%] h-[88%]",
     panelLogoClass: "w-[82%] h-[82%]",
     published: true,
@@ -136,7 +127,6 @@ const projects: Project[] = [
     url: "https://martinfranchiseconsultants.com",
     logo: martinFranchiseLogo,
     logoAlt: "Martin Franchise Consultants",
-    logoTheme: "light",
     compactLogoClass: "w-[92%] h-[84%]",
     panelLogoClass: "w-[86%] h-[80%]",
     published: true,
@@ -149,7 +139,6 @@ const projects: Project[] = [
     url: "https://huvifit.com",
     logo: huvifitLogo,
     logoAlt: "HuviFit",
-    logoTheme: "light",
     compactLogoClass: "w-[88%] h-[80%]",
     panelLogoClass: "w-[82%] h-[76%]",
     published: true,
@@ -163,7 +152,6 @@ const projects: Project[] = [
     url: "https://app.prohireresources.com",
     logo: proscreenLogo,
     logoAlt: "proSCREEN by proHIRE resources",
-    logoTheme: "dark",
     compactLogoClass: "w-full h-full scale-[1.16]",
     panelLogoClass: "w-[92%] h-[92%] scale-[1.12]",
     published: true,
@@ -176,7 +164,6 @@ const projects: Project[] = [
     url: null,
     logo: prohireMark,
     logoAlt: "proHIRE resources",
-    logoTheme: "dark",
     compactLogoClass: "w-full h-full scale-[1.12]",
     panelLogoClass: "w-[78%] h-[78%]",
     internal: true,
@@ -229,7 +216,7 @@ const faq = [
 const ProjectPanel = ({ project }: { project: Project }) => {
   return (
     <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)] p-6 lg:p-10">
-      <div className="w-[78%] max-w-[420px] h-[74%] flex items-center justify-center rounded-lg bg-[#F5F3EE] px-8 py-6 shadow-[0_1px_3px_rgba(0,0,0,0.35)]">
+      <div className="w-[78%] max-w-[420px] h-[74%] flex items-center justify-center rounded-lg bg-[hsl(var(--logo-plate))] px-8 py-6 shadow-premium">
         {project.logo ? (
           <OptimizedImage
             src={project.logo}
@@ -325,7 +312,7 @@ export default function DigitalPositioning() {
             {published.map((p) => {
               const card = (
                 <div className="group flex flex-col items-center text-center h-full rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
-                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-lg bg-[#F5F3EE] px-4 py-3 overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.35)]">
+                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-lg bg-[hsl(var(--logo-plate))] px-4 py-3 overflow-hidden shadow-premium">
                     {p.logo ? (
                       <img
                         src={p.logo}
