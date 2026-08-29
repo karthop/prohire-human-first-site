@@ -122,7 +122,7 @@ export const Navigation = () => {
                   >
                     <button
                       type="button"
-                      onClick={toggleServices}
+                      onClick={handleCapabilitiesClick}
                       aria-expanded={servicesOpen}
                       aria-label="Toggle Capabilities submenu"
                       className={`flex items-center justify-between w-full text-left text-base transition-colors ${
