@@ -579,7 +579,7 @@ export default function DigitalPositioning() {
                         href={p.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`${p.name} — visit site (opens in a new tab)`}
+                        aria-label={`${p.name} - visit site (opens in a new tab)`}
                         className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                       >
                         {body}
