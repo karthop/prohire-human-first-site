@@ -50,21 +50,31 @@ export const Navigation = () => {
       isActive(path) ? "text-foreground" : "text-muted-foreground hover:text-foreground"
     }`;
 
-  const toggleServices = () => setServicesOpen((v) => !v);
+  const openServices = () => {
+    if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
+    setServicesOpen(true);
+  };
 
-  const handleCapabilitiesEnter = () => {
+  const closeServices = () => {
+    hoverTimerRef.current = window.setTimeout(() => {
+      setServicesOpen(false);
+    }, 150);
+  };
+
+  const handleCapabilitiesClick = () => {
     if (window.innerWidth >= 1024) {
-      if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
-      setServicesOpen(true);
+      openServices();
+    } else {
+      setServicesOpen((v) => !v);
     }
   };
 
+  const handleCapabilitiesEnter = () => {
+    if (window.innerWidth >= 1024) openServices();
+  };
+
   const handleCapabilitiesLeave = () => {
-    if (window.innerWidth >= 1024) {
-      hoverTimerRef.current = window.setTimeout(() => {
-        setServicesOpen(false);
-      }, 150);
-    }
+    if (window.innerWidth >= 1024) closeServices();
   };
 
   return (
