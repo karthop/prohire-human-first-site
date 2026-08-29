@@ -25,6 +25,7 @@ const staticEntries: SitemapEntry[] = [
   { path: "/services/hr-support-advisory", changefreq: "monthly", priority: "0.7" },
   { path: "/services/growth-acceleration", changefreq: "monthly", priority: "0.7" },
   { path: "/services/career-advisory", changefreq: "monthly", priority: "0.7" },
+  { path: "/services/digital-positioning", changefreq: "monthly", priority: "0.7" },
   { path: "/services/the-first-move", changefreq: "monthly", priority: "0.7" },
   { path: "/industries", changefreq: "monthly", priority: "0.6" },
   { path: "/what-were-seeing", changefreq: "weekly", priority: "0.7" },

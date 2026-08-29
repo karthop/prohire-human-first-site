@@ -29,6 +29,12 @@ const services = [
     href: "/services/career-advisory",
   },
   {
+    eyebrow: "Digital Positioning",
+    title: "Digital Positioning & Web Design",
+    body: "Positioning, messaging, brand direction and website design for executives, independent consultants and expertise-driven firms. The engagement starts with what the digital presence needs to communicate, not with a page count or a template. Strategy, content, design, development, integrations and launch, built so the domain and accounts stay under your control.",
+    href: "/services/digital-positioning",
+  },
+  {
     eyebrow: "Early Career Advisory",
     title: "The First Move",
     body: "Early career advisory for high school juniors and seniors and college students competing for the internships that set the trajectory. We build a LinkedIn profile that gets found, a resume that reflects real potential, and the networking instincts most people don't develop until years into their career, through individual coaching and institutional partnerships with high schools and universities.",
