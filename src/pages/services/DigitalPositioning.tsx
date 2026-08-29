@@ -325,7 +325,7 @@ export default function DigitalPositioning() {
             {published.map((p) => {
               const card = (
                 <div className="group flex flex-col items-center text-center h-full rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
-                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 p-2 overflow-hidden">
+                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-lg bg-[#F5F3EE] px-4 py-3 overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.35)]">
                     {p.logo ? (
                       <img
                         src={p.logo}
@@ -334,7 +334,7 @@ export default function DigitalPositioning() {
                         className={`${p.compactLogoClass} object-contain transition-transform duration-300 group-hover:scale-[1.04]`}
                       />
                     ) : (
-                      <span className="font-serif text-xl text-center text-white/80">
+                      <span className="font-serif text-xl text-center text-[hsl(218,55%,14%)]/80">
                         {p.name}
                       </span>
                     )}
