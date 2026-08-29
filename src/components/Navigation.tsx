@@ -9,6 +9,7 @@ const services = [
   { to: "/services/hr-support-advisory", label: "HR Support & Advisory" },
   { to: "/services/growth-acceleration", label: "Revenue & Operational Acceleration" },
   { to: "/services/career-advisory", label: "Career Advisory" },
+  { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
   { to: "/services/the-first-move", label: "The First Move" },
 ];
 

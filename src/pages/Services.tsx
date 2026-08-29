@@ -29,6 +29,12 @@ const services = [
     href: "/services/career-advisory",
   },
   {
+    eyebrow: "Digital Positioning",
+    title: "Digital Positioning & Web Design",
+    body: "Positioning, messaging, brand direction and website design for executives, independent consultants and expertise-driven firms. The engagement starts with what the digital presence needs to communicate, not with a page count or a template. Strategy, content, design, development, integrations and launch, built so the domain and accounts stay under your control.",
+    href: "/services/digital-positioning",
+  },
+  {
     eyebrow: "Early Career Advisory",
     title: "The First Move",
     body: "Early career advisory for high school juniors and seniors and college students competing for the internships that set the trajectory. We build a LinkedIn profile that gets found, a resume that reflects real potential, and the networking instincts most people don't develop until years into their career, through individual coaching and institutional partnerships with high schools and universities.",
@@ -79,7 +85,7 @@ export default function ServicesIndex() {
     <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Services | proHIRE resources"
-        description="Five practices: executive search, hiring and workforce strategy, growth acceleration, senior career advisory, and early career advisory. For founders, boards, senior leaders, and the next generation."
+        description="Executive search, hiring and workforce strategy, growth acceleration, senior career advisory, and early career advisory. For founders, boards, senior leaders, and the next generation."
       />
 
       <section className="bg-primary text-primary-foreground brush-texture">
@@ -88,7 +94,7 @@ export default function ServicesIndex() {
             Services
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Five practices, shaped to the moment you are in.
+            Practices, shaped to the moment you are in.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             We engage where experienced judgment, real network reach, and disciplined
