@@ -300,6 +300,67 @@ export default function DigitalPositioning() {
         </div>
       </section>
 
+      {/* Early proof: compact selected work strip */}
+      <section className="py-10 lg:py-12 border-b border-border">
+        <div className="container-editorial">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Selected work
+            </div>
+            <a
+              href="#selected-work"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground link-arrow"
+            >
+              See the full portfolio <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border">
+            {published.map((p) => {
+              const tile = (
+                <div
+                  className={`group h-24 lg:h-28 flex items-center justify-center px-5 py-4 transition-colors ${
+                    p.logoTheme === "dark"
+                      ? "bg-primary hover:bg-primary-dark"
+                      : "bg-white hover:bg-secondary/60"
+                  }`}
+                >
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <span
+                      className={`font-serif text-base text-center ${
+                        p.logoTheme === "dark" ? "text-primary-foreground/80" : "text-primary/80"
+                      }`}
+                    >
+                      {p.name}
+                    </span>
+                  )}
+                </div>
+              );
+              return p.url ? (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.name} — visit site (opens in a new tab)`}
+                  className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                >
+                  {tile}
+                </a>
+              ) : (
+                <div key={p.name}>{tile}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Why this work exists */}
       <section className="py-12 lg:py-16 border-b border-border">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
