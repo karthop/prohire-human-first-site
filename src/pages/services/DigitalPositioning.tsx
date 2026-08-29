@@ -7,6 +7,11 @@ import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import prohireMark from "@/assets/proHIRE_Logo_circle_full.png";
+import rackAndRobotsLogo from "@/assets/logo-rack-and-robots.png";
+import ratchetOutreachLogo from "@/assets/logo-ratchet-outreach.png";
+import martinFranchiseLogo from "@/assets/logo-martin-franchise.png";
+import huvifitLogo from "@/assets/logo-huvifit.png";
+import proscreenLogo from "@/assets/logo-proscreen.png";
 
 const circumstances = [
   {
@@ -112,7 +117,7 @@ const projects: Project[] = [
     context:
       "A technical, product-intensive business requiring a digital presence capable of communicating warehouse automation, robotics, storage systems and integrated solutions clearly to enterprise buyers.",
     url: "https://www.rackandrobots.com",
-    logo: null,
+    logo: rackAndRobotsLogo,
     logoAlt: "Rack & Robots",
     logoTheme: "dark",
     published: true,
@@ -123,7 +128,7 @@ const projects: Project[] = [
     context:
       "A professional-services presence designed to translate expertise, methodology and commercial value into a clear and credible market story.",
     url: "https://ratchetoutreach.com",
-    logo: null,
+    logo: ratchetOutreachLogo,
     logoAlt: "Ratchet Outreach",
     logoTheme: "light",
     published: true,
@@ -134,7 +139,7 @@ const projects: Project[] = [
     context:
       "A consultant-led business where personal credibility, professional positioning and the service offering needed to operate together as one brand.",
     url: "https://martinfranchiseconsultants.com",
-    logo: null,
+    logo: martinFranchiseLogo,
     logoAlt: "Martin Franchise Consultants",
     logoTheme: "light",
     published: true,
@@ -145,7 +150,7 @@ const projects: Project[] = [
     context:
       "A consumer-facing fitness platform combining brand development, digital product experience and web presence.",
     url: "https://huvifit.com",
-    logo: null,
+    logo: huvifitLogo,
     logoAlt: "HuviFit",
     logoTheme: "light",
     published: true,
@@ -157,7 +162,7 @@ const projects: Project[] = [
     context:
       "A purpose-built recruiting application designed to help evaluate candidate resumes against active positions, assess fit and readiness, support recruiter decision-making, and manage the workflow from initial resume review through candidate disposition. Not a marketing site, but the same discipline applied to a working product.",
     url: "https://app.prohireresources.com",
-    logo: null,
+    logo: proscreenLogo,
     logoAlt: "proSCREEN by proHIRE resources",
     logoTheme: "dark",
     published: true,
@@ -291,6 +296,67 @@ export default function DigitalPositioning() {
             >
               Start a Conversation <ArrowRight className="w-4 h-4" />
             </MagneticButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Early proof: compact selected work strip */}
+      <section className="py-10 lg:py-12 border-b border-border">
+        <div className="container-editorial">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Selected work
+            </div>
+            <a
+              href="#selected-work"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground link-arrow"
+            >
+              See the full portfolio <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border">
+            {published.map((p) => {
+              const tile = (
+                <div
+                  className={`group h-24 lg:h-28 flex items-center justify-center px-5 py-4 transition-colors ${
+                    p.logoTheme === "dark"
+                      ? "bg-primary hover:bg-primary-dark"
+                      : "bg-white hover:bg-secondary/60"
+                  }`}
+                >
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <span
+                      className={`font-serif text-base text-center ${
+                        p.logoTheme === "dark" ? "text-primary-foreground/80" : "text-primary/80"
+                      }`}
+                    >
+                      {p.name}
+                    </span>
+                  )}
+                </div>
+              );
+              return p.url ? (
+                <a
+                  key={p.name}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${p.name} — visit site (opens in a new tab)`}
+                  className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                >
+                  {tile}
+                </a>
+              ) : (
+                <div key={p.name}>{tile}</div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -444,7 +510,7 @@ export default function DigitalPositioning() {
 
       {/* Selected work */}
       {published.length > 0 && (
-        <section className="py-16 border-b border-border">
+        <section id="selected-work" className="py-16 border-b border-border scroll-mt-24">
           <div className="container-editorial">
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <Reveal variant="rise" className="lg:col-span-5">
