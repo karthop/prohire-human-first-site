@@ -332,17 +332,12 @@ export default function DigitalPositioning() {
                       </span>
                     )}
                   </div>
-                  <div className="space-y-1">
-                    <h3 className="font-serif text-lg lg:text-xl leading-tight text-white">
-                      {p.name}
-                    </h3>
-                    <p className="text-[10px] lg:text-xs uppercase tracking-[0.16em] text-white/65">
-                      {p.category}
-                      {p.format && (
-                        <span className="normal-case tracking-normal"> · {p.format}</span>
-                      )}
-                    </p>
-                  </div>
+                  <p className="text-[10px] lg:text-xs uppercase tracking-[0.16em] text-white/65">
+                    {p.category}
+                    {p.format && (
+                      <span className="normal-case tracking-normal"> · {p.format}</span>
+                    )}
+                  </p>
                 </div>
               );
               return p.url ? (
