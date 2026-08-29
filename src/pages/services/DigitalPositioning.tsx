@@ -100,18 +100,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "proHIRE resources",
-    category: "Executive Search & Business Advisory",
-    context:
-      "A multi-practice digital presence bringing executive search, organizational advisory, growth support and senior career strategy together under one coherent brand and service architecture.",
-    url: null,
-    logo: prohireMark,
-    logoAlt: "proHIRE resources",
-    logoTheme: "dark",
-    internal: true,
-    published: true,
-  },
-  {
     name: "Rack & Robots",
     category: "Warehouse Automation & Intralogistics",
     context:
@@ -124,7 +112,7 @@ const projects: Project[] = [
   },
   {
     name: "Ratchet Outreach",
-    category: "Marketing & Growth Advisory",
+    category: "Revenue Growth Advisory & Marketing",
     context:
       "A professional-services presence designed to translate expertise, methodology and commercial value into a clear and credible market story.",
     url: "https://ratchetoutreach.com",
@@ -146,7 +134,7 @@ const projects: Project[] = [
   },
   {
     name: "HuviFit",
-    category: "Fitness Technology",
+    category: "AI Powered Personal Fitness & Training App",
     context:
       "A consumer-facing fitness platform combining brand development, digital product experience and web presence.",
     url: "https://huvifit.com",
@@ -156,8 +144,8 @@ const projects: Project[] = [
     published: true,
   },
   {
-    name: "proSCREEN",
-    category: "Recruiting Technology & AI",
+    name: "proSCREEN by proHIRE resources",
+    category: "AI Driven Resume Matching Technology",
     format: "Web application",
     context:
       "A purpose-built recruiting application designed to help evaluate candidate resumes against active positions, assess fit and readiness, support recruiter decision-making, and manage the workflow from initial resume review through candidate disposition. Not a marketing site, but the same discipline applied to a working product.",
@@ -165,6 +153,18 @@ const projects: Project[] = [
     logo: proscreenLogo,
     logoAlt: "proSCREEN by proHIRE resources",
     logoTheme: "dark",
+    published: true,
+  },
+  {
+    name: "proHIRE resources",
+    category: "Executive Search & Recruiting Advisory",
+    context:
+      "A multi-practice digital presence bringing executive search, organizational advisory, growth support and senior career strategy together under one coherent brand and service architecture.",
+    url: null,
+    logo: prohireMark,
+    logoAlt: "proHIRE resources",
+    logoTheme: "dark",
+    internal: true,
     published: true,
   },
 ];
@@ -214,25 +214,21 @@ const faq = [
 const ProjectPanel = ({ project }: { project: Project }) => {
   const onDark = project.logoTheme === "dark";
   return (
-    <div
-      className={`relative aspect-[16/10] flex items-center justify-center overflow-hidden ${
-        onDark
-          ? "bg-primary brush-texture"
-          : "bg-white border border-border"
-      }`}
-    >
+    <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)]">
       {project.logo ? (
-        <OptimizedImage
-          src={project.logo}
-          alt={project.logoAlt}
-          className="w-[62%] max-w-[280px] h-[62%] [&_img]:object-contain"
-        />
-      ) : (
-        <span
-          className={`font-serif text-2xl lg:text-3xl px-8 text-center ${
-            onDark ? "text-primary-foreground/80" : "text-primary/80"
+        <div
+          className={`w-[62%] max-w-[280px] h-[62%] flex items-center justify-center rounded-xl p-4 ${
+            onDark ? "bg-transparent" : "bg-white"
           }`}
         >
+          <OptimizedImage
+            src={project.logo}
+            alt={project.logoAlt}
+            className="w-full h-full [&_img]:object-contain"
+          />
+        </div>
+      ) : (
+        <span className="font-serif text-2xl lg:text-3xl px-8 text-center text-white/80">
           {project.name}
         </span>
       )}
@@ -317,14 +313,12 @@ export default function DigitalPositioning() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {published.map((p) => {
               const card = (
-                <div
-                  className={`group flex flex-col items-center text-center rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium ${
-                    p.logoTheme === "dark"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-white text-foreground border border-border"
-                  }`}
-                >
-                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5">
+                <div className="group flex flex-col items-center text-center rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
+                  <div
+                    className={`h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-xl p-3 ${
+                      p.logoTheme === "dark" ? "bg-transparent" : "bg-white"
+                    }`}
+                  >
                     {p.logo ? (
                       <img
                         src={p.logo}
@@ -333,34 +327,16 @@ export default function DigitalPositioning() {
                         className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
                       />
                     ) : (
-                      <span
-                        className={`font-serif text-xl text-center ${
-                          p.logoTheme === "dark"
-                            ? "text-primary-foreground/80"
-                            : "text-primary/80"
-                        }`}
-                      >
+                      <span className="font-serif text-xl text-center text-white/80">
                         {p.name}
                       </span>
                     )}
                   </div>
                   <div className="space-y-1">
-                    <h3
-                      className={`font-serif text-lg lg:text-xl leading-tight ${
-                        p.logoTheme === "dark"
-                          ? "text-primary-foreground"
-                          : "text-foreground"
-                      }`}
-                    >
+                    <h3 className="font-serif text-lg lg:text-xl leading-tight text-white">
                       {p.name}
                     </h3>
-                    <p
-                      className={`text-[10px] lg:text-xs uppercase tracking-[0.16em] ${
-                        p.logoTheme === "dark"
-                          ? "text-primary-foreground/65"
-                          : "text-muted-foreground"
-                      }`}
-                    >
+                    <p className="text-[10px] lg:text-xs uppercase tracking-[0.16em] text-white/65">
                       {p.category}
                       {p.format && (
                         <span className="normal-case tracking-normal"> · {p.format}</span>
@@ -375,7 +351,7 @@ export default function DigitalPositioning() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${p.name} — ${p.category} (opens in a new tab)`}
+                  aria-label={`${p.name} - ${p.category} (opens in a new tab)`}
                   className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-xl"
                 >
                   {card}
