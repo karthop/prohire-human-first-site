@@ -314,32 +314,59 @@ export default function DigitalPositioning() {
               See the full portfolio <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {published.map((p) => {
-              const tile = (
+              const card = (
                 <div
-                  className={`group h-24 lg:h-28 flex items-center justify-center px-5 py-4 transition-colors ${
+                  className={`group flex flex-col items-center text-center rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium ${
                     p.logoTheme === "dark"
-                      ? "bg-primary hover:bg-primary-dark"
-                      : "bg-white hover:bg-secondary/60"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-white text-foreground border border-border"
                   }`}
                 >
-                  {p.logo ? (
-                    <img
-                      src={p.logo}
-                      alt={p.logoAlt}
-                      loading="lazy"
-                      className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
-                    />
-                  ) : (
-                    <span
-                      className={`font-serif text-base text-center ${
-                        p.logoTheme === "dark" ? "text-primary-foreground/80" : "text-primary/80"
+                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.logoAlt}
+                        loading="lazy"
+                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <span
+                        className={`font-serif text-xl text-center ${
+                          p.logoTheme === "dark"
+                            ? "text-primary-foreground/80"
+                            : "text-primary/80"
+                        }`}
+                      >
+                        {p.name}
+                      </span>
+                    )}
+                  </div>
+                  <div className="space-y-1">
+                    <h3
+                      className={`font-serif text-lg lg:text-xl leading-tight ${
+                        p.logoTheme === "dark"
+                          ? "text-primary-foreground"
+                          : "text-foreground"
                       }`}
                     >
                       {p.name}
-                    </span>
-                  )}
+                    </h3>
+                    <p
+                      className={`text-[10px] lg:text-xs uppercase tracking-[0.16em] ${
+                        p.logoTheme === "dark"
+                          ? "text-primary-foreground/65"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {p.category}
+                      {p.format && (
+                        <span className="normal-case tracking-normal"> · {p.format}</span>
+                      )}
+                    </p>
+                  </div>
                 </div>
               );
               return p.url ? (
@@ -348,13 +375,15 @@ export default function DigitalPositioning() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${p.name} — visit site (opens in a new tab)`}
-                  className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  aria-label={`${p.name} — ${p.category} (opens in a new tab)`}
+                  className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-xl"
                 >
-                  {tile}
+                  {card}
                 </a>
               ) : (
-                <div key={p.name}>{tile}</div>
+                <div key={p.name} className="rounded-xl">
+                  {card}
+                </div>
               );
             })}
           </div>
