@@ -7,6 +7,11 @@ import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import prohireMark from "@/assets/proHIRE_Logo_circle_full.png";
+import rackAndRobotsLogo from "@/assets/logo-rack-and-robots.png";
+import ratchetOutreachLogo from "@/assets/logo-ratchet-outreach.png";
+import martinFranchiseLogo from "@/assets/logo-martin-franchise.png";
+import huvifitLogo from "@/assets/logo-huvifit.png";
+import proscreenLogo from "@/assets/logo-proscreen.png";
 
 const circumstances = [
   {
@@ -112,7 +117,7 @@ const projects: Project[] = [
     context:
       "A technical, product-intensive business requiring a digital presence capable of communicating warehouse automation, robotics, storage systems and integrated solutions clearly to enterprise buyers.",
     url: "https://www.rackandrobots.com",
-    logo: null,
+    logo: rackAndRobotsLogo,
     logoAlt: "Rack & Robots",
     logoTheme: "dark",
     published: true,
@@ -123,7 +128,7 @@ const projects: Project[] = [
     context:
       "A professional-services presence designed to translate expertise, methodology and commercial value into a clear and credible market story.",
     url: "https://ratchetoutreach.com",
-    logo: null,
+    logo: ratchetOutreachLogo,
     logoAlt: "Ratchet Outreach",
     logoTheme: "light",
     published: true,
@@ -134,7 +139,7 @@ const projects: Project[] = [
     context:
       "A consultant-led business where personal credibility, professional positioning and the service offering needed to operate together as one brand.",
     url: "https://martinfranchiseconsultants.com",
-    logo: null,
+    logo: martinFranchiseLogo,
     logoAlt: "Martin Franchise Consultants",
     logoTheme: "light",
     published: true,
@@ -145,7 +150,7 @@ const projects: Project[] = [
     context:
       "A consumer-facing fitness platform combining brand development, digital product experience and web presence.",
     url: "https://huvifit.com",
-    logo: null,
+    logo: huvifitLogo,
     logoAlt: "HuviFit",
     logoTheme: "light",
     published: true,
@@ -157,7 +162,7 @@ const projects: Project[] = [
     context:
       "A purpose-built recruiting application designed to help evaluate candidate resumes against active positions, assess fit and readiness, support recruiter decision-making, and manage the workflow from initial resume review through candidate disposition. Not a marketing site, but the same discipline applied to a working product.",
     url: "https://app.prohireresources.com",
-    logo: null,
+    logo: proscreenLogo,
     logoAlt: "proSCREEN by proHIRE resources",
     logoTheme: "dark",
     published: true,
