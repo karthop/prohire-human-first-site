@@ -134,7 +134,7 @@ const projects: Project[] = [
   },
   {
     name: "HuviFit",
-    category: "AI Powered Personal Fitness & Training App",
+    category: "AI-Powered Personal Fitness & Training App",
     context:
       "A consumer-facing fitness platform combining brand development, digital product experience and web presence.",
     url: "https://huvifit.com",
@@ -145,8 +145,8 @@ const projects: Project[] = [
   },
   {
     name: "proSCREEN by proHIRE resources",
-    category: "AI Driven Resume Matching Technology",
-    format: "Web application",
+    category: "AI-Driven Resume Matching Technology",
+    format: "Web Application",
     context:
       "A purpose-built recruiting application designed to help evaluate candidate resumes against active positions, assess fit and readiness, support recruiter decision-making, and manage the workflow from initial resume review through candidate disposition. Not a marketing site, but the same discipline applied to a working product.",
     url: "https://app.prohireresources.com",
