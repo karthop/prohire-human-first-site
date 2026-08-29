@@ -92,6 +92,9 @@ interface Project {
    * white in both themes so the wordmark never disappears in dark mode.
    */
   logoTheme: "dark" | "light";
+  /** Per-logo optical sizing so unlike aspect ratios carry comparable weight. */
+  compactLogoClass: string;
+  panelLogoClass: string;
   /** Visitors are already on this site, so no external CTA is shown. */
   internal?: boolean;
   /** Only published projects render. */
@@ -108,6 +111,8 @@ const projects: Project[] = [
     logo: rackAndRobotsLogo,
     logoAlt: "Rack & Robots",
     logoTheme: "dark",
+    compactLogoClass: "w-[92%] h-[82%]",
+    panelLogoClass: "w-[88%] h-[78%]",
     published: true,
   },
   {
@@ -119,6 +124,8 @@ const projects: Project[] = [
     logo: ratchetOutreachLogo,
     logoAlt: "Ratchet Outreach",
     logoTheme: "light",
+    compactLogoClass: "w-[88%] h-[88%]",
+    panelLogoClass: "w-[82%] h-[82%]",
     published: true,
   },
   {
@@ -130,6 +137,8 @@ const projects: Project[] = [
     logo: martinFranchiseLogo,
     logoAlt: "Martin Franchise Consultants",
     logoTheme: "light",
+    compactLogoClass: "w-[92%] h-[84%]",
+    panelLogoClass: "w-[86%] h-[80%]",
     published: true,
   },
   {
@@ -141,6 +150,8 @@ const projects: Project[] = [
     logo: huvifitLogo,
     logoAlt: "HuviFit",
     logoTheme: "light",
+    compactLogoClass: "w-[88%] h-[80%]",
+    panelLogoClass: "w-[82%] h-[76%]",
     published: true,
   },
   {
@@ -153,6 +164,8 @@ const projects: Project[] = [
     logo: proscreenLogo,
     logoAlt: "proSCREEN by proHIRE resources",
     logoTheme: "dark",
+    compactLogoClass: "w-full h-full scale-[1.16]",
+    panelLogoClass: "w-[92%] h-[92%] scale-[1.12]",
     published: true,
   },
   {
@@ -164,6 +177,8 @@ const projects: Project[] = [
     logo: prohireMark,
     logoAlt: "proHIRE resources",
     logoTheme: "dark",
+    compactLogoClass: "w-full h-full scale-[1.12]",
+    panelLogoClass: "w-[78%] h-[78%]",
     internal: true,
     published: true,
   },
@@ -212,19 +227,15 @@ const faq = [
 ];
 
 const ProjectPanel = ({ project }: { project: Project }) => {
-  const onDark = project.logoTheme === "dark";
   return (
     <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)]">
       {project.logo ? (
-        <div
-          className={`w-[62%] max-w-[280px] h-[62%] flex items-center justify-center rounded-xl p-4 ${
-            onDark ? "bg-transparent" : "bg-white"
-          }`}
-        >
+        <div className="w-[72%] max-w-[360px] h-[72%] flex items-center justify-center p-4">
           <OptimizedImage
             src={project.logo}
             alt={project.logoAlt}
-            className="w-full h-full [&_img]:object-contain"
+            className={`${project.panelLogoClass} [&_img]:object-contain`}
+            placeholder="bg-transparent"
           />
         </div>
       ) : (
@@ -314,17 +325,13 @@ export default function DigitalPositioning() {
             {published.map((p) => {
               const card = (
                 <div className="group flex flex-col items-center text-center h-full rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
-                  <div
-                    className={`h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-xl p-3 ${
-                      p.logoTheme === "dark" ? "bg-transparent" : "bg-white"
-                    }`}
-                  >
+                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 p-2 overflow-hidden">
                     {p.logo ? (
                       <img
                         src={p.logo}
                         alt={p.logoAlt}
                         loading="lazy"
-                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+                        className={`${p.compactLogoClass} object-contain transition-transform duration-300 group-hover:scale-[1.04]`}
                       />
                     ) : (
                       <span className="font-serif text-xl text-center text-white/80">
