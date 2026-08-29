@@ -310,10 +310,10 @@ export default function DigitalPositioning() {
               See the full portfolio <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 grid-rows-3 sm:grid-rows-2 gap-4">
             {published.map((p) => {
               const card = (
-                <div className="group flex flex-col items-center text-center rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
+                <div className="group flex flex-col items-center text-center h-full rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
                   <div
                     className={`h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-xl p-3 ${
                       p.logoTheme === "dark" ? "bg-transparent" : "bg-white"
