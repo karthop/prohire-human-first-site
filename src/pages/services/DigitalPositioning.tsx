@@ -228,21 +228,21 @@ const faq = [
 
 const ProjectPanel = ({ project }: { project: Project }) => {
   return (
-    <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)]">
-      {project.logo ? (
-        <div className="w-[72%] max-w-[360px] h-[72%] flex items-center justify-center p-4">
+    <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)] p-6 lg:p-10">
+      <div className="w-[78%] max-w-[420px] h-[74%] flex items-center justify-center rounded-lg bg-[#F5F3EE] px-8 py-6 shadow-[0_1px_3px_rgba(0,0,0,0.35)]">
+        {project.logo ? (
           <OptimizedImage
             src={project.logo}
             alt={project.logoAlt}
             className={`${project.panelLogoClass} [&_img]:object-contain`}
             placeholder="bg-transparent"
           />
-        </div>
-      ) : (
-        <span className="font-serif text-2xl lg:text-3xl px-8 text-center text-white/80">
-          {project.name}
-        </span>
-      )}
+        ) : (
+          <span className="font-serif text-2xl lg:text-3xl px-8 text-center text-[hsl(218,55%,14%)]/80">
+            {project.name}
+          </span>
+        )}
+      </div>
     </div>
   );
 };
