@@ -88,6 +88,8 @@ interface Project {
   /** Per-logo optical sizing so unlike aspect ratios carry comparable weight. */
   compactLogoClass: string;
   panelLogoClass: string;
+  /** Dark-lettered marks use the same fixed light inset in both site themes. */
+  lightLogoInset?: boolean;
   /** Visitors are already on this site, so no external CTA is shown. */
   internal?: boolean;
   /** Only published projects render. */
@@ -117,6 +119,7 @@ const projects: Project[] = [
     logoAlt: "Ratchet Outreach",
     compactLogoClass: "w-[88%] h-[88%]",
     panelLogoClass: "w-[82%] h-[82%]",
+    lightLogoInset: true,
     published: true,
   },
   {
@@ -129,6 +132,7 @@ const projects: Project[] = [
     logoAlt: "Martin Franchise Consultants",
     compactLogoClass: "w-[92%] h-[84%]",
     panelLogoClass: "w-[86%] h-[80%]",
+    lightLogoInset: true,
     published: true,
   },
   {
@@ -141,6 +145,7 @@ const projects: Project[] = [
     logoAlt: "HuviFit",
     compactLogoClass: "w-[88%] h-[80%]",
     panelLogoClass: "w-[82%] h-[76%]",
+    lightLogoInset: true,
     published: true,
   },
   {
@@ -216,7 +221,13 @@ const faq = [
 const ProjectPanel = ({ project }: { project: Project }) => {
   return (
     <div className="relative aspect-[16/10] flex items-center justify-center overflow-hidden bg-[hsl(218,55%,14%)] p-6 lg:p-10">
-      <div className="w-[78%] max-w-[420px] h-[74%] flex items-center justify-center rounded-lg bg-[hsl(var(--logo-plate))] px-8 py-6 shadow-premium">
+      <div
+        className={`w-[78%] max-w-[420px] h-[74%] flex items-center justify-center px-8 py-6 ${
+          project.lightLogoInset
+            ? "rounded-lg bg-[hsl(var(--logo-plate))] shadow-premium"
+            : "bg-transparent"
+        }`}
+      >
         {project.logo ? (
           <OptimizedImage
             src={project.logo}
@@ -312,7 +323,13 @@ export default function DigitalPositioning() {
             {published.map((p) => {
               const card = (
                 <div className="group flex flex-col items-center text-center h-full rounded-xl p-5 lg:p-7 transition-all duration-300 hover:shadow-premium bg-[hsl(218,55%,14%)] text-white">
-                  <div className="h-24 lg:h-28 w-full flex items-center justify-center mb-5 rounded-lg bg-[hsl(var(--logo-plate))] px-4 py-3 overflow-hidden shadow-premium">
+                  <div
+                    className={`h-24 lg:h-28 w-full flex items-center justify-center mb-5 px-4 py-3 overflow-hidden ${
+                      p.lightLogoInset
+                        ? "rounded-lg bg-[hsl(var(--logo-plate))] shadow-premium"
+                        : "bg-transparent"
+                    }`}
+                  >
                     {p.logo ? (
                       <img
                         src={p.logo}
