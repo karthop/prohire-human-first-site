@@ -510,7 +510,7 @@ export default function DigitalPositioning() {
 
       {/* Selected work */}
       {published.length > 0 && (
-        <section id="selected-work" className="py-16 border-b border-border">
+        <section id="selected-work" className="py-16 border-b border-border scroll-mt-24">
           <div className="container-editorial">
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <Reveal variant="rise" className="lg:col-span-5">
