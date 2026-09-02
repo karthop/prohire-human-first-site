@@ -1,11 +1,11 @@
 import { ServiceTemplate } from "@/sections/ServiceTemplate";
 
-export default function GrowthAcceleration() {
+export default function RevenueOperationalAcceleration() {
   return (
     <ServiceTemplate
       seoTitle="Revenue & Operational Acceleration | proHIRE resources"
       seoDescription="Senior business development, partnership work, and operating infrastructure for companies between strategy and scale."
-      eyebrow="Growth Acceleration"
+      eyebrow="Revenue & Operational Acceleration"
       title="Revenue & Operational Acceleration"
       lead="The gap between a strategy deck and a closed enterprise account is staffed wrong in most companies. We close it with experienced operators on shorter time horizons, real revenue and operating impact in 30, 60, and 90 days."
       thesis="Most growth-stage companies don't lack strategy. They lack the senior execution muscle to turn it into closed revenue and durable operating infrastructure. Hiring a full-time CRO or COO is an 8-to-12-month exercise the company often can't afford to wait for. We bring operators who have run the play before, embed them inside the team, and accept real accountability for the outcome."

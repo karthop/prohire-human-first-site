@@ -49,7 +49,7 @@ const chapters = [
     label: "The practice today",
     years: "2021-Present",
     title: "proHIRE resources.",
-    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The practices: Executive Search, HR Support & Advisory, Growth Acceleration, Career Advisory, and The First Move.",
+    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The practices: Recruiting & Talent Delivery, Executive Search, HR & Talent Leadership Support, Revenue & Operational Acceleration, Career Advisory, and The First Move.",
     learned: "The boutique model exists to do the work the larger firms have stopped doing.",
   },
 ];

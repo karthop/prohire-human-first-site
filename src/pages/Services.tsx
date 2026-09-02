@@ -5,22 +5,28 @@ import { CTABand } from "@/sections/CTABand";
 
 const services = [
   {
+    eyebrow: "Recruiting & Talent Delivery",
+    title: "Recruiting & Talent Delivery",
+    body: "Senior-led recruiting for a single professional hire, a multi-role hiring campaign, or an embedded recruiting assignment. Direct-hire, contract, contract-to-hire, embedded recruiting support, and functional team buildouts across technology, finance, HR, marketing, sales, supply chain, engineering, and general corporate functions.",
+    href: "/services/recruiting",
+  },
+  {
     eyebrow: "Executive Search",
     title: "Executive Search & Leadership Advisory",
     body: "Retained C-suite, VP, and board-track search, plus fractional CXOs who have scaled comparable businesses. Partner-led from intake through onboarding, with the scope rewritten before sourcing begins and measurable time-to-impact written into the engagement.",
     href: "/services/executive-search",
   },
   {
-    eyebrow: "HR Support & Advisory",
-    title: "HR Support & Advisory",
+    eyebrow: "HR & Talent Leadership Support",
+    title: "HR & Talent Leadership Support",
     body: "The execution partner behind the HR leader. Senior expertise and execution capacity to help CEOs, CHROs, and Heads of People build, strengthen, and transform the people function. Includes HR leadership advisory, function build-out, workforce planning, and specialized talent delivery, direct-hire, contract, contract-to-hire, and statement-of-work, from Startup to Enterprise.",
     href: "/services/hr-support-advisory",
   },
   {
-    eyebrow: "Growth Acceleration",
+    eyebrow: "Revenue & Operational Acceleration",
     title: "Revenue & Operational Acceleration",
     body: "Senior BD execution, operating infrastructure, and partnership work on shorter time horizons than a full-time hire allows. We run the target-account campaign, build the operating cadence, and convert to a permanent leader once the motion is real.",
-    href: "/services/growth-acceleration",
+    href: "/services/revenue-operational-acceleration",
   },
   {
     eyebrow: "Career Advisory",
@@ -50,7 +56,7 @@ const integrations = [
   },
   {
     situation: "PE value-creation plan, year one",
-    play: "HR Support & Advisory + Executive Search",
+    play: "HR & Talent Leadership Support + Executive Search",
     body: "Design the people function around the value-creation plan, then build the finance and people teams on the cadence the sponsor expects.",
   },
   {

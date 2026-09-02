@@ -10,15 +10,15 @@ const pillars = [
     linkText: "Explore Executive Search",
   },
   {
-    title: "HR Support & Advisory",
+    title: "HR & Talent Leadership Support",
     body: "We act as the tactical execution partner for your HR leadership, helping you build, structure, and scale your people operations from Series A through enterprise.",
     href: "/services/hr-support-advisory",
-    linkText: "Explore HR Support & Advisory",
+    linkText: "Explore HR & Talent Leadership Support",
   },
   {
     title: "Revenue & Operational Acceleration",
     body: "An embedded business development and operations team designed to deliver target revenue and hit critical quarterly milestones.",
-    href: "/services/growth-acceleration",
+    href: "/services/revenue-operational-acceleration",
     linkText: "Explore Revenue & Operational Acceleration",
   },
   {

@@ -181,9 +181,10 @@ export default function Contact() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="recruiting">Recruiting &amp; talent delivery</SelectItem>
                   <SelectItem value="executive-search">Executive search / fractional CXO</SelectItem>
-                  <SelectItem value="people-organization">People &amp; Organization / HR advisory</SelectItem>
-                  <SelectItem value="growth-acceleration">Growth acceleration / BD</SelectItem>
+                  <SelectItem value="hr-talent-leadership">HR &amp; talent leadership support</SelectItem>
+                  <SelectItem value="revenue-operational-acceleration">Revenue &amp; operational acceleration</SelectItem>
                   <SelectItem value="career-advisory">Career advisory (individual)</SelectItem>
                   <SelectItem value="partnership">Partnership / referral</SelectItem>
                   <SelectItem value="general">General inquiry</SelectItem>

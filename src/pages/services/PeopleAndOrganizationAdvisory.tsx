@@ -213,7 +213,7 @@ export default function PeopleAndOrganizationAdvisory() {
   return (
     <div className="min-h-screen pt-20 bg-background">
       <Seo
-        title="HR Support & Advisory | proHIRE resources"
+        title="HR & Talent Leadership Support | proHIRE resources"
         description="Execution partner for CHROs, Heads of People, and founders. HR leadership advisory, people function build-out, workforce strategy, and specialized talent delivery, from Startup to Enterprise."
       />
 
@@ -227,10 +227,10 @@ export default function PeopleAndOrganizationAdvisory() {
             ← All services
           </Link>
           <div className="mt-6 text-xs uppercase tracking-[0.2em] text-accent mb-6">
-            HR Support & Advisory
+            HR &amp; Talent Leadership Support
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            HR Support & Advisory
+            HR &amp; Talent Leadership Support
           </h1>
           <p className="mt-8 text-lg lg:text-xl text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             The execution partner behind the HR leader. Senior expertise and execution
