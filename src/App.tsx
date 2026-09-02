@@ -24,7 +24,8 @@ const Industries = lazy(() => import("./pages/Industries"));
 const Services = lazy(() => import("./pages/Services"));
 const ExecutiveSearch = lazy(() => import("./pages/services/ExecutiveSearch"));
 const PeopleAndOrganizationAdvisory = lazy(() => import("./pages/services/PeopleAndOrganizationAdvisory"));
-const GrowthAcceleration = lazy(() => import("./pages/services/GrowthAcceleration"));
+const RevenueOperationalAcceleration = lazy(() => import("./pages/services/RevenueOperationalAcceleration"));
+const RecruitingTalentDelivery = lazy(() => import("./pages/services/RecruitingTalentDelivery"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const DigitalPositioning = lazy(() => import("./pages/services/DigitalPositioning"));
 const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
@@ -40,6 +41,7 @@ const legacyRedirects: Record<string, string> = {
   "/employers": "/services/hr-support-advisory",
   "/services/talent-solutions": "/services/hr-support-advisory",
   "/services/people-and-organization-advisory": "/services/hr-support-advisory",
+  "/services/growth-acceleration": "/services/revenue-operational-acceleration",
   "/professionals": "/services/career-advisory",
   "/talent-areas": "/services",
   "/networking-strategies": "/what-were-seeing",
@@ -99,11 +101,13 @@ const App = () => (
             <Routes>
               <Route path="/" element={<PageTransition><Home /></PageTransition>} />
               <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+              <Route path="/services/recruiting" element={<PageTransition><RecruitingTalentDelivery /></PageTransition>} />
               <Route path="/services/executive-search" element={<PageTransition><ExecutiveSearch /></PageTransition>} />
               <Route path="/services/hr-support-advisory" element={<PageTransition><PeopleAndOrganizationAdvisory /></PageTransition>} />
               <Route path="/services/people-and-organization-advisory" element={<LegacyRedirect to={legacyRedirects["/services/people-and-organization-advisory"]} />} />
               <Route path="/services/talent-solutions" element={<LegacyRedirect to={legacyRedirects["/services/talent-solutions"]} />} />
-              <Route path="/services/growth-acceleration" element={<PageTransition><GrowthAcceleration /></PageTransition>} />
+              <Route path="/services/revenue-operational-acceleration" element={<PageTransition><RevenueOperationalAcceleration /></PageTransition>} />
+              <Route path="/services/growth-acceleration" element={<LegacyRedirect to={legacyRedirects["/services/growth-acceleration"]} />} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/services/digital-positioning" element={<PageTransition><DigitalPositioning /></PageTransition>} />
               <Route path="/services/the-first-move" element={<PageTransition><TheFirstMove /></PageTransition>} />

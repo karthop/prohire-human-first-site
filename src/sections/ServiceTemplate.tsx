@@ -47,7 +47,11 @@ interface Props {
   whoFor: string[];
   capabilities: Section[];
   disciplines?: Section[];
+  disciplinesEyebrow?: string;
+  disciplinesHeading?: string;
   rolesWeLeadOn?: string[];
+  rolesEyebrow?: string;
+  rolesHeading?: string;
   methodMap?: MethodStep[];
   wontDo?: string[];
   engagements: Engagement[];
@@ -55,6 +59,8 @@ interface Props {
   outcomes?: CaseQuote[];
   caseNarrative?: CaseNarrative;
   faq?: FaqItem[];
+  ctaTitle?: string;
+  ctaBody?: string;
   seoTitle: string;
   seoDescription: string;
 }
@@ -69,7 +75,11 @@ export const ServiceTemplate = ({
   whoFor,
   capabilities,
   disciplines,
+  disciplinesEyebrow = "How the work gets done",
+  disciplinesHeading = "How we hold ourselves to it.",
   rolesWeLeadOn,
+  rolesEyebrow = "Mandates",
+  rolesHeading = "Roles we lead on.",
   methodMap,
   wontDo,
   engagements,
@@ -77,6 +87,8 @@ export const ServiceTemplate = ({
   outcomes,
   caseNarrative,
   faq,
+  ctaTitle = "Talk to us about a partnership.",
+  ctaBody = "Tell us where you're headed. We will respond with a candid view of how, and whether, we can help.",
   seoTitle,
   seoDescription,
 }: Props) => {
@@ -209,10 +221,10 @@ export const ServiceTemplate = ({
             <div className="grid lg:grid-cols-12 gap-12 mb-12">
               <div className="lg:col-span-4">
                 <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                  How the work gets done
+                  {disciplinesEyebrow}
                 </div>
                 <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                  How we hold ourselves to it.
+                  {disciplinesHeading}
                 </h2>
               </div>
             </div>
@@ -240,10 +252,10 @@ export const ServiceTemplate = ({
           <div className="container-editorial grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                Mandates
+                {rolesEyebrow}
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                Roles we lead on.
+                {rolesHeading}
               </h2>
             </div>
             <ul className="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-foreground text-lg font-light">
@@ -388,10 +400,7 @@ export const ServiceTemplate = ({
       {/* FAQ */}
       {faq && faq.length > 0 && <FaqList items={faq} />}
 
-      <CTABand
-        title="Talk to us about a partnership."
-        body="Tell us where you're headed. We will respond with a candid view of how, and whether, we can help."
-      />
+      <CTABand title={ctaTitle} body={ctaBody} />
 
       <div className="py-12 bg-background">
         <div className="container-editorial">

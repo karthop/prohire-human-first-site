@@ -5,19 +5,19 @@ import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const services = [
+  { to: "/services/recruiting", label: "Recruiting & Talent Delivery" },
   { to: "/services/executive-search", label: "Executive Search & Leadership Advisory" },
-  { to: "/services/hr-support-advisory", label: "HR Support & Advisory" },
-  { to: "/services/growth-acceleration", label: "Growth Acceleration" },
-  { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
+  { to: "/services/hr-support-advisory", label: "HR & Talent Leadership Support" },
+  { to: "/services/revenue-operational-acceleration", label: "Revenue & Operational Acceleration" },
   { to: "/services/career-advisory", label: "Career Advisory" },
-  { to: "/services/the-first-move", label: "The First Move" },
+  { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
 ];
 
 const primary = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Capabilities", children: services },
   { to: "/industries", label: "Industries" },
-  { to: "/approach", label: "How We Work" },
+  { to: "/approach", label: "Human & AI" },
   { to: "/what-were-seeing", label: "Insights & Market Trends" },
   { to: "/about", label: "About" },
   { to: "https://app.prohireresources.com", label: "proSCREEN", external: true },

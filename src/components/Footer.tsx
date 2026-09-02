@@ -23,9 +23,11 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Capabilities</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search</Link></li>
-              <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR Support &amp; Advisory</Link></li>
-              <li><Link to="/services/growth-acceleration" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Growth Acceleration</Link></li>
+              <li><Link to="/services" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Overview</Link></li>
+              <li><Link to="/services/recruiting" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Recruiting &amp; Talent Delivery</Link></li>
+              <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search &amp; Leadership Advisory</Link></li>
+              <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR &amp; Talent Leadership Support</Link></li>
+              <li><Link to="/services/revenue-operational-acceleration" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Revenue &amp; Operational Acceleration</Link></li>
               <li><Link to="/services/career-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Career Advisory</Link></li>
               <li><Link to="/services/digital-positioning" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Digital Positioning &amp; Web Design</Link></li>
             </ul>
@@ -34,7 +36,7 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Firm</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">How We Work</Link></li>
+              <li><Link to="/approach" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Human &amp; AI</Link></li>
               <li><Link to="/industries" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Industries</Link></li>
               <li><Link to="/what-were-seeing" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Insights &amp; Market Trends</Link></li>
               <li><Link to="/about" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">About</Link></li>
