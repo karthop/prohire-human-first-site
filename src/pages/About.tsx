@@ -49,7 +49,7 @@ const chapters = [
     label: "The practice today",
     years: "2021-Present",
     title: "proHIRE resources.",
-    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The practices: Recruiting & Talent Delivery, Executive Search, HR & Talent Leadership Support, Revenue & Operational Acceleration, Career Advisory, and The First Move.",
+    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The capabilities: Recruiting & Talent Delivery, Executive Search & Leadership Advisory, HR & Talent Leadership Support, Revenue & Operational Acceleration, Career Advisory, and Digital Positioning & Web Design.",
     learned: "The boutique model exists to do the work the larger firms have stopped doing.",
   },
 ];
@@ -65,15 +65,15 @@ const situations = [
 
 const boutiqueReasons = [
   {
-    h: "Partner attention, every engagement.",
+    h: "You work with a senior person on every engagement.",
     b: "There is no junior staffing layer. The senior who pitches the engagement is the senior executing it. This is the single most consequential difference between boutique and large-firm work, and the easiest one to verify.",
   },
   {
-    h: "No leverage model to feed.",
-    b: "Large search and consulting firms have economics that require staffing engagements with junior associates. We don't. Our economics are aligned to do the work right, not to maximize headcount on the project plan.",
+    h: "We do not staff engagements with junior associates.",
+    b: "Large search and consulting firms often need to staff engagements with junior associates to make the economics work. We do not operate that way. Chris leads the work and brings in qualified recruiters and specialists when a project requires additional capacity."
   },
   {
-    h: "The relationship outlasts the engagement.",
+    h: "The relationship continues after the engagement ends.",
     b: "Boutique work compounds across years and roles. Most of our engagements come from clients we've worked with at three different companies, in three different stages, for three different reasons. That's the model, and it only works if the work is honest.",
   },
 ];
@@ -96,7 +96,7 @@ export default function About() {
 
       {/* Hero */}
       <section className="text-primary-foreground brush-texture" style={{ backgroundColor: "#101E37" }}>
-        <div className="container-editorial py-14 lg:py-12 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="container-editorial py-16 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-8">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
             <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
@@ -121,7 +121,7 @@ export default function About() {
       </section>
 
       {/* Founder narrative */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Founder</div>
@@ -135,15 +135,11 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
-            <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
-              "You are more than just a keyword search."
-            </p>
             <p>
-              That sentence is the practice in a single line. Most of what's labeled
-              "executive search" today is a sourcing motion dressed up in advisory language,
-              a database query with a glossy deck. The work that actually moves a company is
-              slower, more specific, and almost always begins with re-scoping the question
-              the client first asked.
+              Most of what is labeled executive search today is a sourcing process
+              presented as advisory work, a database query with a polished deck. The work
+              that actually moves a company is slower, more specific, and almost always
+              begins by re-scoping the question the client first asked.
             </p>
             <p>
               proHIRE resources was built to do that work. We sit with founders before the
@@ -205,7 +201,7 @@ export default function About() {
       </section>
 
       {/* Career chapters, narrative, not resume */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="max-w-3xl mb-20">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">The arc</div>

@@ -14,17 +14,17 @@ export const EditorialHero = () => {
         <div className="max-w-3xl lg:max-w-2xl">
           <Reveal variant="fade" delay={50}>
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-8 font-sans">
-              Executive search &amp; growth advisory
+              Recruiting, executive search &amp; growth advisory
             </div>
           </Reveal>
           <SplitHeadline
             as="h1"
             className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-normal text-primary-foreground"
-            text="Executive Search & Growth Advisory for Growing Companies"
+            text="We Provide Recruiting, Executive Search, and Growth Advisory for Growing Companies."
           />
           <Reveal variant="fade" delay={600}>
             <p className="mt-8 text-lg lg:text-xl leading-relaxed text-primary-foreground/80 max-w-2xl font-light">
-              We help founders and enterprise leaders make critical executive hires, build functional teams from scratch, and scale revenue capabilities. Before a job description is ever written, we work alongside you to align hiring strategy with business reality, and we stay deeply engaged through the first 90 days.
+              We recruit professionals and executives, build functional teams, and provide targeted advisory support when clients need experienced help.
             </p>
           </Reveal>
           <Reveal variant="fade" delay={750}>

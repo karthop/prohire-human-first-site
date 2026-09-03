@@ -28,7 +28,6 @@ const RevenueOperationalAcceleration = lazy(() => import("./pages/services/Reven
 const RecruitingTalentDelivery = lazy(() => import("./pages/services/RecruitingTalentDelivery"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const DigitalPositioning = lazy(() => import("./pages/services/DigitalPositioning"));
-const TheFirstMove = lazy(() => import("./pages/services/TheFirstMove"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 import { BackToTop } from "@/components/BackToTop";
@@ -42,6 +41,7 @@ const legacyRedirects: Record<string, string> = {
   "/services/talent-solutions": "/services/hr-support-advisory",
   "/services/people-and-organization-advisory": "/services/hr-support-advisory",
   "/services/growth-acceleration": "/services/revenue-operational-acceleration",
+  "/services/the-first-move": "/services/career-advisory#early-career-strategy",
   "/professionals": "/services/career-advisory",
   "/talent-areas": "/services",
   "/networking-strategies": "/what-were-seeing",
@@ -80,10 +80,22 @@ const LegacyRedirect = ({ to }: { to: string }) => {
 };
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      // Let the lazy route render before looking for the anchor.
+      const target = window.setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "instant" as ScrollBehavior, block: "start" });
+          return;
+        }
+        window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+      }, 120);
+      return () => window.clearTimeout(target);
+    }
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 
@@ -110,7 +122,7 @@ const App = () => (
               <Route path="/services/growth-acceleration" element={<LegacyRedirect to={legacyRedirects["/services/growth-acceleration"]} />} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/services/digital-positioning" element={<PageTransition><DigitalPositioning /></PageTransition>} />
-              <Route path="/services/the-first-move" element={<PageTransition><TheFirstMove /></PageTransition>} />
+              <Route path="/services/the-first-move" element={<LegacyRedirect to={legacyRedirects["/services/the-first-move"]} />} />
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
               <Route path="/what-were-seeing" element={<PageTransition><WhatWereSeeing /></PageTransition>} />

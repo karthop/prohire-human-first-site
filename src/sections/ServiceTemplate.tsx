@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CTABand } from "@/sections/CTABand";
 import { Seo } from "@/components/Seo";
 import { FaqList } from "@/components/FaqList";
+import { GridFill } from "@/components/GridFill";
 
 interface Section {
   heading: string;
@@ -76,7 +77,7 @@ export const ServiceTemplate = ({
   capabilities,
   disciplines,
   disciplinesEyebrow = "How the work gets done",
-  disciplinesHeading = "How we hold ourselves to it.",
+  disciplinesHeading = "How we deliver the work.",
   rolesWeLeadOn,
   rolesEyebrow = "Mandates",
   rolesHeading = "Roles we lead on.",
@@ -87,8 +88,8 @@ export const ServiceTemplate = ({
   outcomes,
   caseNarrative,
   faq,
-  ctaTitle = "Talk to us about a partnership.",
-  ctaBody = "Tell us where you're headed. We will respond with a candid view of how, and whether, we can help.",
+  ctaTitle = "Tell us what you are working on.",
+  ctaBody = "Send us a short summary of your situation. We will respond with a candid view of how, and whether, we can help.",
   seoTitle,
   seoDescription,
 }: Props) => {
@@ -103,7 +104,7 @@ export const ServiceTemplate = ({
             to="/services"
             className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
-            ← All services
+            ← All capabilities
           </Link>
           <div className="mt-6 text-xs uppercase tracking-[0.2em] text-accent mb-6">
             {eyebrow}
@@ -126,7 +127,7 @@ export const ServiceTemplate = ({
                 Where we stand
               </div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                Why this practice exists.
+                Why we provide this service.
               </h2>
             </div>
             <div className="lg:col-span-8 text-foreground text-lg leading-relaxed font-light">
@@ -210,6 +211,7 @@ export const ServiceTemplate = ({
                 )}
               </div>
             ))}
+            <GridFill items={capabilities.length} md={2} />
           </div>
         </div>
       </section>
@@ -277,10 +279,11 @@ export const ServiceTemplate = ({
                   How we run this work
                 </div>
                 <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                  Discovery → Design → Execute → Embed.
+                  We run every engagement in four phases.
                 </h2>
                 <p className="mt-4 text-muted-foreground font-light leading-relaxed">
-                  The same four phases, applied to the texture of this work.
+                  Discovery, design, execution, and handover apply to every engagement in
+                  this service.
                 </p>
               </div>
               <div className="lg:col-span-8 divide-y divide-border border-y border-border">
@@ -308,7 +311,7 @@ export const ServiceTemplate = ({
                 What we will not do.
               </h2>
               <p className="mt-4 text-primary-foreground/75 font-light leading-relaxed">
-                What you say no to says more than what you sell.
+                We are direct about the work we do not take on.
               </p>
             </div>
             <ul className="lg:col-span-8 divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
@@ -336,7 +339,7 @@ export const ServiceTemplate = ({
             </div>
             <p className="lg:col-span-7 lg:col-start-6 text-muted-foreground font-light text-lg leading-relaxed">
               {engagementsNote ||
-                "Investment is engagement-specific and shared in conversation. Engagements compose by capability, with incentives for multi-month and annual partnerships."}
+                "Every engagement has a written scope and an agreed schedule. We discuss fees in conversation once we understand the work."}
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
@@ -346,6 +349,7 @@ export const ServiceTemplate = ({
                 <p className="text-muted-foreground font-light text-sm leading-relaxed">{e.detail}</p>
               </div>
             ))}
+            <GridFill items={engagements.length} md={2} lg={3} />
           </div>
         </div>
       </section>
@@ -380,7 +384,7 @@ export const ServiceTemplate = ({
               What clients have said
             </div>
             <h2 className="font-serif text-3xl lg:text-4xl mb-16 max-w-3xl leading-tight">
-              In their words, after the work was done.
+              Comments clients made after the work was completed.
             </h2>
             <div className="grid md:grid-cols-2 gap-px bg-primary-foreground/15">
               {outcomes.map((o) => (
@@ -392,6 +396,7 @@ export const ServiceTemplate = ({
                   <div className="mt-6 text-sm text-primary-foreground/75">{o.role}</div>
                 </article>
               ))}
+              <GridFill items={outcomes.length} md={2} className="bg-primary" />
             </div>
           </div>
         </section>
@@ -408,7 +413,7 @@ export const ServiceTemplate = ({
             to="/services"
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
           >
-            <ArrowUpRight className="w-4 h-4 rotate-180" /> All services
+            <ArrowUpRight className="w-4 h-4 rotate-180" /> All capabilities
           </Link>
         </div>
       </div>

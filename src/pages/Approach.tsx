@@ -34,31 +34,31 @@ const phases = [
 
 const principles = [
   {
-    h: "Human-first.",
-    b: "Real judgment over volume. Real relationships over transactions. Discretion is not a feature, it is the practice.",
+    h: "People make the decisions",
+    b: "Experienced people own the judgment on every engagement, including which candidates to present, what to recommend, and what to tell a client when the news is not good.",
   },
   {
-    h: "AI-enhanced.",
-    b: "Modern tooling for sourcing, screening, and market intelligence, used where it sharpens a decision, never where it replaces one.",
+    h: "Technology supports the work",
+    b: "We use modern tooling for research, sourcing, screening, and market analysis. It helps us prepare and cover more ground, and it does not decide who gets hired or what we advise.",
   },
   {
-    h: "Accountable for the outcome.",
-    b: "We commit to outcomes you can measure, investment shapes you can read, and the candor to tell you when we are not the right partner.",
+    h: "We say what we find",
+    b: "We tell clients what the market is showing us, including when a role is scoped in a way that will not work and when we are not the right firm for the engagement.",
   },
 ];
 
 const pricingPrinciples = [
   {
-    h: "Clear shapes, never published rates.",
-    b: "We use a small set of clear engagement shapes that apply across every kind of work we do, from C-suite searches to professional hires to growth and operating engagements: Retainer, Project, Subscription, Performance-linked. The investment for each is engagement-specific and shared in conversation, not advertised. Premium positioning and published rate cards do not coexist.",
+    h: "A small set of engagement shapes",
+    b: "We use a small set of engagement shapes across every kind of work we do, including retained search, contract recruiting, embedded recruiting, project work, interim leadership, and defined advisory engagements. We agree which one fits before the work starts.",
   },
   {
-    h: "Modular by capability.",
-    b: "Engagements compose by practice and by workstream. You pay for the capability you actually use, with bundled incentives for multi-month and annual commitments.",
+    h: "You pay for the capability you use",
+    b: "Engagements are scoped by capability and by workstream, so you pay for the work you actually need rather than a predetermined package.",
   },
   {
-    h: "Shared accountability.",
-    b: "Every engagement defines success in writing at intake. We grade ourselves against those metrics at quarterly reviews and adjust the engagement, not just the conversation, when the work demands it.",
+    h: "Success is defined in writing",
+    b: "Every engagement defines what finished looks like in writing at the start. We review the work against that definition and adjust the engagement on paper when it needs to change.",
   },
 ];
 
@@ -96,41 +96,47 @@ export default function Approach() {
   return (
     <div className="min-h-screen pt-20 bg-background">
       <Seo
-        title="How We Work | proHIRE resources"
-        description="The proHIRE method: Discovery, Design, Execute, Embed. Boutique by design, with the discipline a board would expect."
+        title="Human & AI | proHIRE resources"
+        description="How proHIRE resources works. Technology supports research, analysis, organization, and execution. Experienced people remain responsible for decisions, recommendations, and client communication."
       />
 
       {/* Hero */}
       <section className="bg-primary text-primary-foreground brush-texture">
         <div className="container-editorial py-12 lg:py-18">
-          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">How we work</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">Human &amp; AI</div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Human-first. AI-enhanced. Accountable for the outcome.
+            AI sharpens the work. Human judgment makes the call.
           </h1>
-          <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
-            A boutique operating model run with the discipline of a much larger firm. The
-            same method whether we are placing a CFO, building out a finance team, or
-            running a quarter of business development for you. We don't just work at the top
-            of the house. We build the teams that support it, applying the same disciplined
-            vetting to professional hires that others only reserve for the C-suite.
-          </p>
+          <div className="mt-8 max-w-3xl space-y-5 text-lg text-primary-foreground/85 font-light leading-relaxed">
+            <p>
+              We use technology to support research, analysis, organization, and
+              execution. It helps us cover a market faster, keep records straight, and
+              prepare better for the conversations that matter.
+            </p>
+            <p>
+              Experienced people remain responsible for the decisions, the
+              recommendations, and the communication with clients and candidates. Chris
+              leads every engagement and brings in qualified recruiters and specialists
+              when a project requires additional capacity.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Method */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">The method</div>
               <h2 className="font-serif text-3xl lg:text-5xl text-foreground leading-[1.1]">
-                Four phases. One discipline.
+                We run every engagement in four phases.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 lg:pt-4 text-muted-foreground font-light text-lg leading-relaxed">
-              Every engagement runs through the same four phases, applied to the texture of
-              the work. The phases are written so you know, at every point, what you are
-              paying for and what you should expect to receive.
+              Every engagement runs through the same four phases. We write them down so
+              you know at every point what the work covers and what you should expect to
+              receive.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-px bg-border">
@@ -160,9 +166,9 @@ export default function Approach() {
         <div className="container-editorial">
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">How we operate</div>
           <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight max-w-3xl mb-16">
-            Three commitments that govern every engagement.
+            How the work actually runs.
           </h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {principles.map((p) => (
               <div key={p.h}>
                 <div className="font-serif text-2xl text-foreground mb-4">{p.h}</div>
@@ -180,12 +186,12 @@ export default function Approach() {
             <div className="lg:col-span-5">
               <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">How we price</div>
               <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-                We do not publish rates. We publish principles.
+                We do not publish rates.
               </h2>
             </div>
             <p className="lg:col-span-6 lg:col-start-7 text-muted-foreground font-light text-lg leading-relaxed">
-              Fees vary by scope, urgency, and the shape of the partnership. The
-              principles do not.
+              Fees vary by scope, urgency, and the shape of the engagement. We discuss
+              them in conversation once we understand the work.
             </p>
           </div>
           <div className="divide-y divide-border border-y border-border">
