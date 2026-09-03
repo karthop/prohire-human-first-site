@@ -118,7 +118,7 @@ export default function Approach() {
       </section>
 
       {/* Method */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
@@ -162,7 +162,7 @@ export default function Approach() {
           <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight max-w-3xl mb-16">
             Three commitments that govern every engagement.
           </h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {principles.map((p) => (
               <div key={p.h}>
                 <div className="font-serif text-2xl text-foreground mb-4">{p.h}</div>

@@ -31,13 +31,15 @@ export default function Industries() {
       </section>
 
       <section className="py-12">
-        <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+        <div className="container-editorial">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {industries.map((i) => (
             <article key={i.name} className="bg-background p-10 flex flex-col">
               <h2 className="font-serif text-xl text-foreground mb-4 leading-snug">{i.name}</h2>
               <p className="text-muted-foreground font-light leading-relaxed">{i.body}</p>
             </article>
           ))}
+          </div>
         </div>
       </section>
 

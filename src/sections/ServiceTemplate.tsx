@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CTABand } from "@/sections/CTABand";
 import { Seo } from "@/components/Seo";
 import { FaqList } from "@/components/FaqList";
+import { GridFill } from "@/components/GridFill";
 
 interface Section {
   heading: string;
@@ -210,6 +211,7 @@ export const ServiceTemplate = ({
                 )}
               </div>
             ))}
+            <GridFill items={capabilities.length} md={2} />
           </div>
         </div>
       </section>
@@ -346,6 +348,7 @@ export const ServiceTemplate = ({
                 <p className="text-muted-foreground font-light text-sm leading-relaxed">{e.detail}</p>
               </div>
             ))}
+            <GridFill items={engagements.length} md={2} lg={3} />
           </div>
         </div>
       </section>
@@ -392,6 +395,7 @@ export const ServiceTemplate = ({
                   <div className="mt-6 text-sm text-primary-foreground/75">{o.role}</div>
                 </article>
               ))}
+              <GridFill items={outcomes.length} md={2} className="bg-primary" />
             </div>
           </div>
         </section>

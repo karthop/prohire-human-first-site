@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, Link2, Check } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 import { articles, getArticleBySlug, SITE_URL } from "@/content/articles";
+import { GridFill } from "@/components/GridFill";
 
 function formatDate(iso: string) {
   const d = new Date(iso + "T00:00:00Z");
@@ -143,7 +144,7 @@ export default function WhatWereSeeingArticle() {
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8">
               More for {article.audience}
             </div>
-            <div className="grid md:grid-cols-3 gap-px bg-border">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
               {moreArticles.map((a) => (
                 <Link
                   key={a.slug}
@@ -167,6 +168,7 @@ export default function WhatWereSeeingArticle() {
                   </div>
                 </Link>
               ))}
+              <GridFill items={moreArticles.length} md={2} lg={3} />
             </div>
           </div>
         </section>

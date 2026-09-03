@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
+import { GridFill } from "@/components/GridFill";
 
 const services = [
   {
@@ -136,7 +137,8 @@ export default function ServicesIndex() {
 
       {/* Practice cards */}
       <section className="py-12">
-        <div className="container-editorial grid md:grid-cols-2 gap-px bg-border">
+        <div className="container-editorial">
+          <div className="grid md:grid-cols-2 gap-px bg-border">
           {services.map((s) => (
             <Link
               key={s.href}
@@ -156,6 +158,8 @@ export default function ServicesIndex() {
               </div>
             </Link>
           ))}
+            <GridFill items={services.length} md={2} />
+          </div>
         </div>
       </section>
 
@@ -213,13 +217,14 @@ export default function ServicesIndex() {
               </h2>
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
             {comparisons.map((c) => (
               <div key={c.title} className="bg-background p-8 lg:p-10">
                 <h3 className="font-serif text-xl text-foreground mb-4">{c.title}</h3>
                 <p className="text-muted-foreground font-light leading-relaxed">{c.body}</p>
               </div>
             ))}
+            <GridFill items={comparisons.length} md={2} lg={3} />
           </div>
         </div>
       </section>

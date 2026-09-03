@@ -96,7 +96,7 @@ export default function About() {
 
       {/* Hero */}
       <section className="text-primary-foreground brush-texture" style={{ backgroundColor: "#101E37" }}>
-        <div className="container-editorial py-14 lg:py-12 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="container-editorial py-16 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-8">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
             <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
@@ -121,7 +121,7 @@ export default function About() {
       </section>
 
       {/* Founder narrative */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Founder</div>
@@ -205,7 +205,7 @@ export default function About() {
       </section>
 
       {/* Career chapters, narrative, not resume */}
-      <section className="py-14 lg:py-12">
+      <section className="py-16">
         <div className="container-editorial">
           <div className="max-w-3xl mb-20">
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">The arc</div>

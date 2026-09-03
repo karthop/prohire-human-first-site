@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { GridFill } from "@/components/GridFill";
 
 const pillars = [
   {
@@ -37,7 +38,7 @@ const pillars = [
 
 export const PillarGrid = () => {
   return (
-    <section className="py-14 lg:py-12 bg-background">
+    <section className="py-16 bg-background">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-12 gap-12 mb-20">
           <Reveal variant="rise" className="lg:col-span-4">
@@ -71,13 +72,14 @@ export const PillarGrid = () => {
                 <p className="text-muted-foreground leading-relaxed font-light flex-1">
                   {p.body}
                 </p>
-                <div className="link-arrow mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                  {p.linkText}
-                  <ArrowUpRight className="w-4 h-4" />
+                <div className="link-arrow mt-8 text-sm font-medium text-foreground leading-relaxed">
+                  {p.linkText}{" "}
+                  <ArrowUpRight className="inline-block w-4 h-4 align-text-bottom" />
                 </div>
               </Link>
             </Reveal>
           ))}
+          <GridFill items={pillars.length} md={2} lg={3} />
         </div>
       </div>
     </section>

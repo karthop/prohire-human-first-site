@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
+import { GridFill } from "@/components/GridFill";
 
 const cases = [
   {
@@ -25,7 +26,7 @@ const cases = [
 
 export const FeaturedCases = () => {
   return (
-    <section className="py-14 lg:py-12 bg-primary text-primary-foreground brush-texture">
+    <section className="py-16 bg-primary text-primary-foreground brush-texture">
       <div className="container-editorial">
         <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
           <Reveal variant="rise">
@@ -46,7 +47,7 @@ export const FeaturedCases = () => {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-primary-foreground/15">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-primary-foreground/15">
           {cases.map((c, i) => (
             <Reveal key={c.role + c.tag} delay={i * 100} variant="rise">
               <article className="bg-primary p-8 lg:p-10 flex flex-col h-full">
@@ -60,6 +61,7 @@ export const FeaturedCases = () => {
               </article>
             </Reveal>
           ))}
+          <GridFill items={cases.length} md={2} lg={3} className="bg-primary" />
         </div>
       </div>
     </section>

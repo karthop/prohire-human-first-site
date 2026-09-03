@@ -5,7 +5,7 @@ import { Logo } from "@/components/Logo";
 export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground brush-texture">
-      <div className="container-editorial py-12">
+      <div className="container-editorial pt-12 pb-24 lg:pb-12">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
@@ -71,7 +71,7 @@ export const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/15 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/55">
           <div>© {new Date().getFullYear()} proHIRE resources LLC. All rights reserved.</div>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-primary-foreground transition-colors">Terms &amp; Conditions</Link>
             <span>Atlanta · National reach</span>

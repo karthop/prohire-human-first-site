@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CTABand } from "@/sections/CTABand";
 import { Seo } from "@/components/Seo";
 import { FaqList } from "@/components/FaqList";
+import { GridFill } from "@/components/GridFill";
 
 const situations = [
   "New CHRO, VP People, or Head of HR just stepped in and needs execution capacity in the first ninety days",
@@ -261,7 +262,7 @@ export default function PeopleAndOrganizationAdvisory() {
               execution are. We do not replace the function. We equip it, and we put
               embedded recruiting behind it so the hiring plan actually gets executed.
             </p>
-            <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
               {modes.map((m) => (
                 <div key={m.label} className="bg-background p-6">
                   <div className="text-xs uppercase tracking-[0.18em] text-accent mb-3">
@@ -272,6 +273,7 @@ export default function PeopleAndOrganizationAdvisory() {
                   </p>
                 </div>
               ))}
+              <GridFill items={modes.length} md={2} lg={3} />
             </div>
           </div>
         </div>
@@ -538,6 +540,7 @@ export default function PeopleAndOrganizationAdvisory() {
                 </p>
               </div>
             ))}
+            <GridFill items={engagements.length} md={2} lg={3} />
           </div>
         </div>
       </section>
