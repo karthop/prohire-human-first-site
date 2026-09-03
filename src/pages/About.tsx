@@ -49,7 +49,7 @@ const chapters = [
     label: "The practice today",
     years: "2021-Present",
     title: "proHIRE resources.",
-    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The practices: Recruiting & Talent Delivery, Executive Search, HR & Talent Leadership Support, Revenue & Operational Acceleration, Career Advisory, and The First Move.",
+    body: "A boutique executive search and growth advisory firm in Atlanta, serving founders, CEOs, and boards from Series A through Fortune 500, with revenue scales from $15M to $150B. The capabilities: Recruiting & Talent Delivery, Executive Search & Leadership Advisory, HR & Talent Leadership Support, Revenue & Operational Acceleration, Career Advisory, and Digital Positioning & Web Design.",
     learned: "The boutique model exists to do the work the larger firms have stopped doing.",
   },
 ];
@@ -65,15 +65,15 @@ const situations = [
 
 const boutiqueReasons = [
   {
-    h: "Partner attention, every engagement.",
+    h: "You work with a senior person on every engagement.",
     b: "There is no junior staffing layer. The senior who pitches the engagement is the senior executing it. This is the single most consequential difference between boutique and large-firm work, and the easiest one to verify.",
   },
   {
-    h: "No leverage model to feed.",
-    b: "Large search and consulting firms have economics that require staffing engagements with junior associates. We don't. Our economics are aligned to do the work right, not to maximize headcount on the project plan.",
+    h: "We do not staff engagements with junior associates.",
+    b: "Large search and consulting firms often need to staff engagements with junior associates to make the economics work. We do not operate that way. Chris leads the work and brings in qualified recruiters and specialists when a project requires additional capacity."
   },
   {
-    h: "The relationship outlasts the engagement.",
+    h: "The relationship continues after the engagement ends.",
     b: "Boutique work compounds across years and roles. Most of our engagements come from clients we've worked with at three different companies, in three different stages, for three different reasons. That's the model, and it only works if the work is honest.",
   },
 ];

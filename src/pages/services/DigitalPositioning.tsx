@@ -6,6 +6,7 @@ import { FaqList } from "@/components/FaqList";
 import { Reveal } from "@/components/motion/Reveal";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { GridFill } from "@/components/GridFill";
 import prohireMark from "@/assets/proHIRE_Logo_circle_full.png";
 import rackAndRobotsLogo from "@/assets/logo-rack-and-robots.png";
 import ratchetOutreachLogo from "@/assets/logo-ratchet-outreach.png";
@@ -49,28 +50,53 @@ const audiences = [
 
 const capabilities = [
   {
-    heading: "Positioning & Messaging",
-    body: "Before design begins, we work through the audience, offer, differentiation and what someone should understand after spending a few minutes with you or your business. For some engagements, the positioning is already clear. For others, this is where the most important work happens.",
+    heading: "Business positioning",
+    body: "We work through the audience, the offer, and the difference before any design begins. For some engagements the positioning is already clear. For others this is where most of the value is created.",
   },
   {
-    heading: "Website Strategy & Architecture",
-    body: "We determine what the site needs to accomplish, how information should be organized, what deserves prominence and how a visitor should move from first impression to meaningful action. The goal isn't more pages. It's the right ones.",
+    heading: "Website strategy and messaging",
+    body: "We agree what the site needs to accomplish, how the information should be organized, what deserves prominence, and how a visitor should move from a first impression to a useful next step.",
   },
   {
-    heading: "Brand & Visual Direction",
-    body: "Typography, imagery, visual language, hierarchy and supporting brand elements designed around the professional reputation you're building or the business you've already built.",
+    heading: "Website copy",
+    body: "We write the headlines, service descriptions, page copy, calls to action, and executive biographies so the words and the design carry the same message.",
   },
   {
-    heading: "Design & Development",
-    body: "Modern, responsive websites built around the engagement rather than forced into a stock template. We handle design, development, mobile experience and the technical requirements established during discovery.",
+    heading: "Website design and development",
+    body: "We design and build responsive websites around the engagement rather than fitting the work into a stock template. That includes the desktop and mobile experience and the technical requirements agreed during discovery.",
   },
   {
-    heading: "Content & Copy",
-    body: "Good design can't rescue unclear thinking. We work collaboratively on headlines, service positioning, page copy, calls to action, executive biographies and the language that connects what you know with what your audience needs to understand.",
+    heading: "Executive branding",
+    body: "We help senior leaders present their experience consistently across their professional presence, including biographies, personal positioning statements, and the visual direction that supports them.",
   },
   {
-    heading: "Integrations & Digital Foundation",
-    body: "Contact forms, scheduling, lead routing and other practical integrations can be incorporated based on the needs of the engagement. We also handle the technical path to launch, including domain configuration, site structure, performance fundamentals and search basics.",
+    heading: "Company LinkedIn pages",
+    body: "We set up and improve company LinkedIn pages so the company description, services, and visual presentation match the positioning on the website.",
+  },
+  {
+    heading: "Business-facing LinkedIn content",
+    body: (
+      <>
+        We help companies plan and write business-facing LinkedIn content that supports
+        the positioning. Personal LinkedIn profiles and individual career positioning are
+        part of{" "}
+        <Link
+          to="/services/career-advisory"
+          className="underline hover:text-foreground transition-colors"
+        >
+          Career Advisory
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    heading: "Website integrations",
+    body: "We add the practical integrations a site needs, including contact forms, scheduling, and lead routing, based on what the engagement calls for.",
+  },
+  {
+    heading: "Website launch support",
+    body: "We handle the technical path to launch, including domain configuration, site structure, performance fundamentals, and search basics, and we make sure you understand how the finished site works.",
   },
 ];
 
@@ -256,7 +282,7 @@ export default function DigitalPositioning() {
     <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Digital Positioning & Web Design | proHIRE resources"
-        description="Digital positioning, messaging and website design for executives, independent consultants, professional-services firms and specialized businesses."
+        description="Business positioning, website strategy and messaging, website copy, design and development, executive branding, company LinkedIn pages, integrations, and launch support."
       />
 
       {/* Hero */}
@@ -266,31 +292,23 @@ export default function DigitalPositioning() {
             to="/services"
             className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
-            ← All services
+            ← All capabilities
           </Link>
           <div className="mt-6 text-xs uppercase tracking-[0.2em] text-accent mb-6">
             Digital Positioning & Web Design
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            Your reputation already exists. Your digital presence should reinforce it.
+            We Help Companies Improve Their Positioning, Messaging, and Digital Presence.
           </h1>
           <div className="mt-8 max-w-3xl space-y-5 text-lg lg:text-xl text-primary-foreground/85 font-light leading-relaxed">
             <p>
-              Digital positioning, messaging, brand direction and website design for
-              executives, independent consultants and expertise-driven firms.
+              We work with companies, independent consultants, and expertise-driven firms
+              on positioning, messaging, website design and development, executive
+              branding, and company presence on LinkedIn.
             </p>
             <p>
-              We help translate what makes a person or business valuable into a digital
-              presence that communicates it clearly.
-            </p>
-            <p>
-              That can mean sharpening the positioning. Reworking the message. Establishing
-              the visual direction. Designing and building a new website. Or starting over
-              when the current presence no longer reflects the business or professional
-              reputation behind it.
-            </p>
-            <p className="text-primary-foreground">
-              The website is the visible result. The work starts before we build it.
+              We agree what the business needs to communicate before we design anything,
+              then write, design, build, and launch the presence that carries it.
             </p>
           </div>
           <div className="mt-10">
@@ -454,6 +472,7 @@ export default function DigitalPositioning() {
                 <p className="text-muted-foreground font-light leading-relaxed">{a.body}</p>
               </div>
             ))}
+            <GridFill items={audiences.length} md={2} />
           </div>
         </div>
       </section>
@@ -478,6 +497,7 @@ export default function DigitalPositioning() {
                 <p className="text-muted-foreground font-light leading-relaxed">{c.body}</p>
               </div>
             ))}
+            <GridFill items={capabilities.length} md={2} />
           </div>
         </div>
       </section>
@@ -496,23 +516,22 @@ export default function DigitalPositioning() {
           <div className="lg:col-span-8">
             <ul className="divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
               <li className="py-6 font-serif text-xl lg:text-2xl leading-snug">
-                Sometimes a business needs a new site.
+                Some companies need a new website.
               </li>
               <li className="py-6 font-serif text-xl lg:text-2xl leading-snug">
-                Sometimes the existing site needs a clearer message, stronger structure or
-                better visual presentation.
+                Some companies need a clearer message, a stronger structure, or better
+                visual presentation on the site they already have.
               </li>
               <li className="py-6 font-serif text-xl lg:text-2xl leading-snug">
-                Sometimes the real issue is positioning, and rebuilding anything before
-                resolving it would simply create a better-looking version of the same
-                problem.
+                Some companies need to resolve their positioning first, because rebuilding
+                before that produces a better-looking version of the same problem.
               </li>
             </ul>
             <div className="mt-8 space-y-4 text-primary-foreground/85 font-light text-lg leading-relaxed">
-              <p>We'll tell you which one we think you're dealing with.</p>
+              <p>We will tell you which of these we think you are dealing with.</p>
               <p>
-                That's also why we don't begin with page counts, templates or predetermined
-                packages. We begin with the objective.
+                We do not begin with page counts, templates, or predetermined packages. We
+                begin with what the business needs to communicate.
               </p>
             </div>
           </div>
@@ -644,9 +663,9 @@ export default function DigitalPositioning() {
             </h2>
           </Reveal>
           <Reveal variant="rise" delay={120} className="lg:col-span-8">
-            <blockquote className="font-serif text-2xl lg:text-3xl text-foreground leading-snug border-l border-accent pl-6">
-              Your website shouldn't become someone else's leverage.
-            </blockquote>
+            <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug border-l border-accent pl-6">
+              You keep control of your website, your domain, and your accounts.
+            </p>
             <div className="mt-8 space-y-5 text-foreground text-lg font-light leading-relaxed">
               <p>
                 Your domain, accounts and core digital infrastructure remain under your

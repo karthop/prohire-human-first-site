@@ -1,114 +1,173 @@
+import { Link } from "react-router-dom";
 import { ServiceTemplate } from "@/sections/ServiceTemplate";
 
 export default function RevenueOperationalAcceleration() {
   return (
     <ServiceTemplate
       seoTitle="Revenue & Operational Acceleration | proHIRE resources"
-      seoDescription="Senior business development, partnership work, and operating infrastructure for companies between strategy and scale."
+      seoDescription="We help companies improve revenue team structure and role clarity, support sales leadership and sales talent decisions, align hiring plans with growth priorities, and improve selected operating processes."
       eyebrow="Revenue & Operational Acceleration"
-      title="Revenue & Operational Acceleration"
-      lead="The gap between a strategy deck and a closed enterprise account is staffed wrong in most companies. We close it with experienced operators on shorter time horizons, real revenue and operating impact in 30, 60, and 90 days."
-      thesis="Most growth-stage companies don't lack strategy. They lack the senior execution muscle to turn it into closed revenue and durable operating infrastructure. Hiring a full-time CRO or COO is an 8-to-12-month exercise the company often can't afford to wait for. We bring operators who have run the play before, embed them inside the team, and accept real accountability for the outcome."
-      pointOfView="Acceleration isn't more activity. It's the right person, in the right seat, for the right twelve weeks."
+      title="We Help Companies Improve Revenue Team Structure and Execution."
+      lead="We work with company leaders on how the revenue team is structured, who is responsible for what, which roles to hire next, and which operating processes need attention."
+      thesis="This is defined project work, not general management consulting. We take on a specific problem with a written scope, an agreed schedule, and a named person responsible for delivering it. Chris leads the client relationship and brings in qualified specialists when the work requires expertise outside his own. We do not sell open-ended advisory retainers and we do not promise a revenue number."
+      pointOfView="We take on defined work with an agreed scope. We do not guarantee revenue, sales, or cost outcomes."
+      pointOfViewPlain
       whoFor={[
-        "Founder-led companies needing senior BD execution before, or instead of, a full-time sales hire",
-        "PE-backed portfolios scaling go-to-market or operating capacity across multiple investments",
-        "Leadership teams penetrating enterprise accounts, new geographies, or new market segments",
-        "Companies whose product is ready and whose pipeline isn't",
+        "Company leaders building a revenue team for the first time.",
+        "Leaders reorganizing an existing sales or revenue team where responsibilities have become unclear.",
+        "Companies whose hiring plan and growth priorities no longer match each other.",
+        "Leaders who need experienced help with sales leadership and sales talent decisions.",
+        "Companies with a specific operating process that needs to be documented or improved.",
       ]}
       capabilities={[
         {
-          heading: "Business development execution",
-          body: "We function as your senior external BD team, running target-account campaigns, partnership development, and C-level relationship building while the leadership team focuses on strategy and product.",
+          heading: "Revenue team structure and role clarity",
+          body: "We review how the revenue team is organized today, where responsibilities overlap or fall through, and what the structure needs to look like for the stage the company is entering. The work ends with a written structure and a responsibility map.",
           bullets: [
-            "Enterprise account penetration",
-            "Strategic partnership identification and structuring",
-            "C-level relationship building and deal facilitation",
-            "Market entry and competitive positioning",
+            "Current structure and reporting review",
+            "Role definitions and responsibility mapping",
+            "Coverage gaps and duplicated effort",
+            "A written recommended structure",
           ],
         },
         {
-          heading: "Operating infrastructure",
-          body: "Strategic HR, compliance, and operating systems that scale with growth while reducing legal and operational exposure.",
+          heading: "Sales leadership and talent support",
+          body: (
+            <>
+              We advise on the sales leadership the company needs next and support the
+              hiring that follows. Senior leadership searches run through{" "}
+              <Link
+                to="/services/executive-search"
+                className="underline hover:text-foreground transition-colors"
+              >
+                Executive Search &amp; Leadership Advisory
+              </Link>
+              , and sales and marketing recruiting runs through{" "}
+              <Link
+                to="/services/recruiting"
+                className="underline hover:text-foreground transition-colors"
+              >
+                Recruiting &amp; Talent Delivery
+              </Link>
+              .
+            </>
+          ),
+        },
+        {
+          heading: "Alignment between hiring plans and growth priorities",
+          body: "We compare the hiring plan against the growth priorities and the current team, then identify which roles to hire, in what order, and which ones can wait. The work ends with a written hiring sequence the leadership team can act on.",
           bullets: [
-            "Compliance and risk frameworks",
-            "Performance management and compensation design",
-            "Organizational design and change management",
+            "Hiring plan review against stated priorities",
+            "Role sequencing and timing",
+            "Where existing team members can cover the work instead",
           ],
         },
         {
-          heading: "Fractional executive support",
-          body: "Senior chief-of-staff and executive operations capacity for CEOs and founders whose time is the bottleneck.",
+          heading: "Selected operating process improvements",
+          body: "We take on specific processes rather than whole operating models. Typical work includes documenting how a process runs today, agreeing how it should run, and putting the change in place with the people who use it.",
+          bullets: [
+            "Pipeline and forecast review practices",
+            "Handoffs between sales, marketing, and delivery",
+            "Reporting the leadership team relies on",
+            "Onboarding and enablement for new revenue hires",
+          ],
         },
         {
-          heading: "Strategic partnership models",
-          body: "Foundation, Growth, and Enterprise partnership shapes, modular by capability, with quarterly business reviews and shared milestones.",
+          heading: "Defined projects with qualified specialists",
+          body: "When a project needs expertise outside Chris's own, we bring in a qualified specialist and name that person on the engagement. Each project has a written scope, a schedule, and a named delivery lead.",
         },
       ]}
+      disciplinesEyebrow="How we deliver"
+      disciplinesHeading="Every engagement has a defined scope and a named delivery lead."
       disciplines={[
         {
-          heading: "Named plays, not generic activity",
-          body: "Every engagement runs against one of a small number of named plays we have run before. We are explicit about which play we are running, why, and what success looks like at each milestone.",
+          heading: "Chris leads the client relationship",
+          body: "Chris runs the intake, the scope, the client communication, and the accountability on every engagement, and brings in qualified specialists when the work requires additional expertise.",
         },
         {
-          heading: "Senior operators in the seat",
-          body: "The work is done by senior operators with first-hand experience running the play, not by a junior team supervised from a distance. The person you meet at intake is the person executing.",
+          heading: "The scope is written down before we start",
+          body: "We agree the problem, the deliverables, the schedule, and the communication cadence in writing. Both sides know what finished looks like.",
         },
         {
-          heading: "Written milestones, weekly cadence",
-          body: "Engagements run on a weekly working session and written milestone notes. There is no ambiguity about what was committed, what shipped, and what is at risk.",
+          heading: "Specialists are named on the engagement",
+          body: "When a specialist is doing part of the work, we tell you who they are and which part they own before the work begins.",
         },
         {
-          heading: "Outcome accountability",
-          body: "We define measurable outcomes in writing at the start of each engagement and grade ourselves against them at quarterly reviews.",
+          heading: "We report progress in writing",
+          body: "Engagements run on a regular working session and a written note covering what moved, what is outstanding, and what needs a decision.",
         },
       ]}
       methodMap={[
-        { phase: "Discovery", body: "Two to three structured conversations with the CEO and revenue or operations leadership to identify the highest-leverage play and the constraint that's been blocking it." },
-        { phase: "Design", body: "A written 12-week plan: named accounts or workstreams, weekly cadence, success metrics, and the senior operator who will run it. Reviewed and signed jointly." },
-        { phase: "Execute", body: "Partner-led execution against the plan. Weekly working sessions with the client team, written milestone notes, and monthly steering check-in with the CEO or sponsor." },
-        { phase: "Embed", body: "Hand-off plan to the internal team or recommended next hire. The play continues running after we step back; the playbook stays with the client." },
+        {
+          phase: "Discovery",
+          body: "We hold structured conversations with the CEO and the revenue or operations leadership to understand the current team, the priorities, and the specific problem to work on.",
+        },
+        {
+          phase: "Design",
+          body: "We write the scope, which covers the deliverables, the schedule, the delivery lead, and any specialists involved. You review and approve it before the work starts.",
+        },
+        {
+          phase: "Execute",
+          body: "We run the work on an agreed cadence with written progress notes, working alongside the people who own the process or the team.",
+        },
+        {
+          phase: "Handover",
+          body: "We hand over the documentation and the plan so the internal team can carry the work forward, then check in once they have had time to run with it.",
+        },
       ]}
       wontDo={[
-        "Sell a fixed-deliverable engagement when the underlying play hasn't been agreed in writing.",
-        "Staff junior operators against a senior mandate.",
-        "Take performance-only engagements where there is no shared accountability for inputs.",
+        "We do not operate as a general management consulting firm or take on whole-company transformation programs.",
+        "We do not guarantee revenue growth, increased sales, cost savings, or other business results.",
+        "We do not take performance-only engagements where neither side is accountable for the scope of work.",
+        "We do not sell open-ended advisory retainers without a defined scope.",
       ]}
       engagements={[
-        { name: "Foundation Partnership", detail: "Core operating infrastructure for companies under 30 employees. Onboarding, light recruiting, and HR foundations that scale with the headcount." },
-        { name: "Growth Partnership", detail: "Active BD execution and operating infrastructure for Series A and B companies. The most common engagement shape we run." },
-        { name: "Enterprise Partnership", detail: "BD execution, operating infrastructure, and fractional executive capacity running in parallel, for companies that need senior capacity across more than one function at once." },
-        { name: "BD execution", detail: "Standalone senior BD engagement against a target-account or partnership thesis, with monthly retainer and outcome incentives." },
-        { name: "Operations & HR", detail: "Standalone operating-infrastructure engagement, retainer or project-based." },
-        { name: "Volume partnership", detail: "Multi-quarter and annual commitments structured with shared milestones and partnership incentives." },
+        {
+          name: "Structure and role review",
+          detail: "A fixed-scope review of the revenue team structure, ending with a written structure and responsibility map.",
+        },
+        {
+          name: "Hiring plan alignment",
+          detail: "A defined project comparing the hiring plan against growth priorities, ending with a written hiring sequence.",
+        },
+        {
+          name: "Process improvement project",
+          detail: "A single operating process documented, agreed, and put in place with the people who use it.",
+        },
+        {
+          name: "Sales leadership advisory",
+          detail: "Advisory support on the sales leadership the company needs next and the hiring that follows.",
+        },
+        {
+          name: "Specialist project",
+          detail: "A defined project delivered with a named qualified specialist for work outside our own expertise.",
+        },
       ]}
-      caseNarrative={{
-        tag: "Series B · Logistics",
-        title: "Five national-chain meetings in 30 days, two converted within the quarter.",
-        body: "A Series B logistics platform had spent six months trying to break into national retail accounts and was burning founder cycles on cold outreach.\n\nWe ran our enterprise account-penetration play: a target list of seven retailers, a senior operator who had sold into the same buyers from a prior role, and a weekly cadence with the founder.\n\nWithin 30 days, five of the seven were in active conversations. By the end of the quarter, two had become signed contracts. The internal sales hire, postponed for a year while the company looked for the wrong profile, was now scoped against actual deal motion."
-      }}
+      engagementsNote="Every engagement has a written scope, an agreed schedule, and a named delivery lead. We discuss fees in conversation once we understand the work."
       faq={[
         {
-          q: "How fast do we see impact?",
-          a: "Most engagements show first measurable signal (a meeting set, a partnership advanced, an operating workstream stood up) within the first 30 days. We define what 30/60/90-day signal looks like at the start of each engagement, in writing.",
+          q: "Are you a management consulting firm?",
+          a: "No. We take on defined pieces of work with a written scope and a named delivery lead. We do not run whole-company transformation programs or sell open-ended advisory retainers.",
         },
         {
-          q: "Are you a substitute for a full-time CRO or COO?",
-          a: "Sometimes, for a defined window. More often we are the bridge that buys the company time to hire the right full-time leader against real, validated motion rather than against a hypothesis. We will tell you directly which case yours is.",
+          q: "Do you guarantee revenue results?",
+          a: "No. We do not guarantee revenue growth, sales increases, or cost savings. We agree the scope of work, the deliverables, and the schedule, and we are accountable for delivering those.",
         },
         {
-          q: "Do you take performance-only deals?",
-          a: "No. Pure performance-only structures create misaligned incentives and short-term behavior. We take blended structures with shared accountability for both inputs and outcomes.",
+          q: "Can you hire the revenue team as well as advise on it?",
+          a: "Yes, through the other services. Sales and marketing recruiting runs through Recruiting & Talent Delivery, and senior sales leadership searches run through Executive Search & Leadership Advisory.",
         },
         {
-          q: "What does a typical week look like?",
-          a: "One working session with the client team, target-account or workstream execution between sessions, and a written milestone note at the end of the week. A monthly steering check-in with the CEO or sponsor.",
+          q: "How long does an engagement run?",
+          a: "It depends on the work. A structure review or a hiring plan alignment is usually a matter of weeks. A process improvement project runs longer because it includes putting the change in place. We agree the schedule in writing before we start.",
         },
         {
-          q: "Who owns the relationships built during the engagement?",
-          a: "The client. Every account, contact, and partnership advanced during the engagement transitions to the client team and the client CRM. The playbook stays with the client when we step back.",
+          q: "Who does the work?",
+          a: "Chris leads the client relationship and the engagement. Qualified specialists deliver the parts of the work that require expertise outside his own, and we name them before the work starts.",
         },
       ]}
+      ctaTitle="Tell us which part of the revenue team needs work."
+      ctaBody="Send us a short summary of the team, the priorities, and the problem you want to solve. We will respond with a candid view of how, and whether, we can help."
     />
   );
 }

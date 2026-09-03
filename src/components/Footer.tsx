@@ -13,10 +13,8 @@ export const Footer = () => {
               <span className="font-serif text-xl">proHIRE resources</span>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed font-light max-w-sm">
-              Built for high-stakes hires and revenue growth. Fully accountable for results.
-            </p>
-            <p className="text-primary-foreground/60 text-sm italic font-serif">
-              "You are more than just a keyword search."
+              proHIRE resources provides recruiting, executive search, and growth advisory
+              for growing companies.
             </p>
           </div>
 
