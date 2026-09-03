@@ -135,15 +135,11 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-8 space-y-6 text-foreground font-light text-lg leading-relaxed">
-            <p className="font-serif text-2xl lg:text-3xl text-foreground leading-snug">
-              "You are more than just a keyword search."
-            </p>
             <p>
-              That sentence is the practice in a single line. Most of what's labeled
-              "executive search" today is a sourcing motion dressed up in advisory language,
-              a database query with a glossy deck. The work that actually moves a company is
-              slower, more specific, and almost always begins with re-scoping the question
-              the client first asked.
+              Most of what is labeled executive search today is a sourcing process
+              presented as advisory work, a database query with a polished deck. The work
+              that actually moves a company is slower, more specific, and almost always
+              begins by re-scoping the question the client first asked.
             </p>
             <p>
               proHIRE resources was built to do that work. We sit with founders before the
