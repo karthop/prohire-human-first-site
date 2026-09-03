@@ -1,7 +1,7 @@
 import { Seo } from "@/components/Seo";
 import { CTABand } from "@/sections/CTABand";
 import chrisDogs from "@/assets/chris-dogs.png";
-import chrisHeadshot from "@/assets/chris-headshot.png";
+import chrisHeadshotAsset from "@/assets/chris-headshot.png.asset.json";
 
 
 const principles = [
@@ -111,7 +111,7 @@ export default function About() {
           </div>
           <div className="lg:col-span-4" style={{ overflow: "visible" }}>
             <img
-              src={chrisHeadshot}
+              src={chrisHeadshotAsset.url}
               alt="Chris Betz, founder of proHIRE resources"
               className="w-full h-auto block"
               style={{ display: "block", background: "transparent" }}
