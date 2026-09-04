@@ -100,13 +100,15 @@ export default function About() {
           <div className="lg:col-span-8">
             <div className="text-xs uppercase tracking-[0.2em] text-primary-foreground/70 mb-6">About</div>
             <h1 className="font-serif text-4xl lg:text-6xl leading-[1.05] max-w-4xl">
-              Twenty years on every side of the table.
+              Where this approach comes from.
             </h1>
             <p className="mt-8 text-lg lg:text-xl text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
-              proHIRE resources is a boutique executive search and advisory practice for
-              founders, CEOs, and boards who want an advisor in the room, not a vendor on
-              the call. Twenty years of knowing when to hire, when to restructure, and when
-              the answer is neither.
+              proHIRE resources handles separate work for separate needs. Founders, CEOs,
+              and boards come to us for executive search and advisory. HR and talent leaders
+              come to us for professional recruiting and help with specific talent projects.
+              Individual executives work with us on career strategy and executive branding.
+              Each engagement stands on its own, and twenty years of experience shape how we
+              approach it.
             </p>
           </div>
           <div className="lg:col-span-4" style={{ overflow: "visible" }}>
