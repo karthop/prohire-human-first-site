@@ -298,7 +298,8 @@ export default function DigitalPositioning() {
             Digital Positioning & Web Design
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            We Help Companies Improve Their Positioning, Messaging, and Digital Presence.
+            Positioning, branding, messaging and digital presence for companies,
+            consultants, and executives.
           </h1>
           <div className="mt-8 max-w-3xl space-y-5 text-lg lg:text-xl text-primary-foreground/85 font-light leading-relaxed">
             <p>
