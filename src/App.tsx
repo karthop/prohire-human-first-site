@@ -134,6 +134,8 @@ const App = () => (
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
               <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
               <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+              {/* Unlisted client dashboards, direct link only */}
+              <Route path="/dashboard/:client" element={<ClientDashboard />} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<LegacyRedirect to={legacyRedirects["/employers"]} />} />
               <Route path="/professionals" element={<LegacyRedirect to={legacyRedirects["/professionals"]} />} />
