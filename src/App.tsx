@@ -28,6 +28,7 @@ const RevenueOperationalAcceleration = lazy(() => import("./pages/services/Reven
 const RecruitingTalentDelivery = lazy(() => import("./pages/services/RecruitingTalentDelivery"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const DigitalPositioning = lazy(() => import("./pages/services/DigitalPositioning"));
+const ClientDashboard = lazy(() => import("./pages/ClientDashboard"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 import { BackToTop } from "@/components/BackToTop";
