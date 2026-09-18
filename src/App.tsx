@@ -28,6 +28,7 @@ const RevenueOperationalAcceleration = lazy(() => import("./pages/services/Reven
 const RecruitingTalentDelivery = lazy(() => import("./pages/services/RecruitingTalentDelivery"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const DigitalPositioning = lazy(() => import("./pages/services/DigitalPositioning"));
+const ClientDashboard = lazy(() => import("./pages/ClientDashboard"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
 import { BackToTop } from "@/components/BackToTop";
@@ -133,6 +134,8 @@ const App = () => (
               <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
               <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
               <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+              {/* Unlisted client dashboards, direct link only */}
+              <Route path="/dashboard/:client" element={<ClientDashboard />} />
               {/* Legacy redirects */}
               <Route path="/employers" element={<LegacyRedirect to={legacyRedirects["/employers"]} />} />
               <Route path="/professionals" element={<LegacyRedirect to={legacyRedirects["/professionals"]} />} />
