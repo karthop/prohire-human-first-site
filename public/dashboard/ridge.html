@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Knight Commercial — Search Status</title>
+<title>Ridge Planning & Engineering — Search Status</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Knight Commercial brand, sampled from their logo */
+  /* Client brand palette */
   --navy:#1D2655;
   --at-target:#1D2655;
   --chip:#EDF0F5;
@@ -330,17 +330,19 @@ function stageInfo(raw){
           rank:(t.rank!==undefined?t.rank:50), clock:t.clock===true};
 }
 
-const SNAPSHOT_TAKEN = "Sep 1, 2026 5:10 PM";
-const SNAPSHOT = `Client,Position,Submitted As,Hiring Manager,Reports To,First Name,Last Name,Submit Date,Comp,Feedback/ Stage
-Knight Commercial,Finance Ops,Direct,Jackie Rios,Bryan Knodel,Jade,Pappous,8/21/2026,"130,000.00",Active Interview
-Knight Commercial,Payroll Specialist,Direct,Jackie Rios,Jackie Rios,Kate,Garner,8/24/2026,"80,000.00",Need feedback from client
-Knight Commercial,Payroll Specialist,Direct,Jackie Rios,Jackie Rios,Sharon,Klimski,8/21/2026,"65,000.00",Need feedback from client
-Knight Commercial,Sales Support Specialist,Direct,Jackie Rios,Grant Parsons,Diana,Oliva,8/31/2026,"75,000.00",Active Interview
-Knight Commercial,Finance Ops,Direct,Jackie Rios,Bryan Knodel,Need,Candidates,,,NA
-Knight Commercial,Ops Manager,Direct,Jackie Rios,Victor Rrejo,Need,Candidates,,,NA
-Knight Commercial,Director of Marketing,Direct,Jackie Rios,Grant Parsons,Mike,Bek,,,Waiting on prescreen
-Knight Commercial,Executive Admin Asst,Direct,Jackie Rios,Victor Trejo & Grant Parsons,Marisell,Fournier,,,Waiting on resume
-Knight Commercial,Finance Ops,Contract,Jackie Rios,Victor Trejo & Grant Parsons,Clark,Dorsey,8/21/2026,,On Hold`;
+const SNAPSHOT_TAKEN = "Sep 22, 2026 6:54 PM";
+const SNAPSHOT = `Client,Position,Role Type,Hiring Manager,Reports To,First Name,Last Name,Submit Date,Interview Date,Feedback/ Stage,Start Date,Salary
+Ridge,Civil Engineer,Direct,Jeff Smith,,Austin,Brooks,9/10/2026,,Need feedback from client,,"95,000.00"
+Ridge,Civil Engineer,Direct,Jeff Smith,,David,Linder,9/10/2026,,On Hold,,
+Ridge,Civil Engineer,Direct,Jeff Smith,,Emily,Cain,9/8/2026,,On Hold,,"120,000.00"
+Ridge,Civil Engineer,Direct,Jeff Smith,,Stephanie,Williams,4/28/2026,,On Hold,,
+Ridge,Civil Engineer,Direct,Jeff Smith,,Jeniffer,Moreno,,,On Hold,,
+Ridge,Civil Engineer,Direct,Jeff Smith,,Chris,Zubak,4/21/2026,,On Hold,,"105,000.00"
+Ridge,Civil Engineer,Direct,Jeff Smith,,Christian,Breeden,4/17/2026,,NA,,
+Ridge,Project Manager,Direct,Jeff Smith,,Need,Candidates,,,NA,,
+Ridge,Land Planner,Direct,Jeff Smith,,Need,Candidates,,,NA,,
+Ridge,Civil Engineer,Direct,Jeff Smith,,Curtis,Wilson,12/11/2025,,NA,,
+Ridge,Civil Engineer,Direct,Jeff Smith,,Jacob,Bolton,11/19/2025,,NA,,"100,000.00"`;
 
 function parseCSV(t){
   const rows=[];let row=[],f="",q=false;
