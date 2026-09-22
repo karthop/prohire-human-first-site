@@ -132,8 +132,8 @@ body{background:var(--page);color:var(--ink);
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .key{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
 
-.board{column-width:340px;column-gap:14px;padding:14px 0 30px}
-.board > *{min-height:300px;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;margin:0 0 14px;display:inline-block;width:100%}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;align-items:stretch;padding:14px 0 30px}
+.board > *{min-height:300px;margin:0}
 .col{background:var(--card);border-radius:9px;box-shadow:var(--shadow);overflow:hidden}
 .col-head{padding:13px 15px 11px;border-bottom:1px solid var(--rule);
   border-top:3px solid var(--navy)}
@@ -187,8 +187,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
 @media (max-width:520px){
   .metric{min-width:104px;padding:11px 13px}
   .metric .n{font-size:23px}
-  .board{column-width:auto;column-count:1;column-gap:0}
-  .board > *{margin-bottom:12px}
+  .board{grid-template-columns:1fr;gap:12px}
   .who h1{font-size:19px}
 }
 </style>
@@ -285,6 +284,11 @@ function currentClient(){
   }
   const q=(new URLSearchParams(location.search).get("client")||"").toLowerCase();
   if(CLIENTS[q]) return {key:q, ...CLIENTS[q]};
+  const named = parts.filter(p=>p!=="dashboard" && p!=="portal" && !/\.html?$/.test(p));
+  if(named.length===0 && !q){
+    const first=Object.keys(CLIENTS)[0];
+    return {key:first, ...CLIENTS[first]};
+  }
   return null;
 }
 const ACTIVE = currentClient() || {key:"", name:"proHIRE Resources", feedUrl:"", logo:""};
@@ -335,7 +339,7 @@ function stageInfo(raw){
   const text = (raw||"").trim();
   const key  = text.toLowerCase().replace(/\s+/g," ");
   const t    = STAGE_TONE[key] || {owner:"prohire",tone:"ours"};
-  return {label:text, owner:t.owner, tone:t.tone, counts:t.counts!==false,
+  return {label:text, owner:t.owner, tone:t.tone, counts:t.clock===true,
           rank:(t.rank!==undefined?t.rank:50), clock:t.clock===true};
 }
 
@@ -439,7 +443,7 @@ function render(recs){
   const all=reqs.flatMap(q=>q.live);
   const withClient=all.filter(c=>c.stage.tone==="client").length;
   const interviewing=all.filter(c=>c.stage.tone==="live").length;
-  const withUs=all.filter(c=>c.stage.owner==="prohire"&&c.stage.counts).length;
+  const withUs=all.filter(c=>c.stage.owner==="prohire"&&c.stage.rank<90).length;
 
   document.getElementById("metrics").innerHTML=[
     {n:reqs.length,l:"Open searches"},
