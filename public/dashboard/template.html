@@ -534,13 +534,17 @@ function render(recs){
       '</div>';
   }).join("");
 
-  document.getElementById("board").addEventListener("click",e=>{
-    const btn=e.target.closest(".moreBtn"); if(!btn)return;
-    const extra=btn.previousElementSibling;
-    const open=extra.hasAttribute("hidden");
-    if(open) extra.removeAttribute("hidden"); else extra.setAttribute("hidden","");
-    btn.textContent = open ? "Show less" : "Show "+btn.dataset.n+" more";
-  });
+  const boardEl=document.getElementById("board");
+  if(!boardEl.dataset.moreBound){
+    boardEl.dataset.moreBound="1";
+    boardEl.addEventListener("click",e=>{
+      const btn=e.target.closest(".moreBtn"); if(!btn)return;
+      const extra=btn.previousElementSibling;
+      const open=extra.hasAttribute("hidden");
+      if(open) extra.removeAttribute("hidden"); else extra.setAttribute("hidden","");
+      btn.textContent = open ? "Show less" : "Show "+btn.dataset.n+" more";
+    });
+  }
   document.getElementById("charts").hidden=false;
   document.getElementById("state").style.display="none";
 }
