@@ -192,7 +192,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
   .who h1{font-size:19px}
 }
 </style>
-</head>
+<script defer src="/~flock.js" data-proxy-url="/~api/analytics"></script><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_1yy9dw34sm8mzbe607hq2jby0g/ff0d30d664d9dbe45fa9c5b647ab4427_1790089221465.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_1yy9dw34sm8mzbe607hq2jby0g/ff0d30d664d9dbe45fa9c5b647ab4427_1790089221465.png"></head>
 <body>
 
 <div class="top"><div class="wrap"><div class="toprow">
@@ -370,6 +370,9 @@ function toObjects(rows){
 const isPh = r => {
   const f=(r["First Name"]||"").trim(), l=(r["Last Name"]||"").trim();
   if(!f && !l) return true;
+  /* Hidden statuses: the row still makes its position appear, but no candidate shows */
+  const st=(r["Feedback/ Stage"]||"").trim().toLowerCase();
+  if(st==="na" || st==="n/a" || st==="need candidates") return true;
   return f.toLowerCase()==="need" && l.toLowerCase()==="candidates";
 };
 function money(v){
