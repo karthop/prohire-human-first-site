@@ -22,7 +22,7 @@ const ClientDashboard = () => {
     <div className="fixed inset-0 z-[9999] bg-white">
       <iframe
         title="Client search status dashboard"
-        src={`/dashboard/template.html?client=${encodeURIComponent(key)}`}
+        src={`/dashboard/${encodeURIComponent(key)}.html`}
         className="h-full w-full border-0"
       />
     </div>
