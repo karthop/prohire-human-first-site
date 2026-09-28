@@ -298,7 +298,7 @@ const STAGE_TONE = {
   "offer accepted":         {owner:"client", tone:"won",    rank:0, clock:true},
   "offer extended":         {owner:"client", tone:"won",    rank:1, clock:true},
   "offer pending":          {owner:"client", tone:"won",    rank:2, clock:true},
-  "need interview feedback":{owner:"client", tone:"client", rank:3, clock:true},
+  "need interview feedback":{owner:"client", tone:"client", rank:3, clock:true, pill:"live"},
   "interview scheduled":    {owner:"client", tone:"live",   rank:4, clock:true},
   "interview requested":    {owner:"client", tone:"live",   rank:5, clock:true},
   "scheduling interview":   {owner:"client", tone:"client", rank:6, clock:true},
@@ -326,7 +326,7 @@ function stageInfo(raw){
   const text = (raw||"").trim();
   const key  = text.toLowerCase().replace(/\s+/g," ");
   const t    = STAGE_TONE[key] || {owner:"prohire",tone:"ours"};
-  return {label:text, owner:t.owner, tone:t.tone, counts:t.clock===true,
+  return {label:text, owner:t.owner, tone:t.tone, pill:(t.pill||t.tone), counts:t.clock===true,
           rank:(t.rank!==undefined?t.rank:50), clock:t.clock===true};
 }
 
@@ -522,12 +522,12 @@ function render(recs){
           ? (age>=7?" late":age>=5?" mid":age>=3?" warn":"") : "";
         bits.push('<span class="age'+grade+'">'+age+(age===1?" day":" days")+'</span>');
       }
-      return '<div class="row '+stage.tone+'"><div class="row-main">'+
+      return '<div class="row '+stage.pill+'"><div class="row-main">'+
         '<div class="nm">'+esc(rec["First Name"]+" "+rec["Last Name"])+
           ((rec["Role Type"]||"").trim() && (rec["Role Type"]||"").trim().toLowerCase()!==(q.roleType||"").toLowerCase()
             ? ' <span class="qual">('+esc((rec["Role Type"]||"").trim())+')</span>' : "")+'</div>'+
         '<div class="meta">'+bits.join(" &middot; ")+'</div></div>'+
-        '<span class="tag '+stage.tone+'">'+esc(stage.label)+'</span></div>';
+        '<span class="tag '+stage.pill+'">'+esc(stage.label)+'</span></div>';
     });
     const hidden=rowHTML.length-ROWS_SHOWN;
     const rows = hidden>0
