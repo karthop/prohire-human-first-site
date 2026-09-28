@@ -309,7 +309,7 @@ const STAGE_TONE = {
   "prescreen scheduled":    {owner:"prohire",tone:"ours",   rank:9},
   "waiting on prescreen":   {owner:"prohire",tone:"ours",   rank:10},
   "waiting on resume":      {owner:"prohire",tone:"ours",   rank:11},
-  "on hold":                {owner:"prohire",tone:"ours",   rank:99},
+  "on hold":                {owner:"prohire",tone:"ours",   rank:99, counts:false},
   /* retired names, kept so an un-updated sheet still renders correctly */
   "offer coming":           {owner:"client", tone:"won",    rank:2, clock:true},
   "offer out/ hired":       {owner:"client", tone:"won",    rank:0, clock:true},
@@ -326,7 +326,7 @@ function stageInfo(raw){
   const text = (raw||"").trim();
   const key  = text.toLowerCase().replace(/\s+/g," ");
   const t    = STAGE_TONE[key] || {owner:"prohire",tone:"ours"};
-  return {label:text, owner:t.owner, tone:t.tone, pill:(t.pill||t.tone), counts:t.clock===true,
+  return {label:text, owner:t.owner, tone:t.tone, pill:(t.pill||t.tone), counts:t.counts!==false,
           rank:(t.rank!==undefined?t.rank:50), clock:t.clock===true};
 }
 
