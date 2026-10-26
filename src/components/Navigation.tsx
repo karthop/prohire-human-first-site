@@ -11,6 +11,7 @@ const services = [
   { to: "/services/revenue-operational-acceleration", label: "Revenue & Operational Acceleration" },
   { to: "/services/career-advisory", label: "Career Advisory" },
   { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
+  { to: "/services/private-equity", label: "Private Equity & Advisors" },
 ];
 
 const primary = [
