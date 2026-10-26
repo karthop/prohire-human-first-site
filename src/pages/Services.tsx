@@ -158,6 +158,34 @@ export default function ServicesIndex() {
         </div>
       </section>
 
+      {/* Private equity is not a seventh capability. It sits after the Industries band. */}
+      <section className="py-16 border-b border-border">
+        <div className="container-editorial grid lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="lg:col-span-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              Private Equity
+            </div>
+            <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
+              We support sponsors, portfolio companies, and their advisors.
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-5">
+            <p className="text-foreground text-lg font-light leading-relaxed">
+              Private equity firms and the advisory firms that work with them use the same
+              six capabilities. The private equity page shows where each one fits, from
+              the first 100 days after close through exit.
+            </p>
+            <Link
+              to="/services/private-equity"
+              className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
+            >
+              See how we support private equity
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CTABand />
     </div>
   );
