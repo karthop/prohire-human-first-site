@@ -124,6 +124,7 @@ const App = () => (
               <Route path="/services/growth-acceleration" element={<LegacyRedirect to={legacyRedirects["/services/growth-acceleration"]} />} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/services/digital-positioning" element={<PageTransition><DigitalPositioning /></PageTransition>} />
+              <Route path="/services/private-equity" element={<PageTransition><PrivateEquity /></PageTransition>} />
               <Route path="/services/the-first-move" element={<LegacyRedirect to={legacyRedirects["/services/the-first-move"]} />} />
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
