@@ -163,20 +163,6 @@ export const Navigation = () => {
                             {c.label}
                           </Link>
                         ))}
-                        <div className="border-t border-border pt-3 mt-1">
-                          <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70 mb-2">
-                            Who we support
-                          </div>
-                          <Link
-                            to="/services/private-equity"
-                            className={`text-sm ${
-                              isActive("/services/private-equity") ? "text-foreground" : "text-muted-foreground"
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            Private Equity &amp; Advisors
-                          </Link>
-                        </div>
                       </div>
                     )}
                   </div>
