@@ -28,6 +28,7 @@ const RevenueOperationalAcceleration = lazy(() => import("./pages/services/Reven
 const RecruitingTalentDelivery = lazy(() => import("./pages/services/RecruitingTalentDelivery"));
 const CareerAdvisory = lazy(() => import("./pages/services/CareerAdvisory"));
 const DigitalPositioning = lazy(() => import("./pages/services/DigitalPositioning"));
+const PrivateEquity = lazy(() => import("./pages/services/PrivateEquity"));
 const ClientDashboard = lazy(() => import("./pages/ClientDashboard"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 import { ReeceWidget } from "@/components/assistant/ReeceWidget";
@@ -123,6 +124,7 @@ const App = () => (
               <Route path="/services/growth-acceleration" element={<LegacyRedirect to={legacyRedirects["/services/growth-acceleration"]} />} />
               <Route path="/services/career-advisory" element={<PageTransition><CareerAdvisory /></PageTransition>} />
               <Route path="/services/digital-positioning" element={<PageTransition><DigitalPositioning /></PageTransition>} />
+              <Route path="/services/private-equity" element={<PageTransition><PrivateEquity /></PageTransition>} />
               <Route path="/services/the-first-move" element={<LegacyRedirect to={legacyRedirects["/services/the-first-move"]} />} />
               <Route path="/industries" element={<PageTransition><Industries /></PageTransition>} />
               <Route path="/approach" element={<PageTransition><Approach /></PageTransition>} />
