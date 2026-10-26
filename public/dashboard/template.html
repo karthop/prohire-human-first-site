@@ -340,7 +340,7 @@ function stageInfo(raw){
   const text = (raw||"").trim();
   const key  = text.toLowerCase().replace(/\s+/g," ");
   const t    = STAGE_TONE[key] || {owner:"prohire",tone:"ours"};
-  return {label:text, owner:t.owner, tone:t.tone, counts:t.clock===true,
+  return {label:text, owner:t.owner, tone:t.tone, counts:(t.rank!==undefined&&t.rank<90),
           rank:(t.rank!==undefined?t.rank:50), clock:t.clock===true};
 }
 
