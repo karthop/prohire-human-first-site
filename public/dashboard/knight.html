@@ -425,8 +425,15 @@ function render(recs){
       return !c || c===want || c.startsWith(ACTIVE.key);
     });
   const hide=CONFIG.hiddenPositions||[];
-  if(hide.length)
-    recs=recs.filter(r=>!hide.includes((r["Position"]||"").trim().toLowerCase()));
+  if(hide.length){
+    /* Compare on letters and digits only, so "FP&A" / "FP & A" / "fp and a"
+       and stray spacing or punctuation in the sheet all land on the same key.
+       Still a whole-value match: "Controller" is hidden, "Assistant Controller"
+       is not. */
+    const normPos=v=>(v||"").toLowerCase().replace(/\band\b/g," ").replace(/[^a-z0-9]/g,"");
+    const hideKeys=hide.map(normPos);
+    recs=recs.filter(r=>!hideKeys.includes(normPos(r["Position"])));
+  }
   document.title = CONFIG.clientName + " \u2014 Search Status";
   const mark=document.getElementById("clientMark");
   if(mark) mark.innerHTML = ACTIVE.logo
