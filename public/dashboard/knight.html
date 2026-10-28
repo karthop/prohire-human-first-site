@@ -284,7 +284,13 @@ const CONFIG = {
   firmName: "proHIRE Resources",
   feedUrl: ACTIVE.feedUrl,
   slateTarget: 3,
-  refreshMs: 120000
+  refreshMs: 120000,
+  /* Positions withheld from this client's board. Matched on the whole
+     Position value, trimmed and lower-cased. Rows are dropped at intake,
+     so a hidden position has no card and contributes to no count, metric,
+     donut slot or chart bar. */
+  hiddenPositions: ["fp&a","fp&a manager","controller","finance ops",
+                    "director of marketing","ops manager"]
 };
 
 const ALLOWED = ["Client","Position","Role Type","Hiring Manager","Reports To",
@@ -418,6 +424,9 @@ function render(recs){
       const c=(r["Client"]||"").trim().toLowerCase();
       return !c || c===want || c.startsWith(ACTIVE.key);
     });
+  const hide=CONFIG.hiddenPositions||[];
+  if(hide.length)
+    recs=recs.filter(r=>!hide.includes((r["Position"]||"").trim().toLowerCase()));
   document.title = CONFIG.clientName + " \u2014 Search Status";
   const mark=document.getElementById("clientMark");
   if(mark) mark.innerHTML = ACTIVE.logo
