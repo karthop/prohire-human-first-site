@@ -22,13 +22,13 @@ export const Footer = () => {
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-5">Capabilities</h3>
             <ul className="space-y-3 text-sm">
               <li><Link to="/services" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Overview</Link></li>
-              <li><Link to="/services/recruiting" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Recruiting &amp; Talent Delivery</Link></li>
               <li><Link to="/services/executive-search" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Executive Search &amp; Leadership Advisory</Link></li>
+              <li><Link to="/services/private-equity" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Private Equity &amp; Advisors</Link></li>
+              <li><Link to="/services/recruiting" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Recruiting &amp; Talent Delivery</Link></li>
               <li><Link to="/services/hr-support-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">HR &amp; Talent Leadership Support</Link></li>
               <li><Link to="/services/revenue-operational-acceleration" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Revenue &amp; Operational Acceleration</Link></li>
-              <li><Link to="/services/career-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Career Advisory</Link></li>
               <li><Link to="/services/digital-positioning" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Digital Positioning &amp; Web Design</Link></li>
-              <li className="pt-3"><Link to="/services/private-equity" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Private Equity &amp; Advisors</Link></li>
+              <li><Link to="/services/career-advisory" className="text-primary-foreground/85 hover:text-primary-foreground transition-colors">Career Advisory</Link></li>
             </ul>
           </div>
 
