@@ -5,16 +5,22 @@ import { GridFill } from "@/components/GridFill";
 
 const pillars = [
   {
-    title: "Recruiting & Talent Delivery",
-    body: "We recruit professionals for permanent, contract, and contract-to-hire roles, provide embedded recruiting support, and build out functional teams.",
-    href: "/services/recruiting",
-    linkText: "Explore Recruiting & Talent Delivery",
-  },
-  {
     title: "Executive Search & Leadership Advisory",
     body: "We run senior leadership searches, assess executive candidates, and place fractional and interim executives when a company needs leadership sooner.",
     href: "/services/executive-search",
     linkText: "Explore Executive Search & Leadership Advisory",
+  },
+  {
+    title: "Private Equity & Advisors",
+    body: "We support sponsors, operating partners, and portfolio companies with leadership hiring and team builds across the ownership cycle.",
+    href: "/services/private-equity",
+    linkText: "Explore Private Equity & Advisors",
+  },
+  {
+    title: "Recruiting & Talent Delivery",
+    body: "We recruit professionals for permanent, contract, and contract-to-hire roles, provide embedded recruiting support, and build out functional teams.",
+    href: "/services/recruiting",
+    linkText: "Explore Recruiting & Talent Delivery",
   },
   {
     title: "HR & Talent Leadership Support",
@@ -29,16 +35,16 @@ const pillars = [
     linkText: "Explore Revenue & Operational Acceleration",
   },
   {
-    title: "Career Advisory",
-    body: "We advise executives and senior professionals on career decisions, and we help students and early career professionals plan their first steps.",
-    href: "/services/career-advisory",
-    linkText: "Explore Career Advisory",
-  },
-  {
     title: "Digital Positioning & Web Design",
     body: "We help companies sharpen their positioning and messaging, then design, write, and launch the website and LinkedIn presence that carry it.",
     href: "/services/digital-positioning",
     linkText: "Explore Digital Positioning & Web Design",
+  },
+  {
+    title: "Career Advisory",
+    body: "We advise executives and senior professionals on career decisions, and we help students and early career professionals plan their first steps.",
+    href: "/services/career-advisory",
+    linkText: "Explore Career Advisory",
   },
 ];
 
