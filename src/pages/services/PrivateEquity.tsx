@@ -87,7 +87,7 @@ const faq = [
     a: "Either, and often both. Some engagements start with an operating partner and run inside the portfolio company. Others start with the company's leadership. We agree up front who the client is and who is kept informed.",
   },
   {
-    q: "How does this page relate to your six capabilities?",
+    q: "How does this page relate to your other capabilities?",
     a: "It is not a separate service. It shows how the existing capabilities apply under private equity ownership. Each capability page describes that service in full.",
   },
   {
