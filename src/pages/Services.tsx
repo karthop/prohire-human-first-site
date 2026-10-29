@@ -5,20 +5,28 @@ import { CTABand } from "@/sections/CTABand";
 
 const capabilities = [
   {
-    eyebrow: "Recruiting & Talent Delivery",
-    title: "Recruiting & Talent Delivery",
-    what: "We recruit professionals for permanent, contract, and contract-to-hire roles. We also provide embedded recruiting support inside your hiring process and build out complete functional teams against a written hiring plan.",
-    who: "Hiring managers, talent acquisition teams, and company leaders who need professional hires across technology, finance, HR, marketing, sales, supply chain, engineering, and general corporate functions.",
-    when: "Use this capability when you need to fill one position, several positions at once, or an entire team, and you want senior attention on the work.",
-    href: "/services/recruiting",
-  },
-  {
     eyebrow: "Executive Search & Leadership Advisory",
     title: "Executive Search & Leadership Advisory",
     what: "We run senior leadership searches, assess executive candidates, advise leadership teams and boards on senior talent decisions, and place fractional and interim executives.",
     who: "Founders, CEOs, boards, and investors filling senior leadership roles, and companies that need experienced leadership before a permanent hire is in place.",
     when: "Use this capability when the role sits at the senior leadership level, whether you need a permanent executive or temporary executive leadership.",
     href: "/services/executive-search",
+  },
+  {
+    eyebrow: "Private Equity & Advisors",
+    title: "Private Equity & Advisors",
+    what: "We provide leadership and professional hiring for private equity sponsors, portfolio companies, and the advisory firms that work alongside them, from the first 100 days after close through growth, add-on acquisitions, and preparation for the next stage.",
+    who: "Operating partners, deal teams, portfolio company leadership, and the advisory firms that support them.",
+    when: "Use this capability when a portfolio company needs leadership in place after close, needs to build the layer below the C-suite, or needs to staff growth and add-on acquisitions.",
+    href: "/services/private-equity",
+  },
+  {
+    eyebrow: "Recruiting & Talent Delivery",
+    title: "Recruiting & Talent Delivery",
+    what: "We recruit professionals for permanent, contract, and contract-to-hire roles. We also provide embedded recruiting support inside your hiring process and build out complete functional teams against a written hiring plan.",
+    who: "Hiring managers, talent acquisition teams, and company leaders who need professional hires across technology, finance, HR, marketing, sales, supply chain, engineering, and general corporate functions.",
+    when: "Use this capability when you need to fill one position, several positions at once, or an entire team, and you want senior attention on the work.",
+    href: "/services/recruiting",
   },
   {
     eyebrow: "HR & Talent Leadership Support",
@@ -37,20 +45,20 @@ const capabilities = [
     href: "/services/revenue-operational-acceleration",
   },
   {
-    eyebrow: "Career Advisory",
-    title: "Career Advisory",
-    what: "We advise individuals on career decisions, positioning, and personal LinkedIn strategy. The page covers two service paths, Executive Career Advisory and Early Career Strategy.",
-    who: "Executives, senior leaders, and experienced professionals on one path, and students, recent graduates, and early career professionals on the other. We also help mid-career professionals.",
-    when: "Use this capability when you are weighing a move, preparing for a search, or deciding how to present your experience.",
-    href: "/services/career-advisory",
-  },
-  {
     eyebrow: "Digital Positioning & Web Design",
     title: "Digital Positioning & Web Design",
     what: "We help companies define their positioning and messaging, then write, design, build, and launch the website that carries it. We also handle executive branding, company LinkedIn pages, and business-facing LinkedIn content.",
     who: "Companies, independent consultants, and expertise-driven firms whose digital presence no longer reflects what they do.",
     when: "Use this capability when your positioning needs to be clearer, when your website needs to be rebuilt, or when your company presence on LinkedIn needs work.",
     href: "/services/digital-positioning",
+  },
+  {
+    eyebrow: "Career Advisory",
+    title: "Career Advisory",
+    what: "We advise individuals on career decisions, positioning, and personal LinkedIn strategy. The page covers two service paths, Executive Career Advisory and Early Career Strategy.",
+    who: "Executives, senior leaders, and experienced professionals on one path, and students, recent graduates, and early career professionals on the other. We also help mid-career professionals.",
+    when: "Use this capability when you are weighing a move, preparing for a search, or deciding how to present your experience.",
+    href: "/services/career-advisory",
   },
 ];
 
@@ -59,7 +67,7 @@ export default function ServicesIndex() {
     <div className="min-h-screen pt-20 bg-background">
       <Seo
         title="Capabilities | proHIRE resources"
-        description="Recruiting and talent delivery, executive search and leadership advisory, HR and talent leadership support, revenue and operational acceleration, career advisory, and digital positioning and web design."
+        description="Executive search and leadership advisory, private equity and advisors, recruiting and talent delivery, HR and talent leadership support, revenue and operational acceleration, career advisory, and digital positioning and web design."
       />
 
       <section className="bg-primary text-primary-foreground brush-texture">
@@ -68,7 +76,7 @@ export default function ServicesIndex() {
             Capabilities
           </div>
           <h1 className="font-serif text-4xl lg:text-6xl leading-[1.1] max-w-4xl">
-            We Provide Six Capabilities for Companies and Professionals.
+            We Provide Seven Capabilities for Companies, Investors, and Professionals.
           </h1>
           <p className="mt-8 text-lg text-primary-foreground/85 font-light max-w-3xl leading-relaxed">
             Each capability below explains what we provide, who it supports, and when a
@@ -152,34 +160,6 @@ export default function ServicesIndex() {
               className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
             >
               See the industries we serve
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Private equity is not a seventh capability. It sits after the Industries band. */}
-      <section className="py-16 border-b border-border">
-        <div className="container-editorial grid lg:grid-cols-12 gap-8 lg:gap-12">
-          <div className="lg:col-span-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-              Private Equity
-            </div>
-            <h2 className="font-serif text-3xl lg:text-4xl text-foreground leading-tight">
-              We support sponsors, portfolio companies, and their advisors.
-            </h2>
-          </div>
-          <div className="lg:col-span-8 space-y-5">
-            <p className="text-foreground text-lg font-light leading-relaxed">
-              Private equity firms and the advisory firms that work with them use the same
-              six capabilities. The private equity page shows where each one fits, from
-              the first 100 days after close through exit.
-            </p>
-            <Link
-              to="/services/private-equity"
-              className="link-arrow inline-flex items-center gap-2 text-sm font-medium text-foreground border-b border-foreground/30 pb-1 hover:border-foreground transition-colors"
-            >
-              See how we support private equity
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>

@@ -5,13 +5,13 @@ import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const services = [
-  { to: "/services/recruiting", label: "Recruiting & Talent Delivery" },
   { to: "/services/executive-search", label: "Executive Search & Leadership Advisory" },
+  { to: "/services/private-equity", label: "Private Equity & Advisors" },
+  { to: "/services/recruiting", label: "Recruiting & Talent Delivery" },
   { to: "/services/hr-support-advisory", label: "HR & Talent Leadership Support" },
   { to: "/services/revenue-operational-acceleration", label: "Revenue & Operational Acceleration" },
-  { to: "/services/career-advisory", label: "Career Advisory" },
   { to: "/services/digital-positioning", label: "Digital Positioning & Web Design" },
-  { to: "/services/private-equity", label: "Private Equity & Advisors" },
+  { to: "/services/career-advisory", label: "Career Advisory" },
 ];
 
 const primary = [
